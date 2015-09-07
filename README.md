@@ -10,7 +10,7 @@ Steps to re-creating this project:
 
 3. $ node hello-world-server.js
 
-4. Navigate to localhost:1338 in a web browser
+4. Navigate to localhost:3000 in a web browser
 
 
 * NOTE: no CSS currently uploaded 
