@@ -1,0 +1,7 @@
+DirectoryIndex index.html index.php
+ErrorDocument 404 http://www.schulzetenberg.com/404.html
+ErrorDocument 500 http://www.schulzetenberg.com/500.html
+php_value upload_max_filesize 64M
+php_value post_max_size 64M
+php_value max_execution_time 300
+php_value max_input_time 300

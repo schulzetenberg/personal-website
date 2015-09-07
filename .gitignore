@@ -93,3 +93,5 @@ local.properties
 .jshintrc
 build.gradle
 .tern-project
+
+css/
