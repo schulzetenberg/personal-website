@@ -34,7 +34,7 @@ app.get('/', function(req,res){
 	res.sendFile('/index.html');
 });
 app.get('/index', function(req,res){
-	res.sendFile('index.html');
+	res.sendFile('/index.html');
 });
 
 //app.get('/users', user.list);
