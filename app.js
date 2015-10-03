@@ -5,12 +5,13 @@ var express = require('express')
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');  
 app.engine('html', require('ejs').renderFile);  //render html files as ejs
 
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
+app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
 app.listen(app.get('port'));
 console.log('Express server listening on port ' + app.get('port'));
 
