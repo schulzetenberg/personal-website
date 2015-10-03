@@ -8,9 +8,8 @@ Steps to re-creating this project:
 
 2. $ npm install (Downloads & installs dependent modules listed in package.json)
 
-3. $ node hello-world-server.js
+3. $ node server.js
 
-4. Navigate to localhost:3000 in a web browser
+4. Navigate to localhost:8999 in a web browser
 
-
-* NOTE: no CSS currently uploaded 
+This project can be run locally or deployed to openshift.com (free nodejs application hosting)
