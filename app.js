@@ -1,6 +1,5 @@
 var express = require('express')
   , route = require('./routes/index')
-  , user = require('./routes/user')
   , logger = require('morgan')
   , path = require('path');
 
@@ -10,12 +9,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');  
 app.engine('html', require('ejs').renderFile);  //render html files as ejs
-
-//app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080);
-//app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
-//app.listen(app.get('port'));
-//console.log('Express server listening on port ' + app.get('port'));
-
 app.use('/', route);
 
 // Handle 404 error
@@ -25,6 +18,7 @@ app.use(function(req, res) {
 });
 
 // Development error handler, will print stacktrace
+// TODO: test this 500 error
 if (app.get('env') === 'development') {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
