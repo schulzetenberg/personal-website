@@ -6,7 +6,7 @@
   "devDependencies": {},
   "bundleDependencies": [],
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "engines": {
 	    "node": ">= 0.6.0",

@@ -31,13 +31,12 @@ var AppContainer = function () {
    */
   self.terminator = function (sig) {
     if (typeof sig === "string") {
-      console.log('%s: Received %s - terminating sample app ...',
+      console.log('%s: Received %s - terminating the app ...',
         Date(Date.now()), sig);
       process.exit(1);
     }
     console.log('%s: Node server stopped.', Date(Date.now()));
   };
-
 
   /**
    *  Setup termination handlers (for exit and a list of signals).
@@ -57,15 +56,14 @@ var AppContainer = function () {
       });
   };
 
-  /**
-   *  Initializes the sample application.
-   */
+  
+   //Initializes the application.
   self.initialize = function () {
     self.setupVariables();
     self.setupTerminationHandlers();
   };
 
-
+  
   self.setupServer = function () {
 
     /**
