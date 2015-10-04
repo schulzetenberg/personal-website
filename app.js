@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');  
 app.engine('html', require('ejs').renderFile);  //render html files as ejs
-
+app.use('/', route);
 
 function wwwRedirect(req, res, next) {
     if (req.headers.host.slice(0, 4) === 'www.') {
@@ -19,8 +19,8 @@ function wwwRedirect(req, res, next) {
     next();
 }
 
-app.use(wwwRedirect);
-app.use('/', route);
+//Redirect is not working with OpenShift
+//app.use(wwwRedirect);
 
 // Handle 404 error
 app.use(function(req, res) {
