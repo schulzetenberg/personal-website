@@ -19,7 +19,7 @@ function wwwRedirect(req, res, next) {
     next();
 }
 
-//Redirect is not working with OpenShift
+//Redirect is not working with OpenShift!
 //app.use(wwwRedirect);
 
 // Handle 404 error
