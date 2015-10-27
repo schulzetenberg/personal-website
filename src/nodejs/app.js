@@ -1,7 +1,15 @@
 var express = require('express')
-  , route = require('./routes/index')
+  , route = require('../../routes/index')
   , logger = require('morgan')
-  , path = require('path');
+  , path = require('path')
+  , mongo = require('./mongo-DB.js')
+  , nodeSchedule = require('node-schedule') 
+  , save = require('./save.js');
+
+nodeSchedule.scheduleJob('*/1 * * * *', save.saveToDB);
+
+mongo.db();
+//save.saveToDB();
 
 var app = express();
 app.use(logger('dev'));

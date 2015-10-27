@@ -29,10 +29,16 @@
 	    "express": "^4.13.0",
 	    "morgan": "^1.6.0",
 	    "passport": "^0.2.2",
-	    "ejs": "^2.3.4"
+	    "ejs": "^2.3.4",
+	    "q":"^1.4.1",
+	    "node-rest-client":"latest",
+	    "mongodb": "^2.0.40",
+	    "mongoose": "latest",
+	    "promisify-node": "latest",
+	    "node-schedule": "latest"
 	  },
 	  "devDependencies": {},
 	  "bundleDependencies": [],
 	  "private": true,
-	  "main": "server.js"
+	  "main": "src/nodejs/server.js"
 	}
