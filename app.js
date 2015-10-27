@@ -1,7 +1,7 @@
 var express = require('express')
   , route = require('../../routes/index')
   , logger = require('morgan')
-  //, path = require('path')
+  , path = require('path')
   , mongo = require('./mongo-DB.js')
   , nodeSchedule = require('node-schedule') 
   , save = require('./save.js');
@@ -13,8 +13,8 @@ mongo.db();
 
 var app = express();
 app.use(logger('dev'));
-app.use(express.static('public'));
-app.use(express.static('views'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 app.set('view engine', 'ejs');  
 app.engine('html', require('ejs').renderFile);  //render html files as ejs
 app.use('/', route);

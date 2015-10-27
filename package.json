@@ -40,5 +40,5 @@
 	  "devDependencies": {},
 	  "bundleDependencies": [],
 	  "private": true,
-	  "main": "src/nodejs/server.js"
+	  "main": "server.js"
 	}
