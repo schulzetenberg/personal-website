@@ -1,6 +1,7 @@
 #!/bin/env node
 // File from: https://github.com/master-atul/openshift-express4/blob/master/server.js
 
+//This file needs to be on root for app.js paths to work correctly
 var AppContainer = function () {
   //  Scope.
   var self = this;
@@ -69,7 +70,7 @@ var AppContainer = function () {
     /**
      * Module dependencies.
      */
-    var app = require('./app');
+    var app = require('./src/nodejs/app');
     var http = require('http');
     /**
      * Get port from environment and store in Express.
