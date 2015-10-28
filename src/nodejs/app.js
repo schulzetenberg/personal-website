@@ -4,12 +4,12 @@ var express = require('express')
   , path = require('path')
   , mongo = require('./mongo-DB.js')
   , nodeSchedule = require('node-schedule') 
-  , save = require('./save.js');
+  , save = require('./save-to-DB.js');
 
-nodeSchedule.scheduleJob('*/1 * * * *', save.saveToDB);
+nodeSchedule.scheduleJob('*/1 * * * *', save.lastFM);
 
 mongo.db();
-//save.saveToDB();
+save.lastFM();
 
 var app = express();
 app.use(logger('dev'));

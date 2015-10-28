@@ -35,7 +35,8 @@
 	    "mongodb": "^2.0.40",
 	    "mongoose": "latest",
 	    "promisify-node": "latest",
-	    "node-schedule": "latest"
+	    "node-schedule": "latest",
+	    "moment": "latest"
 	  },
 	  "devDependencies": {},
 	  "bundleDependencies": [],

@@ -1,9 +1,12 @@
 var lastFMSchema = require('../mongoose_schema/lastFM-schema.js');
 var lastFMData = require('../mongoose_data/lastFM-data.js')
+var moment = require('moment');
 
-function saveToDB() {
+function lastFM() {
+	var currentTime = moment();
 	var data = {};
-	data.timeStamp = "time";
+	data.timeStamp = currentTime.valueOf();
+	console.log(data.timeStamp);
 	data.json = "json data";
 	
 	
@@ -15,4 +18,4 @@ function saveToDB() {
 }
 
 
-module.exports = {saveToDB : saveToDB};
+module.exports = {lastFM : lastFM};
