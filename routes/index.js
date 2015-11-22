@@ -29,10 +29,6 @@ router.get('/senior-design', function (req, res, next) {
 	  res.render('pages/senior-design.html');
 });
 
-router.get('/resume', function (req, res, next) {
-	  res.render('pages/resume.html');
-});
-
 router.get('/website', function (req, res, next) {
 	  res.render('pages/website.html');
 });

@@ -6,7 +6,7 @@ var express = require('express')
   , nodeSchedule = require('node-schedule') 
   , save = require('./save-to-DB.js');
 
-nodeSchedule.scheduleJob('*/1 * * * *', save.lastFM);
+//nodeSchedule.scheduleJob('*/1 * * * *', save.lastFM);
 
 mongo.db();
 save.lastFM();

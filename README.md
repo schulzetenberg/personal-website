@@ -1,15 +1,3 @@
 
 # nodejs-website
 Moving my personal website to Node.js
-
-Steps to re-creating this project:
-
-1. Install nodeJS (https://nodejs.org), which also installs npm
-
-2. $ npm install (Downloads & installs dependent modules listed in package.json)
-
-3. $ node server.js
-
-4. Navigate to localhost:8999 in a web browser
-
-This project can be run locally or deployed to openshift.com (free nodejs application hosting)
