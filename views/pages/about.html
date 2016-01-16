@@ -1,5 +1,7 @@
 <% include ../partials/header.html %>
-
+<link href="css/states.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="https://www.google.com/jsapi"></script>
+<script src="js/states.js"></script>
 <script src="js/apiKeys.js"></script>
 <script src="js/lastFM.js"></script>
 <script src="js/goodReads.js"></script>
@@ -88,6 +90,34 @@
 					</div>
 				</div>
 			
+			</section>
+
+			<section>
+				<div class="container">
+					<div class="row" id="states">
+						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">							
+							  <div style="display:inline-block;clear:both;width:100%;">
+								<div id="completion">
+								  <h1 id="percent"></h1>
+								  <h5>
+									<span id="visited_states"></span>/<span id="total_states"></span> States
+								  </h5>
+								</div>
+							
+								<ul id="legend">
+								<h5>
+								  <li><div id="legend-visited"></div> Visited</li>
+								  <li><div id="legend-temporary"></div> Lived</li>
+								  <li><div id="legend-never"></div> Unvisited</li>
+							  	</h5>
+								</ul>
+							  </div>
+							
+							  <div id="regions_div"></div>
+
+						</div>
+					</div>
+				</div>
 			</section>
 			
 			<section>
