@@ -1,3 +1,5 @@
+// Original code from: https://github.com/amerikan/states-visited
+
 google.load("visualization", "1", {packages:["geochart"]});
 google.setOnLoadCallback(drawRegionsMap);
 
@@ -39,7 +41,7 @@ var states = [
   [{v: 'US-NM', f: 'New Mexico'}, 1, ''],
   [{v: 'US-NY', f: 'New York'}, 0, ''],
   [{v: 'US-NC', f: 'North Carolina'}, 0, ''],
-  [{v: 'US-ND', f: 'North Dakota'}, 1, ''],
+  [{v: 'US-ND', f: 'North Dakota'}, 2, ''],
   [{v: 'US-OH', f: 'Ohio'}, 1, ''],
   [{v: 'US-OK', f: 'Oklahoma'}, 1, ''],
   [{v: 'US-OR', f: 'Oregon'}, 0, ''],
