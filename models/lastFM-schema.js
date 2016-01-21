@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 
 module.exports = mongoose.model("LastFM", {
-	timeStamp : String,
 	json : String
-});
+},
+{timestamps: { createdAt: 'created_at' } } // Auto added by mongoose
+);
