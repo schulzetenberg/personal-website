@@ -58,17 +58,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
 app.use(cookieParser());
 
-function requireHTTPS(req, res, next) {
-    if (!req.secure) {
-        return res.redirect('https://' + req.get('host') + req.url);
-    }
-    next();
-}
-
 if (app.get('env') === 'production') {
 	publicOpts = { maxAge: 86400000 }; // Max age of 1 day for static content
-	app.set('trust proxy', 1); // trust first proxy
-	app.use(requireHTTPS);  // HTTPS redirection
 	lessDebug = false;
 	lessCompileOnce = false;
 }
