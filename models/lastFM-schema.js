@@ -1,7 +1,8 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
-module.exports = mongoose.model("LastFM", {
-	json : String
-},
-{timestamps: { createdAt: 'created_at' } } // Auto added by mongoose
+var lastfm = new mongoose.Schema({
+	songCount: { type: Number, default: 0 }
+}, {timestamps: true } // Auto added by mongoose
 );
+
+module.exports = mongoose.model('lastfm', lastfm);

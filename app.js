@@ -1,6 +1,3 @@
-/**
- * Module dependencies.
- */
 var express = require('express');
 var lessMiddleware = require('less-middleware');
 var cookieParser = require('cookie-parser');
@@ -13,13 +10,6 @@ var methodOverride = require('method-override');
 var path = require('path');
 var mongoose = require('mongoose');
 var nodeSchedule = require('node-schedule');
-
-var route = require('./routes/index');
-
-/**
- * Configuration.
- */
-var secrets = require('./config/secrets');
 
 /**
  * Development options
@@ -39,8 +29,7 @@ var app = express();
 var mongoDB = require('./nodejs/db.js');
 
 var save = require('./nodejs/save');
-//nodeSchedule.scheduleJob('0 0 * * *', save.lastFM); // Run daily
-save.lastFM();
+nodeSchedule.scheduleJob('* * * * *', save.lastFM); // Run daily
 
 /**
  * Express configuration.
@@ -71,6 +60,7 @@ app.use(lessMiddleware(path.join(__dirname, 'build','less'), {
 
 app.use(express.static(path.join(__dirname, 'public'), publicOpts));
 
+var route = require('./routes/index');
 app.use('/', route);
 
 
@@ -91,5 +81,6 @@ if (app.get('env') === 'production') {
 } else {
 	app.use(errorHandler()); // Display stack trace in dev
 }
+
 
 module.exports = app;

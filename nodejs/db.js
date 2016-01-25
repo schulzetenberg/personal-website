@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var secrets = require('../config/secrets');
-console.log(secrets.db);
+
 var url = secrets.db;
 mongoose.connect(url);
 var db = mongoose.connection;
@@ -26,4 +26,4 @@ process.on('SIGINT', function() {
     console.log('Mongoose connection disconnected through app termination'); 
     process.exit(0); 
   }); 
-});
+}); 
