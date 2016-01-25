@@ -61,7 +61,9 @@ app.use(lessMiddleware(path.join(__dirname, 'build','less'), {
 app.use(express.static(path.join(__dirname, 'public'), publicOpts));
 
 var route = require('./routes/index');
+var apiRoute = require('./routes/api');
 app.use('/', route);
+app.use('/api', apiRoute);
 
 
 if (app.get('env') === 'production') {
