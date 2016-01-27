@@ -30,6 +30,7 @@ var mongoDB = require('./nodejs/db.js');
 
 var save = require('./nodejs/save');
 nodeSchedule.scheduleJob('* * * * *', save.lastFM); // Run daily
+nodeSchedule.scheduleJob('* * * * *', save.goodreads); // Run daily
 
 /**
  * Express configuration.
