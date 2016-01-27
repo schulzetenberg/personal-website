@@ -4,8 +4,8 @@ module.exports = {
   
   lastFmKey: process.env.LASTFM_API_KEY || '',
   
-  goodreadsID: '',
+  goodreadsID: process.env.GOODREADS_ID || '',
   
-  goodreadsKey: ''
+  goodreadsKey: process.env.GOODREADS_API_KEY || ''
 
 };
