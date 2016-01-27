@@ -8,10 +8,10 @@
     animation: blink 0.7s infinite;
 }
 @media all and (max-width: 767px) {
-.coming-soon h1 {
-  font-size: 20px;
-  font-weight: 600;
-}
+    .coming-soon h1 {
+        font-size: 20px;
+        font-weight: 600;
+    }
 }
 @keyframes blink{
     0% { opacity:1; }
@@ -29,14 +29,14 @@
     100% { opacity:1; }
 }
 .image-bottom {
-  padding-bottom: 0px;
+    padding-bottom: 0px;    
 }
 .image-bottom img {
-  display: inline-block;
-  margin-top: 0px;
+    display: inline-block;
+    margin-top: 0px;
 }
 .text-teal {
-  color: #01a2a6;
+    color: #01a2a6;
 }
 
 .circular {
@@ -45,11 +45,10 @@
 	border-radius: 100px;
 	-webkit-border-radius: 100px;
 	-moz-border-radius: 100px;
-	background: url(http://link-to-your/image.jpg) no-repeat;
 	box-shadow: 0 0 22px rgba(0, 0, 0, .9);
 	-webkit-box-shadow: 0 0 22px rgba(0, 0, 0, .9);
 	-moz-box-shadow: 0 0 22px rgba(0, 0, 0, .9);
-	}
+}
 .loader {
 	position: fixed;
 	left: 0px;
