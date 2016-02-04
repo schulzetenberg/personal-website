@@ -17,4 +17,12 @@ router.get('/goodreads', function (req, res, next) {
     });      
 });
 
+router.post('/beautify', function (req, res, next) {
+    console.log(req.body);
+    /*
+        TO implement: parse the body and return the beautified data
+    */
+    res.json("data");
+});
+
 module.exports = router;
