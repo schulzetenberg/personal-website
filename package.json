@@ -30,6 +30,7 @@
     "ejs": "^2.3.4",
     "errorhandler": "^1.4.3",
     "express": "^4.13.0",
+    "js-beautify": "^1.6.2",
     "less-middleware": "^2.0.1",
     "method-override": "^2.3.5",
     "moment": "^2.11.2",
