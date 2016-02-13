@@ -74,3 +74,21 @@ exports.goodreads = function() {
 		}
 	});
 };
+
+
+exports.github = function() {
+	var user = secrets.githubUser;
+	var githubToken = secrets.githubToken;
+	var url = "https://api.github.com/users/" + user + "?access_token=" + githubToken;
+
+	request(url, function (error, response, body) {
+  		if (error || response.statusCode !== 200) {
+			console.log("Get github data error");
+			if(response) console.log(response.statusCode);
+			console.log(error);
+		} 
+		else {
+			console.log(body);
+		}
+	});
+};
