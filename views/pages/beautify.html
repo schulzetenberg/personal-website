@@ -1,0 +1,50 @@
+<% include ../partials/header.html %>
+
+        <div class="main-container" ng-app="myApp" ng-controller="beautifyController">
+			<header class="page-header">
+				<div class="background-image-holder parallax-background">
+					<img class="background-image" alt="Background Image" src="img/7898132606_cac2a9e838_o.jpg">
+				</div>
+				
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<h1 class="text-white">Beautify JS/JSON</h1>
+							<a href="https://github.com/beautify-web/js-beautify"><p class="lead text-white">GitHub Repo</p></a>
+						</div>
+					</div>
+				</div>
+			</header>
+            
+            <section class="strip bg-secondary-1">
+				<div class="container">
+					<div class="row clearfix">					
+						<div class="col-sm-12 col-xs-12 pull-right text-right">
+                            <input class="btn btn-primary active" ng-click="change()" value="JS" />
+                            <input class="btn btn-primary" ng-click="change()" value="CSS" />
+                            <input class="btn btn-primary" ng-click="change()" value="HTML" />
+						</div>
+					</div>
+				</div>
+			</section>
+            
+			<section class="pure-text-centered">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-10 col-sm-offset-1 col-md-offset-1 text-center col-md-10">
+							<h2><strong>JS/JSON</strong></h2>      
+                            <form ng-submit="submit()" ng-controller="beautifyController">
+                              <textarea rows="8"  style="width:100%" ng-model="text"></textarea>
+                              <h3><strong>Options</strong></h3> 
+                              <textarea rows="6"  style="width:100%" ng-model="options"></textarea>
+                              <input class="btn btn-primary" ng-click="submit()" value="submit" />
+                            </form>
+					  </div>
+					</div>
+				</div>
+			</section>      
+		</div>
+        
+<script src="app/controllers/beautify.js"></script>
+
+<% include ../partials/footer.html %>

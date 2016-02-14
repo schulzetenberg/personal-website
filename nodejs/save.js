@@ -3,6 +3,8 @@ var parseString = require('xml2js').parseString;
 var secrets = require('../config/secrets');
 var lastFMSchema = require('../models/lastFM-schema.js');
 var goodreadsSchema = require('../models/goodreads-schema.js');
+var githubSchema = require('../models/github-schema.js');
+var Q = require('q');
 
 exports.lastFM = function() {
 	var apiKey = secrets.lastFmKey;
@@ -73,4 +75,66 @@ exports.goodreads = function() {
 			}
 		}
 	});
+};
+
+
+exports.github = function() {
+	var user = secrets.githubUser;
+	var githubToken = secrets.githubToken;
+	var promises = [userData(),contribData()];
+	Q.all(promises).then( function(data){
+		var doc = new githubSchema({ 
+			repos: data[0].public_repos,
+			contribSvg: data[1]
+		});
+		doc.save(function(err) {
+			if (err) console.log(err);
+		});	
+	});
+	
+	function userData(){
+		var defer = Q.defer();
+		var options = {
+			url: "https://api.github.com/users/" + user + "?access_token=" + githubToken,
+			headers: { 'User-Agent': 'GitHub User:' + user }
+		};
+
+		request(options, function (error, response, body) {
+			if (error || response.statusCode !== 200) {
+				console.log("Get github data error");
+				if(response) console.log(response);
+				console.log(error);
+				defer.reject(error);
+			} 
+			else {
+				try {
+					body = JSON.parse(body);
+					defer.resolve(body);
+				} catch (e){
+					console.log("unable to parse github response body",e);
+					defer.reject(e);
+				}
+			}
+		});
+		return defer.promise;
+	}
+
+	function contribData(){
+		var defer = Q.defer();
+		var optionsContrib = { url: "https://github.com/users/" + user + "/contributions" };
+	
+		request(optionsContrib, function (error, response, body) {
+			if (error || response.statusCode !== 200) {
+				console.log("Get github data error");
+				if(response) console.log(response);
+				console.log(error);
+				defer.reject(error);
+			} 
+			else {
+				defer.resolve(body);
+			}
+		});
+		return defer.promise;
+	}
+
 };

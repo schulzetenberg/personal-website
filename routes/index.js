@@ -33,4 +33,8 @@ router.get('/website', function (req, res, next) {
 	  res.render('pages/website.html');
 });
 
+router.get('/beautify', function (req, res, next) {
+	  res.render('pages/beautify.html');
+});
+
 module.exports = router;

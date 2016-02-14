@@ -6,6 +6,10 @@ module.exports = {
   
   goodreadsID: process.env.GOODREADS_ID || '',
   
-  goodreadsKey: process.env.GOODREADS_API_KEY || ''
+  goodreadsKey: process.env.GOODREADS_API_KEY || '',
+  
+  githubUser: process.env.GITHUB_USER || 'schulzetenberg',
+  
+  githubToken: process.env.GITHUB_TOKEN || ''
 
 };
