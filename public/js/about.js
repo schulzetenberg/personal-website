@@ -20,7 +20,12 @@ $(document).ready(function(){
     $.getJSON('../api/goodreads', function (data) {
         $('#BookCount').text(data.bookCount);
     });
-
+    
+    $.getJSON('../api/github', function (data) {
+        $('#repos').text(data.repos);
+        $('#contribSvg').html(data.contribSvg);
+    });
+    
 });
 
 $(window).load(function(){

@@ -6,6 +6,7 @@ var beautify_html = require('js-beautify').html;
 
 var lastFM = require('../models/lastFM-schema');
 var goodreads = require('../models/goodreads-schema');
+var github = require('../models/github-schema');
 
 router.get('/lastFM', function (req, res, next) {
     lastFM.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
@@ -16,6 +17,13 @@ router.get('/lastFM', function (req, res, next) {
 
 router.get('/goodreads', function (req, res, next) {
     goodreads.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
+        if (err) return next(err);
+        res.json(data);
+    });      
+});
+
+router.get('/github', function (req, res, next) {
+    github.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
         if (err) return next(err);
         res.json(data);
     });      
