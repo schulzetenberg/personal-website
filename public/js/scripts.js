@@ -6,7 +6,7 @@ $(document).ready(function(){
 	// Nav Sticky
 	$(window).scroll(function(){
 		var scrollTop = $(this).scrollTop();
-		if($(window).scrollTop() > 0 && !$('.mobile-toggle').is(":visible")){
+		if($(window).scrollTop() > 65 && !$('.mobile-toggle').is(":visible")){
 		   if (scrollTop > lastScrollTop){
 		       // downscroll
 					 $('.top-bar').removeClass('nav-sticky');
