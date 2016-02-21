@@ -53,9 +53,6 @@ $(document).ready(function(){
 		$('.top-bar .logo').addClass('logo-square');
 	}
 
-	// Smooth scroll
-	$('.inner-link').smoothScroll({offset: -96, speed: 800});
-
 	// Mobile Toggle
 	$('.mobile-toggle').click(function(){
 		$('nav').toggleClass('open-nav');
@@ -140,7 +137,9 @@ $(document).ready(function(){
 
 	// Scroll Reveal
 	if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-       window.scrollReveal = new scrollReveal();
+		if(window.scrollReveal){
+   		window.scrollReveal = new scrollReveal();
+		}
     }else{
     	$('body').addClass('pointer');
     }
@@ -216,18 +215,14 @@ $(document).ready(function(){
     });
 
     if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-        skrollr.init({
-            forceHeight: false
-        });
-
-        // Multi Layer Parallax
-		$('.hover-background').each(function(){
-			$(this).mousemove(function( event ) {
-				$(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX /30 + 'px,' + -event.pageY /45+ 'px)');
-				$(this).find('.layer-1').css('transform', 'translate(' + -event.pageX /50 + 'px,' + -event.pageY /50+ 'px)');
-				$(this).find('.layer-2').css('transform', 'translate(' + -event.pageX /60 + 'px,' + -event.pageY /60+ 'px)');
+      // Multi Layer Parallax
+			$('.hover-background').each(function(){
+				$(this).mousemove(function( event ) {
+					$(this).find('.background-image-holder').css('transform', 'translate(' + -event.pageX /30 + 'px,' + -event.pageY /45+ 'px)');
+					$(this).find('.layer-1').css('transform', 'translate(' + -event.pageX /50 + 'px,' + -event.pageY /50+ 'px)');
+					$(this).find('.layer-2').css('transform', 'translate(' + -event.pageX /60 + 'px,' + -event.pageY /60+ 'px)');
+				});
 			});
-		});
     }
 
 	// Expanding Lists
@@ -249,41 +244,44 @@ $(window).load(function(){
 		alignBottom();
 	});
 
-	// Isotope Projects
-	$('.projects-container').isotope({
-	  itemSelector: '.project',
-	  layoutMode: 'fitRows'
-	});
 
-	$('.filters li').click(function() {
-	  var current = $(this);
+	if(window.Isotope){
+		// Isotope Projects
+		$('.projects-container').isotope({
+		  itemSelector: '.project',
+		  layoutMode: 'fitRows'
+		});
 
-	  current.siblings('li').removeClass('active');
-	  current.addClass('active');
+		$('.filters li').click(function() {
+		  var current = $(this);
 
-	  var filterValue = current.attr('data-filter');
-	  var container = current.closest('.projects-wrapper').find('.projects-container');
-	  container.isotope({ filter: filterValue });
-	});
+		  current.siblings('li').removeClass('active');
+		  current.addClass('active');
 
-	// Isotope contained feature boxes
-	$('.contained-features-wrapper').isotope({
-	  itemSelector: '.no-pad',
-	  layoutMode: 'masonry',
-	  masonry: {
-		  gutter: 0
-		}
-	});
+		  var filterValue = current.attr('data-filter');
+		  var container = current.closest('.projects-wrapper').find('.projects-container');
+		  container.isotope({ filter: filterValue });
+		});
 
-    // Remove Loader
-    $('.loader').css('opacity', 0);
-    setTimeout(function(){$('.loader').hide();}, 600);
+		// Isotope contained feature boxes
+		$('.contained-features-wrapper').isotope({
+		  itemSelector: '.no-pad',
+		  layoutMode: 'masonry',
+		  masonry: {
+			  gutter: 0
+			}
+		});
 
-	// Blog Masonry
-	$('.blog-masonry-container').isotope({
-	  itemSelector: '.blog-masonry-item',
-	  layoutMode: 'masonry'
-	});
+	  // Blog Masonry
+	  $('.blog-masonry-container').isotope({
+	    itemSelector: '.blog-masonry-item',
+	    layoutMode: 'masonry'
+	  });
+	}
+
+  // Remove Loader
+  $('.loader').css('opacity', 0);
+  setTimeout(function(){$('.loader').hide();}, 600);
 
 	$('.blog-filters li').click(function() {
 	  var current = $(this);
