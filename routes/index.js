@@ -37,4 +37,12 @@ router.get('/beautify', function (req, res, next) {
 	  res.render('pages/beautify.html');
 });
 
+router.get('/404', function (req, res, next) {
+	  res.render('pages/404.html');
+});
+
+router.get('/500', function (req, res, next) {
+	  res.render('pages/500.html');
+});
+
 module.exports = router;
