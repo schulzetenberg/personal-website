@@ -1,138 +1,136 @@
-<% include ../partials/header.html %>
+<% include ../partials/top-nav-header.html %>
+
 <link href="css/states.css" rel="stylesheet" type="text/css" media="all"/>
+
+<div class="main-container" ng-app="myApp" ng-controller="aboutCtrl">
+	<header class="page-header">
+		<div class="background-image-holder parallax-background">
+			<img class="background-image" alt="Background Image" src="img/About Background.jpg">
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10">
+					<h1 class="text-white">About&nbsp;</h1>
+					<p class="text-white lead">I am Jacob Schulzetenberg. <br>
+						A software engineer with a interest in <br>
+						programming, technology, analytics, and finance.</p>
+						<img class="circular" alt="Linked In" src="img/LinkedIn Jacob Schulzetenberg.jpg">
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="duplicatable-content milestones">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+					<h1>Some Stats</h1>
+					<p class="lead">(Past 3 Months)</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-sm-6 text-center">
+					<div class="feature feature-icon-large">
+						<a href="http://www.last.fm/user/waterland15">
+							<i class="icon icon-video" ></i>
+						</a>
+						<div class="pin-body"></div>
+						<div class="pin-head"></div>
+						<h5 ng-bind="::songCount"></h5>
+						<h5><a href="http://www.last.fm/user/waterland15">Songs Listened To</a></h5>
+						<span>LastFM</span>
+						<span class="sub"></span>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-sm-6 text-center">
+					<div class="feature feature-icon-large">
+						<a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">
+							<i class="icon icon-book-open"></i>
+						</a>
+						<div class="pin-body"></div>
+						<div class="pin-head"></div>
+						<h5 ng-bind="::bookCount"></h5>
+						<h5><a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">Books Read</a></h5>
+						<span>Goodreads</span>
+						<span class="sub"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row" id="states">
+				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+					<div style="display:inline-block;clear:both;width:100%;">
+						<div id="completion">
+							<h1 id="percent"></h1>
+							<h5>
+								<span id="visited_states"></span>/<span id="total_states"></span> States
+							</h5>
+						</div>
+
+						<ul id="legend">
+							<h5>
+								<li><div id="legend-visited"></div> Visited</li>
+								<li><div id="legend-temporary"></div> Lived</li>
+								<li><div id="legend-never"></div> Unvisited</li>
+							</h5>
+						</ul>
+					</div>
+
+					<div id="regions_div"></div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1>Github Stats</h1>
+					<p class="lead">Public Repos: <span ng-bind="::repos"></span></p>
+					<p class="lead hidden-xs">Contributions</p>
+					<div class="hidden-xs" id="contribSvg"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+					<i class="icon icon-jumbo social_twitter"></i>
+					<div id="tweets"></div>
+					<p>Follow <strong><a href="https://twitter.com/schulzetenberg">@schulzetenberg</a></strong> on Twitter</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="instagram-feed">
+		<div class="container">
+			<div class="row text-center">
+				<span class="alt-font"><p><a href="https://instagram.com/schulzetenberg">Insta <i class="icon social_instagram"></i> Gram</a></p></span>
+			</div>
+		</div>
+		<div class="instafeed">
+			<ul></ul>
+		</div>
+	</section>
+</div>
+
+<script src="app/controllers/about.js"></script>
 <script src="https://www.google.com/jsapi"></script>
 <script src="js/states.js"></script>
-
-<div class="main-container">
-			<header class="page-header">
-				<div class="background-image-holder parallax-background">
-					<img class="background-image" alt="Background Image" src="img/About Background.jpg">
-				</div>
-				
-				<div class="container">
-					<div class="row">
-					  <div class="col-sm-10">
-					    <h1 class="text-white">About&nbsp;</h1>
-						  <p class="text-white lead">I am Jacob Schulzetenberg. <br>
-					      A software engineer with a interest in <br>
-                          programming, technology, analytics, and finance.</p>
-                          <img class="circular" alt="Linked In" src="img/LinkedIn Jacob Schulzetenberg.jpg">
-					  </div>
-					</div>
-				</div>
-			</header>
-			
-			<section class="duplicatable-content milestones">
-			
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-							<h1>Some Stats</h1>
-							<p class="lead">(Past 3 Months)</p>	
-						</div>
-					</div>
-		
-					<div class="row">
-						<div class="col-md-6 col-sm-6 text-center">
-							<div class="feature feature-icon-large">
-							<a href="http://www.last.fm/user/waterland15">
-								<i class="icon icon-video" ></i>
-							</a>
-								<div class="pin-body"></div>
-								<div class="pin-head"></div>
-                                 <h5 id="SongCount"></h5>
-								<h5><a href="http://www.last.fm/user/waterland15">Songs Listened To</a></h5>
-								<span>LastFM</span>
-								<span class="sub"> </span>
-							</div>
-						</div>
-						
-						<div class="col-md-6 col-sm-6 text-center">
-							<div class="feature feature-icon-large">
-							<a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">
-								<i class="icon icon-book-open"></i>
-							</a>
-								<div class="pin-body"></div>
-								<div class="pin-head"></div>
-                                <h5 id="BookCount"></h5>
-								<h5><a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">Books Read</a></h5>
-								<span>Goodreads</span>
-								<span class="sub"> </span>
-							</div>
-						</div>		
-					</div>
-				</div>
-			
-			</section>
-
-			<section>
-				<div class="container">
-					<div class="row" id="states">
-						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">							
-							  <div style="display:inline-block;clear:both;width:100%;">
-								<div id="completion">
-								  <h1 id="percent"></h1>
-								  <h5>
-									<span id="visited_states"></span>/<span id="total_states"></span> States
-								  </h5>
-								</div>
-							
-								<ul id="legend">
-								<h5>
-								  <li><div id="legend-visited"></div> Visited</li>
-								  <li><div id="legend-temporary"></div> Lived</li>
-								  <li><div id="legend-never"></div> Unvisited</li>
-							  	</h5>
-								</ul>
-							  </div>
-							
-							  <div id="regions_div"></div>
-
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			<section>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 text-center">
-							<h1>Github Stats</h1>
-							<p class="lead">Public Repos: <span id="repos"></span></p>	
-							<p class="lead hidden-xs">Contributions</p>	
-							<div class="hidden-xs" id="contribSvg"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-						
-			<section>
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-							<i class="icon icon-jumbo social_twitter"></i>
-							<div id="tweets" data-widget-id="617415300229677056">
-							</div>
-							<p>Follow <strong><a href="https://twitter.com/schulzetenberg">@schulzetenberg</a></strong> on Twitter</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			<section class="instagram-feed">
-				<div class="container">
-					<div class="row text-center">
-						<span class="alt-font"><p><a href="https://instagram.com/schulzetenberg">Insta <i class="icon social_instagram"></i> Gram</a></p></span>
-					</div>
-				</div>
-				<div class="instafeed">
-					<ul></ul>
-				</div>
-			</section>
-		</div>		
-<script src="js/about.js"></script>
+<script src="plugins/twitterFetcher/twitterFetcher.min.js"></script>
+<script src="plugins/spectragram/spectragram.min.js"></script>
 
 <% include ../partials/footer.html %>
-
-<script src="plugins/twitterFetcher/twitterFetcher_v10_min.js"></script>
-<script src="plugins/spectragram/spectragram.min.js"></script>

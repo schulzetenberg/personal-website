@@ -1,20 +1,30 @@
-<% include ../partials/top-nav-header.html %>	
+<% include ../partials/top-nav-header.html %>
 
-		<div class="main-container" >
-		<section class="no-pad coming-soon fullscreen-element">
-				<div class="background-image-holder overlay">
-					<img class="background-image" alt="Background Image" src="img/7898132606_cac2a9e838_o.jpg">
-				</div>
-				
-				<div class="container align-vertical">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 text-center background-t">
-							<h1 class="text-white"> <span class="typing"></span></h1> 
-					  </div>
-					</div>
-				</div>		
-		  </section>
+<div class="main-container" >
+	<section class="no-pad coming-soon fullscreen-element">
+		<div class="background-image-holder overlay">
+			<img class="background-image" alt="Background Image" src="img/7898132606_cac2a9e838_o.jpg">
 		</div>
-		
-<% include ../partials/no-icon-footer.html %>		
+
+		<div class="container align-vertical">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center background-t">
+					<h1 class="text-white"> <span id="typing"></span></h1>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+<!--Typing script-->
+<script>
+	$(function(){
+		$("#typing").typed({
+			strings: ["I'm Jacob Schulzetenberg.<br>Welcome to my website."],
+			typeSpeed: 30
+		});
+	});
+</script>
+
+<% include ../partials/no-icon-footer.html %>
 <script src="plugins/typed/typed.js"></script>
