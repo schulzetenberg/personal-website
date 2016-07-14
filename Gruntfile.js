@@ -11,6 +11,21 @@ module.exports = function(grunt) {
       ]
     },
 
+    'less': {
+        // production config is also available
+        theme: {
+            options: {
+                // Specifies directories to scan for @import directives when parsing.
+                // Default value is the directory of the source, which is probably what you want.
+                paths: ["lib/less/"],
+            },
+            files: {
+                // compilation.css  :  source.less
+                "public/css/aquatica.css": "lib/less/aquatica.less"
+            }
+        }
+    },
+
     // Concatenate all files
     'concat': {
       options: {},
@@ -19,7 +34,7 @@ module.exports = function(grunt) {
           'node_modules/bootstrap/dist/css/bootstrap.min.css',
           'node_modules/font-awesome/css/font-awesome.min.css',
           'node_modules/flexslider/flexslider.css',
-          'lib/css/theme-aquatica.css',
+          'public/css/aquatica.css',
           'lib/css/custom.css'
         ],
         dest: 'public/css/styles.css',
@@ -92,6 +107,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('default', ['jshint:lib', 'concat:styles', 'concat:header', 'concat:footer', 'cssmin:styles', 'copy:fa', 'copy:bs']);
+  grunt.registerTask('default', ['jshint:lib', 'less:theme', 'concat:styles', 'concat:header', 'concat:footer', 'cssmin:styles', 'copy:fa', 'copy:bs']);
 
 };
