@@ -95,3 +95,4 @@ build.gradle
 .tern-project
 
 public/js/apiKeys.js
+public/css/aquatica.css
