@@ -64,5 +64,8 @@
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
-  "main": "./nodejs/server.js"
+  "main": "./nodejs/server.js",
+  "scripts" : {
+    "postinstall": "export HOME=app-root/runtime/repo; ./node_modules/grunt-cli/bin/grunt"
+  }
 }

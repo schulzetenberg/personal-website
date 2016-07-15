@@ -29,9 +29,9 @@ var app = express();
 var mongoDB = require('./nodejs/db.js');
 
 var save = require('./nodejs/save');
-nodeSchedule.scheduleJob('10 0 * * * *', save.lastFM); // Run daily 
-nodeSchedule.scheduleJob('5 0 * * * *', save.goodreads); // Run daily
-nodeSchedule.scheduleJob('0 0 * * * *', save.github); // Run daily
+nodeSchedule.scheduleJob('10 0 0 * * *', save.lastFM); // Run daily
+nodeSchedule.scheduleJob('5 0 0 * * *', save.goodreads); // Run daily
+nodeSchedule.scheduleJob('0 0 0 * * *', save.github); // Run daily
 
 /**
  * Express configuration.
@@ -70,7 +70,7 @@ app.use('/api', apiRoute);
 if (app.get('env') === 'production') {
 	//catch 404 and forward to error handler
 	app.use(function(req, res, next) {
-		res.render('404.html',{title: "404"});
+		res.render('404.html', {title: "404"});
 	});
 	// production error handler,  no stacktraces shown
 	app.use(function(err, req, res, next) {

@@ -12,7 +12,6 @@ module.exports = function(grunt) {
     },
 
     'less': {
-        // production config is also available
         theme: {
             options: {
                 // Specifies directories to scan for @import directives when parsing.
