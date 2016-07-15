@@ -107,6 +107,6 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('default', ['jshint:lib', 'less:theme', 'concat:styles', 'concat:header', 'concat:footer', 'cssmin:styles', 'copy:fa', 'copy:bs']);
+  grunt.registerTask('default', ['jshint:lib', 'less', 'concat', 'uglify', 'cssmin', 'copy']);
 
 };
