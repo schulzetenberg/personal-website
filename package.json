@@ -37,6 +37,7 @@
     "flexslider": "^2.6.0",
     "font-awesome": "^4.6.3",
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",
@@ -64,5 +65,8 @@
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
-  "main": "./nodejs/server.js"
+  "main": "./nodejs/server.js",
+  "scripts": {
+    "postinstall": "export HOME=app-root/runtime/repo; ./node_modules/grunt-cli/bin/grunt"
+  }
 }

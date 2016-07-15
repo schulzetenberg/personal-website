@@ -9,5 +9,4 @@
 
 ### Installation & Start-Up
   - $ npm install
-  - $ grunt
   - $ nodemon
