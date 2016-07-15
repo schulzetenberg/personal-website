@@ -72,6 +72,10 @@ module.exports = function(grunt) {
       footer: {
         src: 'public/js/footer-plugins.js',
         dest: 'public/js/footer-plugins.js'
+      },
+      isotope: {
+        src: 'node_modules/isotope-layout/dist/isotope.pkgd.min.js',
+        dest: 'public/js/isotope.js'
       }
     },
 

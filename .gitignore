@@ -100,3 +100,5 @@ public/css/styles.css
 public/fonts
 public/js/footer-plugins.js
 public/js/header-plugins.js
+public/js/isotope.js
+public/js/scrollreveal.js
