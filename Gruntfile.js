@@ -35,6 +35,7 @@ module.exports = function(grunt) {
           'node_modules/font-awesome/css/font-awesome.min.css',
           'node_modules/flexslider/flexslider.css',
           'public/css/aquatica.css',
+          'lib/css/font-cardo.css',
           'lib/css/custom.css'
         ],
         dest: 'public/css/styles.css',
