@@ -4,7 +4,7 @@
 var AppContainer = function () {
   //  Scope.
   var self = this;
-  
+
   /**
    *  Set up server IP address and port # using env variables/defaults.
    */
@@ -12,7 +12,7 @@ var AppContainer = function () {
     //  Set the environment variables we need.
     self.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
     self.port = process.env.OPENSHIFT_NODEJS_PORT || 8999;
-    
+
     if (typeof self.ipaddress === "undefined") {
       //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
       //  allows us to run/test the app locally.
@@ -53,14 +53,18 @@ var AppContainer = function () {
       });
   };
 
-  
+
    //Initializes the application.
   self.initialize = function () {
     self.setupVariables();
-    self.setupTerminationHandlers();
+
+    // Dont use locally for nodemon compatability
+    if (self.ipaddress !== "127.0.0.1") {
+        self.setupTerminationHandlers();
+    }
   };
 
-  
+
   self.setupServer = function () {
 
     /**
@@ -70,12 +74,12 @@ var AppContainer = function () {
 	var app = require('../app');
     var http = require('http');
     var https = require('https');
-    
+
     /**
      * Get port from environment and store in Express.
      */
     var port = normalizePort(self.port);
-    
+
     /**
      * Create HTTP(S) server.
      * On OpenShift, use HTTP server with HTTPS redirects
@@ -87,10 +91,10 @@ var AppContainer = function () {
         var privateKey  = fs.readFileSync('./key.pem', 'utf8');
         var certificate = fs.readFileSync('./cert.pem', 'utf8');
         var credentials = {key: privateKey, cert: certificate};
-        
+
     	var server = https.createServer(credentials,app);
     }
-    
+
     /**
      * Listen on provided port, on all network interfaces.
      */
@@ -100,7 +104,7 @@ var AppContainer = function () {
     });
 
     server.on('error', onError);
-    
+
     /**
      * Normalize a port into a number, string, or false.
      */
