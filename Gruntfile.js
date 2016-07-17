@@ -72,6 +72,10 @@ module.exports = function(grunt) {
       footer: {
         src: 'public/js/footer-plugins.js',
         dest: 'public/js/footer-plugins.js'
+      },
+      isotope: {
+        src: 'node_modules/isotope-layout/dist/isotope.pkgd.min.js',
+        dest: 'public/js/isotope.js'
       }
     },
 
@@ -102,11 +106,21 @@ module.exports = function(grunt) {
       cwd: 'node_modules/bootstrap/fonts/',
       src: '**',
       dest: 'public/fonts/'
+    },
+    twitter: {
+      nonull: true,
+      src: 'node_modules/twitter-fetcher/js/twitterFetcher_min.js',
+      dest: 'public/js/twitter-fetcher.js'
+    },
+    instagram: {
+      nonull: true,
+      src: 'node_modules/spectragram/spectragram.js',
+      dest: 'public/js/spectragram.js'
     }
   }
 
   });
 
-  grunt.registerTask('default', ['jshint:lib', 'less:theme', 'concat:styles', 'concat:header', 'concat:footer', 'cssmin:styles', 'copy:fa', 'copy:bs']);
+  grunt.registerTask('default', ['jshint:lib', 'less', 'concat', 'uglify', 'cssmin', 'copy']);
 
 };

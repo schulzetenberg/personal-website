@@ -96,3 +96,12 @@ build.gradle
 
 public/js/apiKeys.js
 public/css/aquatica.css
+public/css/styles.css
+public/fonts
+public/js/footer-plugins.js
+public/js/header-plugins.js
+public/js/isotope.js
+public/js/scrollreveal.js
+public/js/twitter-fetcher.js
+
+public/js/spectragram.js
