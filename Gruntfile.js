@@ -106,6 +106,11 @@ module.exports = function(grunt) {
       cwd: 'node_modules/bootstrap/fonts/',
       src: '**',
       dest: 'public/fonts/'
+    },
+    twitter: {
+      nonull: true,
+      src: 'node_modules/twitter-fetcher/js/twitterFetcher_min.js',
+      dest: 'public/js/twitter-fetcher.js'
     }
   }
 
