@@ -1,12 +1,14 @@
 app.controller('aboutCtrl', function($scope, $http) {
 
   $.fn.spectragram.accessData = {
-      accessToken: '1406933036.fedaafa.feec3d50f5194ce5b705a1f11a107e0b',
-      clientID: 'fedaafacf224447e8aef74872d3820a1'
+      accessToken: '23102384.aad9174.ca58d8df7eac42e095ffb55b6f1cf52a',
+      clientID: 'aad9174904814991a8e5a16cff50cdde'
   };
 
   $('.instafeed').each(function () {
       $(this).children('ul').spectragram('getUserFeed', {
+          max: 6,
+          size: 'medium',
           query: 'schulzetenberg'
       });
   });

@@ -61,6 +61,7 @@
     "q": "^1.4.1",
     "request": "^2.67.0",
     "serve-favicon": "^2.3.0",
+    "spectragram": "^1.0.3",
     "twitter-fetcher": "^16.0.2",
     "xml2js": "^0.4.16"
   },

@@ -111,6 +111,11 @@ module.exports = function(grunt) {
       nonull: true,
       src: 'node_modules/twitter-fetcher/js/twitterFetcher_min.js',
       dest: 'public/js/twitter-fetcher.js'
+    },
+    instagram: {
+      nonull: true,
+      src: 'node_modules/spectragram/spectragram.js',
+      dest: 'public/js/spectragram.js'
     }
   }
 
