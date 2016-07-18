@@ -116,6 +116,11 @@ module.exports = function(grunt) {
       nonull: true,
       src: 'node_modules/spectragram/spectragram.js',
       dest: 'public/js/spectragram.js'
+    },
+    typed: {
+      nonull: true,
+      src: 'node_modules/typed.js/dist/typed.min.js',
+      dest: 'public/js/typed.js'
     }
   }
 

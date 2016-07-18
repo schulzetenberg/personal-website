@@ -63,6 +63,7 @@
     "serve-favicon": "^2.3.0",
     "spectragram": "^1.0.3",
     "twitter-fetcher": "^16.0.2",
+    "typed.js": "^1.1.1",
     "xml2js": "^0.4.16"
   },
   "devDependencies": {},
