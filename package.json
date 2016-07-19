@@ -48,6 +48,7 @@
     "jquery": "2.2.4",
     "js-beautify": "^1.6.2",
     "less-middleware": "^2.0.1",
+    "lightbox2": "^2.8.2",
     "load-grunt-tasks": "^3.5.0",
     "lodash": "^4.13.1",
     "method-override": "^2.3.5",

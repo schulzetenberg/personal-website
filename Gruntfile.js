@@ -33,6 +33,7 @@ module.exports = function(grunt) {
           'node_modules/bootstrap/dist/css/bootstrap.min.css',
           'node_modules/font-awesome/css/font-awesome.min.css',
           'node_modules/flexslider/flexslider.css',
+          'node_modules/lightbox2/dist/css/lightbox.min.css',
           'public/css/aquatica.css',
           'lib/css/font-cardo.css',
           'lib/css/custom.css'
@@ -57,7 +58,9 @@ module.exports = function(grunt) {
       footer: {
         src: [
           'node_modules/bootstrap/dist/js/bootstrap.min.js',
-          'node_modules/flexslider/jquery.flexslider-min.js'
+          'node_modules/flexslider/jquery.flexslider-min.js',
+          'node_modules/lightbox2/dist/js/lightbox.min.js',
+          'lib/js/scripts.js'
         ],
         dest: 'public/js/footer-plugins.js',
         nonull: true
@@ -121,6 +124,13 @@ module.exports = function(grunt) {
       nonull: true,
       src: 'node_modules/typed.js/dist/typed.min.js',
       dest: 'public/js/typed.js'
+    },
+    lightboxImg: {
+      nonull: true,
+      expand: true,
+      cwd: 'node_modules/lightbox2/dist/images',
+      src: '**',
+      dest: 'public/images/'
     }
   }
 
