@@ -61,6 +61,7 @@
     "passport": "^0.2.2",
     "q": "^1.4.1",
     "request": "^2.67.0",
+    "scrollreveal": "2.3.3",
     "serve-favicon": "^2.3.0",
     "spectragram": "^1.0.3",
     "twitter-fetcher": "^16.0.2",

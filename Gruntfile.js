@@ -60,6 +60,7 @@ module.exports = function(grunt) {
           'node_modules/bootstrap/dist/js/bootstrap.min.js',
           'node_modules/flexslider/jquery.flexslider-min.js',
           'node_modules/lightbox2/dist/js/lightbox.min.js',
+          'node_modules/scrollreveal/dist/scrollreveal.min.js',
           'lib/js/scripts.js'
         ],
         dest: 'public/js/footer-plugins.js',
