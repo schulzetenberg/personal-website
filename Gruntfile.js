@@ -36,7 +36,8 @@ module.exports = function(grunt) {
           'node_modules/lightbox2/dist/css/lightbox.min.css',
           'public/css/aquatica.css',
           'lib/css/font-cardo.css',
-          'lib/css/custom.css'
+          'lib/css/custom.css',
+          'lib/css/states.css'
         ],
         dest: 'public/css/styles.css',
         nonull: true
