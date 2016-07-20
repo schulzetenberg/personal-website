@@ -46,7 +46,6 @@ module.exports = function(grunt) {
           'node_modules/jquery/dist/jquery.min.js',
           'node_modules/angular/angular.min.js',
           'lib/js/google-analytics.js',
-          'lib/js/loader.js',
           'node_modules/q/q.js',
           'node_modules/lodash/lodash.js',
           'node_modules/d3/build/d3.min.js',
