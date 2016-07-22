@@ -37,6 +37,7 @@ module.exports = function(grunt) {
           'public/css/aquatica.css',
           'lib/css/font-cardo.css',
           'lib/css/custom.css',
+          'lib/css/photostack.css',
           'lib/css/states.css'
         ],
         dest: 'public/css/styles.css',

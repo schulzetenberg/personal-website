@@ -1,5 +1,7 @@
 <% include ../partials/top-nav-header.html %>
 
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rock+Salt'>
+
 <div class="main-container" ng-app="myApp" ng-controller="aboutCtrl">
 	<header class="page-header">
 		<div class="background-image-holder parallax-background">
@@ -54,6 +56,85 @@
 						<h5><a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">Books Read</a></h5>
 						<span>Goodreads</span>
 						<span class="sub"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="hidden-xs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center" style="z-index: 1;">
+						<h1 style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:230px">Top Artists</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="photostack" class="photostack">
+						<div>
+							<figure>
+								<a class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/174s/7274aee0133e495f927d6d421ce84136.png"/></a>
+								<figcaption>
+									<h2 class="photostack-title">Hillsong Young & Free</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/770x0/c959caa43a1043c099bac996eccd4f17.jpg"/></a>
+								<figcaption>
+									<h2 class="photostack-title">The Summer Set</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/770x0/60a4cb8205e8421bc2381fcbfae076c0.jpg"/></a>
+								<figcaption>
+									<h2 class="photostack-title">Sleeping With Sirens</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/174s/eb5236205e1e488899bdc52b7090476f.png"/></a>
+								<figcaption>
+									<h2 class="photostack-title">We Came As Romans</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a href="#" class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/174s/1fe6c478ff994186b40bcecd1468993a.png"/></a>
+								<figcaption>
+									<h2 class="photostack-title">A Day to Remember</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a href="#" class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/174s/cc6304fbf8c1d6a39bfad62e660b6b99.png"/></a>
+								<figcaption>
+									<h2 class="photostack-title">NF</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a href="#" class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/174s/81179966b2804e8b8832a505553afe68.png"/></a>
+								<figcaption>
+									<h2 class="photostack-title">For All Those Sleeping</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a href="#" class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/770x0/5679d6de42f7375d2118db756a87d8fd.jpg"/></a>
+								<figcaption>
+									<h2 class="photostack-title">One Direction</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a href="#" class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/770x0/cfdfa17f57da4da98fecc580db864288.jpg"/></a>
+								<figcaption>
+									<h2 class="photostack-title">Two Door Cinema Club</h2>
+								</figcaption>
+							</figure>
+							<figure data-dummy>
+								<a href="#" class="photostack-img"><img src="http://img2-ak.lst.fm/i/u/770x0/958aa29ba65a4068995759b23f9416a7.jpg"/></a>
+								<figcaption>
+									<h2 class="photostack-title">Elevation Worship</h2>
+								</figcaption>
+							</figure>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -127,5 +208,11 @@
 <script src="app/controllers/states.js"></script>
 <script src="js/twitter-fetcher.js"></script>
 <script src="js/spectragram.js"></script>
+
+<script src="js/modernizr.min.js"></script>
+<script src="js/photostack.js"></script>
+<script>
+	new Photostack( document.getElementById('photostack'));
+</script>
 
 <% include ../partials/footer.html %>

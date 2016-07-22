@@ -1,0 +1,59 @@
+.photostack {
+	height: 400px;
+}
+
+.photostack-title {
+	font-family: 'Rock Salt', cursive;
+}
+
+.photostack > div {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.photostack figure {
+	width: 320px;
+	height: 360px;
+	position: relative;
+	display: inline-block;
+	background: #fff;
+	padding: 40px;
+	text-align: center;
+	margin: 5px;
+	border: rgba(107, 83, 41, 0.09);
+  border-style: solid;
+  border-width: 2px;
+}
+
+.photostack figure {
+	position: absolute;
+	display: block;
+	margin: 0;
+}
+
+.photostack figcaption h2 {
+	font-size: 16px;
+}
+
+.photostack-img {
+	outline: none;
+	display: block;
+	width: 240px;
+	height: 240px;
+}
+
+.photostack-img > img {
+	width: 100%;
+	max-height:240px;
+}
+
+.photostack figure::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.02);
+}
