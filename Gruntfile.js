@@ -33,9 +33,12 @@ module.exports = function(grunt) {
           'node_modules/bootstrap/dist/css/bootstrap.min.css',
           'node_modules/font-awesome/css/font-awesome.min.css',
           'node_modules/flexslider/flexslider.css',
+          'node_modules/lightbox2/dist/css/lightbox.min.css',
           'public/css/aquatica.css',
           'lib/css/font-cardo.css',
-          'lib/css/custom.css'
+          'lib/css/custom.css',
+          'lib/css/photostack.css',
+          'lib/css/states.css'
         ],
         dest: 'public/css/styles.css',
         nonull: true
@@ -45,7 +48,6 @@ module.exports = function(grunt) {
           'node_modules/jquery/dist/jquery.min.js',
           'node_modules/angular/angular.min.js',
           'lib/js/google-analytics.js',
-          'lib/js/loader.js',
           'node_modules/q/q.js',
           'node_modules/lodash/lodash.js',
           'node_modules/d3/build/d3.min.js',
@@ -57,7 +59,10 @@ module.exports = function(grunt) {
       footer: {
         src: [
           'node_modules/bootstrap/dist/js/bootstrap.min.js',
-          'node_modules/flexslider/jquery.flexslider-min.js'
+          'node_modules/flexslider/jquery.flexslider-min.js',
+          'node_modules/lightbox2/dist/js/lightbox.min.js',
+          'node_modules/scrollreveal/dist/scrollreveal.min.js',
+          'lib/js/scripts.js'
         ],
         dest: 'public/js/footer-plugins.js',
         nonull: true
@@ -116,6 +121,18 @@ module.exports = function(grunt) {
       nonull: true,
       src: 'node_modules/spectragram/spectragram.js',
       dest: 'public/js/spectragram.js'
+    },
+    typed: {
+      nonull: true,
+      src: 'node_modules/typed.js/dist/typed.min.js',
+      dest: 'public/js/typed.js'
+    },
+    lightboxImg: {
+      nonull: true,
+      expand: true,
+      cwd: 'node_modules/lightbox2/dist/images',
+      src: '**',
+      dest: 'public/images/'
     }
   }
 

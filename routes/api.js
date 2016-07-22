@@ -1,5 +1,4 @@
-var express = require('express');
-var router = express.Router();
+var router = require('express').Router();
 var beautify_js  = require('js-beautify').js_beautify;
 var beautify_css = require('js-beautify').css;
 var beautify_html = require('js-beautify').html;
@@ -12,21 +11,21 @@ router.get('/lastFM', function (req, res, next) {
     lastFM.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
         if (err) return next(err);
         res.json(data);
-    });      
+    });
 });
 
 router.get('/goodreads', function (req, res, next) {
     goodreads.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
         if (err) return next(err);
         res.json(data);
-    });      
+    });
 });
 
 router.get('/github', function (req, res, next) {
     github.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
         if (err) return next(err);
         res.json(data);
-    });      
+    });
 });
 
 router.post('/beautify', function (req, res, next) {
@@ -40,7 +39,7 @@ router.post('/beautify', function (req, res, next) {
         } catch (e){
             options = '';
         }
-        try{
+        try {
             output = beautify_js(text,options);
         } catch (e){
             return res.sendStatus(500);

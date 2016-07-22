@@ -1,8 +1,4 @@
-var mongoose = require('mongoose');
-
-var lastfm = new mongoose.Schema({
-	songCount: { type: Number, default: 0 }
-}, {timestamps: true } // Auto added by mongoose
-);
-
-module.exports = mongoose.model('lastfm', lastfm);
+module.exports = require('mongoose').model('lastfm', {
+  timestamp : { type: Date, default: Date.now, expires: 60*60*24*7}, // Delete documents after 7 days
+	songCount: Number
+});
