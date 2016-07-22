@@ -1,8 +1,4 @@
-var mongoose = require('mongoose');
-
-var goodreads = new mongoose.Schema({
-	bookCount: { type: Number, default: 0 }
-}, {timestamps: true } // Auto added by mongoose
-);
-
-module.exports = mongoose.model('goodreads', goodreads);
+module.exports = require('mongoose').model('goodreads', {
+  timestamp : { type: Date, default: Date.now, expires: 60*60*24*7}, // Delete documents after 7 days
+	bookCount: Number
+});

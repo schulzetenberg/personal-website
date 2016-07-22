@@ -1,9 +1,5 @@
-var mongoose = require('mongoose');
-
-var github = new mongoose.Schema({
-	repos: { type: Number, default: 0 },
-	contribSvg: { type: String },
-}, {timestamps: true }
-);
-
-module.exports = mongoose.model('github', github);
+module.exports = require('mongoose').model('github', {
+  timestamp : { type: Date, default: Date.now, expires: 60*60*24*7}, // Delete documents after 7 days
+	repos: Number,
+	contribSvg: String
+});
