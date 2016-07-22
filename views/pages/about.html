@@ -60,7 +60,7 @@
 		</div>
 	</section>
 
-	<section>
+	<section ng-controller="statesCtrl">
 		<div class="container">
 			<div class="row" id="states">
 				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
@@ -68,10 +68,9 @@
 						<div id="completion">
 							<h1 id="percent"></h1>
 							<h5>
-								<span id="visited_states"></span>/<span id="total_states"></span> States
+								<span id="visitedStates"></span>/<span id="totalStates"></span> States
 							</h5>
 						</div>
-
 						<ul id="legend">
 							<h5>
 								<li><div id="legend-visited"></div> Visited</li>
@@ -80,9 +79,7 @@
 							</h5>
 						</ul>
 					</div>
-
-					<div id="regions_div"></div>
-
+					<div id="regionsDiv"></div>
 				</div>
 			</div>
 		</div>
@@ -127,7 +124,7 @@
 
 <script src="app/controllers/about.js"></script>
 <script src="https://www.google.com/jsapi"></script>
-<script src="js/states.js"></script>
+<script src="app/controllers/states.js"></script>
 <script src="js/twitter-fetcher.js"></script>
 <script src="js/spectragram.js"></script>
 
