@@ -3,7 +3,7 @@ var beautify_js  = require('js-beautify').js_beautify;
 var beautify_css = require('js-beautify').css;
 var beautify_html = require('js-beautify').html;
 
-var lastFM = require('../models/lastFM-schema');
+var lastFM = require('../models/last-fm-schema');
 var goodreads = require('../models/goodreads-schema');
 var github = require('../models/github-schema');
 

@@ -28,10 +28,13 @@ var app = express();
  */
 var mongoDB = require('./nodejs/db.js');
 
-var save = require('./nodejs/save');
-nodeSchedule.scheduleJob('10 0 0 * * *', save.lastFM); // Run daily
-nodeSchedule.scheduleJob('5 0 0 * * *', save.goodreads); // Run daily
-nodeSchedule.scheduleJob('0 0 0 * * *', save.github); // Run daily
+var goodreads = require('./nodejs/goodreads');
+var github = require('./nodejs/github');
+var lastFM = require('./nodejs/last-fm');
+
+nodeSchedule.scheduleJob('10 0 0 * * *', lastFM.save); // Run daily
+nodeSchedule.scheduleJob('5 0 0 * * *', goodreads.save); // Run daily
+nodeSchedule.scheduleJob('0 0 0 * * *', github.save); // Run daily
 
 /**
  * Express configuration.
