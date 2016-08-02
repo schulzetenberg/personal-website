@@ -1,4 +1,4 @@
-app.controller('aboutCtrl', function($scope, $http) {
+app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
 
   $.fn.spectragram.accessData = {
       accessToken: '23102384.aad9174.ca58d8df7eac42e095ffb55b6f1cf52a',
@@ -46,36 +46,38 @@ app.controller('aboutCtrl', function($scope, $http) {
   }
 
   var getConfig = {};
-  $http.get("../api/lastFM", getConfig)
-  .then(
-     function(response){
+  $http.get("../api/lastFM", getConfig).then(function(response){
       $scope.songCount = response.data.songCount;
-     },
-     function(err){
-       console.log(err);
-     }
-  );
+
+      // Pull out top artist to set in center of collage
+      $scope.topArtist = response.data.topArtists[0];
+      response.data.topArtists.splice(0, 1);
+      
+      $scope.topArtists = response.data.topArtists;
+      $timeout(photostack, 1); // Create on next digest cycle
+
+      function photostack(){
+        new Photostack( document.getElementById('photostack'));
+      }
+   },
+   function(err){
+     console.log(err);
+   });
 
 
-  $http.get("../api/goodreads", getConfig)
-  .then(
-     function(response){
+  $http.get("../api/goodreads", getConfig).then(function(response){
       $scope.bookCount = response.data.bookCount;
-     },
-     function(err){
-       console.log(err);
-     }
-  );
+   },
+   function(err){
+     console.log(err);
+   });
 
-  $http.get("../api/github", getConfig)
-  .then(
-     function(response){
+  $http.get("../api/github", getConfig).then(function(response){
       $scope.repos = response.data.repos;
-      $('#contribSvg').html(response.data.contribSvg);
-     },
-     function(err){
-       console.log(err);
-     }
-  );
+      $scope.contribSvg = $sce.trustAsHtml(response.data.contribSvg);
+   },
+   function(err){
+     console.log(err);
+   });
 
 });
