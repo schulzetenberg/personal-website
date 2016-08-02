@@ -9,36 +9,20 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var path = require('path');
 var mongoose = require('mongoose');
-var nodeSchedule = require('node-schedule');
 
-/**
- * Development options
- */
+// Development options
 var publicOpts = {maxAge: 0}; // No cached content
 var lessDebug = true;
 var lessCompileOnce = true;
 
-/**
- * Create Express server.
- */
 var app = express();
 
-/**
- * Connect to MongoDB.
- */
-var mongoDB = require('./nodejs/db.js');
+// Connect to MongoDB.
+var mongoDB = require('./nodejs/db');
 
-var goodreads = require('./nodejs/goodreads');
-var github = require('./nodejs/github');
-var lastFM = require('./nodejs/last-fm');
+// Run scheduler
+var schedule = require('./nodejs/schedule');
 
-nodeSchedule.scheduleJob('10 0 0 * * *', lastFM.save); // Run daily
-nodeSchedule.scheduleJob('5 0 0 * * *', goodreads.save); // Run daily
-nodeSchedule.scheduleJob('0 0 0 * * *', github.save); // Run daily
-
-/**
- * Express configuration.
- */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);  //render html files as ejs
