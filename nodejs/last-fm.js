@@ -1,12 +1,10 @@
 var request = require('request');
 var Q = require('q');
+var moment = require('moment');
+
 var secrets = require('../config/secrets');
 var lastFMSchema = require('../models/last-fm-schema');
-var time = require('./time');
-
 var apiKey = secrets.lastFmKey;
-var fromDate = time.getEpochTime() - time.getDaysEpoch(90);
-var toDate = time.getEpochTime();
 
 exports.save = function() {
 	topArtists().then(recentTracks).catch(function(err){
@@ -16,7 +14,7 @@ exports.save = function() {
 
 function topArtists() {
 	var defer = Q.defer();
-    var url = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=waterland15&limit=15&page=1&api_key=" + apiKey + "&format=json&from=" + fromDate + "&to=" + toDate;
+    var url = "http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=waterland15&limit=15&page=1&api_key=" + apiKey + "&format=json&period=6month";
 
 	var temp = [];
 	request(url, function (error, response, body) {
@@ -26,8 +24,6 @@ function topArtists() {
 			try {
 				var data = JSON.parse(body);
 				if(!data || !data.topartists || !data.topartists.artist || !data.topartists.artist.length) return console.log("Could not parse top artist data");
-				console.log(data.topartists.artist);
-				console.log(data.topartists.artist.length);
 				var artistData = data.topartists.artist;
 
 				for (var i=0; i < artistData.length; i++){
@@ -47,6 +43,8 @@ function topArtists() {
 
 function recentTracks(topArtists) {
 	var defer = Q.defer();
+	var fromDate = moment().subtract(90, 'days').unix();
+	var toDate = moment().unix();
     var url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=waterland15&limit=1&page=1&api_key=" + apiKey + "&format=json&from=" + fromDate + "&to=" + toDate;
 
 	request(url, function (error, response, body) {
