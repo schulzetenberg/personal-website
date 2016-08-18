@@ -21,52 +21,38 @@
 		</div>
 	</header>
 
-	<section class="duplicatable-content milestones">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-					<h1>Some Stats</h1>
-					<p class="lead">(Past 3 Months)</p>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-6 col-sm-6 text-center">
-					<div class="feature feature-icon-large">
-						<a href="http://www.last.fm/user/waterland15">
-							<i class="fa fa-music"></i>
-						</a>
-						<div class="pin-body"></div>
-						<div class="pin-head"></div>
-						<h5 ng-bind="::songCount"></h5>
-						<h5><a href="http://www.last.fm/user/waterland15">Songs Listened To</a></h5>
-						<span>LastFM</span>
-						<span class="sub"></span>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-sm-6 text-center">
-					<div class="feature feature-icon-large">
-						<a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">
-							<i class="fa fa-book"></i>
-						</a>
-						<div class="pin-body"></div>
-						<div class="pin-head"></div>
-						<h5 ng-bind="::bookCount"></h5>
-						<h5><a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">Books Read</a></h5>
-						<span>Goodreads</span>
-						<span class="sub"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section class="aq-block light-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+          <h2 class="pull-left" style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:230px">
+            <a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read" class="text-white">
+              Books Read
+            </a>
+          </h2>
+        </div>
+      </div>
+      <div class="row row-centered">
+    		<div class="clients-2">
+    			<div ng-repeat="book in books" class="col-md-2 col-sm-4 col-centered">
+            <img width="98" max-height="151" src="{{book.img}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 	<section class="hidden-xs" style="padding-bottom:0px">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center" style="z-index: 1;">
-						<h1 style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:230px">Top Artists</h1>
+					<h2 class="pull-left" style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:230px">
+            Top Artists
+          </h2>
+					<h5 class="pull-right" style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:200px">
+            Avg Daily Listening:<br>
+            <i ng-bind="(((songCount / 90) * 3.5 / 60) | number:0) + ' Hours'"></i>
+          </h5>
 				</div>
 			</div>
 
@@ -94,6 +80,11 @@
       <div class="row">
         <div class="col-sm-12 text-center">
           <span style="color:#ffffff; background:#2f2933; z-index:1; font-family:monospace;" ng-bind="artistsList"></span>
+        </div>
+        <div class="col-sm-12 text-center">
+          <a href="http://www.last.fm/user/waterland15">
+            <i style="color: red; font-size:40px;" class="fa fa-lastfm-square" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
 		</div>
@@ -134,7 +125,7 @@
           <!--
 					<div class="hidden-xs" ng-bind-html="contribSvg"></div>
           -->
-          <iframe id="githubFrame" style="border-style:none; width: 100%; max-width:600px;" scrolling="no" height="190"
+          <iframe style="border-style:none; width: 100%; max-width:600px;" scrolling="no" height="190"
             src="http://song-of-github.herokuapp.com/?username=schulzetenberg&embeddable&playbutton">
           </iframe>
 				</div>

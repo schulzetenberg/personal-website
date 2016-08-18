@@ -74,7 +74,7 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
 
 
   $http.get("../api/goodreads", getConfig).then(function(response){
-      $scope.bookCount = response.data.bookCount;
+      $scope.books = response.data.books;
    },
    function(err){
      console.log(err);

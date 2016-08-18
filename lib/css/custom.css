@@ -1,6 +1,24 @@
 html {
   background: #2f2933;
 }
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.client-row img, .clients-2 img {
+  max-height: 140px;
+}
+
 .timeline-event .middle:hover {
   size::40px;
 }
