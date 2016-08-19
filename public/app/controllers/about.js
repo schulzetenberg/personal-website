@@ -49,11 +49,19 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
   $http.get("../api/lastFM", getConfig).then(function(response){
       $scope.songCount = response.data.songCount;
 
+      var topArtists = response.data.topArtists;
+      var artistsList = '';
+      for(var i=0; i < topArtists.length; i++){
+        artistsList += topArtists[i].artist + '.  ';
+      }
+      $scope.artistsList = artistsList;
+
       // Pull out top artist to set in center of collage
-      $scope.topArtist = response.data.topArtists[0];
-      response.data.topArtists.splice(0, 1);
-      
-      $scope.topArtists = response.data.topArtists;
+      $scope.topArtist = topArtists[0];
+      topArtists.splice(0, 1);
+
+      $scope.topArtists = topArtists;
+
       $timeout(photostack, 1); // Create on next digest cycle
 
       function photostack(){
@@ -66,7 +74,7 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
 
 
   $http.get("../api/goodreads", getConfig).then(function(response){
-      $scope.bookCount = response.data.bookCount;
+      $scope.books = response.data.books;
    },
    function(err){
      console.log(err);
