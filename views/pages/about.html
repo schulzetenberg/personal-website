@@ -21,42 +21,137 @@
 		</div>
 	</header>
 
-  <section class="aq-block light-wrapper">
+  <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-          <h2 class="pull-left" style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:230px">
-            <a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read" class="text-white">
-              Books Read
-            </a>
-          </h2>
+        <div class="col-lg-12 text-center">
+          <h1>Github Stats</h1>
+          <p class="lead">Public Repos: <span ng-bind="::repos"></span></p>
+          <p class="lead">Contributions</p>
+          <!--
+          <div class="hidden-xs" ng-bind-html="contribSvg"></div>
+          -->
+          <iframe style="border-style:none; width: 100%; max-width:600px;" scrolling="no" height="190"
+            src="http://song-of-github.herokuapp.com/?username=schulzetenberg&embeddable&playbutton">
+          </iframe>
         </div>
       </div>
-      <div class="row row-centered">
-    		<div class="clients-2">
-    			<div ng-repeat="book in books" class="col-md-2 col-sm-4 col-centered">
-            <img width="98" max-height="151" src="{{book.img}}">
+    </div>
+  </section>
+
+  <section class="image-divider overlay duplicatable-content">
+    <div class="background-image-holder parallax-background skrollable skrollable-between"
+    style="transform: translate3d(0px, -31.9658px, 0px); background: url(img/kindle.jpg) 50% 0%;"
+    data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)"
+    data-center="-webkit-transform: translate3d(0px,0px, 0px)"
+    data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
+       <img class="background-image" alt="Background Image" src="img/kindle.jpg" style="display: none;">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+          <h1 class="text-white">Books</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="feature feature-icon-large">
+            <i class="text-white fa fa-book"></i>
+            <h5 class="text-white">Books Read</h5>
+            <p class="text-white" ng-bind="'2 (Past 6 Months)'"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature feature-icon-large">
+            <i class="text-white fa fa-file-text-o "></i>
+            <h5 class="text-white">Pages Read</h5>
+            <p class="text-white" ng-bind="'298 (Past 6 Months)'"></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">
+             <img style="border: white; border-style: solid; width: 48px; opacity:0.8;"
+             onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" src="img/goodreads.ico">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aq-block light-wrapper">
+    <div class="container">
+      <div class="row row-centered" style="min-height: 300px;">
+        <div class="clients-2">
+          <div ng-repeat="book in books" class="col-md-2 col-sm-4 col-centered">
+            <img width="98" max-height="151" ng-src="{{book.img}}">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-	<section class="hidden-xs" style="padding-bottom:0px">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center" style="z-index: 1;">
-					<h2 class="pull-left" style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:230px">
-            Top Artists
-          </h2>
-					<h5 class="pull-right" style="background-color: #01a2a6; border-radius: 40px; padding: 10px; max-width:200px">
-            Avg Daily Listening:<br>
-            <i ng-bind="(((songCount / 90) * 3.5 / 60) | number:0) + ' Hours'"></i>
-          </h5>
-				</div>
-			</div>
+  <section class="image-divider overlay duplicatable-content">
+    <div class="background-image-holder parallax-background skrollable skrollable-between"
+    style="transform: translate3d(0px, -31.9658px, 0px); background: url(img/computer.jpg) 50% 0%;"
+    data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)"
+    data-center="-webkit-transform: translate3d(0px,0px, 0px)"
+    data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
+       <img class="background-image" alt="Background Image" src="img/computer.jpg" style="display: none;">
+    </div>
 
-			<div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+          <h1 class="text-white">Music</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="feature feature-icon-large">
+            <i class="text-white fa fa-headphones"></i>
+            <h5 class="text-white">Average Daily Listening</h5>
+            <p class="text-white" ng-bind="(((lastFM.songCount / 90) * 3.5 / 60) | number:0) + ' Hours'"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature feature-icon-large">
+            <i class="text-white fa fa-music"></i>
+            <h5 class="text-white">Songs Listened To</h5>
+            <p class="text-white" ng-bind="lastFM.songCount + ' (Past 6 Months)'"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature feature-icon-large">
+            <i class="text-white fa fa-user"></i>
+            <h5 class="text-white">Artists Listened To</h5>
+            <p class="text-white" ng-bind="lastFM.artistCount + ' (Past 6 Months)'"></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="feature feature-icon-large">
+            <i class="text-white fa fa-users"></i>
+            <h5 class="text-white">Top Artists</h5>
+            <p class="text-white" ng-bind="artistsList"></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <a href="http://www.last.fm/user/waterland15">
+            <i style="color: white; opacity:0.8;" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" class="fa fa-lastfm-square icon-jumbo" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+	<section>
+		<div class="container">
+			<div class="row hidden-xs">
 				<div class="col-sm-12">
 					<div id="photostack" class="photostack">
 						<div>
@@ -76,19 +171,8 @@
 					</div>
 				</div>
 			</div>
-
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <span style="color:#ffffff; background:#2f2933; z-index:1; font-family:monospace;" ng-bind="artistsList"></span>
-        </div>
-        <div class="col-sm-12 text-center">
-          <a href="http://www.last.fm/user/waterland15">
-            <i style="color: red; font-size:40px;" class="fa fa-lastfm-square" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-		</div>
-	</section>
+    </div>
+  </section>
 
 	<section ng-controller="statesCtrl">
 		<div class="container">
@@ -110,24 +194,6 @@
 						</ul>
 					</div>
 					<div id="regionsDiv"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h1>Github Stats</h1>
-					<p class="lead">Public Repos: <span ng-bind="::repos"></span></p>
-          <p class="lead">Contributions</p>
-          <!--
-					<div class="hidden-xs" ng-bind-html="contribSvg"></div>
-          -->
-          <iframe style="border-style:none; width: 100%; max-width:600px;" scrolling="no" height="190"
-            src="http://song-of-github.herokuapp.com/?username=schulzetenberg&embeddable&playbutton">
-          </iframe>
 				</div>
 			</div>
 		</div>
@@ -165,5 +231,10 @@
 
 <script src="js/modernizr.min.js"></script>
 <script src="js/photostack.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
 
 <% include ../partials/footer.html %>
