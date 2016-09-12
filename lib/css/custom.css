@@ -100,5 +100,10 @@ img.attr {
 }
 
 .instafeed img {
-  height: auto
+  height: auto;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.instafeed img:hover {
+  padding: 5px;
 }

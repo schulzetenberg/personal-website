@@ -38,6 +38,7 @@ module.exports = function(grunt) {
           'lib/css/font-cardo.css',
           'lib/css/custom.css',
           'lib/css/photostack.css',
+          'lib/css/books.css',
           'lib/css/states.css'
         ],
         dest: 'public/css/styles.css',

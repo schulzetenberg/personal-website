@@ -2,7 +2,7 @@
 
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rock+Salt'>
 
-<div class="main-container" ng-app="myApp" ng-controller="aboutCtrl">
+<div id="skrollr-body" class="main-container" ng-app="myApp" ng-controller="aboutCtrl">
 	<header class="page-header">
 		<div class="background-image-holder parallax-background">
 			<img class="background-image" alt="Background Image" src="img/About Background.jpg">
@@ -59,14 +59,14 @@
           <div class="feature feature-icon-large">
             <i class="text-white fa fa-book"></i>
             <h5 class="text-white">Books Read</h5>
-            <p class="text-white" ng-bind="'2 (Past 6 Months)'"></p>
+            <p class="text-white" ng-bind="books.length + ' (Past 6 Months)'"></p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="feature feature-icon-large">
             <i class="text-white fa fa-file-text-o "></i>
             <h5 class="text-white">Pages Read</h5>
-            <p class="text-white" ng-bind="'298 (Past 6 Months)'"></p>
+            <p class="text-white" ng-bind="pagesRead + ' (Past 6 Months)'"></p>
           </div>
         </div>
       </div>
@@ -83,12 +83,12 @@
 
   <section class="aq-block light-wrapper">
     <div class="container">
-      <div class="row row-centered" style="min-height: 300px;">
-        <div class="clients-2">
-          <div ng-repeat="book in books" class="col-md-2 col-sm-4 col-centered">
-            <img width="98" max-height="151" ng-src="{{book.img}}">
+      <div class="row row-centered" style="min-height: 300px; padding-top: 60px;">
+          <div class="books">
+              <div id="book1" class="book" ng-repeat="book in books">
+                  <img title="{{book.title}}" ng-src="{{book.img}}" />
+              </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
