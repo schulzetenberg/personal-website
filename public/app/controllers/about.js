@@ -74,7 +74,15 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
 
 
   $http.get("../api/goodreads", getConfig).then(function(response){
-      $scope.books = response.data.books;
+      var books = response.data.books;
+      if(!books) return console.log("No books data");
+      $scope.books = books;
+
+      var pagesRead = 0;
+      for(var i=0; i < books.length; i++){
+          if(books[i].pages) pagesRead += parseInt(books[i].pages);
+      }
+      $scope.pagesRead = pagesRead;
    },
    function(err){
      console.log(err);
