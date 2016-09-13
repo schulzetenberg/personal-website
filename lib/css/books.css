@@ -7,7 +7,14 @@
   margin: 10px;
 }
 
-.book img { vertical-align: middle; }
+.book img {
+  vertical-align: middle;
+  height: 260px;
+  transition: all 0.3s ease;
+}
+.book img:hover {
+  height: 250px;
+}
 
 /*
  *  In order for this to work, you must use Modernizer

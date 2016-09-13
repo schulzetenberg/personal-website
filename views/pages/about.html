@@ -86,7 +86,9 @@
       <div class="row row-centered" style="min-height: 300px; padding-top: 60px;">
           <div class="books">
               <div id="book1" class="book" ng-repeat="book in books">
-                  <img title="{{book.title}}" ng-src="{{book.img}}" />
+                  <a ng-href="{{book.link}}">
+                    <img title="{{book.title}}" ng-src="{{book.img}}" />
+                  </a>
               </div>
           </div>
       </div>
