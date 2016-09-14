@@ -9,11 +9,20 @@
 
 .book img {
   vertical-align: middle;
-  height: 260px;
+  height: 150px;
   transition: all 0.3s ease;
 }
 .book img:hover {
-  height: 250px;
+  height: 140px;
+}
+
+@media screen and (min-width: 800px) {
+  .book img {
+    height: 220px;
+  }
+  .book img:hover {
+    height: 210px;
+  }
 }
 
 /*
