@@ -23,19 +23,26 @@ exports.save = function() {
 
 					var books = result.GoodreadsResponse.reviews[0].review;
 
-					for (var i=0; i < books.length; i++){
-						 if (new Date(books[i].read_at).getTime() >= pastDate){
-               saveData.books.push({
-                 title: books[i].book[0].title[0],
-                 // TODO: replace m with l to view large photo
-                 // ex. 1405392994m --> 1405392994l
-                 // http://d2arxad8u2l0g7.cloudfront.net/books/1405392994m/18595312.jpg
-                 img: books[i].book[0].image_url[0],
-                 pages: books[i].book[0].num_pages[0]
-               });
-						 }
-					}
-				});
+          for (var i=0; i < books.length; i++){
+            if (new Date(books[i].read_at).getTime() >= pastDate){
+              // Replace m with l to view large photo
+              // ex. 1405392994m --> 1405392994l
+              // http://d2arxad8u2l0g7.cloudfront.net/books/1405392994m/18595312.jpg
+              var img = books[i].book[0].image_url[0];
+              var imgSplit = img.split('/');
+              if(imgSplit.length === 6){
+                imgSplit[4] = imgSplit[4].replace("m", "l");
+                img = imgSplit.join('/');
+              }
+              saveData.books.push({
+                title: books[i].book[0].title[0],
+                img: img,
+                pages: books[i].book[0].num_pages[0],
+                link: books[i].book[0].link[0],
+              });
+            }
+          }
+        });
 
 				var doc = new goodreadsSchema(saveData);
 				doc.save(function(err) {

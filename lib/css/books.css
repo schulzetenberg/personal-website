@@ -7,7 +7,23 @@
   margin: 10px;
 }
 
-.book img { vertical-align: middle; }
+.book img {
+  vertical-align: middle;
+  height: 150px;
+  transition: all 0.3s ease;
+}
+.book img:hover {
+  height: 140px;
+}
+
+@media screen and (min-width: 800px) {
+  .book img {
+    height: 220px;
+  }
+  .book img:hover {
+    height: 210px;
+  }
+}
 
 /*
  *  In order for this to work, you must use Modernizer
