@@ -2,10 +2,12 @@ var router = require('express').Router();
 var beautify_js  = require('js-beautify').js_beautify;
 var beautify_css = require('js-beautify').css;
 var beautify_html = require('js-beautify').html;
+var moment = require('moment');
 
 var lastFM = require('../models/last-fm-schema');
 var goodreads = require('../models/goodreads-schema');
 var github = require('../models/github-schema');
+var trakt = require('../models/trakt-schema');
 
 router.get('/lastFM', function (req, res, next) {
     lastFM.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
@@ -25,6 +27,21 @@ router.get('/github', function (req, res, next) {
     github.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
         if (err) return next(err);
         res.json(data);
+    });
+});
+
+router.get('/trakt', function (req, res, next) {
+    trakt.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
+        if (err) return next(err);
+
+        var startDate = moment('2016-10-02');
+        var now = moment();
+        var totalDays = now.diff(startDate, 'days');
+        var response = {
+          data: data.data,
+          totalDays: totalDays
+        };
+        res.json(response);
     });
 });
 

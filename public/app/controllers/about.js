@@ -96,4 +96,12 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
      console.log(err);
    });
 
+   $http.get("../api/trakt", getConfig).then(function(response){
+       $scope.trakt = response.data;
+    },
+    function(err){
+      console.log(err);
+    });
+
+
 });
