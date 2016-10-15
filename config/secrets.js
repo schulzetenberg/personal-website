@@ -1,7 +1,7 @@
 module.exports = {
 
   db: process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME || 'mongodb://localhost:27017/personal-site',
-  
+
   lastFmKey: process.env.LASTFM_API_KEY || '',
 
   goodreadsID: process.env.GOODREADS_ID || '',
@@ -14,7 +14,8 @@ module.exports = {
 
   traktID: process.env.TRAKT_ID || '',
 
+  traktSecret: process.env.TRAKT_SECRET || '',
 
-  traktSecret: process.env.TRAKT_SECRET || ''
+  tmdbKey: process.env.TMDB_KEY || ''
 
 };
