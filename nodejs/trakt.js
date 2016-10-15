@@ -37,7 +37,7 @@ function userData(user){
         body = JSON.parse(body);
         defer.resolve(body);
       } catch (e){
-        defer.reject("unable to parse github response body", e);
+        defer.reject("unable to parse trakt response body", e);
       }
     }
   });

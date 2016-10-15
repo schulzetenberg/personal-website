@@ -14,6 +14,8 @@ module.exports = {
 
   traktID: process.env.TRAKT_ID || '',
 
-  traktSecret: process.env.TRAKT_SECRET || ''
+  traktSecret: process.env.TRAKT_SECRET || '',
+
+  tmdbKey: process.env.TMDB_KEY || ''
 
 };
