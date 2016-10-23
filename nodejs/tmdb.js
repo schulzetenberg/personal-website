@@ -1,3 +1,8 @@
+/*
+  Using TMDB to get the best images:
+  https://apiblog.trakt.tv/how-to-find-the-best-images-516045bcc3b6#.gjylr224j
+ */
+
 var request = require('request');
 var Q = require('q');
 var fs = require('fs');
@@ -19,7 +24,7 @@ exports.getConfig = function() {
       try {
         body = JSON.parse(body);
 
-        fs.writeFile("./config/tmdb.js", JSON.stringify(body, null, 4), function(err) {
+        fs.writeFile("./config/tmdb.json", JSON.stringify(body, null, 4), function(err) {
           if(err) {
             return console.log(err);
           }
@@ -29,5 +34,5 @@ exports.getConfig = function() {
       }
     }
   });
-  
+
 };

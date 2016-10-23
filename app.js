@@ -28,7 +28,7 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);  //render html files as ejs
 app.use(compress());
 app.use(logger('dev', {
-	skip: function (req, res) { return res.statusCode < 400 } // log only HTTP request errors
+  skip: function (req, res) { return res.statusCode < 400; } // log only HTTP request errors
 }));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(bodyParser.json());
@@ -37,14 +37,14 @@ app.use(methodOverride());
 app.use(cookieParser());
 
 if (app.get('env') === 'production') {
-	publicOpts = { maxAge: 86400000 }; // Max age of 1 day for static content
-	lessDebug = false;
-	lessCompileOnce = false;
+  publicOpts = { maxAge: 86400000 }; // Max age of 1 day for static content
+  lessDebug = false;
+  lessCompileOnce = false;
 }
 app.use(lessMiddleware(path.join(__dirname, 'build','less'), {
   dest: path.join(__dirname, 'public'),
-	once: lessCompileOnce,
-	debug: lessDebug
+  once: lessCompileOnce,
+  debug: lessDebug
 }));
 
 app.use(express.static(path.join(__dirname, 'public'), publicOpts));
@@ -55,21 +55,21 @@ app.use('/', route);
 app.use('/api', apiRoute);
 
 if (app.get('env') === 'production') {
-	//catch 404 and forward to error handler
-	app.use(function(req, res, next) {
-		res.render('404.html', {title: "404"});
-	});
-	// production error handler,  no stacktraces shown
-	app.use(function(err, req, res, next) {
-	    res.status(err.status || 500);
-	    res.render('500.html', {
-	        message: err.message,
-	        error: {},
-	        title : "500"
-	    });
-	});
+  //catch 404 and forward to error handler
+  app.use(function(req, res, next) {
+    res.render('404.html', {title: "404"});
+  });
+  // production error handler,  no stacktraces shown
+  app.use(function(err, req, res, next) {
+      res.status(err.status || 500);
+      res.render('500.html', {
+        message: err.message,
+        error: {},
+        title : "500"
+      });
+    });
 } else {
-	app.use(errorHandler()); // Display stack trace in dev
+  app.use(errorHandler()); // Display stack trace in dev
 }
 
 module.exports = app;
