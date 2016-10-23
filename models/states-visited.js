@@ -1,5 +1,5 @@
 module.exports = require('mongoose').model('states-visited', {
-  timestamp : {type: Date, default: Date.now},
+  timestamp : { type: Date, default: Date.now },
   states: [
     [
       {
