@@ -98,6 +98,22 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
 
    $http.get("../api/trakt", getConfig).then(function(response){
        $scope.trakt = response.data;
+
+       var topMovies = response.data.topMovies;
+       var topMoviesList = '';
+       for(var i=0; i < topMovies.length; i++){
+         topMoviesList += topMovies[i].movie.title + '.  ';
+       }
+       $scope.topMoviesList = topMoviesList;
+
+       var topShows = response.data.topShows;
+       var topShowsList = '';
+       for(var j=0; j < topShows.length; j++){
+         topShowsList += topShows[j].show.title + '.  ';
+       }
+       $scope.topShowsList = topShowsList;
+
+
     },
     function(err){
       console.log(err);

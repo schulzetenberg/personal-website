@@ -31,17 +31,15 @@ router.get('/github', function (req, res, next) {
 });
 
 router.get('/trakt', function (req, res, next) {
-    trakt.findOne({}, {}, { sort: { '_id' : -1 } }, function(err, data) {
+    trakt.findOne({}, {}, { sort: { '_id' : -1 } }).lean().exec(function (err, data){
         if (err) return next(err);
 
         var startDate = moment('2016-10-02');
         var now = moment();
         var totalDays = now.diff(startDate, 'days');
-        var response = {
-          data: data.data,
-          totalDays: totalDays
-        };
-        res.json(response);
+        data.totalDays = totalDays;
+
+        res.json(data);
     });
 });
 
