@@ -52,9 +52,13 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
     var topArtists = response.data.topArtists;
     var artistsList = '';
     for(var i=0; i < topArtists.length; i++){
-      artistsList += topArtists[i].artist + '.  ';
+      if(i%2){
+        artistsList += '<b>' + topArtists[i].artist + '. </b>';
+      } else {
+        artistsList += topArtists[i].artist + '.  ';
+      }
     }
-    $scope.artistsList = artistsList;
+    $scope.artistsList =  $sce.trustAsHtml(artistsList);
 
     // Pull out top artist to set in center of collage
     $scope.topArtist = topArtists[0];
@@ -73,15 +77,28 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
 
 
   $http.get("../api/goodreads", getConfig).then(function(response){
-    var books = response.data.books;
-    if(!books) return console.log("No books data");
+    var books = response.data.booksRead;
+    if(!books) return console.log("No books read data");
     $scope.books = books;
 
     var pagesRead = 0;
     for(var i=0; i < books.length; i++){
-        if(books[i].pages) pagesRead += parseInt(books[i].pages);
+      if(books[i].pages) pagesRead += parseInt(books[i].pages);
     }
     $scope.pagesRead = pagesRead;
+
+    var topBooks = response.data.topBooks;
+    var topBooksList = '';
+    for(var j=0; j < topBooks.length; j++){
+      if(j%2){
+        topBooksList += '<b>' + topBooks[j].title + '. </b>';
+      } else {
+        topBooksList += topBooks[j].title + '. ';
+      }
+    }
+    $scope.topBooksList = $sce.trustAsHtml(topBooksList);
+
+
    }, function(err){
      console.log(err);
    });
@@ -99,16 +116,24 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
      var topMovies = response.data.topMovies;
      var topMoviesList = '';
      for(var i=0; i < topMovies.length; i++){
-       topMoviesList += topMovies[i].movie.title + '.  ';
+       if(i%2){
+         topMoviesList += '<b>' + topMovies[i].movie.title + '. </b>';
+       } else {
+         topMoviesList += topMovies[i].movie.title + '.  ';
+       }
      }
-     $scope.topMoviesList = topMoviesList;
+     $scope.topMoviesList = $sce.trustAsHtml(topMoviesList);
 
      var topShows = response.data.topShows;
      var topShowsList = '';
      for(var j=0; j < topShows.length; j++){
-       topShowsList += topShows[j].show.title + '.  ';
+       if(j%2){
+         topShowsList += '<b>' + topShows[j].show.title + '. </b>';
+       } else {
+         topShowsList += topShows[j].show.title + '.  ';
+       }
      }
-     $scope.topShowsList = topShowsList;
+     $scope.topShowsList = $sce.trustAsHtml(topShowsList);
     }, function(err){
       console.log(err);
     });

@@ -69,6 +69,13 @@
             <p class="text-white" ng-bind="pagesRead + ' (Past 6 Months)'"></p>
           </div>
         </div>
+        <div class="col-sm-6">
+          <div class="feature feature-icon-large">
+            <i class="text-white fa fa-file-text-o "></i>
+            <h5 class="text-white">Favorite Books</h5>
+            <p class="text-white" ng-bind-html="topBooksList"></p>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-12 text-center">
@@ -137,7 +144,7 @@
           <div class="feature feature-icon-large">
             <i class="text-white fa fa-users"></i>
             <h5 class="text-white">Top Artists</h5>
-            <p class="text-white" ng-bind="artistsList"></p>
+            <p class="text-white" ng-bind-html="artistsList"></p>
           </div>
         </div>
       </div>
@@ -211,14 +218,14 @@
           <div class="feature feature-icon-large">
             <i class="text-white fa fa-heart"></i>
             <h5 class="text-white">Favorite Movies</h5>
-            <p class="text-white" ng-bind="topMoviesList"></p>
+            <p class="text-white" ng-bind-html="topMoviesList"></p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="feature feature-icon-large">
             <i class="text-white fa fa-heart"></i>
             <h5 class="text-white">Favorite TV Shows</h5>
-            <p class="text-white" ng-bind="topShowsList"></p>
+            <p class="text-white" ng-bind-html="topShowsList"></p>
           </div>
         </div>
       </div>
