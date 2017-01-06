@@ -20,9 +20,6 @@ var app = express();
 // Connect to MongoDB.
 var mongoDB = require('./nodejs/db');
 
-// Run scheduler
-var schedule = require('./nodejs/schedule');
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);  //render html files as ejs

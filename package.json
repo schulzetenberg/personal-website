@@ -1,29 +1,23 @@
 {
   "name": "Personal-Website-App",
   "version": "1.0.0",
-  "description": "OpenShift Website Application",
+  "description": "Personal Website Application",
   "keywords": [
-    "OpenShift",
     "Node.js",
     "application",
-    "openshift"
+    "portfolio"
   ],
   "author": {
     "name": "Jacob",
     "email": "jacob.schulzetenberg@gmail.com",
     "url": "http://www.schulzetenberg.com/"
   },
-  "homepage": "http://www.openshift.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/schulzetenberg/nodejs-website.git"
   },
-  "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
-  },
   "dependencies": {
-    "angular": "^1.5.7",
+    "angular": "1.5.8",
     "body-parser": "^1.13.1",
     "bootstrap": "^3.3.6",
     "compression": "^1.6.1",
