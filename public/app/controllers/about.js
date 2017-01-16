@@ -46,37 +46,41 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
   }
 
   var getConfig = {};
-  $http.get("../api/lastFM", getConfig).then(function(response){
+  $http.get("../api/collector?app=lastFm", getConfig).then(function(response){
     $scope.lastFM = response.data;
 
     var topArtists = response.data.topArtists;
-    var artistsList = '';
-    for(var i=0; i < topArtists.length; i++){
-      if(i%2){
-        artistsList += '<b>' + topArtists[i].artist + '. </b>';
-      } else {
-        artistsList += topArtists[i].artist + '.  ';
+    if(topArtists){
+      var artistsList = '';
+      for(var i=0; i < topArtists.length; i++){
+        if(i%2){
+          artistsList += '<b>' + topArtists[i].artist + '. </b>';
+        } else {
+          artistsList += topArtists[i].artist + '.  ';
+        }
       }
+      $scope.artistsList =  $sce.trustAsHtml(artistsList);
+
+      // Pull out top artist to set in center of collage
+      $scope.topArtist = topArtists[0];
+      topArtists.splice(0, 1);
+
+      $scope.topArtists = topArtists;
+
+      $timeout(photostack, 1); // Create on next digest cycle
+    } else {
+      console.log('No top artists data');
     }
-    $scope.artistsList =  $sce.trustAsHtml(artistsList);
-
-    // Pull out top artist to set in center of collage
-    $scope.topArtist = topArtists[0];
-    topArtists.splice(0, 1);
-
-    $scope.topArtists = topArtists;
-
-    $timeout(photostack, 1); // Create on next digest cycle
 
     function photostack(){
-      new Photostack( document.getElementById('photostack'));
+      new Photostack(document.getElementById('photostack'));
     }
    }, function(err){
      console.log(err);
    });
 
 
-  $http.get("../api/goodreads", getConfig).then(function(response){
+  $http.get("../api/collector?app=goodreads", getConfig).then(function(response){
     var books = response.data.booksRead;
     if(!books) return console.log("No books read data");
     $scope.books = books;
@@ -103,37 +107,46 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
      console.log(err);
    });
 
-  $http.get("../api/github", getConfig).then(function(response){
+  $http.get("../api/collector?app=github", getConfig).then(function(response){
     $scope.repos = response.data.repos;
     $scope.contribSvg = $sce.trustAsHtml(response.data.contribSvg);
    }, function(err){
      console.log(err);
    });
 
-   $http.get("../api/trakt", getConfig).then(function(response){
+   $http.get("../api/collector?app=trakt", getConfig).then(function(response){
      $scope.trakt = response.data;
 
      var topMovies = response.data.topMovies;
-     var topMoviesList = '';
-     for(var i=0; i < topMovies.length; i++){
-       if(i%2){
-         topMoviesList += '<b>' + topMovies[i].movie.title + '. </b>';
-       } else {
-         topMoviesList += topMovies[i].movie.title + '.  ';
+     if(topMovies){
+       var topMoviesList = '';
+       for(var i=0; i < topMovies.length; i++){
+         if(i%2){
+           topMoviesList += '<b>' + topMovies[i].movie.title + '. </b>';
+         } else {
+           topMoviesList += topMovies[i].movie.title + '.  ';
+         }
        }
+       $scope.topMoviesList = $sce.trustAsHtml(topMoviesList);
+     } else {
+       console.log('No top movies data');
      }
-     $scope.topMoviesList = $sce.trustAsHtml(topMoviesList);
+
 
      var topShows = response.data.topShows;
-     var topShowsList = '';
-     for(var j=0; j < topShows.length; j++){
-       if(j%2){
-         topShowsList += '<b>' + topShows[j].show.title + '. </b>';
-       } else {
-         topShowsList += topShows[j].show.title + '.  ';
+     if(topShows){
+       var topShowsList = '';
+       for(var j=0; j < topShows.length; j++){
+         if(j%2){
+           topShowsList += '<b>' + topShows[j].show.title + '. </b>';
+         } else {
+           topShowsList += topShows[j].show.title + '.  ';
+         }
        }
+       $scope.topShowsList = $sce.trustAsHtml(topShowsList);
+     } else {
+       console.log('No top shows data');
      }
-     $scope.topShowsList = $sce.trustAsHtml(topShowsList);
     }, function(err){
       console.log(err);
     });
