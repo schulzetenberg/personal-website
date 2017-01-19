@@ -114,6 +114,12 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
      console.log(err);
    });
 
+   $http.get("../api/collector?app=fuelly-avg", getConfig).then(function(response){
+     $scope.car = response.data;
+    }, function(err){
+      console.log(err);
+    });
+
    $http.get("../api/collector?app=trakt", getConfig).then(function(response){
      $scope.trakt = response.data;
 
