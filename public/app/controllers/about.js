@@ -46,7 +46,7 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
   }
 
   var getConfig = {};
-  $http.get("../api/collector?app=lastFm", getConfig).then(function(response){
+  $http.get("../api/collector?app=music", getConfig).then(function(response){
     $scope.lastFM = response.data;
 
     var topArtists = response.data.topArtists;

@@ -130,14 +130,14 @@
           <div class="feature feature-icon-large">
             <i class="text-white fa fa-music"></i>
             <h5 class="text-white">Songs Listened To</h5>
-            <p class="text-white" ng-bind="lastFM.songCount + ' (Past 6 Months)'"></p>
+            <p class="text-white" ng-bind="lastFM.songCount + ' (Past Year)'"></p>
           </div>
         </div>
         <div class="col-sm-3">
           <div class="feature feature-icon-large">
             <i class="text-white fa fa-user"></i>
             <h5 class="text-white">Artists Listened To</h5>
-            <p class="text-white" ng-bind="lastFM.artistCount + ' (Past 6 Months)'"></p>
+            <p class="text-white" ng-bind="lastFM.artistCount + ' (Past Year)'"></p>
           </div>
         </div>
         <div class="col-sm-3">
@@ -146,6 +146,7 @@
             <h5 class="text-white">Top Artists</h5>
             <p class="text-white" ng-bind-html="artistsList"></p>
           </div>
+          <!-- TODO: Add genres from top artists data. Criteria: Find a duplicate genre across artists to consider it as a top genre -->
         </div>
       </div>
       <div class="row">
