@@ -1,5 +1,6 @@
 var router = require('express').Router();
 var request = require('request');
+var secrets = require('../config/secrets');
 var beautify_js  = require('js-beautify').js_beautify;
 var beautify_css = require('js-beautify').css;
 var beautify_html = require('js-beautify').html;
@@ -35,8 +36,9 @@ router.get('/collector', function (req, res, next) {
     return res.sendStatus(500);
   }
 
-  request({url: "https://collector-schulzetenberg.rhcloud.com/api/" + app}, function(error, response, body) {
+  request({url: secrets.dataApiUrl + '/api/' + app}, function(error, response, body) {
     if (error || response.statusCode !== 200) {
+      console.log(error);
       return res.sendStatus(500);
     }
     try {

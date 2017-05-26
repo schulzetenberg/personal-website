@@ -51,6 +51,8 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
 
     var topArtists = response.data.topArtists;
     if(topArtists){
+      $scope.genresList = $sce.trustAsHtml(genres(topArtists));
+
       var artistsList = '';
       for(var i=0; i < topArtists.length; i++){
         if(i%2){
@@ -157,3 +159,42 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
       console.log(err);
     });
 });
+
+function genres(data) {
+  var genreCounts = [];
+
+  // For each artist
+  for(var i=0, x=data.length; i<x; i++) {
+    // For each genre
+    for(var j=0, y=data[i].genres.length; j<y; j++) {
+        var index = _.findIndex(genreCounts, { genre: data[i].genres[j] });
+
+        if(index > -1){
+          genreCounts[index].count ++;
+        } else {
+          genreCounts.push({
+            genre: data[i].genres[j],
+            count: 1
+          });
+        }
+    }
+  }
+
+  genreCounts = _.sortBy(genreCounts, "count"); // Sort (ascending) based on total occurances of a genre across the artists
+
+  var topGenreCount = genreCounts.length > 16 ? 16 : genreCounts.length; // Error handling for when there are less than 15 top genres
+
+  var topGenres = '';
+
+  // Offset by 1 because array index starts at 0
+  // Take the genre with the highest count first (desc order)
+  for(var k=1, z=topGenreCount; k<z; k++) {
+    if(k%2){
+      topGenres += '<b>' + genreCounts[genreCounts.length - k].genre + '. </b>';
+    } else {
+      topGenres += genreCounts[genreCounts.length - k].genre + '.  ';
+    }
+  }
+
+  return topGenres;
+}
