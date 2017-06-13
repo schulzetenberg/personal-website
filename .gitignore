@@ -108,3 +108,34 @@ public/js/typed.js
 public/images
 config/tmdb.js
 config/tmdb.json
+
+# compiled output
+/dist
+/out-tsc
+
+# IDEs and editors
+/.idea
+.c9/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
