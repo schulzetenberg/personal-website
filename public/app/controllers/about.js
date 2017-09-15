@@ -109,12 +109,7 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
      console.log(err);
    });
 
-  $http.get("../api/collector?app=github", getConfig).then(function(response){
-    $scope.repos = response.data.repos;
-    $scope.contribSvg = $sce.trustAsHtml(response.data.contribSvg);
-   }, function(err){
-     console.log(err);
-   });
+
 
    $http.get("../api/collector?app=fuelly-avg", getConfig).then(function(response){
      $scope.car = response.data;

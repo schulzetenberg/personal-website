@@ -1,0 +1,71 @@
+<app-top-nav-header></app-top-nav-header>
+
+<div class="main-container">
+  <section class="no-pad-bottom projects-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+          <h1>Personal Projects</h1>
+          <p class="lead">Software and hardware projects past to present</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-wrapper clearfix">
+      <div class="container">
+        <div class="row">
+          <ul class="filters">
+            <li data-filter="*" class="active"><span>All</span></li>
+            <li data-filter=".branding"><span>Software</span></li>
+            <li data-filter=".development"><span>Hardware</span></li>
+            <li data-filter=".print"><span>Other</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="projects-container column-projects">
+          <div class="col-md-4 col-sm-6 project branding image-holder">
+            <div class="background-image-holder">
+              <img class="background-image" alt="Online Portfolio" src="assets/img/7898132606_cac2a9e838_o.jpg">
+            </div>
+            <div class="hover-state">
+              <div class="align-vertical">
+                <h3 class="text-white"><strong>Online Portfolio </strong> Website</h3>
+                <a routerLink="/website" class="btn btn-primary btn-white">See Project</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 project branding image-holder">
+            <div class="background-image-holder">
+              <img class="background-image" alt="Album Art Backgrounder" src="assets/img/Album Art Backgrounder/1.png">
+            </div>
+            <div class="hover-state">
+              <div class="align-vertical">
+                <h3 class="text-white"><strong>Album Art Backgrounder </strong> Windows App</h3>
+                <a routerLink="/album-art" class="btn btn-primary btn-white">See Project</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 project development image-holder">
+            <div class="background-image-holder">
+              <img class="background-image" alt="Zoo Bird Call Display" src="assets/img/Senior_Design/American Krestel.jpg">
+            </div>
+            <div class="hover-state">
+              <div class="align-vertical">
+              <h3 class="text-white"><strong>Zoo Bird Call Display</strong> Senior Project</h3>
+              <a routerLink="/senior-design" class="btn btn-primary btn-white">See Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="js/isotope.js"></script>
+
+<app-footer></app-footer>
