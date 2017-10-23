@@ -8,7 +8,6 @@ var errorHandler = require('errorhandler');
 var logger = require('morgan');
 var methodOverride = require('method-override');
 var path = require('path');
-var mongoose = require('mongoose');
 
 // Development options
 var publicOpts = {maxAge: 0}; // No cached content
@@ -18,14 +17,14 @@ var lessCompileOnce = true;
 var app = express();
 
 // Connect to MongoDB.
-var mongoDB = require('./nodejs/db');
+require('./nodejs/db');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);  //render html files as ejs
+app.engine('html', require('ejs').renderFile);  // Render html files as ejs
 app.use(compress());
 app.use(logger('dev', {
-  skip: function (req, res) { return res.statusCode < 400; } // log only HTTP request errors
+  skip: function (req, res) { return res.statusCode < 400; } // Log only HTTP request errors
 }));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 app.use(bodyParser.json());
@@ -52,11 +51,11 @@ app.use('/', route);
 app.use('/api', apiRoute);
 
 if (app.get('env') === 'production') {
-  //catch 404 and forward to error handler
+  // Catch 404 and forward to error handler
   app.use(function(req, res, next) {
     res.render('404.html', {title: "404"});
   });
-  // production error handler,  no stacktraces shown
+  // Production error handler, no stacktraces shown
   app.use(function(err, req, res, next) {
       res.status(err.status || 500);
       res.render('500.html', {
