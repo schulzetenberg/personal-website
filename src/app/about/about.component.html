@@ -1,0 +1,100 @@
+<app-top-nav-header></app-top-nav-header>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+
+<div id="skrollr-body" class="main-container">
+  <header class="page-header">
+    <div class="background-image-holder parallax-background">
+      <img class="background-image" alt="Background Image" src="assets/img/About Background.jpg">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10">
+          <h1 class="text-white">About</h1>
+          <p class="text-white lead">
+            I am Jacob Schulzetenberg. <br>
+            A software engineer with a interest in <br>
+            programming, technology, analytics, and finance.
+          </p>
+            <img class="circular" alt="Linked In" src="assets/img/LinkedIn Jacob Schulzetenberg.jpg">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1>Github Stats</h1>
+          <p class="lead">Public Repos: <span [innerHtml]="repos | async"></span></p>
+          <p class="lead">Contributions</p>
+          <iframe style="border-style:none; width: 100%; max-width:600px;" scrolling="no" height="190"
+            src="http://song-of-github.herokuapp.com/?username=schulzetenberg&embeddable&playbutton">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <section class="image-divider overlay duplicatable-content">
+      <div class="background-image-holder parallax-background skrollable skrollable-between"
+        style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/kindle.jpg) 50% 0%;"
+        data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)"
+        data-center="-webkit-transform: translate3d(0px,0px, 0px)"
+        data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
+        <img class="background-image" alt="Background Image" src="assets/img/kindle.jpg" style="display: none;">
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <h1 class="text-white">Books</h1>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="feature feature-icon-large">
+              <i class="text-white fa fa-book"></i>
+              <h5 class="text-white">Books Read</h5>
+              <p class="text-white" ng-bind="books.length + ' (Past 6 Months)'"></p>
+
+
+                    <span>  MUSIC {{music.artistCount}}</span>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="feature feature-icon-large">
+              <i class="text-white fa fa-file-text-o "></i>
+              <h5 class="text-white">Pages Read</h5>
+              <p class="text-white" ng-bind="pagesRead + ' (Past 6 Months)'"></p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="feature feature-icon-large">
+              <i class="text-white fa fa-file-text-o "></i>
+              <h5 class="text-white">Favorite Books</h5>
+              <p class="text-white" ng-bind-html="topBooksList"></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">
+               <img style="border: white; border-style: solid; width: 48px; opacity:0.8;"
+               onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" src="assets/img/goodreads.ico">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+</div>
+
+<app-footer></app-footer>

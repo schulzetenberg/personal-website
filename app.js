@@ -1,34 +1,30 @@
-var express = require('express');
-var lessMiddleware = require('less-middleware');
-var cookieParser = require('cookie-parser');
-var compress = require('compression');
-var favicon = require('serve-favicon');
-var bodyParser = require('body-parser');
-var errorHandler = require('errorhandler');
-var logger = require('morgan');
-var methodOverride = require('method-override');
-var path = require('path');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const compress = require('compression');
+const favicon = require('serve-favicon');
+const bodyParser = require('body-parser');
+const errorHandler = require('errorhandler');
+const logger = require('morgan');
+const methodOverride = require('method-override');
+const path = require('path');
 
 // Development options
-var publicOpts = {maxAge: 0}; // No cached content
-var lessDebug = true;
-var lessCompileOnce = true;
+let publicOpts = {maxAge: 0}; // No cached content
+let lessDebug = true;
+let lessCompileOnce = true;
 
 var app = express();
 
 // Connect to MongoDB.
 require('./nodejs/db');
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);  // Render html files as ejs
 app.use(compress());
 app.use(logger('dev', {
   skip: function (req, res) { return res.statusCode < 400; } // Log only HTTP request errors
 }));
-app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
+app.use(favicon(path.join(__dirname, 'src/assets/img', 'favicon.ico')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride());
 app.use(cookieParser());
 
@@ -37,18 +33,16 @@ if (app.get('env') === 'production') {
   lessDebug = false;
   lessCompileOnce = false;
 }
-app.use(lessMiddleware(path.join(__dirname, 'build','less'), {
-  dest: path.join(__dirname, 'public'),
-  once: lessCompileOnce,
-  debug: lessDebug
-}));
-
 app.use(express.static(path.join(__dirname, 'public'), publicOpts));
+app.use(express.static(path.join(__dirname, 'dist'))); // ng2 files
 
-var route = require('./routes/index');
-var apiRoute = require('./routes/api');
-app.use('/', route);
+let apiRoute = require('./routes/api');
 app.use('/api', apiRoute);
+
+// Root webpage
+app.get('/', (req, res) => {
+  res.render('index.html');
+});
 
 if (app.get('env') === 'production') {
   // Catch 404 and forward to error handler
