@@ -110,7 +110,7 @@ app.controller('aboutCtrl', function($scope, $http, $sce, $timeout) {
    });
 
   $http.get("../api/collector?app=github", getConfig).then(function(response){
-    $scope.repos = response.data.repos;
+    $scope.githubData = response.data;
     $scope.contribSvg = $sce.trustAsHtml(response.data.contribSvg);
    }, function(err){
      console.log(err);

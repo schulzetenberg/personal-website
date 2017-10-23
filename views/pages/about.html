@@ -11,8 +11,9 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-10">
-          <h1 class="text-white">About&nbsp;</h1>
-          <p class="text-white lead">I am Jacob Schulzetenberg. <br>
+          <h1 class="text-white">About</h1>
+          <p class="text-white lead">
+            I am Jacob Schulzetenberg. <br>
             A software engineer with a interest in <br>
             programming, technology, analytics, and finance.</p>
             <img class="circular" alt="Linked In" src="img/LinkedIn Jacob Schulzetenberg.jpg">
@@ -25,15 +26,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h1>Github Stats</h1>
-          <p class="lead">Public Repos: <span ng-bind="::repos"></span></p>
-          <p class="lead">Contributions</p>
-          <!--
+          <h1>Github</h1>
+          <p class="lead">Public Repos: <span ng-bind="::githubData.repos"></span></p>
+          <p class="lead">Following: <span ng-bind="::githubData.following.length"></span></p>
+          <p class="lead">Followers: <span ng-bind="::githubData.followers.length"></span></p>
+          <p class="lead hidden-xs">Contributions</p>
           <div class="hidden-xs" ng-bind-html="contribSvg"></div>
-          -->
-          <iframe style="border-style:none; width: 100%; max-width:600px;" scrolling="no" height="190"
-            src="http://song-of-github.herokuapp.com/?username=schulzetenberg&embeddable&playbutton">
-          </iframe>
         </div>
       </div>
     </div>
