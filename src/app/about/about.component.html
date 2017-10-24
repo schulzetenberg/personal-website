@@ -23,110 +23,42 @@
     </div>
   </header>
 
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1>Github Stats</h1>
-          <p class="lead">Public Repos: <span [innerHtml]="githubData && githubData.repos"></span></p>
-          <p class="lead">Followers: <span [innerHtml]="githubData && githubData.followers.length"></span></p>
-          <p class="lead">Following: <span [innerHtml]="githubData && githubData.following.length"></span></p>
-          <p class="lead hidden-xs">Contributions</p>
-          <div class="svg hidden-xs" [innerHTML]="svg"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section></section> <!-- Used to create whitespace -->
 
+  <app-github></app-github>
 
-  <section class="image-divider overlay duplicatable-content">
-    <div class="background-image-holder parallax-background skrollable skrollable-between"
-      style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/computer.jpg) 50% 0%;"
-      data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)"
-      data-center="-webkit-transform: translate3d(0px,0px, 0px)"
-      data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
-      <img class="background-image" alt="Background Image" src="assets/img/computer.jpg" style="display: none;">
-    </div>
+  <app-books></app-books>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 text-center">
-          <h1 class="text-white">Music</h1>
-        </div>
-      </div>
+  <app-music></app-music>
 
-      <div class="row">
-        <div class="col-lg-2 col-lg-offset-1">
-          <div class="feature feature-icon-large">
-            <i class="text-white fa fa-headphones"></i>
-            <h5 class="text-white">Average Daily Listening</h5>
-            <p class="text-white" [innerHTML]="musicData && (((musicData.songCount / 365) * 3.5 / 60) | number:'1.0-0') + ' Hours'"></p>
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="feature feature-icon-large">
-            <i class="text-white fa fa-music"></i>
-            <h5 class="text-white">Songs Listened To</h5>
-            <p class="text-white" [innerHTML]="musicData && (musicData.songCount | number:'1.0-0') + ' (Past Year)'"></p>
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="feature feature-icon-large">
-            <i class="text-white fa fa-user"></i>
-            <h5 class="text-white">Artists Listened To</h5>
-            <p class="text-white" [innerHTML]="musicData && (musicData.artistCount | number:'1.0-0') + ' (Past Year)'"></p>
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="feature feature-icon-large">
-            <i class="text-white fa fa-users"></i>
-            <h5 class="text-white">Top Artists</h5>
-            <p class="text-white" [innerHTML]="artistsList"></p>
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="feature feature-icon-large">
-            <i class="text-white fa fa-random"></i>
-            <h5 class="text-white">Top Genres</h5>
-            <p class="text-white" [innerHTML]="genresList"></p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <a href="http://www.last.fm/user/waterland15">
-            <i style="color: white; opacity:0.8;" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" class="fa fa-lastfm-square icon-jumbo" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-tv></app-tv>
+
+  <app-states></app-states>
+
+  <app-driving></app-driving>
 
   <section>
     <div class="container">
-      <div class="row hidden-xs">
-        <div class="col-sm-12">
-          <div id="photostack" class="photostack">
-            <div>
-              <figure>
-                <a href="#" class="photostack-img"><img [src]="topArtist && topArtist.img"/></a>
-                <figcaption>
-                  <h2 class="photostack-title" [innerHTML]="topArtist && topArtist.artist"></h2>
-                </figcaption>
-              </figure>
-              <figure data-dummy *ngFor="let artist of topArtists">
-                <a href="#" class="photostack-img"><img [src]="artist.img"/></a>
-                <figcaption>
-                  <h2 class="photostack-title" [innerHTML]="artist.artist"></h2>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+          <i class="icon-jumbo fa fa-twitter"></i>
+          <p>Follow <strong><a href="https://twitter.com/schulzetenberg">@schulzetenberg</a></strong> on Twitter</p>
+          <div id="tweets"></div>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="instagram-feed">
+    <div class="container">
+      <div class="row text-center">
+        <span class="alt-font"><p><a href="https://instagram.com/schulzetenberg">Insta <i class="fa fa-instagram"></i> Gram</a></p></span>
+      </div>
+    </div>
+    <div class="instafeed">
+      <ul></ul>
+    </div>
+  </section>
 
 </div>
 

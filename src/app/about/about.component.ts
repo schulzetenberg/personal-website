@@ -1,13 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import { Response } from '@angular/http';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
-import { ServerService } from '../server.service';
-
-import * as _ from "lodash";
 
 declare var skrollr: any;
-declare var Photostack: any;
+declare var $: any;
+declare var twitterFetcher: any;
 
 @Component({
   selector: 'app-about',
@@ -18,16 +13,8 @@ declare var Photostack: any;
 })
 
 export class AboutComponent implements OnInit {
-  githubData: {};
-  musicData: {};
-  topArtistsData: {};
-  artistsList = '';
-  genresList = '';
-  topArtists = [];
-  topArtist: {};
-  svg:SafeHtml;
 
-  constructor(private serverService: ServerService, private sanitizer: DomSanitizer) { }
+  constructor() { }
 
   ngOnInit(): void {
     var s = skrollr.init();
@@ -35,79 +22,51 @@ export class AboutComponent implements OnInit {
       s.destroy();
     }
 
-    this.serverService.getGithubData().then(githubData => {
-      this.githubData = githubData;
-      this.svg = this.sanitizer.bypassSecurityTrustHtml(githubData.contribSvg);
+    $.fn.spectragram.accessData = {
+      accessToken: '23102384.aad9174.ca58d8df7eac42e095ffb55b6f1cf52a',
+      clientID: 'aad9174904814991a8e5a16cff50cdde'
+    };
+
+    $('.instafeed').each(function () {
+      $(this).children('ul').spectragram('getUserFeed', {
+        max: 6,
+        size: 'medium',
+        query: 'schulzetenberg'
+      });
     });
 
-    this.serverService.getMusicData().then(musicData => {
-      this.musicData = musicData;
-      this.artistsList = this.topArtistsParse(musicData.topArtists);
-      this.genresList = this.genres(musicData.topArtists);
-      this.topArtist = musicData.topArtists[0];
-      musicData.topArtists.shift();
-      this.topArtists = musicData.topArtists;
-
-      setTimeout(() => {
-        new Photostack(document.getElementById('photostack'));
-      }, 10);
+    $(window).load(function(){
+      $('#tweets').flexslider({ directionNav: false, controlNav: false });
     });
-  }
 
-  topArtistsParse(data) {
-    let artists = '';
+    var twitterConfig = {
+      "id": '617415300229677056',
+      "domId": '',
+      "maxTweets": 5,
+      "enableLinks": true,
+      "showUser": true,
+      "showTime": true,
+      "dateFunction": '',
+      "showRetweet": false,
+      "customCallback": handleTweets,
+      "showInteraction": false
+    };
 
-    if(data && data.length) {
-      for(let i=0; i < data.length; i++) {
-        if(i%2) {
-          artists += '<b>' + data[i].artist + '. </b>';
-        } else {
-          artists += data[i].artist + '.  ';
-        }
+    twitterFetcher.fetch(twitterConfig);
+
+    function handleTweets(tweets){
+      var x = tweets.length;
+      var n = 0;
+      var element = document.getElementById('tweets');
+      var html = '<ul class="slides">';
+      while(n < x) {
+      html += '<li>' + tweets[n] + '</li>';
+      n++;
       }
-    } else {
-      console.log('No top artists data');
+      html += '</ul>';
+      element.innerHTML = html;
     }
 
-    return artists;
-  }
-
-  genres(data) {
-    var genreCounts = [];
-
-    // For each artist
-    for(let i=0, x=data.length; i<x; i++) {
-      // For each genre
-      for(let j=0, y=data[i].genres.length; j<y; j++) {
-          let index = _.findIndex(genreCounts, { genre: data[i].genres[j] });
-
-          if(index > -1) {
-            genreCounts[index].count ++;
-          } else {
-            genreCounts.push({
-              genre: data[i].genres[j],
-              count: 1
-            });
-          }
-      }
-    }
-
-    genreCounts = _.sortBy(genreCounts, "count"); // Sort (ascending) based on total occurances of a genre across the artists
-
-    var topGenreCount = genreCounts.length > 16 ? 16 : genreCounts.length; // Error handling for when there are less than 15 top genres
-    var topGenres = '';
-
-    // Offset by 1 because array index starts at 0
-    // Take the genre with the highest count first (desc order)
-    for(let k=1, z=topGenreCount; k<z; k++) {
-      if(k%2) {
-        topGenres += '<b>' + genreCounts[genreCounts.length - k].genre + '. </b>';
-      } else {
-        topGenres += genreCounts[genreCounts.length - k].genre + '.  ';
-      }
-    }
-
-    return topGenres;
   }
 
 }

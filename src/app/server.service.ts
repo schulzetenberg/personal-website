@@ -28,4 +28,29 @@ export class ServerService {
       .toPromise()
       .then(response => response.json());
   }
+
+  getBookData() {
+    return this.http.get('/api/collector?app=goodreads')
+      .toPromise()
+      .then(response => response.json());
+  }
+
+  getTvData() {
+    return this.http.get('/api/collector?app=trakt')
+      .toPromise()
+      .then(response => response.json());
+  }
+
+  getDrivingData() {
+    return this.http.get('/api/collector?app=fuelly-avg')
+      .toPromise()
+      .then(response => response.json());
+  }
+
+  getStatesData() {
+    return this.http.get('/api/collector?app=states')
+      .toPromise()
+      .then(response => response.json());
+  }
+
 }

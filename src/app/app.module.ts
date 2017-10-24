@@ -20,6 +20,12 @@ import { NotFound404Component } from './not-found-404/not-found-404.component';
 import { Error500Component } from './error-500/error-500.component';
 import { AboutComponent } from './about/about.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { MusicComponent } from './about/music/music.component';
+import { GithubComponent } from './about/github/github.component';
+import { BooksComponent } from './about/books/books.component';
+import { TvComponent } from './about/tv/tv.component';
+import { StatesComponent } from './about/states/states.component';
+import { DrivingComponent } from './about/driving/driving.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,7 +57,13 @@ const appRoutes: Routes = [
     NotFound404Component,
     Error500Component,
     AboutComponent,
-    ComingSoonComponent
+    ComingSoonComponent,
+    MusicComponent,
+    GithubComponent,
+    BooksComponent,
+    TvComponent,
+    StatesComponent,
+    DrivingComponent
   ],
   imports: [
     BrowserModule,
