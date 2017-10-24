@@ -12,5 +12,5 @@
 
 ### Installation & Start-Up
   - $ npm install
-  - $ grunt
-  - $ nodemon
+  - $ npm start (terminal 1)
+  - $ nodemon (terminal 2)

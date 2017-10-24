@@ -27,6 +27,7 @@
     "@angular/platform-browser": "4.2.2",
     "@angular/platform-browser-dynamic": "4.2.2",
     "@angular/router": "4.2.2",
+    "@types/lodash": "4.14.78",
     "angular": "1.5.8",
     "body-parser": "1.17.2",
     "bootstrap": "3.3.6",
@@ -89,7 +90,7 @@
   "main": "./nodejs/server.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

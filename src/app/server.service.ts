@@ -11,21 +11,21 @@ export class ServerService {
     return this.http.get('/api/collector?app=github')
       .map(
         (response: Response) => {
-          console.log("HERE!!")
           var data = response.json();
-          return data.repos;
+          return data;
         }
       );
   }
 
-  getMusic() {
+  getGithubData() {
+    return this.http.get('/api/collector?app=github')
+      .toPromise()
+      .then(response => response.json());
+  }
+
+  getMusicData() {
     return this.http.get('/api/collector?app=music')
-      .map(
-        (response: Response) => {
-          var data = response.json();
-          console.log(data);
-          return response.json();
-        }
-      );
+      .toPromise()
+      .then(response => response.json());
   }
 }

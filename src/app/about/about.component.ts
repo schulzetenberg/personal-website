@@ -1,9 +1,13 @@
 import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Response } from '@angular/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { ServerService } from '../server.service';
 
+import * as _ from "lodash";
+
 declare var skrollr: any;
+declare var Photostack: any;
 
 @Component({
   selector: 'app-about',
@@ -14,19 +18,96 @@ declare var skrollr: any;
 })
 
 export class AboutComponent implements OnInit {
+  githubData: {};
+  musicData: {};
+  topArtistsData: {};
+  artistsList = '';
+  genresList = '';
+  topArtists = [];
+  topArtist: {};
+  svg:SafeHtml;
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService, private sanitizer: DomSanitizer) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     var s = skrollr.init();
     if (s.isMobile()) {
       s.destroy();
     }
 
+    this.serverService.getGithubData().then(githubData => {
+      this.githubData = githubData;
+      this.svg = this.sanitizer.bypassSecurityTrustHtml(githubData.contribSvg);
+    });
+
+    this.serverService.getMusicData().then(musicData => {
+      this.musicData = musicData;
+      this.artistsList = this.topArtistsParse(musicData.topArtists);
+      this.genresList = this.genres(musicData.topArtists);
+      this.topArtist = musicData.topArtists[0];
+      musicData.topArtists.shift();
+      this.topArtists = musicData.topArtists;
+
+      setTimeout(() => {
+        new Photostack(document.getElementById('photostack'));
+      }, 10);
+    });
   }
 
-  repos = this.serverService.getGithubRepos();
+  topArtistsParse(data) {
+    let artists = '';
 
-  music = this.serverService.getMusic();
+    if(data && data.length) {
+      for(let i=0; i < data.length; i++) {
+        if(i%2) {
+          artists += '<b>' + data[i].artist + '. </b>';
+        } else {
+          artists += data[i].artist + '.  ';
+        }
+      }
+    } else {
+      console.log('No top artists data');
+    }
+
+    return artists;
+  }
+
+  genres(data) {
+    var genreCounts = [];
+
+    // For each artist
+    for(let i=0, x=data.length; i<x; i++) {
+      // For each genre
+      for(let j=0, y=data[i].genres.length; j<y; j++) {
+          let index = _.findIndex(genreCounts, { genre: data[i].genres[j] });
+
+          if(index > -1) {
+            genreCounts[index].count ++;
+          } else {
+            genreCounts.push({
+              genre: data[i].genres[j],
+              count: 1
+            });
+          }
+      }
+    }
+
+    genreCounts = _.sortBy(genreCounts, "count"); // Sort (ascending) based on total occurances of a genre across the artists
+
+    var topGenreCount = genreCounts.length > 16 ? 16 : genreCounts.length; // Error handling for when there are less than 15 top genres
+    var topGenres = '';
+
+    // Offset by 1 because array index starts at 0
+    // Take the genre with the highest count first (desc order)
+    for(let k=1, z=topGenreCount; k<z; k++) {
+      if(k%2) {
+        topGenres += '<b>' + genreCounts[genreCounts.length - k].genre + '. </b>';
+      } else {
+        topGenres += genreCounts[genreCounts.length - k].genre + '.  ';
+      }
+    }
+
+    return topGenres;
+  }
 
 }
