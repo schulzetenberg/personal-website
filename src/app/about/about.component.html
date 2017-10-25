@@ -2,28 +2,29 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
 
-<div id="skrollr-body" class="main-container">
-  <header class="page-header">
-    <div class="background-image-holder parallax-background">
-      <img class="background-image" alt="Background Image" src="assets/img/About Background.jpg">
-    </div>
+<header class="page-header">
+  <div class="background-image-holder">
+    <img class="background-image" alt="Background Image" src="assets/img/About Background.jpg">
+  </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10">
-          <h1 class="text-white">About</h1>
-          <p class="text-white lead">
-            I am Jacob Schulzetenberg. <br>
-            A software engineer with a interest in <br>
-            programming, technology, analytics, and finance.
-          </p>
-            <img class="circular" alt="Linked In" src="assets/img/LinkedIn Jacob Schulzetenberg.jpg">
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10">
+        <h1 class="text-white">About</h1>
+        <p class="text-white lead">
+          I am Jacob Schulzetenberg. <br>
+          A software engineer with a interest in <br>
+          programming, technology, analytics, and finance.
+        </p>
+          <img class="circular" alt="Linked In" src="assets/img/LinkedIn Jacob Schulzetenberg.jpg">
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section></section> <!-- Used to create whitespace -->
+<div id="skrollr-body">
+
+  <section></section> <!-- Use for whitespace -->
 
   <app-github></app-github>
 
@@ -37,29 +38,30 @@
 
   <app-driving></app-driving>
 
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-          <i class="icon-jumbo fa fa-twitter"></i>
-          <p>Follow <strong><a href="https://twitter.com/schulzetenberg">@schulzetenberg</a></strong> on Twitter</p>
-          <div id="tweets"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="instagram-feed">
-    <div class="container">
-      <div class="row text-center">
-        <span class="alt-font"><p><a href="https://instagram.com/schulzetenberg">Insta <i class="fa fa-instagram"></i> Gram</a></p></span>
-      </div>
-    </div>
-    <div class="instafeed">
-      <ul></ul>
-    </div>
-  </section>
-
 </div>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+        <i class="icon-jumbo fa fa-twitter" style="font-size: 64px !important;"></i>
+        <p>Follow <strong><a href="https://twitter.com/schulzetenberg">@schulzetenberg</a></strong> on Twitter</p>
+        <div id="tweets"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="instagram-feed">
+  <div class="container">
+    <div class="row text-center">
+      <span class="alt-font"><p><a href="https://instagram.com/schulzetenberg">Insta <i class="fa fa-instagram"></i> Gram</a></p></span>
+    </div>
+  </div>
+  <div class="instafeed">
+    <ul></ul>
+  </div>
+</section>
+
 
 <app-footer></app-footer>

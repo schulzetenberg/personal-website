@@ -1,4 +1,4 @@
-<section class="image-divider overlay duplicatable-content" *ngIf="car">
+<section class="image-divider overlay duplicatable-content">
   <div class="background-image-holder parallax-background skrollable skrollable-between"
   style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/utah.jpg) 50% 0%;"
   data-bottom-top="-webkit-transform: translate3d(0px,-50px, 0px)"
@@ -19,21 +19,21 @@
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-car"></i>
           <h5 class="text-white">Average Daily Driving</h5>
-          <p class="text-white" [innerHtml]="((car.totalMiles / car.totalDays) | number:'1.0-0') + ' Miles'"></p>
+          <p class="text-white" [innerHtml]="(car && (car.totalMiles / car.totalDays) | number:'1.0-0') + ' Miles'"></p>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-map-o"></i>
           <h5 class="text-white">Total Miles Driven in 2017</h5>
-          <p class="text-white" [innerHtml]="(car.totalMiles | number:'1.0-0') + ' Miles'"></p>
+          <p class="text-white" [innerHtml]="(car && car.totalMiles | number:'1.0-0') + ' Miles'"></p>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-calendar"></i>
           <h5 class="text-white">Days Per Barrel of Gas Used</h5>
-          <p class="text-white" [innerHtml]="(car.daysPerBarrel | number:'1.0-0') + ' Days'"></p>
+          <p class="text-white" [innerHtml]="(car && car.daysPerBarrel | number:'1.0-0') + ' Days'"></p>
         </div>
       </div>
     </div>

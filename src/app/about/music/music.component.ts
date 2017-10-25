@@ -20,7 +20,7 @@ export class MusicComponent implements OnInit {
   topArtistsData: {};
   artistsList = '';
   genresList = '';
-  topArtists = [];
+  topArtists: {};
   topArtist: {};
 
   constructor(private serverService: ServerService) { }
