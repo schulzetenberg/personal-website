@@ -5,8 +5,8 @@ const https = require('https');
 const logger = require('./log');
 var app = require('../app');
 
-var ipaddress = process.env.IP_ADDRESS || "127.0.0.1";
-var port = process.env.PORT || 8999;
+const ipaddress = process.env.IP_ADDRESS || "127.0.0.1";
+const port = process.env.PORT || 8999;
 var server;
 
 // Create HTTP(S) server.
@@ -40,11 +40,11 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      logger.error(bind + ' requires elevated privileges');
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      logger.error(bind + ' is already in use');
       process.exit(1);
       break;
     default:

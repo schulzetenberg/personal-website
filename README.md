@@ -4,6 +4,12 @@
 #### Personal website built using the MEAN stack
 ![MEAN stack](http://codecondo.com/wp-content/uploads/2015/08/7-Features-of-MEAN-Stack_785.png)
 
+### Versions
+  - MongoDB 3
+  - Express 4
+  - Angular 4
+  - Node 6
+
 ### Pre-Reqs
   - Node.js + npm
   - grunt-cli
