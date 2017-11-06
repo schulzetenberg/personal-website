@@ -40,7 +40,7 @@
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/flexslider/jquery.flexslider-min.js",
         "../node_modules/lightbox2/dist/js/lightbox.min.js",
-        "../node_modules/scrollreveal/dist/scrollreveal.min.js",
+        "../node_modules/scrollreveal/dist/scrollReveal.min.js",
         "../node_modules/isotope-layout/dist/isotope.pkgd.min.js",
         "../node_modules/typed.js/dist/typed.min.js",
         "../node_modules/twitter-fetcher/js/twitterFetcher_min.js",
