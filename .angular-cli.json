@@ -85,6 +85,9 @@
   },
   "defaults": {
     "styleExt": "css",
+    "serve": {
+      "port": 8999
+    },
     "component": {
       "viewEncapsulation": "Emulated",
       "changeDetection": "Default"
