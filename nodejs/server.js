@@ -6,7 +6,7 @@ const logger = require('./log');
 var app = require('../app');
 
 const ipaddress = process.env.IP_ADDRESS || "127.0.0.1";
-const port = process.env.PORT || 8999;
+const port = process.env.EXPRESS_PORT || 8997;
 var server;
 
 // Create HTTP(S) server.
