@@ -27,7 +27,7 @@
     "@angular/platform-browser": "4.4.6",
     "@angular/platform-browser-dynamic": "4.4.6",
     "@angular/router": "4.4.6",
-    "@types/lodash": "4.14.80",
+    "@types/lodash": "4.14.108",
     "body-parser": "1.18.2",
     "bootstrap": "3.3.7",
     "compression": "1.7.1",
