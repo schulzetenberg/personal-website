@@ -8,13 +8,10 @@ export class ServerService {
   constructor(private http: Http) {}
 
   getGithubRepos() {
-    return this.http.get('/api/collector?app=github')
-      .map(
-        (response: Response) => {
-          var data = response.json();
-          return data;
-        }
-      );
+    return this.http.get('/api/collector?app=github').map((response: Response) => {
+        const data = response.json();
+        return data;
+      });
   }
 
   getGithubData() {
