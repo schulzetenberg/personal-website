@@ -23,8 +23,7 @@ export class AboutComponent implements OnInit {
     }
 
     $.fn.spectragram.accessData = {
-      accessToken: '23102384.aad9174.ca58d8df7eac42e095ffb55b6f1cf52a',
-      clientID: 'aad9174904814991a8e5a16cff50cdde'
+      accessToken: '23102384.a39d93a.eb14d0c9397848cb9ea74e440858e625'
     };
 
     $('.instafeed').each(function () {
