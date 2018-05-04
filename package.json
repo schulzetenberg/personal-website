@@ -27,7 +27,7 @@
     "@angular/platform-browser": "4.4.6",
     "@angular/platform-browser-dynamic": "4.4.6",
     "@angular/router": "4.4.6",
-    "@types/lodash": "4.14.80",
+    "@types/lodash": "4.14.108",
     "body-parser": "1.18.2",
     "bootstrap": "3.3.7",
     "compression": "1.7.1",
@@ -64,7 +64,7 @@
     "winston": "2.4.0"
   },
   "devDependencies": {
-    "@angular/cli": "1.4.9",
+    "@angular/cli": "1.7.4",
     "@angular/compiler-cli": "4.4.6",
     "@angular/language-service": "4.4.6",
     "@types/node": "8.0.47",
