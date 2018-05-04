@@ -5,12 +5,12 @@ import { ServerService } from '../../server.service';
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css'],
+  styleUrls: ['./books.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class BooksComponent implements OnInit {
-  books: {};
+  books: any[];
   pagesRead: {};
   topBooksList: {};
 
@@ -24,26 +24,36 @@ export class BooksComponent implements OnInit {
   }
 
   processBookData(data) {
-    if(!data) return console.log("No books data!");
-    var books = data.booksRead;
-    if(!books) return console.log("No books read data");
-    this.books = books;
+    if (!data) {
+      return console.log('No books data!')
+    };
 
-    var pagesRead = 0;
-    for(let i=0; i < books.length; i++){
-      if(books[i].pages) pagesRead += parseInt(books[i].pages);
+    const booksData = data.booksRead;
+    this.books = booksData;
+
+    if (!booksData) {
+      return console.log('No books read data');
     }
-    this.pagesRead = pagesRead;
 
-    var topBooks = data.topBooks;
-    var topBooksList = '';
-    for(let j=0; j < topBooks.length; j++){
-      if(j%2) {
+    let pagesRead = 0;
+    for (let i = 0; i < booksData.length; i++) {
+      if (booksData[i].pages) {
+        pagesRead += parseInt(booksData[i].pages, 10);
+      }
+    }
+
+    this.pagesRead = pagesRead;
+    const topBooks = data.topBooks;
+    let topBooksList = '';
+
+    for (let j = 0; j < topBooks.length; j++) {
+      if (j % 2) {
         topBooksList += '<b>' + topBooks[j].title + '. </b>';
       } else {
         topBooksList += topBooks[j].title + '. ';
       }
     }
+
     this.topBooksList = topBooksList;
   }
 

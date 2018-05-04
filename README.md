@@ -8,7 +8,7 @@
   - MongoDB 3
   - Express 4
   - Angular 4
-  - Node 6
+  - Node 8
 
 ### Pre-Reqs
   - Node.js + npm

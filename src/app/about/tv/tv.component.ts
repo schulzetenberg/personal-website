@@ -10,9 +10,10 @@ import { ServerService } from '../../server.service';
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class TvComponent implements OnInit {
-  trakt: {};
   topMoviesList: {};
   topShowsList: {};
+  avgTv: String;
+  avgMovies: String;
 
   constructor(private serverService: ServerService) { }
 
@@ -24,14 +25,25 @@ export class TvComponent implements OnInit {
 
 
   processTvData(data) {
-    this.trakt = data;
+    const numMinTv = data && data.stats && data.stats.episodes && data.stats.episodes.minutes;
 
-    var topMovies = data.topMovies;
-    if(topMovies){
-      var topMoviesList = '';
+    if (numMinTv && data.totalDays) {
+      this.avgTv = (numMinTv / data.totalDays).toFixed(0) + ' Minutes'; // Round to int value of minutes;
+    }
 
-      for(let i=0; i < topMovies.length; i++){
-        if(i%2){
+    const numMinMovies = data && data.stats && data.stats.movies && data.stats.movies.minutes;
+
+    if (numMinMovies && data.totalDays) {
+      this.avgMovies = (numMinMovies / data.totalDays).toFixed(0) + ' Minutes';
+    }
+
+    const topMovies = data.topMovies;
+
+    if (topMovies) {
+      let topMoviesList = '';
+
+      for (let i = 0; i < topMovies.length; i++) {
+        if ( i % 2) {
           topMoviesList += '<b>' + topMovies[i].movie.title + '. </b>';
         } else {
           topMoviesList += topMovies[i].movie.title + '.  ';
@@ -44,12 +56,13 @@ export class TvComponent implements OnInit {
     }
 
 
-    var topShows = data.topShows;
-    if(topShows){
-      var topShowsList = '';
+    const topShows = data.topShows;
 
-      for(let j=0; j < topShows.length; j++){
-        if(j%2){
+    if (topShows) {
+      let topShowsList = '';
+
+      for (let j = 0; j < topShows.length; j++) {
+        if (j % 2) {
           topShowsList += '<b>' + topShows[j].show.title + '. </b>';
         } else {
           topShowsList += topShows[j].show.title + '.  ';

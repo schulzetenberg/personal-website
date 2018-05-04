@@ -3,7 +3,7 @@ import { Response } from '@angular/http';
 
 import { ServerService } from '../../server.service';
 
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 declare var Photostack: any;
 
@@ -20,14 +20,34 @@ export class MusicComponent implements OnInit {
   topArtistsData: {};
   artistsList = '';
   genresList = '';
-  topArtists: {};
+  topArtists: any[];
   topArtist: {};
+  avgListening: String;
+  totalListening: String;
+  totalArtists: String;
 
   constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
     this.serverService.getMusicData().then(musicData => {
       this.musicData = musicData;
+      const songCount = musicData && musicData.songCount;
+
+      if (songCount) {
+        this.avgListening = ((songCount / 365) * 3.5 / 60).toFixed(0) + ' Hours';
+        this.totalListening = songCount.toFixed(0) + ' (Past Year)';
+      }
+
+      const artistCount = musicData && musicData.artistCount;
+
+      if (artistCount) {
+        this.totalArtists = artistCount.toFixed(0) + ' (Past Year)';
+      }
+
       this.artistsList = this.topArtistsParse(musicData.topArtists);
       this.genresList = this.genres(musicData.topArtists);
       this.topArtist = musicData.topArtists[0];
@@ -43,9 +63,9 @@ export class MusicComponent implements OnInit {
   topArtistsParse(data) {
     let artists = '';
 
-    if(data && data.length) {
-      for(let i=0; i < data.length; i++) {
-        if(i%2) {
+    if (data && data.length) {
+      for (let i = 0; i < data.length; i++) {
+        if (i % 2) {
           artists += '<b>' + data[i].artist + '. </b>';
         } else {
           artists += data[i].artist + '.  ';
@@ -59,15 +79,16 @@ export class MusicComponent implements OnInit {
   }
 
   genres(data) {
-    var genreCounts = [];
+    let genreCounts = [];
 
     // For each artist
-    for(let i=0, x=data.length; i<x; i++) {
-      // For each genre
-      for(let j=0, y=data[i].genres.length; j<y; j++) {
-          let index = _.findIndex(genreCounts, { genre: data[i].genres[j] });
+    if (data && data.length) {
+      for (let i = 0, x = data.length; i < x; i++) {
+        // For each genre
+        for (let j =  0, y = data[i].genres.length; j < y; j++) {
+          const index = _.findIndex(genreCounts, { genre: data[i].genres[j] });
 
-          if(index > -1) {
+          if (index > -1) {
             genreCounts[index].count ++;
           } else {
             genreCounts.push({
@@ -75,18 +96,21 @@ export class MusicComponent implements OnInit {
               count: 1
             });
           }
+        }
       }
+    } else {
+      console.log('No genres data');
     }
 
-    genreCounts = _.sortBy(genreCounts, "count"); // Sort (ascending) based on total occurances of a genre across the artists
+    genreCounts = _.sortBy(genreCounts, 'count'); // Sort (ascending) based on total occurances of a genre across the artists
 
-    var topGenreCount = genreCounts.length > 16 ? 16 : genreCounts.length; // Error handling for when there are less than 15 top genres
-    var topGenres = '';
+    const topGenreCount = genreCounts.length > 16 ? 16 : genreCounts.length; // Error handling for when there are less than 15 top genres
+    let topGenres = '';
 
     // Offset by 1 because array index starts at 0
     // Take the genre with the highest count first (desc order)
-    for(let k=1, z=topGenreCount; k<z; k++) {
-      if(k%2) {
+    for (let k = 1, z = topGenreCount; k < z; k++) {
+      if (k % 2) {
         topGenres += '<b>' + genreCounts[genreCounts.length - k].genre + '. </b>';
       } else {
         topGenres += genreCounts[genreCounts.length - k].genre + '.  ';

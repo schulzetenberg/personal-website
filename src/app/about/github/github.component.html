@@ -19,21 +19,21 @@
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-code"></i>
           <h5 class="text-white">Public Repos</h5>
-          <p class="text-white" [innerHtml]="githubData && githubData.repos"></p>
+          <p class="text-white" [innerHtml]="reposCount"></p>
         </div>
       </div>
       <div class="col-lg-3">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-user-circle-o"></i>
           <h5 class="text-white">Followers</h5>
-          <p class="text-white" [innerHtml]="githubData && githubData.followers.length"></p>
+          <p class="text-white" [innerHtml]="followersCount"></p>
         </div>
       </div>
       <div class="col-lg-3">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-user-circle"></i>
           <h5 class="text-white">Following</h5>
-          <p class="text-white" [innerHtml]="githubData && githubData.following.length"></p>
+          <p class="text-white" [innerHtml]="followingCount"></p>
         </div>
       </div>
     </div>

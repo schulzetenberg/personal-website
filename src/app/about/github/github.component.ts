@@ -14,13 +14,19 @@ import { ServerService } from '../../server.service';
 
 export class GithubComponent implements OnInit {
   githubData: {};
-  svg:SafeHtml;
+  reposCount: Number;
+  followersCount: Number;
+  followingCount: Number;
+  svg: SafeHtml;
 
   constructor(private serverService: ServerService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.serverService.getGithubData().then(githubData => {
       this.githubData = githubData;
+      this.reposCount = githubData && githubData.repos;
+      this.followersCount = githubData && githubData.followers && githubData.followers.length;
+      this.followingCount = githubData && githubData.following && githubData.following.length;
       this.svg = this.sanitizer.bypassSecurityTrustHtml(githubData.contribSvg);
     });
   }

@@ -36,7 +36,6 @@
         "../node_modules/q/q.js",
         "../node_modules/lodash/lodash.js",
         "../node_modules/d3/build/d3.min.js",
-        "../node_modules/dimple/dist/dimple.latest.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/flexslider/jquery.flexslider-min.js",
         "../node_modules/lightbox2/dist/js/lightbox.min.js",
@@ -51,9 +50,6 @@
         "app/shared/js/google-analytics.js",
         "app/shared/js/scripts.js",
         "app/shared/js/typing.js"
-      ],
-      "addons": [
-        "../node_modules/font-awesome/fonts/*.+(otf|eot|svg|ttf|woff|woff2)"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -84,13 +80,13 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "serve": {
-      "port": 8999
-    },
+    "styleExt": "scss",
     "component": {
       "viewEncapsulation": "Emulated",
       "changeDetection": "Default"
+    },
+    "serve": {
+      "port": 8999
     }
   }
 }

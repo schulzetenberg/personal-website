@@ -7,7 +7,7 @@ declare var twitterFetcher: any;
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
+  styleUrls: ['./about.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })
@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    var s = skrollr.init();
+    const s = skrollr.init();
     if (s.isMobile()) {
       s.destroy();
     }
@@ -35,34 +35,36 @@ export class AboutComponent implements OnInit {
       });
     });
 
-    $(window).load(function(){
+    $(window).load(function() {
       $('#tweets').flexslider({ directionNav: false, controlNav: false });
     });
 
-    var twitterConfig = {
-      "id": '617415300229677056',
-      "domId": '',
-      "maxTweets": 5,
-      "enableLinks": true,
-      "showUser": true,
-      "showTime": true,
-      "dateFunction": '',
-      "showRetweet": false,
-      "customCallback": handleTweets,
-      "showInteraction": false
+    const twitterConfig = {
+      'id': '617415300229677056',
+      'domId': '',
+      'maxTweets': 5,
+      'enableLinks': true,
+      'showUser': true,
+      'showTime': true,
+      'dateFunction': '',
+      'showRetweet': false,
+      'customCallback': handleTweets,
+      'showInteraction': false
     };
 
     twitterFetcher.fetch(twitterConfig);
 
-    function handleTweets(tweets){
-      var x = tweets.length;
-      var n = 0;
-      var element = document.getElementById('tweets');
-      var html = '<ul class="slides">';
-      while(n < x) {
-      html += '<li>' + tweets[n] + '</li>';
-      n++;
+    function handleTweets(tweets) {
+      const x = tweets.length;
+      let n = 0;
+      const element = document.getElementById('tweets');
+      let html = '<ul class="slides">';
+
+      while (n < x) {
+        html += '<li>' + tweets[n] + '</li>';
+        n++;
       }
+
       html += '</ul>';
       element.innerHTML = html;
     }
