@@ -68,7 +68,7 @@
     "@angular/compiler-cli": "5.2.10",
     "@angular/language-service": "5.2.10",
     "@types/node": "8.10.12",
-    "codelyzer": "3.2.2",
+    "codelyzer": "4.3.0",
     "ts-node": "3.3.0",
     "tslint": "5.10.0",
     "typescript": "2.6.2",
