@@ -20,6 +20,7 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { MusicComponent } from './about/music/music.component';
 import { GithubComponent } from './about/github/github.component';
 import { BooksComponent } from './about/books/books.component';
+import { PodcastsComponent } from './about/podcasts/podcasts.component';
 import { TvComponent } from './about/tv/tv.component';
 import { StatesComponent } from './about/states/states.component';
 import { DrivingComponent } from './about/driving/driving.component';
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     MusicComponent,
     GithubComponent,
     BooksComponent,
+    PodcastsComponent,
     TvComponent,
     StatesComponent,
     DrivingComponent

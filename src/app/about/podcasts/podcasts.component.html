@@ -1,0 +1,25 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <h1>Podcasts</h1>
+      </div>
+    </div>
+    <div class="row row-centered" style="min-height: 300px;">
+        <div class="books">
+          <div class="col-xs-3 col-md-2 podcast" *ngFor="let podcast of podcasts">
+            <a [href]="podcast.htmlUrl" target="_blank">
+              <img [title]="podcast.title" [src]="podcast.imgUrl" onerror="this.src='assets/img/podcast-default.png'" />
+            </a>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a href="https://player.fm/waterland15/fm">
+          <i style="font-size: 56px; margin-top:30px; color: black; opacity:0.7;" onMouseOut="this.style.opacity='0.7'" onMouseOver="this.style.opacity='1'" class="fa fa-microphone icon-jumbo" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -50,4 +50,10 @@ export class ServerService {
       .then(response => response.json());
   }
 
+  getPodcastData() {
+    return this.http.get('/api/collector?app=player-fm')
+      .toPromise()
+      .then(response => response.json());
+  }
+
 }
