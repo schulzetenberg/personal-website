@@ -43,7 +43,7 @@
     "jquery": "2.2.4",
     "js-beautify": "1.7.5",
     "lightbox2": "2.9.0",
-    "lodash": "4.17.4",
+    "lodash": "4.17.10",
     "method-override": "2.3.10",
     "moment": "2.22.1",
     "mongodb": "2.2.35",
