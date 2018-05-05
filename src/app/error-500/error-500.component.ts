@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 @Component({
   selector: 'app-error-500',
   templateUrl: './error-500.component.html',
-  styleUrls: ['./error-500.component.css'],
+  styleUrls: ['./error-500.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })

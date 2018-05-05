@@ -5,7 +5,7 @@ import { ServerService } from '../../server.service';
 @Component({
   selector: 'app-driving',
   templateUrl: './driving.component.html',
-  styleUrls: ['./driving.component.css'],
+  styleUrls: ['./driving.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })

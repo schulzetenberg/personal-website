@@ -7,7 +7,7 @@ declare var google: any;
 @Component({
   selector: 'app-states',
   templateUrl: './states.component.html',
-  styleUrls: ['./states.component.css'],
+  styleUrls: ['./states.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })

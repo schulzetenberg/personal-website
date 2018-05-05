@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 @Component({
   selector: 'app-not-found-404',
   templateUrl: './not-found-404.component.html',
-  styleUrls: ['./not-found-404.component.css'],
+  styleUrls: ['./not-found-404.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })

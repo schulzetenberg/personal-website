@@ -7,12 +7,11 @@
 ### Versions
   - MongoDB 3
   - Express 4
-  - Angular 4
+  - Angular 5
   - Node 8
 
 ### Pre-Reqs
   - Node.js + npm
-  - grunt-cli
   - nodemon
   - MongoDB
 

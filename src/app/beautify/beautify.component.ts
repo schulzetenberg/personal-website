@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 @Component({
   selector: 'app-beautify',
   templateUrl: './beautify.component.html',
-  styleUrls: ['./beautify.component.css'],
+  styleUrls: ['./beautify.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })

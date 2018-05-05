@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 @Component({
   selector: 'app-coming-soon',
   templateUrl: './coming-soon.component.html',
-  styleUrls: ['./coming-soon.component.css'],
+  styleUrls: ['./coming-soon.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })

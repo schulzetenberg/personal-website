@@ -7,7 +7,7 @@ import { ServerService } from '../../server.service';
 @Component({
   selector: 'app-github',
   templateUrl: './github.component.html',
-  styleUrls: ['./github.component.css'],
+  styleUrls: ['./github.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })

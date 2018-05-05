@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 @Component({
   selector: 'app-no-icon-footer',
   templateUrl: './no-icon-footer.component.html',
-  styleUrls: ['./no-icon-footer.component.css'],
+  styleUrls: ['./no-icon-footer.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default
 })
