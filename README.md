@@ -1,4 +1,4 @@
-# MEAN website
+# MEAN website [![Build Status](https://travis-ci.com/schulzetenberg/mean-website.svg?branch=master)](https://travis-ci.com/schulzetenberg/mean-website)
 #### [Schulzetenberg.com](http://schulzetenberg.com)
 
 #### Personal website built using the MEAN stack
