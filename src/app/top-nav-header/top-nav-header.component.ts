@@ -5,7 +5,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   templateUrl: './top-nav-header.component.html',
   styleUrls: ['./top-nav-header.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class TopNavHeaderComponent implements OnInit {
 

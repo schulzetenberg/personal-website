@@ -5,7 +5,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   templateUrl: './beautify.component.html',
   styleUrls: ['./beautify.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class BeautifyComponent implements OnInit {
 

@@ -9,9 +9,9 @@ export class ServerService {
 
   getGithubRepos() {
     return this.http.get('/api/collector?app=github').map((response: Response) => {
-        const data = response.json();
-        return data;
-      });
+      const data = response.json();
+      return data;
+    });
   }
 
   getGithubData() {

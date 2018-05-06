@@ -5,7 +5,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   templateUrl: './not-found-404.component.html',
   styleUrls: ['./not-found-404.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class NotFound404Component implements OnInit {
 

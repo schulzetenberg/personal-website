@@ -7,7 +7,7 @@ import { ServerService } from '../../server.service';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class BooksComponent implements OnInit {
   books: any[];
@@ -18,15 +18,15 @@ export class BooksComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.serverService.getBookData().then(bookData => {
+    this.serverService.getBookData().then((bookData) => {
       this.processBookData(bookData);
     });
   }
 
   processBookData(data) {
     if (!data) {
-      return console.log('No books data!')
-    };
+      return console.log('No books data!');
+    }
 
     const booksData = data.booksRead;
     this.books = booksData;

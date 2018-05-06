@@ -9,7 +9,7 @@ import { ServerService } from '../../server.service';
   templateUrl: './github.component.html',
   styleUrls: ['./github.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 
 export class GithubComponent implements OnInit {
@@ -22,7 +22,7 @@ export class GithubComponent implements OnInit {
   constructor(private serverService: ServerService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.serverService.getGithubData().then(githubData => {
+    this.serverService.getGithubData().then((githubData) => {
       this.githubData = githubData;
       this.reposCount = githubData && githubData.repos;
       this.followersCount = githubData && githubData.followers && githubData.followers.length;

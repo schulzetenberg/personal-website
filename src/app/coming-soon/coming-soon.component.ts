@@ -5,7 +5,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   templateUrl: './coming-soon.component.html',
   styleUrls: ['./coming-soon.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ComingSoonComponent implements OnInit {
 

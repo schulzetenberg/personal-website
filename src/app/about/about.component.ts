@@ -9,7 +9,7 @@ declare var twitterFetcher: any;
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 
 export class AboutComponent implements OnInit {
@@ -23,14 +23,14 @@ export class AboutComponent implements OnInit {
     }
 
     $.fn.spectragram.accessData = {
-      accessToken: '23102384.a39d93a.eb14d0c9397848cb9ea74e440858e625'
+      accessToken: '23102384.a39d93a.eb14d0c9397848cb9ea74e440858e625',
     };
 
     $('.instafeed').each(function () {
       $(this).children('ul').spectragram('getUserFeed', {
         max: 6,
         size: 'medium',
-        query: 'schulzetenberg'
+        query: 'schulzetenberg',
       });
     });
 
@@ -39,16 +39,16 @@ export class AboutComponent implements OnInit {
     });
 
     const twitterConfig = {
-      'id': '617415300229677056',
-      'domId': '',
-      'maxTweets': 5,
-      'enableLinks': true,
-      'showUser': true,
-      'showTime': true,
-      'dateFunction': '',
-      'showRetweet': false,
-      'customCallback': handleTweets,
-      'showInteraction': false
+      id: '617415300229677056',
+      domId: '',
+      maxTweets: 5,
+      enableLinks: true,
+      showUser: true,
+      showTime: true,
+      dateFunction: '',
+      showRetweet: false,
+      customCallback: handleTweets,
+      showInteraction: false,
     };
 
     twitterFetcher.fetch(twitterConfig);

@@ -12,7 +12,7 @@ declare var Photostack: any;
   templateUrl: './music.component.html',
   styleUrls: ['./music.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 
 export class MusicComponent implements OnInit {
@@ -33,7 +33,7 @@ export class MusicComponent implements OnInit {
   }
 
   getData() {
-    this.serverService.getMusicData().then(musicData => {
+    this.serverService.getMusicData().then((musicData) => {
       this.musicData = musicData;
       const songCount = musicData && musicData.songCount;
 

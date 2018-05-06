@@ -7,7 +7,7 @@ import { ServerService } from '../../server.service';
   templateUrl: './podcasts.component.html',
   styleUrls: ['./podcasts.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class PodcastsComponent implements OnInit {
   podcasts: any[];
@@ -16,16 +16,15 @@ export class PodcastsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.serverService.getPodcastData().then(podcastData => {
+    this.serverService.getPodcastData().then((podcastData) => {
       this.processBookData(podcastData);
     });
   }
 
   processBookData(data) {
-    console.log(data)
     if (!data || !data.podcasts) {
-      return console.log('No podcast data!')
-    };
+      return console.log('No podcast data!');
+    }
 
     this.podcasts = data.podcasts;
   }

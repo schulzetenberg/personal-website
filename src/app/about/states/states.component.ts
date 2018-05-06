@@ -9,7 +9,7 @@ declare var google: any;
   templateUrl: './states.component.html',
   styleUrls: ['./states.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 
 export class StatesComponent implements OnInit {
@@ -19,7 +19,7 @@ export class StatesComponent implements OnInit {
   constructor(private serverService: ServerService) { }
 
   ngOnInit() {
-    this.serverService.getStatesData().then(statesData => {
+    this.serverService.getStatesData().then((statesData) => {
       this.processStatesData(statesData);
     });
   }
@@ -36,11 +36,11 @@ export class StatesComponent implements OnInit {
     const options = {
       backgroundColor: {
         fill: 'transparent',
-        stroke: 'blue'
+        stroke: 'blue',
       },
-       colorAxis: {
-         // unvisited, visited, lived
-         colors: ['#F4F4F4', '#433e47', '#58535B']
+      colorAxis: {
+        // unvisited, visited, lived
+        colors: ['#F4F4F4', '#433e47', '#58535B'],
       },
       legend: 'none',
       displayMode: 'regions',
@@ -49,14 +49,14 @@ export class StatesComponent implements OnInit {
       keepAspectRatio: true,
       title: 'States Visited',
       tooltip : {
-        trigger: 'none'
-      }
+        trigger: 'none',
+      },
     };
 
     this.geoChartData =  {
-       chartType: 'GeoChart',
-       dataTable: data,
-      options: options
+      chartType: 'GeoChart',
+      dataTable: data,
+      options: options,
     };
 
     // UI update

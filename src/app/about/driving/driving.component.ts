@@ -7,7 +7,7 @@ import { ServerService } from '../../server.service';
   templateUrl: './driving.component.html',
   styleUrls: ['./driving.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class DrivingComponent implements OnInit {
   car: {};
@@ -22,7 +22,7 @@ export class DrivingComponent implements OnInit {
   }
 
   getData() {
-    this.serverService.getDrivingData().then(data => {
+    this.serverService.getDrivingData().then((data) => {
       this.car = data;
       const avgDriving = data && data.avgDriving;
 

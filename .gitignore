@@ -89,7 +89,6 @@ local.properties
 
 # TeXlipse plugin
 .texlipse
-.jshintrc
 build.gradle
 .tern-project
 

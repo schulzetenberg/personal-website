@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'coming-soon', component: ComingSoonComponent },
   { path: '500', component: Error500Component },
   { path: '404', component: NotFound404Component },
-]
+];
 
 @NgModule({
   declarations: [
@@ -54,15 +54,15 @@ const appRoutes: Routes = [
     PodcastsComponent,
     TvComponent,
     StatesComponent,
-    DrivingComponent
+    DrivingComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
   ],
   providers: [ServerService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
