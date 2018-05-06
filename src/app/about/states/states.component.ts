@@ -26,18 +26,11 @@ export class StatesComponent implements OnInit {
 
   processStatesData(data) {
     let visitedStates = 0;
-    const dataTable = [
-      ['State', 'Value']
-    ];
 
     for (let i = 0; i < data.length; i++) {
       if (data[i][1] > 0) {
         visitedStates++;
       }
-
-      // TODO: Change the input data to reflect how the data is being displayed
-      const dataState = [data[i][0].v, data[i][1]];
-      dataTable.push(dataState);
     }
 
     const options = {
@@ -62,7 +55,7 @@ export class StatesComponent implements OnInit {
 
     this.geoChartData =  {
        chartType: 'GeoChart',
-       dataTable: dataTable,
+       dataTable: data,
       options: options
     };
 
