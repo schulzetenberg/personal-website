@@ -1,21 +1,15 @@
-# MEAN website [![Build Status](https://travis-ci.com/schulzetenberg/mean-website.svg?branch=master)](https://travis-ci.com/schulzetenberg/mean-website)
-#### [Schulzetenberg.com](http://schulzetenberg.com)
+# PersonalWebsite
 
-#### Personal website built using the MEAN stack
-![MEAN stack](http://codecondo.com/wp-content/uploads/2015/08/7-Features-of-MEAN-Stack_785.png)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-### Versions
-  - MongoDB 3
-  - Express 4
-  - Angular 5
-  - Node 8
+## Development server
 
-### Pre-Reqs
-  - Node.js + npm
-  - nodemon
-  - MongoDB
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### Installation & Start-Up
-  - $ npm install
-  - $ npm start (terminal 1)
-  - $ nodemon (terminal 2)
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.

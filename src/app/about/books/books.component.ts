@@ -5,7 +5,10 @@ import { ServerService } from '../../server.service';
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.scss'],
+  styleUrls: [
+    './books.component.scss',
+    './books.scss',
+  ],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default,
 })

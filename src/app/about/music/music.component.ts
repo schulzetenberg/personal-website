@@ -10,7 +10,10 @@ declare var Photostack: any;
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
-  styleUrls: ['./music.component.scss'],
+  styleUrls: [
+    './music.component.scss',
+    './photostack.scss',
+  ],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default,
 })
