@@ -4142,9 +4142,9 @@ lie@~3.1.0:
   dependencies:
     immediate "~3.0.5"
 
-lightbox2@2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/lightbox2/-/lightbox2-2.9.0.tgz#f9a2fdb41ab3ca94bf0f769210b59bb14a5d5f62"
+lightbox2@2.10.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/lightbox2/-/lightbox2-2.10.0.tgz#06b3f7b7bd7c1332c20d037602d9657542fd7de4"
 
 load-json-file@^1.0.0:
   version "1.1.0"
