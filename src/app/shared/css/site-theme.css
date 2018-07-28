@@ -3148,7 +3148,7 @@ footer.short-2 .contact-action:hover {
   .map-overlay .col-md-4 {
     width: 40%;
   }
-  .map-overlay .col-md-offset-4 {
+  .map-overlay .offset-md-4 {
     margin-left: 30%;
   }
   .hero-divider {
