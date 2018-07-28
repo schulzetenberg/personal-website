@@ -28,13 +28,14 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/flexslider/flexslider.css",
               "node_modules/lightbox2/dist/css/lightbox.min.css",
               "src/app/shared/css/site-theme.css",
               "src/app/shared/css/font-cardo.css",
               "src/app/shared/css/custom.css",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
+              "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
