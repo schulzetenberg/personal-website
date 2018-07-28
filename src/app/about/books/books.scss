@@ -12,16 +12,15 @@
   transition: all 0.3s ease;
   vertical-align: middle;
 }
+
 .book img:hover {
-  height: 140px;
+  opacity: 0.6;
+  transition: all 0.4s ease;
 }
 
 @media screen and (min-width: 800px) {
   .book img {
     height: 220px;
-  }
-  .book img:hover {
-    height: 210px;
   }
 }
 

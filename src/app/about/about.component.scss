@@ -1,1 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
+.instafeed img {
+  height: auto;
+  padding: 10px;
+  transition: all 0.4s ease;
+}
+
+.instafeed img:hover {
+  opacity: 0.6;
+  transition: all 0.4s ease;
+}
