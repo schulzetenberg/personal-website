@@ -22,19 +22,7 @@ export class AboutComponent implements OnInit {
       s.destroy();
     }
 
-    $.fn.spectragram.accessData = {
-      accessToken: '23102384.a39d93a.eb14d0c9397848cb9ea74e440858e625',
-    };
-
-    $('.instafeed').each(function () {
-      $(this).children('ul').spectragram('getUserFeed', {
-        max: 6,
-        size: 'medium',
-        query: 'schulzetenberg',
-      });
-    });
-
-    $(window).load(function() {
+    $(window).load(() => {
       $('#tweets').flexslider({ directionNav: false, controlNav: false });
     });
 

@@ -26,6 +26,7 @@ import { PodcastsComponent } from './about/podcasts/podcasts.component';
 import { TvComponent } from './about/tv/tv.component';
 import { StatesComponent } from './about/states/states.component';
 import { DrivingComponent } from './about/driving/driving.component';
+import { InstagramComponent } from './about/instagram/instagram.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     TvComponent,
     StatesComponent,
     DrivingComponent,
+    InstagramComponent,
   ],
   imports: [
     BrowserModule,

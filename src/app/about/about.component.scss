@@ -1,25 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 
-.instafeed img {
-  height: auto;
-  padding: 10px;
-  transition: all 0.4s ease;
-}
-
-.instafeed img:hover {
-  opacity: 0.6;
-  transition: all 0.4s ease;
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
 }
 
 .instafeed-section {
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 0;
 }
 
-.jumbo-icon {
-  display: inline-block;
-  color: #01a2a6;
-  text-align: center;
-  font-size: 64px;
-  margin-bottom: 24px;
+#tweets .user {
+  display: none;
+}
+
+p a {
+  color: #333;
+}
+
+#tweets .tweet {
+  font-size: 20px;
+  line-height: 40px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.podcast-section {
+  padding-bottom: 20px;
+  padding-top: 60px;
 }

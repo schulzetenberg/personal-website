@@ -6,7 +6,15 @@
   height: 100vh;
 }
 
+@media (min-width: 768px) {
+  .view {
+    overflow: visible;
+    margin-top: -56px;
+  }
+}
+
 .navbar {
+  z-index: 1;
   background-color: transparent;
 }
 

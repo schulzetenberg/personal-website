@@ -3,7 +3,7 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
 @Component({
   selector: 'app-top-nav-header',
   templateUrl: './top-nav-header.component.html',
-  styleUrls: ['./top-nav-header.component.css'],
+  styleUrls: ['./top-nav-header.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.Default,
 })
