@@ -1,5 +1,7 @@
+@import "../../../assets/scss/site-defaults";
+
 #completion {
-  background: #01A0A4;
+  border: 2px solid $primary;
   border-radius: 100px;
   float: left;
   margin: 20px;
@@ -11,12 +13,12 @@
 #completion h1 {
   font-size: 45px;
   margin-bottom: 0;
-  padding-top: 25px;
+  padding-top: 15px;
 }
 
 #completion h5 {
   font-size: 16px;
-  color: #58535B;
+  color: #58535b;
 }
 
 #legend {
@@ -48,5 +50,5 @@
 }
 
 #legend-never {
-  background: #F4F4F4;
+  background: #f4f4f4;
 }

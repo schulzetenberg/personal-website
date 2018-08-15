@@ -1,4 +1,4 @@
-<section class="image-divider overlay duplicatable-content">
+<section class="image-divider2 overlay2 duplicatable-content">
   <div class="background-image-holder parallax-background skrollable skrollable-between"
   style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/kindle.jpg) 50% 0%;"
   data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)"
@@ -49,7 +49,10 @@
 
 <section class="aq-block light-wrapper">
   <div class="container">
-    <div class="row row-centered" style="min-height: 300px; padding-top: 60px;">
+    <div class="col-sm-8 offset-sm-2 text-center">
+      <h1>Recently Read</h1>
+    </div>
+    <div class="row row-centered pt-2" style="min-height: 300px;">
         <div class="books text-center">
             <div id="book1" class="book" *ngFor="let book of books">
                 <a [href]="book.link" target="_blank">

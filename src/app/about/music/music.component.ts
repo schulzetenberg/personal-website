@@ -59,7 +59,8 @@ export class MusicComponent implements OnInit {
 
       setTimeout(() => {
         new Photostack(document.getElementById('photostack'));
-      }, 10);
+      },
+        10);
     });
   }
 
@@ -67,7 +68,7 @@ export class MusicComponent implements OnInit {
     let artists = '';
 
     if (data && data.length) {
-      for (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.length; i += 1) {
         if (i % 2) {
           artists += '<b>' + data[i].artist + '. </b>';
         } else {
@@ -86,17 +87,17 @@ export class MusicComponent implements OnInit {
 
     // For each artist
     if (data && data.length) {
-      for (let i = 0, x = data.length; i < x; i++) {
+      for (let i = 0, x = data.length; i < x; i += 1) {
         // For each genre
-        for (let j =  0, y = data[i].genres.length; j < y; j++) {
+        for (let j =  0, y = data[i].genres.length; j < y; j += 1) {
           const index = _.findIndex(genreCounts, { genre: data[i].genres[j] });
 
           if (index > -1) {
-            genreCounts[index].count ++;
+            genreCounts[index].count += 1;
           } else {
             genreCounts.push({
               genre: data[i].genres[j],
-              count: 1
+              count: 1,
             });
           }
         }
@@ -112,7 +113,7 @@ export class MusicComponent implements OnInit {
 
     // Offset by 1 because array index starts at 0
     // Take the genre with the highest count first (desc order)
-    for (let k = 1, z = topGenreCount; k < z; k++) {
+    for (let k = 1, z = topGenreCount; k < z; k += 1) {
       if (k % 2) {
         topGenres += '<b>' + genreCounts[genreCounts.length - k].genre + '. </b>';
       } else {
