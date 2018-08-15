@@ -6,6 +6,7 @@ html {
 .row-centered {
     text-align:center;
 }
+
 .col-centered {
     display:inline-block;
     float:none;
@@ -22,12 +23,14 @@ html {
 .timeline-event .middle:hover {
   size: 40px;
 }
+
 .typed-cursor{
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
   -moz-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite;
 }
+
 @media all and (max-width: 767px) {
   .coming-soon h1 {
     font-size: 20px;
@@ -70,6 +73,7 @@ html {
   -webkit-box-shadow: 0 0 22px rgba(0, 0, 0, .9);
   -moz-box-shadow: 0 0 22px rgba(0, 0, 0, .9);
 }
+
 .loader {
   position: fixed;
   left: 0px;
@@ -79,6 +83,7 @@ html {
   z-index: 9999;
   background: url(../img/loader.gif) 50% 50% no-repeat rgb(249,249,249);
 }
+
 .icon-link-large i {
   border: 3px solid rgba(0, 0, 0, .6);
   border-radius: 50%;
@@ -92,18 +97,11 @@ html {
   -o-transition:       color 0.5s;
   -ms-transition:      color 0.5s;
 }
+
 .icon-link-large i:hover {
   color: rgba(0, 0, 0, .8);
 }
+
 img.attr {
   max-width: 75%;
-}
-
-.instafeed img {
-  height: auto;
-  padding: 10px;
-  transition: all 0.3s ease;
-}
-.instafeed img:hover {
-  padding: 5px;
 }

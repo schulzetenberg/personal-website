@@ -1,0 +1,22 @@
+.instafeed img {
+  height: auto;
+  padding: 10px;
+  transition: all 0.4s ease;
+}
+
+.instafeed img:hover {
+  opacity: 0.6;
+  transition: all 0.4s ease;
+}
+
+.instafeed ul {
+  overflow: hidden;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.instafeed ul li {
+  float: left;
+  width: 16.666667%;
+}

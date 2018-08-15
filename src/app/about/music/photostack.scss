@@ -1,5 +1,5 @@
 .photostack {
-  height: 400px;
+  height: 650px;
 }
 
 .photostack-title {
@@ -15,18 +15,12 @@
 .photostack figure {
   width: 320px;
   height: 360px;
-  position: relative;
-  display: inline-block;
   background: #fff;
   padding: 40px;
   text-align: center;
-  margin: 5px;
   border: rgba(107, 83, 41, 0.09);
   border-style: solid;
   border-width: 2px;
-}
-
-.photostack figure {
   position: absolute;
   display: block;
   margin: 0;
@@ -45,7 +39,7 @@
 
 .photostack-img > img {
   width: 100%;
-  max-height:240px;
+  max-height: 240px;
 }
 
 .photostack figure::after {
@@ -55,5 +49,9 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.02);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+figcaption {
+  padding-top: 1.5em;
 }

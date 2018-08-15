@@ -1,1 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+
+section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.instafeed-section {
+  padding-top: 30px;
+  padding-bottom: 0;
+}
+
+#tweets .user {
+  display: none;
+}
+
+p a {
+  color: #333;
+}
+
+#tweets .tweet {
+  font-size: 20px;
+  line-height: 40px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+// .podcast-section {
+//   padding-bottom: 20px;
+//   padding-top: 60px;
+// }
+
+.podcast-section {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.image-divider2.overlay2::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  content: '';
+  opacity: 0.3;
+  z-index: 2;
+  background-color: #333;
+}
+
+.overlay2 .container {
+  position: relative;
+  z-index: 3;
+}

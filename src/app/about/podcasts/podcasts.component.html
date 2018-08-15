@@ -1,18 +1,16 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center">
+      <div class="col-sm-8 offset-sm-2 text-center">
         <h1>Podcasts</h1>
       </div>
     </div>
     <div class="row row-centered" style="min-height: 300px;">
-        <div class="books">
-          <div class="col-xs-3 col-md-2 podcast" *ngFor="let podcast of podcasts">
-            <a [href]="podcast.htmlUrl" target="_blank">
-              <img [title]="podcast.title" [src]="podcast.imgUrl" onerror="this.src='assets/img/podcast-default.png'" />
-            </a>
-        </div>
-        </div>
+      <div class="col-xs-3 col-md-2 my-3" *ngFor="let podcast of podcasts">
+        <a [href]="podcast.htmlUrl" target="_blank">
+          <img class="podcast-img" [title]="podcast.title" [src]="podcast.imgUrl" onerror="this.src='assets/img/podcast-default.png'" />
+        </a>
+      </div>
     </div>
     <div class="row">
       <div class="col-sm-12 text-center">

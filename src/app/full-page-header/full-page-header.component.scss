@@ -1,0 +1,37 @@
+@import '../shared/scss/shadow.mixin';
+
+.view {
+  background: url("./background.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .view {
+    overflow: visible;
+    margin-top: -56px;
+  }
+}
+
+.navbar {
+  z-index: 1;
+  background-color: transparent;
+}
+
+.top-nav-collapse {
+  background-color: #4285f4;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #4285f4;
+  }
+}
+
+#headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+
+  @include shadow(4);
+}
