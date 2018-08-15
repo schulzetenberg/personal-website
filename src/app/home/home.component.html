@@ -1,31 +1,38 @@
-<app-top-nav-header></app-top-nav-header>
-
-<div class="main-container">
-  <section class="no-pad coming-soon fullscreen-element">
-    <div class="background-image-holder overlay">
-    <img class="background-image" alt="Background Image" src="assets/img/7898132606_cac2a9e838_o.jpg">
-    </div>
-
-    <div class="container align-vertical">
-      <div class="row">
-        <div class="col-md-8 offset-md-2 text-center background-t">
-          <h1 class="text-white">
-            <span id="typing"></span>
-          </h1>
-        </div>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="">Home</a>
+      <div class="nav-collapse" id="main-menu">
+        <ul class="nav" id="main-menu-left">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Spotify</a></li>
+          <li><a href="#">Github</a></li>
+          <li><a href="#">Guestbook (Coming Soon)</a></li>
+        </ul>
+        <ul class="nav pull-right" id="main-menu-right">
+          <li>
+            <a rel="tooltip" target="_blank" href="http://www.divshot.com" title="Bootstrap Interface Builder">
+              Email<i class="icon-share-alt"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 
-<app-no-icon-footer></app-no-icon-footer>
-
-<!--Typing script-->
-<script>
-  $(function(){
-    $("#typing").typed({
-      strings: ["I'm Jacob Schulzetenberg.<br>Welcome to my website."],
-      typeSpeed: 30
-    });
-  });
-</script>
+<div class="container">
+  <div class="row">
+    <div class="col" style="height: 500px;">
+      Stuff should go here!
+    </div>
+  </div>
+</div>

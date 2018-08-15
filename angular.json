@@ -29,7 +29,6 @@
             "styles": [
               "src/styles.scss",
               "node_modules/flexslider/flexslider.css",
-              "node_modules/lightbox2/dist/css/lightbox.min.css",
               "node_modules/font-awesome/scss/font-awesome.scss",
               "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss"
@@ -40,18 +39,12 @@
               "node_modules/lodash/lodash.js",
               "node_modules/d3/build/d3.min.js",
               "node_modules/flexslider/jquery.flexslider-min.js",
-              "node_modules/lightbox2/dist/js/lightbox.min.js",
-              "node_modules/scrollreveal/dist/scrollReveal.min.js",
-              "node_modules/isotope-layout/dist/isotope.pkgd.min.js",
-              "node_modules/typed.js/dist/typed.min.js",
               "node_modules/twitter-fetcher/js/twitterFetcher_min.js",
               "node_modules/spectragram/spectragram.js",
               "node_modules/skrollr/dist/skrollr.min.js",
-              "src/app/shared/js/modernizr.min.js",
-              "src/app/shared/js/photostack.js",
-              "src/app/shared/js/google-analytics.js",
-              "src/app/shared/js/scripts.js",
-              "src/app/shared/js/typing.js"
+              "src/assets/js/modernizr.min.js",
+              "src/assets/js/photostack.js",
+              "src/assets/js/google-analytics.js",
             ]
           },
           "configurations": {

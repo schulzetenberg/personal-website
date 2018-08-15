@@ -1,15 +1,14 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Response } from '@angular/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { ServerService } from '../../server.service';
+import { ServerService } from '../../shared/server.service';
 
 @Component({
   selector: 'app-github',
   templateUrl: './github.component.html',
   styleUrls: ['./github.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default,
+  encapsulation: ViewEncapsulation.None,
 })
 
 export class GithubComponent implements OnInit {

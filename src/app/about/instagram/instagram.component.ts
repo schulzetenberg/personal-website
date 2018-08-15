@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 declare var $: any;
 
@@ -6,8 +6,7 @@ declare var $: any;
   selector: 'app-instagram',
   templateUrl: './instagram.component.html',
   styleUrls: ['./instagram.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.Default,
+  encapsulation: ViewEncapsulation.None, // tslint:disable-line use-view-encapsulation
 })
 
 export class InstagramComponent implements OnInit {

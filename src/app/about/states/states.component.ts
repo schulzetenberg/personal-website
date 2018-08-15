@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ServerService } from '../../server.service';
+import { ServerService } from '../../shared/server.service';
 
 declare var google: any;
 
@@ -8,8 +8,6 @@ declare var google: any;
   selector: 'app-states',
   templateUrl: './states.component.html',
   styleUrls: ['./states.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default,
 })
 
 export class StatesComponent implements OnInit {

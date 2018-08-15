@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 declare var skrollr: any;
 declare var $: any;
@@ -8,8 +8,7 @@ declare var twitterFetcher: any;
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.Default,
+  encapsulation: ViewEncapsulation.None, // tslint:disable-line use-view-encapsulation
 })
 
 export class AboutComponent implements OnInit {
@@ -49,7 +48,7 @@ export class AboutComponent implements OnInit {
 
       while (n < x) {
         html += '<li>' + tweets[n] + '</li>';
-        n++;
+        n += 1;
       }
 
       html += '</ul>';

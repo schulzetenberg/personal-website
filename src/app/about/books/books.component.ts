@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ServerService } from '../../server.service';
+import { ServerService } from '../../shared/server.service';
 
 @Component({
   selector: 'app-books',
@@ -9,8 +9,6 @@ import { ServerService } from '../../server.service';
     './books.component.scss',
     './books.scss',
   ],
-  encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class BooksComponent implements OnInit {
   books: any[];

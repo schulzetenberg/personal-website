@@ -1,13 +1,11 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ServerService } from '../../server.service';
+import { ServerService } from '../../shared/server.service';
 
 @Component({
   selector: 'app-tv',
   templateUrl: './tv.component.html',
   styleUrls: ['./tv.component.css'],
-  encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default
 })
 export class TvComponent implements OnInit {
   topMoviesList: {};
@@ -18,11 +16,10 @@ export class TvComponent implements OnInit {
   constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
-    this.serverService.getTvData().then(tvData => {
+    this.serverService.getTvData().then((tvData) => {
       this.processTvData(tvData);
     });
   }
-
 
   processTvData(data) {
     const numMinTv = data && data.stats && data.stats.episodes && data.stats.episodes.minutes;
@@ -42,8 +39,8 @@ export class TvComponent implements OnInit {
     if (topMovies) {
       let topMoviesList = '';
 
-      for (let i = 0; i < topMovies.length; i++) {
-        if ( i % 2) {
+      for (let i = 0; i < topMovies.length; i += 1) {
+        if (i % 2) {
           topMoviesList += '<b>' + topMovies[i].movie.title + '. </b>';
         } else {
           topMoviesList += topMovies[i].movie.title + '.  ';
@@ -55,13 +52,12 @@ export class TvComponent implements OnInit {
       console.log('No top movies data');
     }
 
-
     const topShows = data.topShows;
 
     if (topShows) {
       let topShowsList = '';
 
-      for (let j = 0; j < topShows.length; j++) {
+      for (let j = 0; j < topShows.length; j += 1) {
         if (j % 2) {
           topShowsList += '<b>' + topShows[j].show.title + '. </b>';
         } else {

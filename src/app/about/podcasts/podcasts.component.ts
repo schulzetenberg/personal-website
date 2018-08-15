@@ -1,13 +1,11 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ServerService } from '../../server.service';
+import { ServerService } from '../../shared/server.service';
 
 @Component({
   selector: 'app-podcasts',
   templateUrl: './podcasts.component.html',
   styleUrls: ['./podcasts.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
-  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class PodcastsComponent implements OnInit {
   podcasts: any[];

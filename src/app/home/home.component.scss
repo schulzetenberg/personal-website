@@ -1,3 +1,149 @@
-@import "src/app/shared/css/site-theme.css";
-@import "src/app/shared/css/font-cardo.css";
-@import "src/app/shared/css/custom.css";
+body {
+  font-smoothing: none;
+  background: #00f url(./img/microfab.gif) top left;
+  font-family: "Comic Sans","Comic Sans MS","Chalkboard","ChalkboardSE-Regular","Marker Felt","Purisa","URW Chancery L",cursive,sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ff0;
+}
+
+// TYPOGRAPHY
+// -----------------------------------------------------
+h1 { color: #ff0000; }
+h2 { color: #ffcc00; }
+h3 { color: #ffff00; }
+h4 { color: #66ff00; }
+h5 { color: #0000ff; }
+h6 { color: #ff00ff; }
+
+.page-header {
+  border-bottom: 1px solid #B6B2A3;
+}
+
+a {
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: underline !important;
+}
+
+.blink {
+  animation: blink 1s linear infinite;
+}
+
+// NAVBAR
+// -----------------------------------------------------
+.navbar {
+  border-bottom: 1px solid #fff;
+}
+.navbar-inner {
+  border-bottom: 1px solid #D4D0C8;
+  background: #000 url('./img/stars.gif') top left;
+}
+
+.btn-primary {
+  background: #000 url('./img/rainbow.gif') top left;
+}
+
+// FORMS
+// -----------------------------------------------------
+legend {
+  font-weight: bold;
+  color: yellow;
+}
+.control-group.error input {
+  background: #000 url('./img/flames.gif') 0 -30px repeat-x;
+}
+
+// DROPDOWNS
+// -----------------------------------------------------
+.dropdown-menu {
+  border-radius: 0;
+}
+
+// ALERTS, LABELS, BADGES
+// -----------------------------------------------------
+.label-important,
+.badge-important {
+  background-color: red;
+}
+
+.label-important[href],
+.badge-important[href] {
+  background-color: red;
+}
+
+.label-warning,
+.badge-warning {
+  background-color: yellow;
+  color: black;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: yellow;
+  color: black;
+}
+
+.label-success,
+.badge-success {
+  background-color: green;
+}
+
+.label-success[href],
+.badge-success[href] {
+  background-color: green;
+}
+
+.label-info,
+.badge-info {
+  background-color: #00ffff;
+}
+
+.label-info[href],
+.badge-info[href] {
+  background-color: #00ffff;
+}
+
+.label-inverse,
+.badge-inverse {
+  background-color: black;
+}
+
+.label-inverse[href],
+.badge-inverse[href] {
+  background-color: black;
+}
+
+// MISC
+// -----------------------------------------------------
+.hero-unit, .well {
+  background: #000 url('./img/stars.gif') top left;
+}
+
+.breadcrumb {
+  background: black;
+  color: white;
+}
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  border-color: black;
+  background: black;
+}
+
+.progress .bar {
+  background: #C0C0C0 url('./img/progress.gif') top left repeat-x !important;
+  border: 1px solid #fff;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+}
+
+// ANIMATIONS
+@keyframes .blink {
+  0% { opacity: 0; }
+  40% { opacity: 0; }
+  41% { opacity: 1; }
+  99% { opacity: 1; }
+  100% { opacity: 0; }
+}
