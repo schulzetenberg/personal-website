@@ -28,10 +28,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/flexslider/flexslider.css",
               "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/flexslider/flexslider.css",
               "node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
-              "node_modules/angular-bootstrap-md/scss/mdb-free.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
