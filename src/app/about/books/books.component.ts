@@ -12,6 +12,7 @@ import { ServerService } from '../../shared/server.service';
 })
 export class BooksComponent implements OnInit {
   books: any[];
+  recentBooks: any[];
   pagesRead: {};
   topBooksList: {};
 
@@ -31,6 +32,8 @@ export class BooksComponent implements OnInit {
 
     const booksData = data.booksRead;
     this.books = booksData;
+    const recentBookCount = booksData.length > 6 ? 6 : booksData.length;
+    this.recentBooks = booksData.slice(0, recentBookCount);
 
     if (!booksData) {
       return console.log('No books read data');

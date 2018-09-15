@@ -52,9 +52,9 @@
     <div class="col-sm-8 offset-sm-2 text-center">
       <h1>Recently Read</h1>
     </div>
-    <div class="row row-centered pt-2" style="min-height: 300px;">
+    <div class="col-sm-12 pt-2" style="min-height: 300px;">
         <div class="books text-center">
-            <div id="book1" class="book" *ngFor="let book of books">
+            <div id="book1" class="book" *ngFor="let book of recentBooks">
                 <a [href]="book.link" target="_blank">
                   <img [title]="book.title" [src]="book.img" />
                 </a>
