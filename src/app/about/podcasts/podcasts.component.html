@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="row row-centered" style="min-height: 300px;">
-      <div class="col-xs-3 col-md-2 my-3" *ngFor="let podcast of podcasts">
+      <div class="col-4 col-md-2 my-3" *ngFor="let podcast of podcasts">
         <a [href]="podcast.htmlUrl" target="_blank">
           <img class="podcast-img" [title]="podcast.title" [src]="podcast.imgUrl" onerror="this.src='assets/img/podcast-default.png'" />
         </a>

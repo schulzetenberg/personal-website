@@ -37,7 +37,7 @@ export class BooksComponent implements OnInit {
     }
 
     let pagesRead = 0;
-    for (let i = 0; i < booksData.length; i++) {
+    for (let i = 0; i < booksData.length; i += 1) {
       if (booksData[i].pages) {
         pagesRead += parseInt(booksData[i].pages, 10);
       }
@@ -47,7 +47,7 @@ export class BooksComponent implements OnInit {
     const topBooks = data.topBooks;
     let topBooksList = '';
 
-    for (let j = 0; j < topBooks.length; j++) {
+    for (let j = 0; j < topBooks.length; j += 1) {
       if (j % 2) {
         topBooksList += '<b>' + topBooks[j].title + '. </b>';
       } else {
