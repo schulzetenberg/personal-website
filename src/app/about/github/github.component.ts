@@ -26,7 +26,7 @@ export class GithubComponent implements OnInit {
       this.reposCount = githubData && githubData.repos;
       this.followersCount = githubData && githubData.followers && githubData.followers.length;
       this.followingCount = githubData && githubData.following && githubData.following.length;
-      this.svg = this.sanitizer.bypassSecurityTrustHtml(githubData.contribSvg);
+      this.svg = this.sanitizer.bypassSecurityTrustHtml(githubData && githubData.contribSvg);
     });
   }
 

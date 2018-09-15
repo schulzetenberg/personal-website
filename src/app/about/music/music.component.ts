@@ -49,16 +49,17 @@ export class MusicComponent implements OnInit {
         this.totalArtists = artistCount.toFixed(0) + ' (Past Year)';
       }
 
-      this.artistsList = this.topArtistsParse(musicData.topArtists);
-      this.genresList = this.genres(musicData.topArtists);
-      this.topArtist = musicData.topArtists[0];
-      musicData.topArtists.shift();
-      this.topArtists = musicData.topArtists;
+      if (musicData) {
+        this.artistsList = this.topArtistsParse(musicData.topArtists);
+        this.genresList = this.genres(musicData.topArtists);
+        this.topArtist = musicData.topArtists[0];
+        musicData.topArtists.shift();
+        this.topArtists = musicData.topArtists;
 
-      setTimeout(() => {
-        new Photostack(document.getElementById('photostack'));
-      },
-        10);
+        setTimeout(() => {
+          new Photostack(document.getElementById('photostack'));
+        }, 10);
+      }
     });
   }
 

@@ -24,7 +24,7 @@ import { DrivingComponent } from './about/driving/driving.component';
 import { InstagramComponent } from './about/instagram/instagram.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: AboutComponent },
   { path: 'about', component: AboutComponent },
   { path: '500', component: Error500Component },
   { path: '404', component: NotFound404Component },
