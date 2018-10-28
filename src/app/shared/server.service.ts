@@ -1,54 +1,58 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class ServerService {
-
   apiUrl = `http://schulzetenberg.com:8998/api`;
 
   constructor(private http: HttpClient) {}
 
   getGithubData() {
-    return this.http.get(`${this.apiUrl}/github`)
+    return this.http
+      .get(`${this.apiUrl}/github`)
       .toPromise()
-      .then(response => response);
+      .then((response) => response);
   }
 
   getMusicData() {
-    return this.http.get(`${this.apiUrl}/music`)
+    return this.http
+      .get(`${this.apiUrl}/music`)
       .toPromise()
-      .then(response => response);
+      .then((response) => response);
   }
 
-  getBookData() {
-    return this.http.get(`${this.apiUrl}/goodreads`)
+  getBookData(start: Date, end: Date) {
+    return this.http
+      .get(`${this.apiUrl}/goodreads?start=${start}&end=${end}`)
       .toPromise()
-      .then(response => response);
+      .then((response) => response);
   }
 
   getTvData() {
-    return this.http.get(`${this.apiUrl}/trakt`)
+    return this.http
+      .get(`${this.apiUrl}/trakt`)
       .toPromise()
-      .then(response => response);
+      .then((response) => response);
   }
 
   getDrivingData() {
-    return this.http.get(`${this.apiUrl}/fuelly-avg`)
+    return this.http
+      .get(`${this.apiUrl}/fuelly-avg`)
       .toPromise()
-      .then(response => response);
+      .then((response) => response);
   }
 
   getStatesData() {
-    return this.http.get(`${this.apiUrl}/states`)
+    return this.http
+      .get(`${this.apiUrl}/states`)
       .toPromise()
-      .then(response => response);
+      .then((response) => response);
   }
 
   getPodcastData() {
-    return this.http.get(`${this.apiUrl}/player-fm`)
+    return this.http
+      .get(`${this.apiUrl}/player-fm`)
       .toPromise()
-      .then(response => response);
+      .then((response) => response);
   }
-
 }

@@ -19,8 +19,11 @@ export class BooksComponent implements OnInit {
   constructor(private serverService: ServerService) { }
 
   ngOnInit(): void {
+    const now = new Date();
+    const yearAgo = new Date();
+    yearAgo.setDate(yearAgo.getDate() - 365);
 
-    this.serverService.getBookData().then((bookData) => {
+    this.serverService.getBookData(yearAgo, now).then((bookData) => {
       this.processBookData(bookData);
     });
   }
