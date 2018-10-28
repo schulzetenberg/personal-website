@@ -7839,10 +7839,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twitter-fetcher@17.0.0:
-  version "17.0.0"
-  resolved "https://registry.yarnpkg.com/twitter-fetcher/-/twitter-fetcher-17.0.0.tgz#f8a4b1137f3ccfc99c84e879753042c79f93163a"
-  integrity sha1-+KSxE388z8mchOh5dTBCx5+TFjo=
+twitter-fetcher@17.0.3:
+  version "17.0.3"
+  resolved "https://registry.yarnpkg.com/twitter-fetcher/-/twitter-fetcher-17.0.3.tgz#4cc5192e7532652a549674f6b7dc52f5bd83075b"
+  integrity sha1-TMUZLnUyZSpUlnT2t9xS9b2DB1s=
 
 type-check@~0.3.2:
   version "0.3.2"
