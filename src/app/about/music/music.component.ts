@@ -34,7 +34,7 @@ export class MusicComponent implements OnInit {
   }
 
   getData() {
-    this.serverService.getMusicData().then((musicData) => {
+    this.serverService.getMusicData().then((musicData: any) => {
       this.musicData = musicData;
       const songCount = musicData && musicData.songCount;
 

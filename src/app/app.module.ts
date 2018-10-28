@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -51,7 +51,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpModule,
+    HttpClientModule,
     Ng2GoogleChartsModule,
     MDBBootstrapModule.forRoot(),
   ],

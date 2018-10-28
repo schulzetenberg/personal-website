@@ -21,7 +21,7 @@ export class GithubComponent implements OnInit {
   constructor(private serverService: ServerService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.serverService.getGithubData().then((githubData) => {
+    this.serverService.getGithubData().then((githubData: any) => {
       this.githubData = githubData;
       this.reposCount = githubData && githubData.repos;
       this.followersCount = githubData && githubData.followers && githubData.followers.length;

@@ -20,7 +20,7 @@ export class DrivingComponent implements OnInit {
   }
 
   getData() {
-    this.serverService.getDrivingData().then((data) => {
+    this.serverService.getDrivingData().then((data: any) => {
       this.car = data;
       const avgDriving = data && data.avgDriving;
 
