@@ -5,6 +5,8 @@
   "rules": {
     # Override defaults
     "no-empty-source": null,
+    "declaration-colon-newline-after": null,
+    "value-list-comma-newline-after": null,
     "selector-type-no-unknown": [true, { ignoreTypes: [
       "fa-icon"
     ]}],
