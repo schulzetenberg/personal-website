@@ -10,10 +10,8 @@ declare var twitterFetcher: any;
   styleUrls: ['./about.component.scss'],
   encapsulation: ViewEncapsulation.None, // tslint:disable-line use-view-encapsulation
 })
-
 export class AboutComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     const s = skrollr.init();
@@ -26,7 +24,7 @@ export class AboutComponent implements OnInit {
     });
 
     const twitterConfig = {
-      id: '617415300229677056',
+      profile: { screenName: 'schulzetenberg' },
       domId: '',
       maxTweets: 5,
       enableLinks: true,
@@ -54,7 +52,5 @@ export class AboutComponent implements OnInit {
       html += '</ul>';
       element.innerHTML = html;
     }
-
   }
-
 }
