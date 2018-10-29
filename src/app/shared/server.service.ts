@@ -21,9 +21,9 @@ export class ServerService {
       .then((response) => response);
   }
 
-  getBookData(start: Date, end: Date) {
+  getBookData() {
     return this.http
-      .get(`${this.apiUrl}/goodreads?start=${start}&end=${end}`)
+      .get(`${this.apiUrl}/goodreads`)
       .toPromise()
       .then((response) => response);
   }

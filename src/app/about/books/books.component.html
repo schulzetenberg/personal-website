@@ -1,10 +1,8 @@
 <section class="image-divider2 overlay2 duplicatable-content">
-  <div class="background-image-holder parallax-background skrollable skrollable-between"
-  style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/kindle.jpg) 50% 0%;"
-  data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)"
-  data-center="-webkit-transform: translate3d(0px,0px, 0px)"
-  data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
-     <img class="background-image" alt="Background Image" src="assets/img/kindle.jpg" style="display: none;">
+  <div class="background-image-holder parallax-background skrollable skrollable-between" style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/kindle.jpg) 50% 0%;"
+      data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)" data-center="-webkit-transform: translate3d(0px,0px, 0px)"
+      data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
+    <img class="background-image" alt="Background Image" src="assets/img/kindle.jpg" style="display: none;">
   </div>
 
   <div class="container">
@@ -18,14 +16,14 @@
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-book"></i>
           <h5 class="text-white">Books Read</h5>
-          <p class="text-white" [innerHtml]="books && (books.length + ' (Past 6 Months)')"></p>
+          <p class="text-white" [innerHtml]="books && (books.length + ' (Past Year)')"></p>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-file-text-o "></i>
           <h5 class="text-white">Pages Read</h5>
-          <p class="text-white" [innerHtml]="pagesRead && (pagesRead + ' (Past 6 Months)')"></p>
+          <p class="text-white" [innerHtml]="pagesRead && (pagesRead + ' (Past Year)')"></p>
         </div>
       </div>
       <div class="col-sm-6">
@@ -39,8 +37,8 @@
     <div class="row">
       <div class="col-sm-12 text-center">
         <a href="https://www.goodreads.com/review/list/41826442-jacob?shelf=read">
-           <img style="border: white; border-style: solid; width: 48px; opacity:0.8;"
-           onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" src="assets/img/goodreads.ico">
+          <img style="border: white; border-style: solid; width: 48px; opacity:0.8;" onMouseOut="this.style.opacity='0.8'"
+              onMouseOver="this.style.opacity='1'" src="assets/img/goodreads.ico">
         </a>
       </div>
     </div>
@@ -53,13 +51,13 @@
       <h1>Recently Read</h1>
     </div>
     <div class="col-sm-12 pt-2" style="min-height: 300px;">
-        <div class="books text-center">
-            <div id="book1" class="book" *ngFor="let book of recentBooks">
-                <a [href]="book.link" target="_blank">
-                  <img [title]="book.title" [src]="book.img" />
-                </a>
-            </div>
+      <div class="books text-center">
+        <div id="book1" class="book" *ngFor="let book of recentBooks">
+          <a [href]="book.link" target="_blank">
+            <img [title]="book.title" [src]="book.img" />
+          </a>
         </div>
+      </div>
     </div>
   </div>
 </section>

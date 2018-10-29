@@ -65,13 +65,18 @@
     "eslint": "4.19.1",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.11.0",
+    "htmlhint": "0.9.13",
+    "husky": "1.1.0",
     "jasmine-core": "2.99.1",
     "jasmine-spec-reporter": "4.2.1",
+    "js-beautify": "1.8.8",
     "karma": "1.7.1",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage-istanbul-reporter": "2.0.0",
     "karma-jasmine": "1.1.1",
     "karma-jasmine-html-reporter": "0.2.2",
+    "lint-staged": "7.3.0",
+    "prettier": "1.11.1",
     "protractor": "5.3.0",
     "ts-node": "5.0.1",
     "tslint": "5.10.0",
@@ -80,5 +85,28 @@
     "tslint-config-prettier": "^1.15.0",
     "tslint-loader": "3.5.3",
     "typescript": "2.7.2"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint --project tsconfig.json -e 'src/test/**'",
+      "git add"
+    ],
+    "*.html": [
+      "htmlhint --config .htmlhintrc",
+      "js-beautify --config .jsbeautifyrc --type html -r",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --syntax=scss"
+    ],
+    "src/**/*.{ts,css,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
