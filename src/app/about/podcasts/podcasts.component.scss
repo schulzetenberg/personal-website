@@ -1,8 +1,13 @@
+@import '../../../assets/scss/shadow.mixin';
+
 .podcast-img {
+  background-color: white;
+  @include shadow(1);
   transition: all 0.4s ease;
 }
 
 .podcast-img:hover {
-  opacity: 0.6;
+  filter: saturate(130%);
+  @include shadow(3);
   transition: all 0.4s ease;
 }

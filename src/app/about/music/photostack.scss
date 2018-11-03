@@ -1,3 +1,5 @@
+@import '../../../assets/scss/shadow.mixin';
+
 .photostack {
   height: 650px;
 }
@@ -18,9 +20,7 @@
   background: #fff;
   padding: 40px;
   text-align: center;
-  border: rgba(107, 83, 41, 0.09);
-  border-style: solid;
-  border-width: 2px;
+  @include shadow(2);
   position: absolute;
   display: block;
   margin: 0;

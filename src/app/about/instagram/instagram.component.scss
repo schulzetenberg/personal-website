@@ -1,11 +1,14 @@
+@import '../../../assets/scss/shadow.mixin';
+
 .instafeed img {
   height: auto;
-  padding: 10px;
   transition: all 0.4s ease;
+  @include shadow(3);
 }
 
 .instafeed img:hover {
-  opacity: 0.6;
+  @include shadow(4);
+  filter: saturate(130%);
   transition: all 0.4s ease;
 }
 
@@ -19,4 +22,6 @@
 .instafeed ul li {
   float: left;
   width: 16.666667%;
+  padding: 10px;
+  padding-bottom: 30px;
 }
