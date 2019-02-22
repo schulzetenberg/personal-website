@@ -1,14 +1,13 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ]
   "ignoreFiles": [
   ],
   "rules": {
     # Override defaults
     "no-empty-source": null,
-    "declaration-colon-newline-after": null,
-    "value-list-comma-newline-after": null,
-    "at-rule-empty-line-before": null,
-    "declaration-empty-line-before": null,
     "selector-type-no-unknown": [true, { ignoreTypes: [
       "fa-icon"
     ]}],

@@ -78,6 +78,7 @@
     "prettier": "1.11.1",
     "protractor": "5.3.0",
     "stylelint": "9.7.0",
+    "stylelint-config-prettier": "4.0.0",
     "stylelint-config-standard": "18.2.0",
     "ts-node": "5.0.1",
     "tslint": "5.10.0",
