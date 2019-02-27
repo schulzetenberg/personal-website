@@ -22,6 +22,7 @@ import { TvComponent } from './about/tv/tv.component';
 import { StatesComponent } from './about/states/states.component';
 import { DrivingComponent } from './about/driving/driving.component';
 import { InstagramComponent } from './about/instagram/instagram.component';
+import { ResumeComponent } from './about/resume/resume.component';
 
 const appRoutes: Routes = [
   { path: '', component: AboutComponent },
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
     StatesComponent,
     DrivingComponent,
     InstagramComponent,
+    ResumeComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,4 +61,4 @@ const appRoutes: Routes = [
   providers: [ServerService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -2,9 +2,8 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-prettier"
-  ]
-  "ignoreFiles": [
   ],
+  "ignoreFiles": [],
   "rules": {
     # Override defaults
     "no-empty-source": null,
