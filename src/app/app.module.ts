@@ -23,6 +23,7 @@ import { StatesComponent } from './about/states/states.component';
 import { DrivingComponent } from './about/driving/driving.component';
 import { InstagramComponent } from './about/instagram/instagram.component';
 import { ResumeComponent } from './about/resume/resume.component';
+import { ProjectsComponent } from './about/projects/projects.component';
 
 const appRoutes: Routes = [
   { path: '', component: AboutComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     DrivingComponent,
     InstagramComponent,
     ResumeComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
