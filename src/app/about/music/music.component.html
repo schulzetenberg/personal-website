@@ -1,9 +1,7 @@
 <section class="image-divider2 overlay2 duplicatable-content">
-  <div class="background-image-holder parallax-background skrollable skrollable-between"
-    style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/concert.jpg) 50% 0%;"
-    data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)"
-    data-center="-webkit-transform: translate3d(0px,0px, 0px)"
-    data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
+  <div class="background-image-holder parallax-background skrollable skrollable-between" style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/concert.jpg) 50% 0%;"
+      data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)" data-center="-webkit-transform: translate3d(0px,0px, 0px)"
+      data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
     <img class="background-image" alt="Background Image" src="assets/img/concert.jpg" style="display: none;">
   </div>
 
@@ -53,8 +51,9 @@
     </div>
     <div class="row">
       <div class="col-sm-12 text-center">
-        <a href="http://www.last.fm/user/waterland15">
-          <i style="color: white; opacity:0.8;" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" class="fa fa-lastfm-square icon-jumbo" aria-hidden="true"></i>
+        <a href="https://www.last.fm/user/waterland15">
+          <i style="color: white; opacity:0.8;" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'"
+              class="fa fa-lastfm-square icon-jumbo" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -68,13 +67,13 @@
         <div id="photostack" class="photostack">
           <div *ngIf="topArtists && topArtists.length">
             <figure>
-              <a href="#" class="photostack-img"><img [src]="topArtist && topArtist.img"/></a>
+              <a href="#" class="photostack-img"><img [src]="topArtist && topArtist.img" /></a>
               <figcaption>
                 <h2 class="photostack-title" [innerHTML]="topArtist && topArtist.artist"></h2>
               </figcaption>
             </figure>
             <figure data-dummy *ngFor="let artist of topArtists">
-              <a href="#" class="photostack-img"><img [src]="artist.img"/></a>
+              <a href="#" class="photostack-img"><img [src]="artist.img" /></a>
               <figcaption>
                 <h2 class="photostack-title" [innerHTML]="artist.artist"></h2>
               </figcaption>
