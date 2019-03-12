@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ServerService {
-  apiUrl = `http://schulz-portfolio.ddns.net:8998/api`;
+  apiUrl = 'http://data.schulzetenberg.com/api';
 
   constructor(private http: HttpClient) {}
 
