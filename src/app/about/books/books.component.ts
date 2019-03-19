@@ -57,8 +57,13 @@ export class BooksComponent implements OnInit {
       }
     }
 
-    const recentBookCount = recentBooksArr.length > 6 ? 6 : recentBooksArr.length;
-    this.recentBooks = recentBooksArr.slice(0, recentBookCount);
+    /*
+      Since dateRead only applies to the first time a book is read, we need to instead
+      rely on the booksData coming in order of most recent read date
+    */
+    const recentBookCount = booksData.length > 6 ? 6 : booksData.length;
+    this.recentBooks = booksData.slice(0, recentBookCount);
+
     this.books = recentBooksArr;
     this.pagesRead = pagesRead;
     let topBooksList = '';
