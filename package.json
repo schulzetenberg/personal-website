@@ -62,6 +62,7 @@
         "@types/jest": "23.3.8",
         "@types/node": "8.9.4",
         "codelyzer": "4.2.1",
+        "cypress": "3.2.0",
         "htmlhint": "0.9.13",
         "husky": "1.1.0",
         "jasmine-core": "2.99.1",
