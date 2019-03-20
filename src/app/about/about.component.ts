@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 declare var skrollr: any;
 declare var $: any;
@@ -11,9 +12,25 @@ declare var twitterFetcher: any;
   encapsulation: ViewEncapsulation.None, // tslint:disable-line use-view-encapsulation
 })
 export class AboutComponent implements OnInit {
-  constructor() {}
+  @ViewChild('frame') frame: any;
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
+    this.http.get('http://data.schulzetenberg.com/ads.js', { responseType: 'text' }).subscribe(
+      (data) => {
+        console.log('User is not blocking ads');
+      },
+      (err: HttpErrorResponse) => {
+        if (err && err.status === 0) {
+          // Adblock is running. Show the message to the user.
+          this.frame.show();
+        } else {
+          console.error('Uh oh! There was a unexpected error with the ads request', err);
+        }
+      }
+    );
+
     const s = skrollr.init();
     if (s.isMobile()) {
       s.destroy();

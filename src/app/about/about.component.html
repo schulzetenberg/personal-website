@@ -2,6 +2,22 @@
 
 <div id="skrollr-body">
 
+  <div mdbModal #frame="mdbModal" class="modal fade bottom modal-scrolling" id="frameModalTop" tabindex="-1" role="dialog"
+      aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+    <div class="modal-dialog modal-frame modal-bottom modal-notify modal-info" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row d-flex justify-content-center align-items-center">
+            <p class="pt-3 pr-2">Ad blocking is removing some of the content on this site. Please disable your ad
+              blocker and refresh the page.</p>
+            <a type="button" mdbBtn color="primary" outline="true" class="waves-light" mdbWavesEffect data-dismiss="modal"
+                (click)="frame.hide()">Ignore &nbsp; 😞</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section>
     <app-resume></app-resume>
   </section>
