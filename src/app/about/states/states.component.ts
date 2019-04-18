@@ -9,12 +9,10 @@ declare var google: any;
   templateUrl: './states.component.html',
   styleUrls: ['./states.component.scss'],
 })
-
 export class StatesComponent implements OnInit {
-
   geoChartData: any;
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService) {}
 
   ngOnInit() {
     this.serverService.getStatesData().then((statesData) => {
@@ -25,9 +23,9 @@ export class StatesComponent implements OnInit {
   processStatesData(data) {
     let visitedStates = 0;
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i += 1) {
       if (data[i][1] > 0) {
-        visitedStates++;
+        visitedStates += 1;
       }
     }
 
@@ -46,15 +44,15 @@ export class StatesComponent implements OnInit {
       region: 'US',
       keepAspectRatio: true,
       title: 'States Visited',
-      tooltip : {
+      tooltip: {
         trigger: 'none',
       },
     };
 
-    this.geoChartData =  {
+    this.geoChartData = {
+      options,
       chartType: 'GeoChart',
       dataTable: data,
-      options: options,
     };
 
     // UI update
@@ -62,5 +60,4 @@ export class StatesComponent implements OnInit {
     document.getElementById('totalStates').innerHTML = data.length + '';
     document.getElementById('percent').innerHTML = Math.round(visitedStates / data.length * 100) + '%';
   }
-
 }
