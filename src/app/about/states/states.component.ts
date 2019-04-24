@@ -9,12 +9,32 @@ declare var google: any;
   templateUrl: './states.component.html',
   styleUrls: ['./states.component.scss'],
 })
-
 export class StatesComponent implements OnInit {
-
   geoChartData: any;
+  visitedStates: number;
+  percentVisited: string;
 
-  constructor(private serverService: ServerService) { }
+  options = {
+    backgroundColor: {
+      fill: 'transparent',
+      stroke: 'blue',
+    },
+    colorAxis: {
+      // unvisited, visited, lived
+      colors: ['#F4F4F4', '#433e47', '#58535B'],
+    },
+    legend: 'none',
+    displayMode: 'regions',
+    resolution: 'provinces',
+    region: 'US',
+    keepAspectRatio: true,
+    title: 'States Visited',
+    tooltip: {
+      trigger: 'none',
+    },
+  };
+
+  constructor(private serverService: ServerService) {}
 
   ngOnInit() {
     this.serverService.getStatesData().then((statesData) => {
@@ -25,42 +45,19 @@ export class StatesComponent implements OnInit {
   processStatesData(data) {
     let visitedStates = 0;
 
-    for (let i = 0; i < data.length; i++) {
-      if (data[i][1] > 0) {
-        visitedStates++;
+    data.forEach((element) => {
+      if (element[1] > 0) {
+        visitedStates += 1;
       }
-    }
+    });
 
-    const options = {
-      backgroundColor: {
-        fill: 'transparent',
-        stroke: 'blue',
-      },
-      colorAxis: {
-        // unvisited, visited, lived
-        colors: ['#F4F4F4', '#433e47', '#58535B'],
-      },
-      legend: 'none',
-      displayMode: 'regions',
-      resolution: 'provinces',
-      region: 'US',
-      keepAspectRatio: true,
-      title: 'States Visited',
-      tooltip : {
-        trigger: 'none',
-      },
-    };
-
-    this.geoChartData =  {
+    this.geoChartData = {
       chartType: 'GeoChart',
       dataTable: data,
-      options: options,
+      options: this.options,
     };
 
-    // UI update
-    document.getElementById('visitedStates').innerHTML = visitedStates + '';
-    document.getElementById('totalStates').innerHTML = data.length + '';
-    document.getElementById('percent').innerHTML = Math.round(visitedStates / data.length * 100) + '%';
+    this.percentVisited = Math.round(visitedStates / 50 * 100) + '%';
+    this.visitedStates = visitedStates;
   }
-
 }

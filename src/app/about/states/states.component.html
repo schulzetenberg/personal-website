@@ -3,16 +3,22 @@
     <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1 text-center">
       <div style="display:inline-block; clear:both; width:100%;">
         <div id="completion">
-          <h1 id="percent"></h1>
+          <h1>{{ percentVisited }}</h1>
           <h5>
-            <span id="visitedStates"></span>/<span id="totalStates"></span> States
+            {{ visitedStates }} / 50 States
           </h5>
         </div>
         <ul id="legend">
           <h5>
-            <li><div id="legend-visited"></div> Visited</li>
-            <li><div id="legend-temporary"></div> Lived</li>
-            <li><div id="legend-never"></div> Unvisited</li>
+            <li>
+              <div id="legend-visited"></div> Visited
+            </li>
+            <li>
+              <div id="legend-temporary"></div> Lived
+            </li>
+            <li>
+              <div id="legend-never"></div> Unvisited
+            </li>
           </h5>
         </ul>
       </div>
