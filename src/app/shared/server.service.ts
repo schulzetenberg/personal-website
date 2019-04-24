@@ -8,10 +8,7 @@ export class ServerService {
   constructor(private http: HttpClient) {}
 
   getGithubData() {
-    return this.http
-      .get(`${this.apiUrl}/github`)
-      .toPromise()
-      .then((response) => response);
+    return this.http.get(`${this.apiUrl}/github`);
   }
 
   getMusicData() {
@@ -36,10 +33,7 @@ export class ServerService {
   }
 
   getDrivingData() {
-    return this.http
-      .get(`${this.apiUrl}/fuelly-avg`)
-      .toPromise()
-      .then((response) => response);
+    return this.http.get(`${this.apiUrl}/fuelly-avg`);
   }
 
   getStatesData() {
@@ -50,9 +44,6 @@ export class ServerService {
   }
 
   getPodcastData() {
-    return this.http
-      .get(`${this.apiUrl}/player-fm`)
-      .toPromise()
-      .then((response) => response);
+    return this.http.get(`${this.apiUrl}/player-fm`);
   }
 }

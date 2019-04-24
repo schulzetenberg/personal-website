@@ -1,57 +1,18 @@
-<section class="image-divider2 overlay2 duplicatable-content">
-  <div class="background-image-holder parallax-background skrollable skrollable-between" style="transform: translate3d(0px, -31.9658px, 0px); background: url(assets/img/computer.jpg) 50% 0%;"
-      data-bottom-top="-webkit-transform: translate3d(0px,-100px, 0px)" data-center="-webkit-transform: translate3d(0px,0px, 0px)"
-      data-top-bottom="-webkit-transform: translate3d(0px,100px, 0px)">
-    <img class="background-image" alt="Background Image" src="assets/img/computer.jpg" style="display: none;">
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 offset-sm-2 text-center">
-        <h2 class="text-white mb-5">Github Profile</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-3 offset-lg-2">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-code"></i>
-          <h5 class="text-white">Public Repos</h5>
-          <p class="text-white" [innerHtml]="reposCount"></p>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-user-circle-o"></i>
-          <h5 class="text-white">Followers</h5>
-          <p class="text-white" [innerHtml]="followersCount"></p>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-user-circle"></i>
-          <h5 class="text-white">Following</h5>
-          <p class="text-white" [innerHtml]="followingCount"></p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <a href="https://github.com/schulzetenberg">
-          <i style="color: white; opacity:0.8;" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'"
-              class="fa fa-github-square icon-jumbo" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="d-none d-md-block">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="mb-5">Github Contributions</h2>
-        <div class="svg" [innerHTML]="svg"></div>
+        <h2 class="mb-5">Github</h2>
+        <h5 *ngIf="githubData$ | async as githubData">{{ githubData.repos }} Public Repos</h5>
+        <div class="svg" *ngIf="githubData$ | async as githubData" [innerHTML]="sanitizer.bypassSecurityTrustHtml(githubData && githubData.contribSvg)"></div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-sm-12 text-center">
+        <a href="https://github.com/schulzetenberg">
+          <i style="margin-bottom: 0; color: black; opacity:0.7;" onMouseOut="this.style.opacity='0.7'" onMouseOver="this.style.opacity='1'"
+              class="fa fa-github-square icon-jumbo" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   </div>

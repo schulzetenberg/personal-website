@@ -14,7 +14,7 @@ Run `ng g c component-name` to generate a new component. You can also use `ng ge
 End to end testing is done using Cypress. To open the interactive tests run `npx cypress open`.
 
 ## Build
-$ npm build
+$ npm run build
 The build artifacts will be stored in the `dist/` directory.
 
 ## Re-deploy on GCP

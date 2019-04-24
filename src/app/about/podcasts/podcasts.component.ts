@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ServerService } from '../../shared/server.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-podcasts',
@@ -8,23 +9,11 @@ import { ServerService } from '../../shared/server.service';
   styleUrls: ['./podcasts.component.scss'],
 })
 export class PodcastsComponent implements OnInit {
-  podcasts: any[];
+  podcastData$: Observable<{}>;
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService) {}
 
   ngOnInit(): void {
-
-    this.serverService.getPodcastData().then((podcastData) => {
-      this.processBookData(podcastData);
-    });
+    this.podcastData$ = this.serverService.getPodcastData();
   }
-
-  processBookData(data) {
-    if (!data || !data.podcasts) {
-      return console.log('No podcast data!');
-    }
-
-    this.podcasts = data.podcasts;
-  }
-
 }

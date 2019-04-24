@@ -10,7 +10,11 @@ declare var google: any;
   styleUrls: ['./states.component.scss'],
 })
 export class StatesComponent implements OnInit {
-  geoChartData: any;
+  geoChartData: {
+    chartType: string;
+    dataTable: any[];
+    options: {};
+  };
   visitedStates: number;
   percentVisited: string;
 
