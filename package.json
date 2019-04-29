@@ -60,7 +60,7 @@
         "@types/jasmine": "2.8.6",
         "@types/jasminewd2": "2.0.3",
         "@types/jest": "23.3.8",
-        "@types/node": "8.9.4",
+        "@types/node": "8.10.48",
         "codelyzer": "4.2.1",
         "cypress": "3.2.0",
         "htmlhint": "0.9.13",
