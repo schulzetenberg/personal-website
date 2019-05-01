@@ -20,6 +20,5 @@ The build artifacts will be stored in the `dist/` directory.
 ## Re-deploy on GCP
 Upload dist/personal-website folder to p-w-bucket
 Open terminal on GCP
-$ cd personal-website
-$ gsutil rsync -r gs://p-w-bucket ./
-$ gcloud app deploy
+$ cd personal-website && gsutil rsync -r gs://p-w-bucket ./ && gcloud app deploy
+$ y
