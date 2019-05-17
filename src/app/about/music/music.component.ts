@@ -9,12 +9,8 @@ declare var Photostack: any;
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
-  styleUrls: [
-    './music.component.scss',
-    './photostack.scss',
-  ],
+  styleUrls: ['./music.component.scss', './photostack.scss'],
 })
-
 export class MusicComponent implements OnInit {
   musicData: {};
   topArtistsData: {};
@@ -26,7 +22,7 @@ export class MusicComponent implements OnInit {
   totalListening: String;
   totalArtists: String;
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService) {}
 
   ngOnInit(): void {
     this.getData();
@@ -38,7 +34,7 @@ export class MusicComponent implements OnInit {
       const songCount = musicData && musicData.songCount;
 
       if (songCount) {
-        this.avgListening = ((songCount / 365) * 3.5 / 60).toFixed(0) + ' Hours';
+        this.avgListening = (songCount / 365 * 3.5 / 60).toFixed(0) + ' Hours';
         this.totalListening = songCount.toFixed(0) + ' (Past Year)';
       }
 
@@ -56,6 +52,7 @@ export class MusicComponent implements OnInit {
         this.topArtists = musicData.topArtists;
 
         setTimeout(() => {
+          // tslint:disable-next-line no-unused-expression
           new Photostack(document.getElementById('photostack'));
         }, 10);
       }
@@ -87,7 +84,7 @@ export class MusicComponent implements OnInit {
     if (data && data.length) {
       for (let i = 0, x = data.length; i < x; i += 1) {
         // For each genre
-        for (let j =  0, y = data[i].genres.length; j < y; j += 1) {
+        for (let j = 0, y = data[i].genres.length; j < y; j += 1) {
           const index = _.findIndex(genreCounts, { genre: data[i].genres[j] });
 
           if (index > -1) {
@@ -121,5 +118,4 @@ export class MusicComponent implements OnInit {
 
     return topGenres;
   }
-
 }
