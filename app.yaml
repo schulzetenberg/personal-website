@@ -3,13 +3,13 @@ api_version: 1
 threadsafe: true
 handlers:
   - url: /
-    static_files: personal-website/index.html
-    upload: personal-website/index.html
+    static_files: dist/personal-website/index.html
+    upload: dist/personal-website/index.html
     secure: never
     http_headers:
       Access-Control-Allow-Origin: '*'
   - url: /
-    static_dir: personal-website
+    static_dir: dist/personal-website
     secure: never
     http_headers:
       Access-Control-Allow-Origin: '*'
