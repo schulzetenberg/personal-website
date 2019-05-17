@@ -22,6 +22,7 @@ install:
 - npm run build
 before_deploy:
 - cd dist
+- mv ../client-secret.json ./
 deploy:
   provider: gae
   keyfile: client-secret.json
