@@ -1,27 +1,28 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 dist: trusty
 sudo: false
 branches:
   only:
-    - master
+  - master
 cache:
   directories:
-    - node_modules
+  - node_modules
 addons:
   chrome: stable
 script:
-  - npm run lint
-  - npm run test
+- npm run lint
+- npm run test
 before_install:
-  - openssl aes-256-cbc -K $encrypted_849b15a310e0_key -iv $encrypted_849b15a310e0_iv -in client-secret.json.enc -out client-secret.json -d
+- openssl aes-256-cbc -K $encrypted_849b15a310e0_key -iv $encrypted_849b15a310e0_iv
+  -in client-secret.json.enc -out client-secret.json -d
 install:
-  - npm i
-  - npm run build
+- npm i
+- npm run build
 before_deploy:
-  - cd dist
+- cd dist
 deploy:
   provider: gae
-  keyfile: "client-secret.json"
-  project: "personal-website-233701"
+  keyfile: client-secret.json
+  project: personal-website-233701
