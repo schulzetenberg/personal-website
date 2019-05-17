@@ -1,4 +1,4 @@
-# Personal Website
+# Personal Website [![Build Status](https://travis-ci.com/schulzetenberg/personal-website.svg?branch=master)](https://travis-ci.com/schulzetenberg/personal-website)
 
 ## Install Dependencies
 $ npm i
