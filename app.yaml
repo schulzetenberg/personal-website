@@ -5,13 +5,13 @@ skip_files:
   - ^(?!dist)  # Skip any files not in the dist folder
 handlers:
   - url: /
-    static_files: dist/personal-website/index.html
-    upload: dist/personal-website/index.html
+    static_files: dist/index.html
+    upload: dist/index.html
     secure: never
     http_headers:
       Access-Control-Allow-Origin: '*'
   - url: /
-    static_dir: dist/personal-website
+    static_dir: dist
     secure: never
     http_headers:
       Access-Control-Allow-Origin: '*'
