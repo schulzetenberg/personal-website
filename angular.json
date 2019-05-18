@@ -44,7 +44,7 @@
               "node_modules/skrollr/dist/skrollr.min.js",
               "src/assets/js/modernizr.min.js",
               "src/assets/js/photostack.js",
-              "src/assets/js/google-analytics.js",
+              "src/assets/js/google-analytics.js"
             ]
           },
           "configurations": {

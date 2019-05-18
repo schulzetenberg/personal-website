@@ -6,21 +6,29 @@ sudo: false
 branches:
   only:
   - master
+# env:
+#   global:
+#   - NODE_ENV=production
 cache:
   directories:
   - node_modules
 addons:
   chrome: stable
+before_script:
+- npm i -g @angular/cli
+- npm i -g @angular-devkit/build-angular
 script:
 - npm run lint
+- npm run build
 - npm run test
 before_install:
 - openssl aes-256-cbc -K $encrypted_849b15a310e0_key -iv $encrypted_849b15a310e0_iv
   -in client-secret.json.enc -out client-secret.json -d
-install:
-- npm i
-- npm run build
+before_deploy:
+  - npm run build
+  - cp -r dist deploy/
 deploy:
   provider: gae
+  skip_cleanup: true
   keyfile: client-secret.json
   project: personal-website-233701
