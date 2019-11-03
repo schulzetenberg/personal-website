@@ -5,7 +5,7 @@ import { ServerService } from '../../shared/server.service';
 @Component({
   selector: 'app-tv',
   templateUrl: './tv.component.html',
-  styleUrls: ['./tv.component.css'],
+  styleUrls: ['./tv.component.scss'],
 })
 export class TvComponent implements OnInit {
   topMoviesList: {};
@@ -13,7 +13,7 @@ export class TvComponent implements OnInit {
   avgTv: String;
   avgMovies: String;
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService) {}
 
   ngOnInit(): void {
     this.serverService.getTvData().then((tvData) => {

@@ -74,12 +74,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Cardo', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: italic;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Victor Mono', monospace;
+}
+
 .super-lead {
-  font-family: 'Cardo', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Victor Mono', monospace;
 }
 
 // NOTE: This should already be working as default from the theme, but it is not...

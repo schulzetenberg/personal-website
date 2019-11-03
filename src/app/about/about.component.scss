@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
-@import "../../assets/scss/material-bootstrap";
+@import '../../assets/scss/material-bootstrap';
 
 section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   position: relative;
   overflow: hidden;
+}
+
+h1 {
+  margin-bottom: 2rem;
 }
 
 .instafeed-section {
@@ -27,11 +31,6 @@ p a {
   font-style: italic;
   font-weight: 300;
 }
-
-// .podcast-section {
-//   padding-bottom: 20px;
-//   padding-top: 60px;
-// }
 
 .podcast-section {
   padding-bottom: 0;
