@@ -23,8 +23,13 @@
 
 .f4 {
   font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .graph-before-activity-overview {
   border: none !important;
+}
+
+.js-calendar-graph {
+  display: block !important;
 }
