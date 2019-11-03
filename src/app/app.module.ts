@@ -19,7 +19,8 @@ import { GithubComponent } from './about/github/github.component';
 import { BooksComponent } from './about/books/books.component';
 import { PodcastsComponent } from './about/podcasts/podcasts.component';
 import { TvComponent } from './about/tv/tv.component';
-import { StatesComponent } from './about/states/states.component';
+import { StatesComponent } from './about/maps/states/states.component';
+import { CountriesComponent } from './about/maps/countries/countries.component';
 import { DrivingComponent } from './about/driving/driving.component';
 import { InstagramComponent } from './about/instagram/instagram.component';
 import { ResumeComponent } from './about/resume/resume.component';
@@ -47,18 +48,13 @@ const appRoutes: Routes = [
     PodcastsComponent,
     TvComponent,
     StatesComponent,
+    CountriesComponent,
     DrivingComponent,
     InstagramComponent,
     ResumeComponent,
     ProjectsComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    HttpClientModule,
-    Ng2GoogleChartsModule,
-    MDBBootstrapModule.forRoot(),
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule, MDBBootstrapModule.forRoot()],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [ServerService],
   bootstrap: [AppComponent],

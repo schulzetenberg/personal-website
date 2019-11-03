@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+      <div style="display:inline-block; clear:both; width:100%;">
+        <div class="completion">
+          <h1>{{ percentVisited }}</h1>
+          <h5>
+            {{ visitedStates }} / 50 States
+          </h5>
+        </div>
+        <ul class="legend">
+          <h4>
+            <li>
+              <div class="legend-visited"></div> States Visited
+            </li>
+          </h4>
+        </ul>
+      </div>
+      <google-chart [data]="geoChartData"></google-chart>
+    </div>
+  </div>
+</div>

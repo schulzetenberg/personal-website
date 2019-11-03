@@ -43,7 +43,7 @@
         "jquery": "2.2.4",
         "lodash": "4.17.10",
         "moment": "2.22.1",
-        "ng2-google-charts": "3.4.0",
+        "ng2-google-charts": "4.0.0",
         "q": "1.5.1",
         "rxjs": "6.0.0",
         "rxjs-compat": "6.2.2",

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ServerService } from '../../shared/server.service';
+import { ServerService } from '../../../shared/server.service';
 
 declare var google: any;
 
 @Component({
   selector: 'app-states',
   templateUrl: './states.component.html',
-  styleUrls: ['./states.component.scss'],
+  styleUrls: ['../maps.scss', './states.component.scss'],
 })
 export class StatesComponent implements OnInit {
   geoChartData: {
@@ -21,21 +21,13 @@ export class StatesComponent implements OnInit {
   options = {
     backgroundColor: {
       fill: 'transparent',
-      stroke: 'blue',
     },
-    colorAxis: {
-      // unvisited, visited, lived
-      colors: ['#F4F4F4', '#433e47', '#58535B'],
-    },
+    defaultColor: '#433e47',
     legend: 'none',
     displayMode: 'regions',
     resolution: 'provinces',
     region: 'US',
     keepAspectRatio: true,
-    title: 'States Visited',
-    tooltip: {
-      trigger: 'none',
-    },
   };
 
   constructor(private serverService: ServerService) {}
@@ -47,21 +39,15 @@ export class StatesComponent implements OnInit {
   }
 
   processStatesData(data) {
-    let visitedStates = 0;
-
-    data.forEach((element) => {
-      if (element[1] > 0) {
-        visitedStates += 1;
-      }
-    });
+    const dataTable = [['State'], ...data.map((state) => [state])];
 
     this.geoChartData = {
+      dataTable,
       chartType: 'GeoChart',
-      dataTable: data,
       options: this.options,
     };
 
-    this.percentVisited = Math.round(visitedStates / 50 * 100) + '%';
-    this.visitedStates = visitedStates;
+    this.percentVisited = Math.round(data.length / 50 * 100) + '%';
+    this.visitedStates = data.length;
   }
 }
