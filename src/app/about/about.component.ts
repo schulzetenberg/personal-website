@@ -39,9 +39,9 @@ export class AboutComponent implements OnInit {
       s.destroy();
     }
 
-    $(window).load(() => {
+    window.onload = () => {
       $('#tweets').flexslider({ directionNav: false, controlNav: false });
-    });
+    };
 
     const twitterConfig = {
       profile: { screenName: 'schulzetenberg' },
