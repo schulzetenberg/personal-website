@@ -7,9 +7,10 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build --prod",
-        "test": "jest --coverage",
+        "test": "jest",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "test:watch": "jest --watch"
     },
     "author": {
         "name": "Jacob",
@@ -70,11 +71,6 @@
         "jest": "25.1.0",
         "jest-preset-angular": "8.0.0",
         "js-beautify": "1.10.3",
-        "karma": "4.4.1",
-        "karma-chrome-launcher": "3.1.0",
-        "karma-coverage-istanbul-reporter": "2.1.1",
-        "karma-jasmine": "3.1.1",
-        "karma-jasmine-html-reporter": "1.5.2",
         "lint-staged": "10.0.7",
         "prettier": "1.19.1",
         "protractor": "5.4.3",
@@ -110,6 +106,36 @@
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
+        }
+    },
+    "jest": {
+        "preset": "jest-preset-angular",
+        "roots": [
+            "src"
+        ],
+        "transform": {
+            "^.+\\.(ts|js|html)$": "ts-jest"
+        },
+        "setupFilesAfterEnv": [
+            "<rootDir>/src/setup-jest.ts"
+        ],
+        "moduleNameMapper": {
+            "@app/(.*)": "<rootDir>/src/app/$1",
+            "@assets/(.*)": "<rootDir>/src/assets/$1",
+            "@core/(.*)": "<rootDir>/src/app/core/$1",
+            "@env": "<rootDir>/src/environments/environment",
+            "@src/(.*)": "<rootDir>/src/src/$1",
+            "@state/(.*)": "<rootDir>/src/app/state/$1"
+        },
+        "globals": {
+            "ts-jest": {
+                "tsConfig": "<rootDir>/src/tsconfig.spec.json",
+                "stringifyContentPathRegex": "\\.html$",
+                "astTransformers": [
+                    "jest-preset-angular/build/InlineFilesTransformer",
+                    "jest-preset-angular/build/StripStylesTransformer"
+                ]
+            }
         }
     }
 }

@@ -6,10 +6,11 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "emitDecoratorMetadata": true,
+    "allowJs": true
   },
   "files": [
-    "test.ts",
     "polyfills.ts"
   ],
   "include": [
