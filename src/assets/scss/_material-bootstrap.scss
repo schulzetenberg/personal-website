@@ -2,7 +2,7 @@
 // Since I do not want to import all those styles & want to customize the styles I am using this file which replaces the mdb.scss file
 
 // Angular Bootstrap variables
-$image-path: '~/angular-bootstrap-md/assets/img/';
+$image-path: '~/angular-bootstrap-md/assets/img';
 $roboto-font-path: '~/angular-bootstrap-md/assets/font/roboto/';
 
 // Bootstrap
@@ -23,12 +23,8 @@ $roboto-font-path: '~/angular-bootstrap-md/assets/font/roboto/';
 @import '~node_modules/angular-bootstrap-md/assets/scss/core/masks';
 @import '~node_modules/angular-bootstrap-md/assets/scss/core/waves';
 
-// Angular
-@import '~node_modules/angular-bootstrap-md/assets/scss/mdb';
-
 // Custom styles
 @import '../../assets/scss/custom';
 
 // MSC
 @import '~node_modules/angular-bootstrap-md/assets/scss/core/msc/footers';
-@import '~node_modules/angular-bootstrap-md/assets/scss/core/msc/msc';
