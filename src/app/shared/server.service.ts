@@ -7,7 +7,7 @@ export class ServerService {
 
 	httpOptions = {
 		headers: new HttpHeaders({
-			'token': 'be6d527fb17f753f84abfa4152aff6ca', // TODO: Make this a config value
+			'token': '62d180d0bf93044fa913bbeb96c108dc', // TODO: Make this a config value
 		})
 	};
 
