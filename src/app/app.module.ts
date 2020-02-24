@@ -25,6 +25,7 @@ import { DrivingComponent } from './about/driving/driving.component';
 import { InstagramComponent } from './about/instagram/instagram.component';
 import { ResumeComponent } from './about/resume/resume.component';
 import { ProjectsComponent } from './about/projects/projects.component';
+import { UsesComponent } from './uses/uses.component';
 
 const appRoutes: Routes = [
   { path: '', component: AboutComponent },
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
     InstagramComponent,
     ResumeComponent,
     ProjectsComponent,
+    UsesComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule, MDBBootstrapModule.forRoot()],
   schemas: [NO_ERRORS_SCHEMA],
