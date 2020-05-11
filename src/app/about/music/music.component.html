@@ -17,21 +17,21 @@
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-headphones"></i>
           <h5 class="text-white">Average Daily Listening</h5>
-          <p class="text-white" [innerHTML]="avgListening"></p>
+          <p class="text-white" [innerHTML]="(avgListening | number)  + ' Hours'"></p>
         </div>
       </div>
       <div class="col-lg-2">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-music"></i>
           <h5 class="text-white">Songs Listened To</h5>
-          <p class="text-white" [innerHTML]="totalListening"></p>
+          <p class="text-white" [innerHTML]="(totalListening | number)  + ' (Past Year)'"></p>
         </div>
       </div>
       <div class="col-lg-2">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-user"></i>
           <h5 class="text-white">Artists Listened To</h5>
-          <p class="text-white" [innerHTML]="totalArtists"></p>
+          <p class="text-white" [innerHTML]="(totalArtists | number) + ' (Past Year)'"></p>
         </div>
       </div>
       <div class="col-lg-2">

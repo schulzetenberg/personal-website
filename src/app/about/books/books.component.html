@@ -12,18 +12,18 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3" *ngIf="books">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-book"></i>
           <h5 class="text-white">Books Read</h5>
-          <p class="text-white" [innerHtml]="books && (books.length + ' (Past Year)')"></p>
+          <p class="text-white" [innerHtml]="(books.length | number) + ' (Past Year)'"></p>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3" *ngIf="pagesRead">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-file-text-o "></i>
           <h5 class="text-white">Pages Read</h5>
-          <p class="text-white" [innerHtml]="pagesRead && (pagesRead + ' (Past Year)')"></p>
+          <p class="text-white" [innerHtml]="(pagesRead | number) + ' (Past Year)'"></p>
         </div>
       </div>
       <div class="col-sm-6">

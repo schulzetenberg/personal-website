@@ -16,21 +16,21 @@
       <div class="feature feature-icon-large">
         <i class="text-white fa fa-car"></i>
         <h5 class="text-white">Average Daily Driving</h5>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.avgDriving.toFixed(0) }} Miles</p>
+        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.avgDriving.toFixed(0) | number }} Miles</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="feature feature-icon-large">
         <i class="text-white fa fa-map-o"></i>
         <h5 class="text-white">Total Miles Driven (Past Year)</h5>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.totalMiles.toFixed(0) }} Miles</p>
+        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.totalMiles.toFixed(0) | number }} Miles</p>
       </div>
     </div>
     <div class="col-sm-4">
       <div class="feature feature-icon-large">
         <i class="text-white fa fa-calendar"></i>
         <h5 class="text-white">Average Days Per Barrel of Gas Used</h5>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.daysPerBarrel.toFixed(0) }}
+        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.daysPerBarrel.toFixed(0) | number }}
           Days</p>
       </div>
     </div>

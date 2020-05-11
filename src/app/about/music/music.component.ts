@@ -34,14 +34,14 @@ export class MusicComponent implements OnInit {
       const songCount = musicData && musicData.songCount;
 
       if (songCount) {
-        this.avgListening = (songCount / 365 * 3.5 / 60).toFixed(0) + ' Hours';
-        this.totalListening = songCount.toFixed(0) + ' (Past Year)';
+        this.avgListening = (songCount / 365 * 3.5 / 60).toFixed(0);
+        this.totalListening = songCount.toFixed(0);
       }
 
       const artistCount = musicData && musicData.artistCount;
 
       if (artistCount) {
-        this.totalArtists = artistCount.toFixed(0) + ' (Past Year)';
+        this.totalArtists = artistCount.toFixed(0);
       }
 
       if (musicData) {
