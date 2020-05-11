@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { ServerService } from './shared/server.service';
 import { AppComponent } from './app.component';
@@ -56,7 +55,7 @@ const appRoutes: Routes = [
     ProjectsComponent,
     UsesComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule, MDBBootstrapModule.forRoot()],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [ServerService],
   bootstrap: [AppComponent],
