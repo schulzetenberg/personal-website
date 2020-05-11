@@ -17,23 +17,6 @@ export class AboutComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // NOTE: It seems that I am not currently experiencing ad blocking with my site anymore. Will keep the code while monitoring...
-    /*
-    this.http.get('http://data.schulzetenberg.com/ads.js', { responseType: 'text' }).subscribe(
-      (data) => {
-        console.log('User is not blocking ads');
-      },
-      (err: HttpErrorResponse) => {
-        if (err && err.status === 0) {
-          // Adblock is running. Show the message to the user.
-          this.frame.show();
-        } else {
-          console.error('Uh oh! There was a unexpected error with the ads request', err);
-        }
-      }
-    );
-    */
-
     const s = skrollr.init();
     if (s.isMobile()) {
       s.destroy();

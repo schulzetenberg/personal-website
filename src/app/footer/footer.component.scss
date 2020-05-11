@@ -7,3 +7,22 @@
 .social-link:hover {
   opacity: 1;
 }
+
+.elegant-color {
+	background-color: #2e2e2e;
+}
+
+.grey-text {
+	color: #9e9e9e;
+}
+
+footer {
+  &.page-footer {
+    bottom: 0;
+		color: white;
+
+    a {
+      color: white;
+    }
+  }
+}
