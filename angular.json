@@ -25,7 +25,6 @@
             "assets": ["src/favicon.ico", "src/assets", { "glob": "robots.txt", "input": "src/assets", "output": "/" }],
             "styles": [
               "src/styles.scss",
-              "node_modules/font-awesome/scss/font-awesome.scss",
               "node_modules/flexslider/flexslider.css",
 							"node_modules/bootstrap/dist/css/bootstrap.css"
             ],
