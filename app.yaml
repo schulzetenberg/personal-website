@@ -7,11 +7,11 @@ handlers:
   - url: /
     static_files: dist/index.html
     upload: dist/index.html
-    secure: never
+    secure: always
     http_headers:
       Access-Control-Allow-Origin: '*'
   - url: /
     static_dir: dist
-    secure: never
+    secure: always
     http_headers:
       Access-Control-Allow-Origin: '*'
