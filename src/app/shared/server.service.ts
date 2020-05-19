@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ServerService {
-	apiUrl = 'http://data.schulzetenberg.com/api';
+	apiUrl = 'https://data.schulzetenberg.com/api';
 
 	httpOptions = {
 		headers: new HttpHeaders({
