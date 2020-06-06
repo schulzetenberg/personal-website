@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-declare var skrollr: any;
 declare var $: any;
 declare var twitterFetcher: any;
 
@@ -17,11 +16,6 @@ export class AboutComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    const s = skrollr.init();
-    if (s.isMobile()) {
-      s.destroy();
-    }
-
     window.onload = () => {
       $('#tweets').flexslider({ directionNav: false, controlNav: false });
     };
