@@ -37,7 +37,6 @@
               "node_modules/flexslider/jquery.flexslider-min.js",
               "node_modules/twitter-fetcher/js/twitterFetcher_min.js",
               "node_modules/spectragram/spectragram.js",
-              "node_modules/skrollr/dist/skrollr.min.js",
               "src/assets/js/modernizr.min.js",
               "src/assets/js/photostack.js",
               "src/assets/js/google-analytics.js"
