@@ -1,0 +1,11 @@
+
+// Bootstrap variable overrides
+$enable-shadows: true;
+$enable-gradients: true;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Custom
+@media (max-width: 767px) {
+	html { font-size: 0.8rem; }
+}
