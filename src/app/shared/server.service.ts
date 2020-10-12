@@ -52,5 +52,9 @@ export class ServerService {
 
   getPodcastData() {
     return this.http.get(`${this.apiUrl}/player-fm`, this.httpOptions);
-  }
+	}
+
+	getInstagramData() {
+    return this.http.get(`${this.apiUrl}/instagram`, this.httpOptions);
+	}
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
+
+import { ServerService } from '../../shared/server.service';
 
 declare var $: any;
 
@@ -10,23 +14,12 @@ declare var $: any;
 })
 
 export class InstagramComponent implements OnInit {
+	instagramData$: Observable<{}>;
 
-  constructor() { }
+  constructor(private serverService: ServerService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-
-    $.fn.spectragram.accessData = {
-      accessToken: '23102384.a39d93a.eb14d0c9397848cb9ea74e440858e625',
-    };
-
-    $('.instafeed').each(function () {
-      $(this).children('ul').spectragram('getUserFeed', {
-        max: 6,
-        size: 'medium',
-        query: 'schulzetenberg',
-      });
-    });
-
+		this.instagramData$ = this.serverService.getInstagramData();
   }
 
 }
