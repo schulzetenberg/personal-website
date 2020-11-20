@@ -31,9 +31,15 @@
 }
 
 #headshot {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
+  width: 250px;
+  height: 250px;
+	border-radius: 125px;
+
+	@media (max-width: 767px) {
+		width: 200px;
+		height: 200px;
+		border-radius: 100px;
+	}
 
   @include shadow(4);
 }
