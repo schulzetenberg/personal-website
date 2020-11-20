@@ -1,3 +1,5 @@
+@import '../../../assets/scss/site-defaults';
+
 .js-yearly-contributions {
   font-size: 12px;
 }
@@ -12,9 +14,17 @@
 }
 
 .contrib-legend .legend li {
-  display: inline-block;
+	display: inline-block;
+	border-radius: 5px;
   width: 10px;
   height: 10px;
+}
+
+// Make days round
+.calendar-graph rect.day {
+	outline: none;
+	rx: 10;
+	ry: 10;
 }
 
 .contrib-footer > .float-left {
@@ -32,4 +42,30 @@
 
 .js-calendar-graph {
   display: block !important;
+}
+
+// Github now uses CSS variables for colors
+:root, [data-color-mode=light] {
+	--color-calendar-graph-day-bg: #{#e4e4f0};
+	--color-calendar-graph-day-border: #{rgba(27,31,35,0.06)};
+
+	// NOTE: Original colors:
+	// --color-calendar-graph-day-L1-bg: #{#9be9a8};
+	// --color-calendar-graph-day-L2-bg: #{#40c463};
+	// --color-calendar-graph-day-L3-bg: #{#30a14e};
+	// --color-calendar-graph-day-L4-bg: #{#216e39};
+
+	--color-calendar-graph-day-L1-bg: #{lighten($primary, 50%)};
+	--color-calendar-graph-day-L2-bg: #{lighten($primary, 25%)};
+	--color-calendar-graph-day-L3-bg: #{$primary};
+	--color-calendar-graph-day-L4-bg: #{darken($primary, 10%)};
+
+	--color-calendar-graph-day-L4-border: #{rgba(27,31,35,0.06)};
+	--color-calendar-graph-day-L3-border: #{rgba(27,31,35,0.06)};
+	--color-calendar-graph-day-L2-border: #{rgba(27,31,35,0.06)};
+	--color-calendar-graph-day-L1-border: #{rgba(27,31,35,0.06)};
+	--color-calendar-halloween-graph-day-L1-bg: #{#ffee4a};
+	--color-calendar-halloween-graph-day-L2-bg: #{#ffc501};
+	--color-calendar-halloween-graph-day-L3-bg: #{#fe9600};
+	--color-calendar-halloween-graph-day-L4-bg: #{#03001c};
 }
