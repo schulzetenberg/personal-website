@@ -2,7 +2,8 @@
 
 .instafeed img {
   height: auto;
-  transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	border-radius: 5px;
   @include shadow(3);
 }
 

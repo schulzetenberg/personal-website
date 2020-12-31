@@ -1,7 +1,8 @@
 @import '../../../assets/scss/shadow.mixin';
 
 .podcast-img {
-  background-color: white;
+	background-color: white;
+	border-radius: 5px;
   @include shadow(1);
   transition: all 0.4s ease;
 }
