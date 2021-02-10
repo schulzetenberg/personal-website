@@ -24,7 +24,8 @@
 }
 
 .book img {
-  height: 150px;
+	height: 150px;
+  @include shadow(2);
   transition: all 0.3s ease;
   vertical-align: middle;
   position: relative;
