@@ -21,7 +21,7 @@
 }
 
 // Make days round
-.calendar-graph rect.day {
+rect.ContributionCalendar-day {
 	outline: none;
 	rx: 10;
 	ry: 10;
@@ -68,4 +68,29 @@
 	--color-calendar-halloween-graph-day-L2-bg: #{#ffc501};
 	--color-calendar-halloween-graph-day-L3-bg: #{#fe9600};
 	--color-calendar-halloween-graph-day-L4-bg: #{#03001c};
+}
+
+.ContributionCalendar-day, .ContributionCalendar-day[data-level="0"] {
+	fill: var(--color-calendar-graph-day-bg);
+	shape-rendering: geometricPrecision;
+}
+
+.ContributionCalendar-day[data-level="1"] {
+	fill: var(--color-calendar-graph-day-L1-bg);
+}
+
+.ContributionCalendar-day[data-level="2"] {
+	fill: var(--color-calendar-graph-day-L2-bg);
+}
+
+.ContributionCalendar-day[data-level="3"] {
+	fill: var(--color-calendar-graph-day-L3-bg);
+}
+
+.ContributionCalendar-day[data-level="4"] {
+	fill: var(--color-calendar-graph-day-L4-bg);
+}
+
+.muted-link {
+	display: none;
 }
