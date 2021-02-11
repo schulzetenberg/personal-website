@@ -111,16 +111,14 @@
 		}
 
 		if (this._resizeTimeout) clearTimeout(this._resizeTimeout);
-		this._resizeTimeout = setTimeout(delayed, 200);
+		this._resizeTimeout = setTimeout(delayed, 125);
 	}
 
 	Photostack.prototype._resize = function() {
-		// Check if div size is 75 pixels different than the previous render.
+		// Check if div size is 100 pixels different than the previous render.
 		// Only re-render if substantial difference to fix mobile Chrome resize on navbar hide
-		const changedHeight = Math.abs(this.sizes.inner.height - this.inner.offsetHeight) > 75;
-		const changedWidth = Math.abs(this.sizes.inner.width - this.inner.offsetWidth) > 75;
-
-		console.log(changedHeight, changedWidth);
+		const changedHeight = Math.abs(this.sizes.inner.height - this.inner.offsetHeight) > 100;
+		const changedWidth = Math.abs(this.sizes.inner.width - this.inner.offsetWidth) > 100;
 
 		if (changedHeight || changedWidth) {
 			this._getSizes();
