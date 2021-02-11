@@ -66,13 +66,13 @@
         <div id="photostack" class="photostack">
           <div *ngIf="topArtists && topArtists.length">
             <figure>
-              <a href="#" class="photostack-img"><img [src]="topArtist && topArtist.img" /></a>
+              <span class="photostack-img"><img [src]="topArtist && topArtist.img" /></span>
               <figcaption>
                 <h2 class="photostack-title" [innerHTML]="topArtist && topArtist.artist"></h2>
               </figcaption>
             </figure>
             <figure data-dummy *ngFor="let artist of topArtists">
-              <a href="#" class="photostack-img"><img [src]="artist.img" /></a>
+              <span class="photostack-img"><img [src]="artist.img" /></span>
               <figcaption>
                 <h2 class="photostack-title" [innerHTML]="artist.artist"></h2>
               </figcaption>
