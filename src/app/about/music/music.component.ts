@@ -21,6 +21,7 @@ export class MusicComponent implements OnInit {
   avgListening: String;
   totalListening: String;
   totalArtists: String;
+	pastYear: string = ' <small class="ml-1">PAST YEAR</small>';
 
   constructor(private serverService: ServerService) {}
 

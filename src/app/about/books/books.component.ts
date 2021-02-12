@@ -11,7 +11,8 @@ export class BooksComponent implements OnInit {
   books: any[];
   recentBooks: any[];
   pagesRead: {};
-  topBooksList: {};
+	topBooksList: {};
+	pastYear: string = ' <small class="ml-1">PAST YEAR</small>';
 
   constructor(private serverService: ServerService) {}
 

@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" *ngIf="musicData">
       <div class="col-lg-2 offset-lg-1">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-headphones"></i>
@@ -20,14 +20,14 @@
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-music"></i>
           <h5 class="text-white">Songs Listened To</h5>
-          <p class="text-white" [innerHTML]="(totalListening | number)  + ' (Past Year)'"></p>
+          <p class="text-white" [innerHTML]="(totalListening | number)  + pastYear"></p>
         </div>
       </div>
       <div class="col-lg-2">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-user"></i>
           <h5 class="text-white">Artists Listened To</h5>
-          <p class="text-white" [innerHTML]="(totalArtists | number) + ' (Past Year)'"></p>
+          <p class="text-white" [innerHTML]="(totalArtists | number) + pastYear"></p>
         </div>
       </div>
       <div class="col-lg-2">
@@ -44,7 +44,8 @@
           <p class="text-white" [innerHTML]="genresList"></p>
         </div>
       </div>
-    </div>
+		</div>
+
     <div class="row">
       <div class="col-sm-12 text-center">
         <a href="https://www.last.fm/user/JSchulzetenberg">

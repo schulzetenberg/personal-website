@@ -3,9 +3,17 @@
 $enable-shadows: true;
 $enable-gradients: true;
 
+$container-max-widths: (
+  xl: 1300px
+);
+
 @import "node_modules/bootstrap/scss/bootstrap";
 
 // Custom
 @media (max-width: 767px) {
 	html { font-size: 0.8rem; }
+}
+
+.text-white:not(i) {
+	text-shadow: black 0px 0px 10px;
 }

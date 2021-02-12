@@ -7,7 +7,6 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 import { ServerService } from './shared/server.service';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { FullPageHeaderComponent } from './full-page-header/full-page-header.component';
 import { NotFound404Component } from './not-found-404/not-found-404.component';
@@ -36,7 +35,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     FooterComponent,
     FullPageHeaderComponent,
     NotFound404Component,
