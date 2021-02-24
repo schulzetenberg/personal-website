@@ -1,6 +1,6 @@
 .social-link {
-  font-size: 40px;
-  opacity: 0.4;
+  font-size: 50px;
+  opacity: 0.5;
   transition: all 0.3s ease;
 }
 
@@ -17,6 +17,8 @@
 }
 
 footer {
+	background: url("./topography.png");
+
   &.page-footer {
     bottom: 0;
 		color: white;
