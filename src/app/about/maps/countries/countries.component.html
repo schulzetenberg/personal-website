@@ -16,7 +16,7 @@
           </h4>
         </ul>
       </div>
-      <google-chart [data]="geoChartData"></google-chart>
+      <google-chart [data]="geoChartData" (chartSelect)="select($event)"></google-chart>
     </div>
   </div>
 </div>

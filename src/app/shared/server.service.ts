@@ -21,22 +21,19 @@ export class ServerService {
   getMusicData() {
     return this.http
       .get(`${this.apiUrl}/music`, this.httpOptions)
-      .toPromise()
-      .then((response) => response);
+      .toPromise();
   }
 
   getBookData() {
     return this.http
       .get(`${this.apiUrl}/goodreads`, this.httpOptions)
-      .toPromise()
-      .then((response) => response);
+      .toPromise();
   }
 
   getTvData() {
     return this.http
       .get(`${this.apiUrl}/trakt`, this.httpOptions)
-      .toPromise()
-      .then((response) => response);
+      .toPromise();
   }
 
   getDrivingData() {
@@ -46,8 +43,13 @@ export class ServerService {
   getStatesData() {
     return this.http
       .get(`${this.apiUrl}/states`, this.httpOptions)
-      .toPromise()
-      .then((response) => response);
+      .toPromise();
+  }
+
+	getCountriesData() {
+    return this.http
+      .get(`${this.apiUrl}/countries`, this.httpOptions)
+      .toPromise();
   }
 
   getPodcastData() {

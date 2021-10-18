@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartSelectEvent } from 'ng2-google-charts';
 
 import { ServerService } from '../../../shared/server.service';
 
@@ -13,11 +14,12 @@ export class CountriesComponent implements OnInit {
   geoChartData: {
     chartType: string;
     dataTable: any[];
-    options: {};
+    options: any;
   };
   visitedCountries: number;
   percentVisited: string;
 
+	// All options found here: https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options
   options = {
     backgroundColor: {
       fill: 'transparent',
@@ -25,45 +27,40 @@ export class CountriesComponent implements OnInit {
     defaultColor: '#433e47',
     legend: 'none',
     displayMode: 'regions',
+		resolution: 'countries',
+		region: null,
     keepAspectRatio: true,
   };
+
+	countryList: any = [];
+
+	// Continent and region codes can be found here: https://statisticstimes.com/geography/countries-by-continents.php
+	continentCodes = {
+		'Africa': '002',
+		'Antarctica': '010',
+		'North America': '021',
+		'South America': '005',
+		'Europe': '150',
+		'Asia': '142',
+		'Oceania': '009'
+	};
 
   constructor(private serverService: ServerService) {}
 
   ngOnInit() {
-    // TODO: Get data from server
-    // this.serverService.getStatesData().then((statesData) => {
-    //   this.processStatesData(statesData);
-    // });
-
-    this.processStatesData(null);
+    this.serverService.getCountriesData().then((data) => {
+			this.countryList = data;
+      this.processCountriesData(data);
+    });
   }
 
-  processStatesData(data) {
-    // See here for the whole list: https://github.com/nioya/All-Countries-For-Google-GeoChart/blob/master/geochart-country-name.html
-    const countryList = [
-      'United States',
-      'Mexico',
-      'Canada',
-      'Belgium',
-      'United Kingdom',
-      'France',
-      'Italy',
-      'Netherlands',
-      'Bahamas',
-      'Barbados',
-      'Puerto Rico',
-      'Saint Kitts and Nevis',
-      'Saint Lucia',
-      'Saint Martin (French part)',
-      'Sint Maarten (Dutch part)',
-      'United States of America',
-      'United States Minor Outlying Islands',
-      'Virgin Islands (British)',
-      'Virgin Islands (U.S.)',
-    ];
+	getRegion(countryName) {
+		const countryData = this.countryList.find(x => x.country === countryName);
+		return this.continentCodes[countryData.continent];
+	}
 
-    const dataTable = [['Country'], ...countryList.map((country) => [country])];
+  processCountriesData(data) {
+    const dataTable = [['Country'], ...this.countryList.map((x) => [x.country])];
 
     this.geoChartData = {
       dataTable,
@@ -71,7 +68,24 @@ export class CountriesComponent implements OnInit {
       options: this.options,
     };
 
-    this.percentVisited = Math.round(countryList.length / 195 * 100) + '%';
-    this.visitedCountries = countryList.length;
+    this.percentVisited = Math.round(data.length / 197 * 100) + '%';
+    this.visitedCountries = data.length;
   }
+
+	public select(event: ChartSelectEvent) {
+		if (this.options.region) {
+			this.options.region = null;
+		} else {
+			const clickedCountry = event.selectedRowFormattedValues[0];
+			this.options.region = this.getRegion(clickedCountry);
+		}
+
+		this.geoChartData = {
+      ...this.geoChartData,
+      options: {
+				...this.options
+			}
+    };
+	}
 }
+
