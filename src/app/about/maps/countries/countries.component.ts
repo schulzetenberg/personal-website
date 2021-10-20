@@ -55,12 +55,13 @@ export class CountriesComponent implements OnInit {
   }
 
 	getRegion(countryName) {
-		const countryData = this.countryList.find(x => x.country === countryName);
+		const countryData = this.countryList.find(x => x && x.country === countryName);
 		return this.continentCodes[countryData.continent];
 	}
 
   processCountriesData(data) {
-    const dataTable = [['Country'], ...this.countryList.map((x) => [x.country])];
+		// TODO: Remove extra null logic when API is updated
+    const dataTable = [['Country'], ...data.map((x) => x && [x.country])].filter(x => !!x);
 
     this.geoChartData = {
       dataTable,
