@@ -23,7 +23,7 @@ script:
 - npm run build
 - npm run test
 before_install:
-- openssl aes-256-cbc -K $encrypted_849b15a310e0_key -iv $encrypted_849b15a310e0_iv
+- openssl aes-256-cbc -K $encrypted_4409d9b2903a_key -iv $encrypted_4409d9b2903a_iv
   -in client-secret.json.enc -out client-secret.json -d
 before_deploy:
   - npm run build
