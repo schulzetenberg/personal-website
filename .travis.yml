@@ -28,6 +28,7 @@ before_install:
 before_deploy:
   - npm run build
   - cp -r dist deploy/
+  - export CLOUDSDK_PYTHON=/usr/bin/python
 deploy:
   provider: gae
   skip_cleanup: true
