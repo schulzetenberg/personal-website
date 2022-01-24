@@ -1,6 +1,7 @@
 @import '../../../assets/scss/shadow.mixin';
 
 .podcast-img {
+	width: 160px;
 	background-color: white;
 	border-radius: 5px;
   @include shadow(1);
