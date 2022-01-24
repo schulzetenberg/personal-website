@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-          cache: npm
+          # cache: npm
       - name: Install Angular CLI
         run: sudo npm i @angular/cli
       - name: Install Angular Build
