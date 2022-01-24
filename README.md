@@ -10,12 +10,6 @@ Navigate to `http://localhost:4200/`. The app will automatically reload if you c
 ## Code scaffolding
 Run `ng g c component-name` to generate a new component. You can also use `ng generate component|directive|pipe|service|class|guard|interface|enum|module`.
 
-## Unit Testing
-Unit testing is done using Jest. Run the tests with `npm run test`.
-
-## E2E Testing
-End to end testing is done using Cypress. To open the interactive tests run `npx cypress open`.
-
 ## Build
 $ npm run build
 The build artifacts will be stored in the `dist/` directory.
