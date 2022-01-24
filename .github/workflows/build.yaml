@@ -1,11 +1,13 @@
 name: personal-website
-'on':
+on:
   push:
-    branches:
-      - main
+    branches: [ master ]
   pull_request:
-    branches:
-      - main
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,14 +17,14 @@ jobs:
         with:
           submodules: true
       - name: Setup Node.js 16
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: npm
       - name: Install Angular CLI
-        run: sudo npm i -g @angular/cli
+        run: sudo npm i @angular/cli
       - name: Install Angular Build
-        run: sudo i -g @angular-devkit/build-angular
+        run: sudo npm i @angular-devkit/build-angular
       - name: Build Frontend
         run: sudo npm run build
       - name: Deploy to App Engine
