@@ -15,4 +15,4 @@ $ npm run build
 The build artifacts will be stored in the `dist/` directory.
 
 ## Deployment Strategy
-Deployments are performed using Travis CI. When a commit is pushed to the master branch, the CI pipeline gets triggered which lints, tests, builds the code, and then pushes the bundled code to Google App Engine.
+Deployments are performed using Github Actions. When a commit is pushed to the master branch, the CI pipeline gets triggered which builds the code and then pushes the bundled code to Google App Engine.
