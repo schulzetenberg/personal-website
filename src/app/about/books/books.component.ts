@@ -9,10 +9,14 @@ import { ServerService } from '../../shared/server.service';
 })
 export class BooksComponent implements OnInit {
   books: any[];
+
   recentBooks: any[];
+
   pagesRead: {};
-	topBooksList: {};
-	pastYear: string = ' <small class="ml-1">PAST YEAR</small>';
+
+  topBooksList: {};
+
+  pastYear = ' <small class="ml-1">PAST YEAR</small>';
 
   constructor(private serverService: ServerService) {}
 
@@ -71,12 +75,13 @@ export class BooksComponent implements OnInit {
 
     for (let j = 0; j < topBooks.length; j += 1) {
       if (j % 2) {
-        topBooksList += '<b>' + topBooks[j] + '. </b>';
+        topBooksList += `<b>${topBooks[j]}. </b>`;
       } else {
-        topBooksList += topBooks[j] + '. ';
+        topBooksList += `${topBooks[j]}. `;
       }
     }
 
     this.topBooksList = topBooksList;
+    return null;
   }
 }

@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-declare var $: any;
-declare var twitterFetcher: any;
+declare let $: any;
+declare let twitterFetcher: any;
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  encapsulation: ViewEncapsulation.None, // tslint:disable-line use-view-encapsulation
+  encapsulation: ViewEncapsulation.None, // eslint-disable-line
 })
 export class AboutComponent implements OnInit {
   @ViewChild('frame') frame: any;
@@ -19,6 +19,21 @@ export class AboutComponent implements OnInit {
     window.onload = () => {
       $('#tweets').flexslider({ directionNav: false, controlNav: false });
     };
+
+    function handleTweets(tweets) {
+      const x = tweets.length;
+      let n = 0;
+      const element = document.getElementById('tweets');
+      let html = '<ul class="slides">';
+
+      while (n < x) {
+        html += `<li>${tweets[n]}</li>`;
+        n += 1;
+      }
+
+      html += '</ul>';
+      element.innerHTML = html;
+    }
 
     const twitterConfig = {
       profile: { screenName: 'schulzetenberg' },
@@ -34,20 +49,5 @@ export class AboutComponent implements OnInit {
     };
 
     twitterFetcher.fetch(twitterConfig);
-
-    function handleTweets(tweets) {
-      const x = tweets.length;
-      let n = 0;
-      const element = document.getElementById('tweets');
-      let html = '<ul class="slides">';
-
-      while (n < x) {
-        html += '<li>' + tweets[n] + '</li>';
-        n += 1;
-      }
-
-      html += '</ul>';
-      element.innerHTML = html;
-    }
   }
 }

@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found-404.component.scss'],
 })
 export class NotFound404Component implements OnInit {
-
+  // eslint-disable-next-line
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  // eslint-disable-next-line
+  ngOnInit() {}
 }

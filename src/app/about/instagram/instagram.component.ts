@@ -4,22 +4,20 @@ import { Observable } from 'rxjs';
 
 import { ServerService } from '../../shared/server.service';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
   selector: 'app-instagram',
   templateUrl: './instagram.component.html',
   styleUrls: ['./instagram.component.scss'],
-  encapsulation: ViewEncapsulation.None, // tslint:disable-line use-view-encapsulation
+  encapsulation: ViewEncapsulation.None, // eslint-disable-line 
 })
-
 export class InstagramComponent implements OnInit {
-	instagramData$: Observable<{}>;
+  instagramData$: Observable<{}>;
 
-  constructor(private serverService: ServerService, private sanitizer: DomSanitizer) { }
+  constructor(private serverService: ServerService, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-		this.instagramData$ = this.serverService.getInstagramData();
+    this.instagramData$ = this.serverService.getInstagramData();
   }
-
 }

@@ -9,9 +9,12 @@ import { ServerService } from '../../shared/server.service';
 })
 export class TvComponent implements OnInit {
   topMoviesList: {};
+
   topShowsList: {};
-  avgTv: String;
-  avgMovies: String;
+
+  avgTv: string;
+
+  avgMovies: string;
 
   constructor(private serverService: ServerService) {}
 
@@ -25,25 +28,25 @@ export class TvComponent implements OnInit {
     const numMinTv = data && data.stats && data.stats.episodes && data.stats.episodes.minutes;
 
     if (numMinTv && data.totalDays) {
-      this.avgTv = (numMinTv / data.totalDays).toFixed(0) + ' Minutes'; // Round to int value of minutes;
+      this.avgTv = `${(numMinTv / data.totalDays).toFixed(0)} Minutes`; // Round to int value of minutes;
     }
 
     const numMinMovies = data && data.stats && data.stats.movies && data.stats.movies.minutes;
 
     if (numMinMovies && data.totalDays) {
-      this.avgMovies = (numMinMovies / data.totalDays).toFixed(0) + ' Minutes';
+      this.avgMovies = `${(numMinMovies / data.totalDays).toFixed(0)} Minutes`;
     }
 
-    const topMovies = data.topMovies;
+    const { topMovies } = data;
 
     if (topMovies) {
       let topMoviesList = '';
 
       for (let i = 0; i < topMovies.length; i += 1) {
         if (i % 2) {
-          topMoviesList += '<b>' + topMovies[i].movie.title + '. </b>';
+          topMoviesList += `<b>${topMovies[i].movie.title}. </b>`;
         } else {
-          topMoviesList += topMovies[i].movie.title + '.  ';
+          topMoviesList += `${topMovies[i].movie.title}.  `;
         }
       }
 
@@ -52,16 +55,16 @@ export class TvComponent implements OnInit {
       console.log('No top movies data');
     }
 
-    const topShows = data.topShows;
+    const { topShows } = data;
 
     if (topShows) {
       let topShowsList = '';
 
       for (let j = 0; j < topShows.length; j += 1) {
         if (j % 2) {
-          topShowsList += '<b>' + topShows[j].show.title + '. </b>';
+          topShowsList += `<b>${topShows[j].show.title}. </b>`;
         } else {
-          topShowsList += topShows[j].show.title + '.  ';
+          topShowsList += `${topShows[j].show.title}.  `;
         }
       }
 

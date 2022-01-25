@@ -5,11 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './error-500.component.html',
   styleUrls: ['./error-500.component.scss'],
 })
-export class Error500Component implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class Error500Component {}

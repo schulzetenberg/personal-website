@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ServerService } from '../../shared/server.service';
 import { Observable } from 'rxjs';
+import { ServerService } from '../../shared/server.service';
 
 @Component({
   selector: 'app-driving',

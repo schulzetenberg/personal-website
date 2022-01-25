@@ -1,19 +1,17 @@
 <div class="row mt-3">
   <div class="col">
     <p class="text-center">
-      <a class="black-text" href="https://instagram.com/schulzetenberg">
-        INSTA <i class="fa fa-instagram"></i> GRAM
-      </a>
+      <a class="black-text" href="https://instagram.com/schulzetenberg"> INSTA <i class="fa fa-instagram"></i> GRAM </a>
     </p>
   </div>
 </div>
 
 <div class="container">
-	<div class="row row-centered mx-3 mb-5 instafeed" *ngIf="instagramData$ | async as instagramData">
-		<div class="col-3 col-md-2 my-3" *ngFor="let image of instagramData.images">
-			<a [href]="image.postUrl" target="_blank">
-				<img class="podcast-img" [title]="image.caption" [src]="image.imgUrl" />
-			</a>
-		</div>
-	</div>
+  <div class="row row-centered mx-3 mb-5 instafeed" *ngIf="instagramData$ | async as instagramData">
+    <div class="col-3 col-md-2 my-3" *ngFor="let image of instagramData.images">
+      <a [href]="image.postUrl" target="_blank">
+        <img class="podcast-img" [title]="image.caption" [src]="image.imgUrl" />
+      </a>
+    </div>
+  </div>
 </div>

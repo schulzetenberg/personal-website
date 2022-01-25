@@ -3,7 +3,7 @@ import { ChartSelectEvent } from 'ng2-google-charts';
 
 import { ServerService } from '../../../shared/server.service';
 
-declare var google: any;
+declare let google: any;
 
 @Component({
   selector: 'app-countries',
@@ -16,10 +16,12 @@ export class CountriesComponent implements OnInit {
     dataTable: any[];
     options: any;
   };
+
   visitedCountries: number;
+
   percentVisited: string;
 
-	// All options found here: https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options
+  // All options found here: https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options
   options = {
     backgroundColor: {
       fill: 'transparent',
@@ -27,41 +29,41 @@ export class CountriesComponent implements OnInit {
     defaultColor: '#433e47',
     legend: 'none',
     displayMode: 'regions',
-		resolution: 'countries',
-		region: null,
+    resolution: 'countries',
+    region: null,
     keepAspectRatio: true,
   };
 
-	countryList: any = [];
+  countryList: any = [];
 
-	// Continent and region codes can be found here: https://statisticstimes.com/geography/countries-by-continents.php
-	continentCodes = {
-		'Africa': '002',
-		'Antarctica': '010',
-		'North America': '021',
-		'South America': '005',
-		'Europe': '150',
-		'Asia': '142',
-		'Oceania': '009'
-	};
+  // Continent and region codes can be found here: https://statisticstimes.com/geography/countries-by-continents.php
+  continentCodes = {
+    Africa: '002',
+    Antarctica: '010',
+    'North America': '021',
+    'South America': '005',
+    Europe: '150',
+    Asia: '142',
+    Oceania: '009',
+  };
 
   constructor(private serverService: ServerService) {}
 
   ngOnInit() {
     this.serverService.getCountriesData().then((data) => {
-			this.countryList = data;
+      this.countryList = data;
       this.processCountriesData(data);
     });
   }
 
-	getRegion(countryName) {
-		const countryData = this.countryList.find(x => x && x.country === countryName);
-		return this.continentCodes[countryData.continent];
-	}
+  getRegion(countryName) {
+    const countryData = this.countryList.find((x) => x && x.country === countryName);
+    return this.continentCodes[countryData.continent];
+  }
 
   processCountriesData(data) {
-		// TODO: Remove extra null logic when API is updated
-    const dataTable = [['Country'], ...data.map((x) => x && [x.country])].filter(x => !!x);
+    // TODO: Remove extra null logic when API is updated
+    const dataTable = [['Country'], ...data.map((x) => x && [x.country])].filter((x) => !!x);
 
     this.geoChartData = {
       dataTable,
@@ -69,24 +71,23 @@ export class CountriesComponent implements OnInit {
       options: this.options,
     };
 
-    this.percentVisited = Math.round(data.length / 197 * 100) + '%';
+    this.percentVisited = `${Math.round((data.length / 197) * 100)}%`;
     this.visitedCountries = data.length;
   }
 
-	public select(event: ChartSelectEvent) {
-		if (this.options.region) {
-			this.options.region = null;
-		} else {
-			const clickedCountry = event.selectedRowFormattedValues[0];
-			this.options.region = this.getRegion(clickedCountry);
-		}
+  public select(event: ChartSelectEvent) {
+    if (this.options.region) {
+      this.options.region = null;
+    } else {
+      const clickedCountry = event.selectedRowFormattedValues[0];
+      this.options.region = this.getRegion(clickedCountry);
+    }
 
-		this.geoChartData = {
+    this.geoChartData = {
       ...this.geoChartData,
       options: {
-				...this.options
-			}
+        ...this.options,
+      },
     };
-	}
+  }
 }
-

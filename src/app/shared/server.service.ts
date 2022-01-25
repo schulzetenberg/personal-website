@@ -3,15 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ServerService {
-	apiUrl = 'https://data.schulzetenberg.com/api';
+  apiUrl = 'https://data.schulzetenberg.com/api';
 
-	httpOptions = {
-		headers: new HttpHeaders({
-			'token': '62d180d0bf93044fa913bbeb96c108dc', // TODO: Make this a config value
-		})
-	};
+  httpOptions = {
+    headers: new HttpHeaders({
+      token: '62d180d0bf93044fa913bbeb96c108dc', // TODO: Make this a config value
+    }),
+  };
 
-
+  // eslint-disable-next-line
   constructor(private http: HttpClient) {}
 
   getGithubData() {
@@ -19,21 +19,15 @@ export class ServerService {
   }
 
   getMusicData() {
-    return this.http
-      .get(`${this.apiUrl}/music`, this.httpOptions)
-      .toPromise();
+    return this.http.get(`${this.apiUrl}/music`, this.httpOptions).toPromise();
   }
 
   getBookData() {
-    return this.http
-      .get(`${this.apiUrl}/goodreads`, this.httpOptions)
-      .toPromise();
+    return this.http.get(`${this.apiUrl}/goodreads`, this.httpOptions).toPromise();
   }
 
   getTvData() {
-    return this.http
-      .get(`${this.apiUrl}/trakt`, this.httpOptions)
-      .toPromise();
+    return this.http.get(`${this.apiUrl}/trakt`, this.httpOptions).toPromise();
   }
 
   getDrivingData() {
@@ -41,22 +35,18 @@ export class ServerService {
   }
 
   getStatesData() {
-    return this.http
-      .get(`${this.apiUrl}/states`, this.httpOptions)
-      .toPromise();
+    return this.http.get(`${this.apiUrl}/states`, this.httpOptions).toPromise();
   }
 
-	getCountriesData() {
-    return this.http
-      .get(`${this.apiUrl}/countries`, this.httpOptions)
-      .toPromise();
+  getCountriesData() {
+    return this.http.get(`${this.apiUrl}/countries`, this.httpOptions).toPromise();
   }
 
   getPodcastData() {
     return this.http.get(`${this.apiUrl}/player-fm`, this.httpOptions);
-	}
+  }
 
-	getInstagramData() {
+  getInstagramData() {
     return this.http.get(`${this.apiUrl}/instagram`, this.httpOptions);
-	}
+  }
 }

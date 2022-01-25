@@ -1,4 +1,4 @@
-<div class="background-image-holder" style="background: url(assets/img/utah.jpg) 50% 0%;"></div>
+<div class="background-image-holder" style="background: url(assets/img/utah.jpg) 50% 0%"></div>
 
 <div class="container">
   <div class="row">
@@ -12,35 +12,28 @@
       <div class="feature feature-icon-large">
         <i class="text-white fa fa-car"></i>
         <h5 class="text-white">Average Daily Driving</h5>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">
-					{{ drivingData.avgDriving.toFixed(0) | number }} Miles
-				</p>
+        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.avgDriving.toFixed(0) | number }} Miles</p>
       </div>
     </div>
     <div class="col-sm-4 col-lg-3">
       <div class="feature feature-icon-large">
         <i class="text-white fa fa-map-o"></i>
         <h5 class="text-white">Miles Driven</h5>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">
-					{{ drivingData.totalMiles.toFixed(0) | number }} Miles <small class="ml-1">PAST YEAR</small>
-				</p>
+        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.totalMiles.toFixed(0) | number }} Miles <small class="ml-1">PAST YEAR</small></p>
       </div>
     </div>
     <div class="col-sm-4 col-lg-3">
       <div class="feature feature-icon-large">
         <i class="text-white fa fa-calendar"></i>
         <h5 class="text-white">Average Days Per Barrel of Gas</h5>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">
-					{{ drivingData.daysPerBarrel.toFixed(0) | number }} Days
-				</p>
+        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.daysPerBarrel.toFixed(0) | number }} Days</p>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 text-center">
       <a href="http://www.fuelly.com/driver/waterland15">
-        <img style="width: 48px; opacity:0.8;" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'"
-            src="assets/img/gas-icon.png">
+        <img style="width: 48px; opacity: 0.8" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" src="assets/img/gas-icon.png" />
       </a>
     </div>
   </div>

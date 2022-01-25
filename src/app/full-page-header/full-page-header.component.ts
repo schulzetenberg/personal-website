@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./full-page-header.component.scss'],
 })
 export class FullPageHeaderComponent implements OnInit {
-
+  // eslint-disable-next-line
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  // eslint-disable-next-line
+  ngOnInit() {}
 }

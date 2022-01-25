@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ServerService } from '../../../shared/server.service';
 
-declare var google: any;
+declare let google: any;
 
 @Component({
   selector: 'app-states',
@@ -15,7 +15,9 @@ export class StatesComponent implements OnInit {
     dataTable: any[];
     options: {};
   };
+
   visitedStates: number;
+
   percentVisited: string;
 
   options = {
@@ -47,7 +49,7 @@ export class StatesComponent implements OnInit {
       options: this.options,
     };
 
-    this.percentVisited = Math.round(data.length / 50 * 100) + '%';
+    this.percentVisited = `${Math.round((data.length / 50) * 100)}%`;
     this.visitedStates = data.length;
   }
 }
