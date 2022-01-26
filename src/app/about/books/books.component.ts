@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ServerService } from '../../shared/server.service';
 
 @Component({
@@ -7,7 +6,7 @@ import { ServerService } from '../../shared/server.service';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss', './books.scss'],
 })
-export class BooksComponent implements OnInit {
+export default class BooksComponent implements OnInit {
   books: any[];
 
   recentBooks: any[];
@@ -82,6 +81,7 @@ export class BooksComponent implements OnInit {
     }
 
     this.topBooksList = topBooksList;
+
     return null;
   }
 }
