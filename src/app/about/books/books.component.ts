@@ -6,7 +6,7 @@ import { ServerService } from '../../shared/server.service';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss', './books.scss'],
 })
-export default class BooksComponent implements OnInit {
+export class BooksComponent implements OnInit {
   books: any[];
 
   recentBooks: any[];
