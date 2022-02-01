@@ -3,16 +3,16 @@
     <div class="col-sm-10 offset-sm-1">
       <div style="display: inline-block; clear: both; width: 100%">
         <div class="completion">
-          <h1>{{ percentVisited }}</h1>
-          <h5>{{ visitedCountries }} / 195 Countries</h5>
+          <div class="h1">{{ percentVisited }}</div>
+          <div class="h5">{{ visitedCountries }} / 195 Countries</div>
         </div>
         <ul class="legend">
-          <h4>
+          <h2 class="h4">
             <li>
               <div class="legend-visited"></div>
               Countries Visited
             </li>
-          </h4>
+          </h2>
         </ul>
       </div>
       <google-chart [data]="geoChartData" (chartSelect)="select($event)"></google-chart>

@@ -54,8 +54,9 @@
             onMouseOut="this.style.opacity='0.8'"
             onMouseOver="this.style.opacity='1'"
             class="fa fa-lastfm-square icon-jumbo"
-            aria-hidden="true"
+            aria-label="LastFM icon"
           ></i>
+          <span class="sr-only">Navigate to LastFM profile</span>
         </a>
       </div>
     </div>
@@ -72,15 +73,19 @@
         <div id="photostack" class="photostack">
           <div *ngIf="topArtists && topArtists.length">
             <figure>
-              <span class="photostack-img"><img [src]="topArtist && topArtist.img" /></span>
+              <span class="photostack-img">
+                <img [src]="topArtist && topArtist.img" [title]="topArtist && topArtist.artist" [alt]="topArtist && topArtist.artist" />
+              </span>
               <figcaption>
-                <h2 class="photostack-title" [innerHTML]="topArtist && topArtist.artist"></h2>
+                <div class="photostack-title" [innerHTML]="topArtist && topArtist.artist"></div>
               </figcaption>
             </figure>
             <figure data-dummy *ngFor="let artist of topArtists">
-              <span class="photostack-img"><img [src]="artist.img" /></span>
+              <span class="photostack-img">
+                <img [src]="artist.img" [title]="artist.artist" [alt]="artist && artist.artist" />
+              </span>
               <figcaption>
-                <h2 class="photostack-title" [innerHTML]="artist.artist"></h2>
+                <div class="h2 photostack-title" [innerHTML]="artist.artist"></div>
               </figcaption>
             </figure>
           </div>

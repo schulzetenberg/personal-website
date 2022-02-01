@@ -10,7 +10,7 @@
   <div class="row row-centered mx-3 mb-5 instafeed" *ngIf="instagramData$ | async as instagramData">
     <div class="col-3 col-md-2 my-3" *ngFor="let image of instagramData.images">
       <a [href]="image.postUrl" target="_blank">
-        <img class="podcast-img" [title]="image.caption" [src]="image.imgUrl" />
+        <img class="podcast-img" [title]="image.caption" [alt]="'View image on instagram: ' + image.caption" [src]="image.imgUrl" />
       </a>
     </div>
   </div>
