@@ -11,21 +11,21 @@
       <div class="col-sm-12 col-lg-2 offset-lg-1" *ngIf="books">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-book"></i>
-          <h5 class="text-white">Books Read</h5>
+          <div class="h5 text-white">Books Read</div>
           <p class="text-white" [innerHtml]="(books.length | number) + pastYear"></p>
         </div>
       </div>
       <div class="col-sm-12 col-lg-2" *ngIf="pagesRead">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-file-text-o"></i>
-          <h5 class="text-white">Pages Read</h5>
+          <div class="h5 text-white">Pages Read</div>
           <p class="text-white" [innerHtml]="(pagesRead | number) + pastYear"></p>
         </div>
       </div>
       <div class="col-sm-12 col-lg-7">
         <div class="feature feature-icon-large">
           <i class="text-white fa fa-file-text-o"></i>
-          <h5 class="text-white">Favorite Books</h5>
+          <div class="h5 text-white">Favorite Books</div>
           <p class="text-white" [innerHtml]="topBooksList"></p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 .social-link {
-  font-size: 50px;
+  font-size: 42px;
   opacity: 0.5;
   transition: all 0.3s ease;
 }
@@ -9,19 +9,19 @@
 }
 
 .elegant-color {
-	background-color: #2e2e2e;
+  background-color: #2e2e2e;
 }
 
 .grey-text {
-	color: #9e9e9e;
+  color: #9e9e9e;
 }
 
 footer {
-	background: url("./topography.png");
+  background: url('./topography.png');
 
   &.page-footer {
     bottom: 0;
-		color: white;
+    color: white;
 
     a {
       color: white;
