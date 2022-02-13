@@ -4,7 +4,7 @@ import { ServerService } from '../../shared/server.service';
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.scss', './books.scss'],
+  styleUrls: ['./books.component.scss'],
 })
 export class BooksComponent implements OnInit {
   books: any[];
@@ -25,6 +25,7 @@ export class BooksComponent implements OnInit {
     });
   }
 
+  // TODO: Move this logic SS?
   processBookData(data) {
     if (!data) {
       return console.log('No books data!');

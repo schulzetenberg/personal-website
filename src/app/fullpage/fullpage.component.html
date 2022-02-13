@@ -1,13 +1,17 @@
 <ul id="menu">
-  <li data-menuanchor="firstPage"><a href="#firstPage">First section</a></li>
-  <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
+  <li data-menuanchor="github"><a href="#github">Github</a></li>
+  <li data-menuanchor="books"><a href="#books">Books</a></li>
   <li data-menuanchor="thirdPage"><a href="#thirdPage">Third section</a></li>
   <li data-menuanchor="fourthPage"><a href="#fourthPage">Fourth section</a></li>
 </ul>
 
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
-  <div class="section">Some section1</div>
-  <div class="section" (click)="fullpage_api.moveSectionDown()">Some section2</div>
+  <div class="section">
+    <app-github></app-github>
+  </div>
+  <div class="section">
+    <app-books></app-books>
+  </div>
   <div class="section">
     <div class="slide">Slide 2.1</div>
     <div class="slide">Slide 2.2</div>

@@ -6,6 +6,7 @@ import { AngularFullpageModule } from '@fullpage/angular-fullpage';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { AboutComponent } from './about/about.component';
 import { BooksComponent } from './about/books/books.component';
+import { RecentBooksComponent } from './about/books/recent-books/recent-books.component';
 import { DrivingComponent } from './about/driving/driving.component';
 import { GithubComponent } from './about/github/github.component';
 import { InstagramComponent } from './about/instagram/instagram.component';
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     ProjectsComponent,
     UsesComponent,
     FullpageComponent,
+    RecentBooksComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule, AngularFullpageModule],
   schemas: [NO_ERRORS_SCHEMA],

@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 declare let $: any;
 declare let twitterFetcher: any;

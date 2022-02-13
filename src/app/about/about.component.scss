@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Rock+Salt');
-@import '../../assets/scss/custom';
 @import '../../assets/scss/shadow.mixin';
 
 section {
@@ -7,51 +5,6 @@ section {
   padding-bottom: 60px;
   position: relative;
   overflow: hidden;
-}
-
-.h1 {
-  margin-bottom: 2rem;
-}
-
-.instafeed-section {
-  padding-top: 30px;
-  padding-bottom: 0;
-}
-
-#tweets .user {
-  display: none;
-}
-
-p a {
-  color: #333;
-}
-
-#tweets .tweet {
-  font-size: 20px;
-  line-height: 40px;
-  font-style: italic;
-  font-weight: 300;
-}
-
-.podcast-section {
-  padding-bottom: 0;
-  padding-top: 0;
-}
-
-.image-divider2.overlay2::before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  content: '';
-  opacity: 0.7;
-  z-index: 2;
-  background-color: #333;
-}
-
-.overlay2 .container {
-  position: relative;
-  z-index: 3;
 }
 
 .blue-light {
@@ -74,9 +27,4 @@ p a {
     @include shadow(3);
     color: rgb(63, 81, 181);
   }
-}
-
-// This does not work when moved inside the Countries component
-app-countries path[stroke='#3c3840'] {
-  cursor: pointer;
 }
