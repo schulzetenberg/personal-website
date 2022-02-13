@@ -14,6 +14,8 @@ export class FullpageComponent {
     this.config = {
       anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
       menu: '#menu',
+      navigation: true,
+      sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#ccddff'],
 
       afterResize: () => {
         console.log('After resize');
