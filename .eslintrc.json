@@ -36,7 +36,7 @@
 
         // Custom rules:
         "import/extensions": 0,
-        "import/prefer-default-export": "warn",
+        "import/prefer-default-export": 0,
         "no-useless-constructor": 0,
         "class-methods-use-this": "warn",
         "@angular-eslint/no-empty-lifecycle-method": "warn",
