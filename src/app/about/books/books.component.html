@@ -9,26 +9,26 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12 col-lg-2 offset-lg-1" *ngIf="books">
+        <div class="col-sm-12 col-lg-2 offset-lg-1" *ngIf="bookData && bookData.books">
           <div class="h5 text-white">
             <i class="text-white fa fa-circle"></i>
             Books Read
           </div>
-          <p class="text-white" [innerHtml]="(books.length | number) + pastYear"></p>
+          <p class="text-white" [innerHtml]="(bookData.books.length | number) + pastYear"></p>
         </div>
-        <div class="col-sm-12 col-lg-2" *ngIf="pagesRead">
+        <div class="col-sm-12 col-lg-2" *ngIf="bookData && bookData.pagesRead">
           <div class="h5 text-white">
             <i class="text-white fa fa-circle"></i>
             Pages Read
           </div>
-          <p class="text-white" [innerHtml]="(pagesRead | number) + pastYear"></p>
+          <p class="text-white" [innerHtml]="(bookData.pagesRead | number) + pastYear"></p>
         </div>
-        <div class="col-sm-12 col-lg-7">
+        <div class="col-sm-12 col-lg-7" *ngIf="bookData && bookData.topBooksList">
           <div class="h5 text-white">
             <i class="text-white fa fa-circle"></i>
             Favorite Books
           </div>
-          <p class="text-white" [innerHtml]="topBooksList"></p>
+          <p class="text-white" [innerHtml]="bookData.topBooksList"></p>
         </div>
       </div>
       <div class="row mt-4">
@@ -47,8 +47,4 @@
       </div>
     </div>
   </section>
-</div>
-
-<div class="slide">
-  <app-recent-books [recentBooks]="recentBooks"></app-recent-books>
 </div>

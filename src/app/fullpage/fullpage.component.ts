@@ -12,9 +12,11 @@ export class FullpageComponent implements OnInit {
 
   constructor() {
     this.config = {
-      anchors: ['github', 'books', 'thirdPage', 'fourthPage'],
+      anchors: ['github', 'book-stats', 'recently-read', 'fourthPage'],
       menu: '#menu',
       licenseKey: '',
+      // scrollingSpeed: 400,
+      // fitToSectionDelay: 100,
       // responsiveSlides: true,
       // responsiveWidth: 1900,
       // scrollHorizontally: false,
