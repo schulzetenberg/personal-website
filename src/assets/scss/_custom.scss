@@ -157,3 +157,7 @@ app-countries path[stroke='#3c3840'] {
   position: relative;
   z-index: 3;
 }
+
+[data-anchor='music-stats'] {
+  z-index: 1;
+}

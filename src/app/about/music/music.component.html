@@ -10,39 +10,39 @@
 
     <div class="row" *ngIf="musicData">
       <div class="col-lg-2 offset-lg-1">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-headphones"></i>
-          <div class="h5 text-white">Average Daily Listening</div>
-          <p class="text-white" [innerHTML]="(avgListening | number) + ' Hours'"></p>
+        <div class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Average Daily Listening
         </div>
+        <p class="text-white" [innerHTML]="(avgListening | number) + ' Hours'"></p>
       </div>
       <div class="col-lg-2">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-music"></i>
-          <div class="h5 text-white">Songs Listened To</div>
-          <p class="text-white" [innerHTML]="(totalListening | number) + pastYear"></p>
+        <div class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Songs Listened To
         </div>
+        <p class="text-white" [innerHTML]="(totalListening | number) + pastYear"></p>
       </div>
       <div class="col-lg-2">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-user"></i>
-          <div class="h5 text-white">Artists Listened To</div>
-          <p class="text-white" [innerHTML]="(totalArtists | number) + pastYear"></p>
+        <div class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Artists Listened To
         </div>
+        <p class="text-white" [innerHTML]="(totalArtists | number) + pastYear"></p>
       </div>
       <div class="col-lg-2">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-users"></i>
-          <div class="h5 text-white">Top Artists</div>
-          <p class="text-white" [innerHTML]="artistsList"></p>
+        <div class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Top Artists
         </div>
+        <p class="text-white" [innerHTML]="artistsList"></p>
       </div>
       <div class="col-lg-2">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-random"></i>
-          <div class="h5 text-white">Top Genres</div>
-          <p class="text-white" [innerHTML]="genresList"></p>
+        <div class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Top Genres
         </div>
+        <p class="text-white" [innerHTML]="genresList"></p>
       </div>
     </div>
 
@@ -58,38 +58,6 @@
           ></i>
           <span class="sr-only">Navigate to LastFM profile</span>
         </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="top-artists-header">
-    <span>Top Artists</span>
-  </h2>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div id="photostack" class="photostack">
-          <div *ngIf="topArtists && topArtists.length">
-            <figure>
-              <span class="photostack-img">
-                <img [src]="topArtist && topArtist.img" [title]="topArtist && topArtist.artist" [alt]="topArtist && topArtist.artist" />
-              </span>
-              <figcaption>
-                <div class="photostack-title" [innerHTML]="topArtist && topArtist.artist"></div>
-              </figcaption>
-            </figure>
-            <figure data-dummy *ngFor="let artist of topArtists">
-              <span class="photostack-img">
-                <img [src]="artist.img" [title]="artist.artist" [alt]="artist && artist.artist" />
-              </span>
-              <figcaption>
-                <div class="h2 photostack-title" [innerHTML]="artist.artist"></div>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
       </div>
     </div>
   </div>

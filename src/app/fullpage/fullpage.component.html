@@ -1,7 +1,19 @@
 <ul id="menu">
   <li data-menuanchor="github"><a href="#github">Github</a></li>
-  <li data-menuanchor="book-stats"><a href="#book-stats">Books</a></li>
-  <li data-menuanchor="fourthPage"><a href="#fourthPage">Fourth section</a></li>
+  <li>
+    Books
+    <ul class="secondary-list">
+      <li data-menuanchor="book-stats"><a href="#book-stats">Stats</a></li>
+      <li data-menuanchor="recently-read"><a href="#recently-read">Recently Read</a></li>
+    </ul>
+  </li>
+  <li>
+    Music
+    <ul class="secondary-list">
+      <li data-menuanchor="music-stats"><a href="#music-stats">Stats</a></li>
+      <li data-menuanchor="top-artists"><a href="#top-artists">Top Artists</a></li>
+    </ul>
+  </li>
 </ul>
 
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
@@ -11,7 +23,16 @@
   <div class="section">
     <app-books></app-books>
   </div>
-  <div class="section"><app-recent-books></app-recent-books></div>
+  <div class="section">
+    <app-recent-books></app-recent-books>
+  </div>
+  <div class="section">
+    <app-music></app-music>
+  </div>
+  <div class="section">
+    <app-top-artists></app-top-artists>
+  </div>
+
   <div class="section">
     <div class="slide">Slide 2.1</div>
     <div class="slide">Slide 2.2</div>

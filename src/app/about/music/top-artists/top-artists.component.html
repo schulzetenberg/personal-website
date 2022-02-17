@@ -1,0 +1,30 @@
+<h2 class="top-artists-header">
+  <span>Top Artists</span>
+</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div id="photostack" class="photostack">
+        <div *ngIf="topArtists && topArtists.length">
+          <figure>
+            <span class="photostack-img">
+              <img [src]="topArtist && topArtist.img" [title]="topArtist && topArtist.artist" [alt]="topArtist && topArtist.artist" />
+            </span>
+            <figcaption>
+              <div class="photostack-title" [innerHTML]="topArtist && topArtist.artist"></div>
+            </figcaption>
+          </figure>
+          <figure data-dummy *ngFor="let artist of topArtists">
+            <span class="photostack-img">
+              <img [src]="artist.img" [title]="artist.artist" [alt]="artist && artist.artist" />
+            </span>
+            <figcaption>
+              <div class="h2 photostack-title" [innerHTML]="artist.artist"></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

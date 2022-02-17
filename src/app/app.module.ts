@@ -25,6 +25,7 @@ import { FullpageComponent } from './fullpage/fullpage.component';
 import { NotFound404Component } from './not-found-404/not-found-404.component';
 import { ServerService } from './shared/server.service';
 import { UsesComponent } from './uses/uses.component';
+import { TopArtistsComponent } from './about/music/top-artists/top-artists.component';
 
 const appRoutes: Routes = [
   { path: '', component: AboutComponent },
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     UsesComponent,
     FullpageComponent,
     RecentBooksComponent,
+    TopArtistsComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule, AngularFullpageModule],
   schemas: [NO_ERRORS_SCHEMA],

@@ -12,7 +12,7 @@ export class FullpageComponent implements OnInit {
 
   constructor() {
     this.config = {
-      anchors: ['github', 'book-stats', 'recently-read', 'fourthPage'],
+      anchors: ['github', 'book-stats', 'recently-read', 'music-stats', 'top-artists'],
       menu: '#menu',
       licenseKey: '',
       // scrollingSpeed: 400,
@@ -21,7 +21,7 @@ export class FullpageComponent implements OnInit {
       // responsiveWidth: 1900,
       // scrollHorizontally: false,
       // navigation: true,
-      sectionsColor: ['#f4f4f4', '#433e47', '#433e47', '#7BAABE', '#ccddff'],
+      sectionsColor: ['#f4f4f4', '#f4f4f4', '#433e47', '#f4f4f4', '#f4f4f4'],
 
       afterResize: () => {
         console.log('After resize');
