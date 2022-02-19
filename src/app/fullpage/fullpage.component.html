@@ -14,6 +14,13 @@
       <li data-menuanchor="top-artists"><a href="#top-artists">Top Artists</a></li>
     </ul>
   </li>
+  <li data-menuanchor="podcasts"><a href="#podcasts">Podcasts</a></li>
+  <li data-menuanchor="tv"><a href="#tv">TV</a></li>
+  <li data-menuanchor="states"><a href="#states">States</a></li>
+  <li data-menuanchor="countries"><a href="#countries">Countries</a></li>
+  <li data-menuanchor="driving"><a href="#driving">Driving</a></li>
+  <li data-menuanchor="instagram"><a href="#instagram">Instagram</a></li>
+  <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
 </ul>
 
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
@@ -34,9 +41,30 @@
   </div>
 
   <div class="section">
-    <div class="slide">Slide 2.1</div>
-    <div class="slide">Slide 2.2</div>
-    <div class="slide">Slide 2.3</div>
+    <app-podcasts></app-podcasts>
   </div>
-  <div class="section" (click)="fullpage_api.moveTo('firstPage', 2)">Go to Top</div>
+
+  <div class="section">
+    <app-tv></app-tv>
+  </div>
+
+  <div class="section">
+    <app-states></app-states>
+  </div>
+
+  <div class="section">
+    <app-countries></app-countries>
+  </div>
+
+  <div class="section">
+    <app-driving></app-driving>
+  </div>
+
+  <div class="section">
+    <app-instagram></app-instagram>
+  </div>
+
+  <div class="section">
+    <app-footer></app-footer>
+  </div>
 </div>

@@ -1,40 +1,42 @@
-<div class="background-image-holder" style="background: url(assets/img/utah.jpg) 50% 0%"></div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 offset-sm-2 text-center">
-      <h2 class="h1 text-white">Driving</h2>
+<div class="image-divider2 overlay2 duplicatable-content">
+  <div class="background-image-holder" style="background: url(assets/img/utah.jpg) 50% 0%"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 offset-sm-2 text-center">
+        <h2 class="h1 text-white">Driving</h2>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-sm-4 col-lg-3 offset-lg-2">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-car"></i>
-        <h3 class="h5 text-white">Average Daily Driving</h3>
+    <div class="row">
+      <div class="col-sm-4 col-lg-3 offset-lg-2">
+        <h3 class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Average Daily Driving
+        </h3>
         <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.avgDriving.toFixed(0) | number }} Miles</p>
       </div>
-    </div>
-    <div class="col-sm-4 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-map-o"></i>
-        <h3 class="h5 text-white">Miles Driven</h3>
+      <div class="col-sm-4 col-lg-3">
+        <h3 class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Miles Driven
+        </h3>
         <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.totalMiles.toFixed(0) | number }} Miles <small class="ml-1">PAST YEAR</small></p>
       </div>
-    </div>
-    <div class="col-sm-4 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-calendar"></i>
-        <h3 class="h5 text-white">Average Days Per Barrel of Gas</h3>
+
+      <div class="col-sm-4 col-lg-3">
+        <h3 class="h5 text-white">
+          <i class="text-white fa fa-circle"></i>
+          Average Days Per Barrel of Gas
+        </h3>
         <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.daysPerBarrel.toFixed(0) | number }} Days</p>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <a href="http://www.fuelly.com/driver/waterland15">
-        <img style="width: 48px; opacity: 0.8" alt="Fuelly icon" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" src="assets/img/gas-icon.png" />
-      </a>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <a href="http://www.fuelly.com/driver/waterland15">
+          <img style="width: 48px; opacity: 0.8" alt="Fuelly icon" onMouseOut="this.style.opacity='0.8'" onMouseOver="this.style.opacity='1'" src="assets/img/gas-icon.png" />
+        </a>
+      </div>
     </div>
   </div>
 </div>

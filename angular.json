@@ -45,7 +45,8 @@
               "node_modules/twitter-fetcher/js/twitterFetcher_min.js",
               "src/assets/js/modernizr.min.js",
               "src/assets/js/photostack.js",
-              "src/assets/js/google-analytics.js"
+              "src/assets/js/google-analytics.js",
+              "node_modules/fullpage.js/vendors/scrolloverflow.min.js"
             ]
           },
           "configurations": {
