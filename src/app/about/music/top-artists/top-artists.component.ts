@@ -11,8 +11,6 @@ declare let Photostack: any;
 export class TopArtistsComponent implements OnInit {
   topArtists: any[];
 
-  topArtist: {};
-
   constructor(private serverService: ServerService) {}
 
   ngOnInit(): void {
@@ -22,9 +20,6 @@ export class TopArtistsComponent implements OnInit {
   getData() {
     this.serverService.getMusicData().then((musicData: any) => {
       if (musicData) {
-        // eslint-disable-next-line prefer-destructuring
-        this.topArtist = musicData.topArtists[0];
-        musicData.topArtists.shift();
         this.topArtists = musicData.topArtists;
 
         setTimeout(() => {

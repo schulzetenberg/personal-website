@@ -10,8 +10,6 @@ import { ServerService } from '../../shared/server.service';
 export class MusicComponent implements OnInit {
   musicData: {};
 
-  artistsList = '';
-
   genresList = '';
 
   avgListening: string;
@@ -46,28 +44,9 @@ export class MusicComponent implements OnInit {
       }
 
       if (musicData) {
-        this.artistsList = this.topArtistsParse(musicData.topArtists);
         this.genresList = this.genres(musicData.topArtists);
       }
     });
-  }
-
-  topArtistsParse(data) {
-    let artists = '';
-
-    if (data && data.length) {
-      for (let i = 0; i < data.length; i += 1) {
-        if (i % 2) {
-          artists += `<b>${data[i].artist}. </b>`;
-        } else {
-          artists += `${data[i].artist}.  `;
-        }
-      }
-    } else {
-      console.log('No top artists data');
-    }
-
-    return artists;
   }
 
   genres(data) {

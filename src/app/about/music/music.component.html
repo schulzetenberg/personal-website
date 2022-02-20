@@ -9,35 +9,28 @@
     </div>
 
     <div class="row" *ngIf="musicData">
-      <div class="col-lg-2 offset-lg-1">
+      <div class="col-lg-3">
         <div class="h5 text-white">
           <i class="text-white fa fa-circle"></i>
           Average Daily Listening
         </div>
         <p class="text-white" [innerHTML]="(avgListening | number) + ' Hours'"></p>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-3">
         <div class="h5 text-white">
           <i class="text-white fa fa-circle"></i>
           Songs Listened To
         </div>
         <p class="text-white" [innerHTML]="(totalListening | number) + pastYear"></p>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-3">
         <div class="h5 text-white">
           <i class="text-white fa fa-circle"></i>
           Artists Listened To
         </div>
         <p class="text-white" [innerHTML]="(totalArtists | number) + pastYear"></p>
       </div>
-      <div class="col-lg-2">
-        <div class="h5 text-white">
-          <i class="text-white fa fa-circle"></i>
-          Top Artists
-        </div>
-        <p class="text-white" [innerHTML]="artistsList"></p>
-      </div>
-      <div class="col-lg-2">
+      <div class="col-lg-3">
         <div class="h5 text-white">
           <i class="text-white fa fa-circle"></i>
           Top Genres
