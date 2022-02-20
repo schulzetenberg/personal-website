@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import * as _ from 'lodash';
 import { ServerService } from '../../shared/server.service';
 
@@ -15,13 +14,9 @@ export class MusicComponent implements OnInit {
 
   topArtistsData: {};
 
-  artistsList = '';
-
   genresList = '';
 
   topArtists: any[];
-
-  topArtist: {};
 
   avgListening: string;
 
@@ -55,11 +50,7 @@ export class MusicComponent implements OnInit {
       }
 
       if (musicData) {
-        this.artistsList = this.topArtistsParse(musicData.topArtists);
         this.genresList = this.genres(musicData.topArtists);
-        // eslint-disable-next-line prefer-destructuring
-        this.topArtist = musicData.topArtists[0];
-        musicData.topArtists.shift();
         this.topArtists = musicData.topArtists;
 
         setTimeout(() => {
@@ -68,24 +59,6 @@ export class MusicComponent implements OnInit {
         }, 10);
       }
     });
-  }
-
-  topArtistsParse(data) {
-    let artists = '';
-
-    if (data && data.length) {
-      for (let i = 0; i < data.length; i += 1) {
-        if (i % 2) {
-          artists += `<b>${data[i].artist}. </b>`;
-        } else {
-          artists += `${data[i].artist}.  `;
-        }
-      }
-    } else {
-      console.log('No top artists data');
-    }
-
-    return artists;
   }
 
   genres(data) {
