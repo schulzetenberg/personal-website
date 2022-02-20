@@ -15,14 +15,15 @@ export class FullpageComponent implements OnInit {
       anchors: ['github', 'book-stats', 'recently-read', 'music-stats', 'top-artists', 'podcasts', 'tv', 'states', 'countries', 'driving', 'instagram', 'contact'],
       menu: '#menu',
       licenseKey: '',
-      scrollOverflow: true,
+      // scrollOverflow: true,
+      autoScrolling: false,
       // scrollingSpeed: 400,
       // fitToSectionDelay: 100,
       // responsiveSlides: true,
       // responsiveWidth: 1900,
       // scrollHorizontally: false,
       // navigation: true,
-      sectionsColor: ['#f4f4f4', '#f4f4f4', '#433e47', '#f4f4f4', '#f4f4f4', '#f4f4f4', '#f4f4f4', '#f4f4f4', '#f4f4f4', '#f4f4f4', '#f4f4f4', '#f4f4f4'],
+      sectionsColor: ['#f4f4f4', '#f4f4f4', '#433e47', '#f4f4f4', '#fff', '#f4f4f4', '#f4f4f4', '#fff', '#f4f4f4', '#f4f4f4', '#f4f4f4', '#f4f4f4'],
 
       afterResize: () => {
         console.log('After resize');
