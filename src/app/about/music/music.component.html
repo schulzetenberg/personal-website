@@ -69,9 +69,10 @@
           <div *ngIf="topArtists && topArtists.length">
             <figure class="sticky" style="padding: 20px; background-color: #ffc">
               <figcaption class="pt-0">
-                <p class="photostack-title font-weight-bold">Top Artists ♥</p>
+                <div class="mb-2 photostack-title font-weight-bold">Top Artists ♥</div>
                 <ul class="photostack-artists">
-                  <li *ngFor="let artist of topArtists.slice(0, 7); trackBy: artist" [innerHTML]="artist.artist"></li>
+                  <li class="d-md-none" *ngFor="let artist of topArtists.slice(0, 8); trackBy: artist" [innerHTML]="artist.artist"></li>
+                  <li class="d-none d-md-block" *ngFor="let artist of topArtists; trackBy: artist" [innerHTML]="artist.artist"></li>
                 </ul>
               </figcaption>
             </figure>
