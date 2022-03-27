@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ServerService {
@@ -23,7 +23,7 @@ export class ServerService {
   }
 
   getBookData() {
-    return this.http.get(`${this.apiUrl}/goodreads`, this.httpOptions).toPromise();
+    return this.http.get(`${this.apiUrl}/goodreads-raw`, this.httpOptions).toPromise();
   }
 
   getTvData() {
