@@ -3,13 +3,12 @@
   margin: 6px 5px 6px 5px;
   font-size: 0.8em;
   color: #000;
-  background: #fff;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 #menu li.active {
-  background: #666;
+  transition: 0.3s;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
@@ -21,7 +20,8 @@
   color: #000;
 }
 #menu li:hover {
-  background: rgba(255, 255, 255, 0.8);
+  transition: 0.3s;
+  background: rgba(221, 221, 221, 1);
 }
 #menu li a,
 #menu li.active a {
