@@ -1,5 +1,5 @@
 /* Original code from http://srobbin.com/blog/3d-css-book-covers/ */
-@import '../../../assets/scss/shadow.mixin';
+@import '../../../../assets/scss/shadow.mixin';
 
 .books {
   -moz-perspective: 100px;
@@ -24,7 +24,7 @@
 }
 
 .book img {
-	height: 150px;
+  height: 150px;
   @include shadow(2);
   transition: all 0.3s ease;
   vertical-align: middle;

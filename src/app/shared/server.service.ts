@@ -23,7 +23,7 @@ export class ServerService {
   }
 
   getBookData() {
-    return this.http.get(`${this.apiUrl}/goodreads-raw`, this.httpOptions).toPromise();
+    return this.http.get(`${this.apiUrl}/goodreads`, this.httpOptions).toPromise();
   }
 
   getTvData() {
