@@ -65,7 +65,7 @@ img {
 
 // Fonts
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .h1,
@@ -93,11 +93,18 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Victor Mono', monospace;
+  font-family: 'Open Sans', monospace;
+}
+
+h1,
+h2,
+.h1,
+.h2 {
+  font-weight: 300;
 }
 
 .super-lead {
-  font-family: 'Victor Mono', monospace;
+  font-family: 'Open Sans', monospace;
 }
 
 // NOTE: This should already be working as default from the theme, but it is not...
