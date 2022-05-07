@@ -13,6 +13,7 @@ import { InstagramComponent } from './about/instagram/instagram.component';
 import { CountriesComponent } from './about/maps/countries/countries.component';
 import { StatesComponent } from './about/maps/states/states.component';
 import { MusicComponent } from './about/music/music.component';
+import { TopArtistsComponent } from './about/music/top-artists/top-artists.component';
 import { PodcastsComponent } from './about/podcasts/podcasts.component';
 import { ProjectsComponent } from './about/projects/projects.component';
 import { ResumeComponent } from './about/resume/resume.component';
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     UsesComponent,
     FullpageComponent,
     RecentBooksComponent,
+    TopArtistsComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule, AngularFullpageModule],
   schemas: [NO_ERRORS_SCHEMA],

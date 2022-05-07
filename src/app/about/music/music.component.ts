@@ -2,21 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { ServerService } from '../../shared/server.service';
 
-declare let Photostack: any;
-
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
-  styleUrls: ['./music.component.scss', './photostack.scss'],
+  styleUrls: ['./music.component.scss'],
 })
 export class MusicComponent implements OnInit {
   musicData: {};
 
-  topArtistsData: {};
-
   genresList = '';
-
-  topArtists: any[];
 
   avgListening: string;
 
@@ -51,12 +45,6 @@ export class MusicComponent implements OnInit {
 
       if (musicData) {
         this.genresList = this.genres(musicData.topArtists);
-        this.topArtists = musicData.topArtists;
-
-        setTimeout(() => {
-          // eslint-disable-next-line
-          new Photostack(document.getElementById('photostack'));
-        }, 10);
       }
     });
   }
