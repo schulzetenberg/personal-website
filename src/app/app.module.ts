@@ -13,6 +13,7 @@ import { InstagramComponent } from './about/instagram/instagram.component';
 import { CountriesComponent } from './about/maps/countries/countries.component';
 import { StatesComponent } from './about/maps/states/states.component';
 import { MusicComponent } from './about/music/music.component';
+import { TopArtistsComponent } from './about/music/top-artists/top-artists.component';
 import { PodcastsComponent } from './about/podcasts/podcasts.component';
 import { ProjectsComponent } from './about/projects/projects.component';
 import { ResumeComponent } from './about/resume/resume.component';
@@ -25,7 +26,6 @@ import { FullpageComponent } from './fullpage/fullpage.component';
 import { NotFound404Component } from './not-found-404/not-found-404.component';
 import { ServerService } from './shared/server.service';
 import { UsesComponent } from './uses/uses.component';
-import { TopArtistsComponent } from './about/music/top-artists/top-artists.component';
 
 const appRoutes: Routes = [
   { path: '', component: AboutComponent },
