@@ -42,6 +42,10 @@ export class ServerService {
     return this.http.get(`${this.apiUrl}/countries`, this.httpOptions).toPromise();
   }
 
+  getParksData() {
+    return this.http.get(`${this.apiUrl}/parks`, this.httpOptions).toPromise();
+  }
+
   getPodcastData() {
     return this.http.get(`${this.apiUrl}/player-fm`, this.httpOptions);
   }

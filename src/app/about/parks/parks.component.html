@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2 text-center">
+      <div class="completion">
+        <div class="h1 mb-2 text-white">National Parks</div>
+        <div class="h5 text-white" *ngIf="parkData">{{ visitedParks }} / 63 Visited</div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="min-height: 300px" *ngIf="parkData">
+    <div class="m-3" *ngFor="let park of parkData; trackBy: name" [style.color]="'blue'">
+      <div class="stamp">
+        <img class="park-img" [title]="park.name" [src]="park.imageUrl" [id]="'parkImg' + park.name" onerror="this.src='assets/img/us-map.jpg'" />
+        <label class="stamp-label" for="'parkImg' + park.name">{{ park.name }}</label>
+      </div>
+    </div>
+  </div>
+</div>
