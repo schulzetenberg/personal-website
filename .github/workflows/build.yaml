@@ -22,7 +22,7 @@ jobs:
           node-version: 16
           # cache: npm
       - name: Install Angular CLI
-        run: sudo npm i @angular/cli --legacy-peer-deps
+        run: sudo npm i @angular/cli --force
       - name: Install Angular Build
         run: sudo npm i @angular-devkit/build-angular
       - name: Build Frontend
