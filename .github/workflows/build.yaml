@@ -24,9 +24,9 @@ jobs:
       - name: Install Angular CLI
         run: sudo npm i @angular/cli --force
       - name: Install Angular Build
-        run: sudo npm i @angular-devkit/build-angular
+        run: sudo npm i @angular-devkit/build-angular --force
       - name: Build Frontend
-        run: sudo npm run build
+        run: sudo npm run build --force
       - name: Deploy to App Engine
         id: deploy
         uses: google-github-actions/deploy-appengine@v0.5.0
