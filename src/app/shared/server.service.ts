@@ -53,4 +53,8 @@ export class ServerService {
   getInstagramData() {
     return this.http.get(`${this.apiUrl}/instagram`, this.httpOptions);
   }
+
+  getAllocationData() {
+    return this.http.get(`${this.apiUrl}/allocation`, this.httpOptions).toPromise();
+  }
 }

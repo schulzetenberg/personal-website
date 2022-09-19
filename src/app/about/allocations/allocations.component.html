@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1" *ngIf="geoChartData && !expandedToggle">
+      <google-chart [data]="geoChartData"></google-chart>
+    </div>
+    <div class="col-md-10 offset-md-1" *ngIf="geoChartData && expandedToggle">
+      <google-chart [data]="geoChartData"></google-chart>
+    </div>
+    <div class="col-md-10 offset-md-1 text-center" *ngIf="geoChartData">
+      <button class="btn btn-primary mt-3" type="button" (click)="clicked()">Show {{ expandedToggle ? 'Less' : 'More' }}</button>
+    </div>
+  </div>
+</div>
