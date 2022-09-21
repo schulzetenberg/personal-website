@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10 offset-md-1" *ngIf="geoChartData && !expandedToggle">
-      <google-chart [data]="geoChartData"></google-chart>
+    <div class="col-sm-8 offset-sm-2 text-center">
+      <h2 class="h1 mb-0">Portfolio Allocation</h2>
     </div>
-    <div class="col-md-10 offset-md-1" *ngIf="geoChartData && expandedToggle">
+    <div class="col-md-10 offset-md-1">
+      <google-chart [data]="geoChartData" *ngIf="geoChartData"></google-chart>
+    </div>
+    <!-- <div class="col-md-12" *ngIf="geoChartData && expandedToggle">
       <google-chart [data]="geoChartData"></google-chart>
     </div>
     <div class="col-md-10 offset-md-1 text-center" *ngIf="geoChartData">
       <button class="btn btn-primary mt-3" type="button" (click)="clicked()">Show {{ expandedToggle ? 'Less' : 'More' }}</button>
-    </div>
+    </div> -->
   </div>
 </div>

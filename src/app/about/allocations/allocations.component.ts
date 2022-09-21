@@ -36,18 +36,21 @@ export class AllocationsComponent implements OnInit {
 
   processStatesData() {
     const filteredData = this.expandedToggle ? this.apiData.filter((x) => x.percent > 0.2) : this.apiData.slice(0, 25);
-    const dataTable = [['Name', 'Percent'], ...filteredData.map((x) => [x.label, x.percent])];
+    const tooltip = (x) => `<div class="p-1"><strong>${x.ticker}</strong> <br />${x.percent.toFixed(2)}%</div>`;
+    const dataTable = [['Name', 'Percent', { type: 'string', role: 'tooltip', p: { html: true } }], ...filteredData.map((x) => [x.label, x.percent, tooltip(x)])];
 
     this.geoChartData = {
       dataTable,
       chartType: 'BarChart',
       options: {
+        tooltip: { isHtml: true },
         height: filteredData.length * 20 + 250,
-        title: 'Portfolio Allocation',
         isStacked: true,
         legend: 'none',
+        backgroundColor: '#f4f4f4',
+        chartArea: { width: '65%', height: '82%', top: '50' },
         hAxis: {
-          title: 'Percentage',
+          title: 'Percent of Portfolio',
           minValue: 0,
         },
       },
