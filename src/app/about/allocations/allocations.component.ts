@@ -25,23 +25,19 @@ export class AllocationsComponent implements OnInit {
   ngOnInit() {
     this.serverService.getAllocationData().then((data) => {
       this.apiData = data;
-      this.processStatesData();
+      this.processAllocationData();
     });
   }
 
-  public clicked() {
-    this.expandedToggle = !this.expandedToggle;
-    this.processStatesData();
-  }
-
-  processStatesData() {
-    const filteredData = this.expandedToggle ? this.apiData.filter((x) => x.percent > 0.2) : this.apiData.slice(0, 25);
+  processAllocationData() {
+    const filteredData = this.expandedToggle ? this.apiData.portfolio.filter((x) => x.percent > 0.2) : this.apiData.portfolio.slice(0, 25);
     const tooltip = (x) => `<div class="p-1"><strong>${x.ticker}</strong> <br />${x.percent.toFixed(2)}%</div>`;
     const dataTable = [['Name', 'Percent', { type: 'string', role: 'tooltip', p: { html: true } }], ...filteredData.map((x) => [x.label, x.percent, tooltip(x)])];
 
     this.geoChartData = {
       dataTable,
       chartType: 'BarChart',
+      // TODO: Use correct blue for bar color
       options: {
         tooltip: { isHtml: true },
         height: filteredData.length * 20 + 250,
