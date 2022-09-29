@@ -6,6 +6,10 @@
     <div class="col-md-10 offset-md-1">
       <google-chart [data]="geoChartData" *ngIf="geoChartData"></google-chart>
     </div>
+    <div class="col-md-10 offset-md-1 mt-5" *ngIf="diversificationChartData">
+      <div class="h4 text-center">Diversification</div>
+      <google-chart [data]="diversificationChartData"></google-chart>
+    </div>
     <!-- <div class="col-md-12" *ngIf="geoChartData && expandedToggle">
       <google-chart [data]="geoChartData"></google-chart>
     </div>
