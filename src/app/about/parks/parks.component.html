@@ -10,7 +10,7 @@
   <div class="row" style="min-height: 300px" *ngIf="parkData">
     <div class="m-3" *ngFor="let park of parkData; trackBy: value" [style.color]="'blue'">
       <div class="stamp">
-        <img class="park-img" [title]="park.label" [src]="park.imageUrl" [id]="'parkImg' + park.value" onerror="this.src='assets/img/us-map.jpg'" />
+        <img loading="lazy" class="park-img" [title]="park.label" [src]="park.imageUrl" [id]="'parkImg' + park.value" onerror="this.src='assets/img/us-map.jpg'" />
         <label class="stamp-label" [attr.for]="'parkImg' + park.value">{{ park.label }}</label>
       </div>
     </div>

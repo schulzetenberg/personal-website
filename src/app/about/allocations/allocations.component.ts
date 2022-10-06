@@ -37,9 +37,13 @@ export class AllocationsComponent implements OnInit {
   }
 
   processAllocationData() {
+    const isDesktop = window.innerWidth >= 1050;
     const filteredData = this.expandedToggle ? this.apiData.portfolio.filter((x) => x.percent > 0.2) : this.apiData.portfolio.slice(0, 25);
-    const tooltip = (x) => `<div class="p-1"><strong>${x.ticker}</strong> <br />${x.percent.toFixed(2)}%</div>`;
-    const dataTable = [['Name', 'Percent', { type: 'string', role: 'tooltip', p: { html: true } }], ...filteredData.map((x) => [x.label, x.percent, tooltip(x)])];
+    const tooltip = (x) => `<div class="p-1" style="min-width: 135px;"><strong>${x.label}</strong> <br />${x.ticker}<br />${x.percent.toFixed(2)}%</div>`;
+    const dataTable = [
+      ['Name', 'Percent', { type: 'string', role: 'tooltip', p: { html: true } }],
+      ...filteredData.map((x) => [isDesktop ? x.label : x.ticker, x.percent, tooltip(x)]),
+    ];
 
     this.geoChartData = {
       dataTable,
@@ -91,7 +95,7 @@ export class AllocationsComponent implements OnInit {
           '#0288d1',
         ],
         backgroundColor: '#f4f4f4',
-        chartArea: { width: '100%', height: '82%' },
+        chartArea: { width: '90%', height: '82%' },
       },
     };
   }

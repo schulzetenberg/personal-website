@@ -5,9 +5,9 @@
     </div>
     <div class="col-sm-12 py-2" style="min-height: 300px">
       <div class="books text-center">
-        <div id="book1" class="book my-2 mx-3" *ngFor="let book of bookData.recentBooks">
+        <div id="book1" class="book my-2 mx-3" *ngFor="let book of bookData.recentBooks; trackBy: title">
           <a [href]="book.link" target="_blank">
-            <img [title]="book.title" [src]="book.img" [alt]="'View ' + book.title + ' on Goodreads'" />
+            <img loading="lazy" [title]="book.title" [src]="book.img" [alt]="'View ' + book.title + ' on Goodreads'" />
           </a>
         </div>
       </div>

@@ -21,7 +21,7 @@
             </figure>
             <figure data-dummy *ngFor="let artist of topArtists; trackBy: artist">
               <span class="photostack-img">
-                <img [src]="artist.img" [title]="artist.artist" [alt]="artist && artist.artist" />
+                <img loading="lazy" [src]="artist.img" [title]="artist.artist" [alt]="artist && artist.artist" />
               </span>
               <figcaption>
                 <div class="h2 photostack-title" [innerHTML]="artist.artist"></div>
