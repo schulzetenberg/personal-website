@@ -11,10 +11,19 @@ declare let Photostack: any;
 export class TopArtistsComponent implements OnInit {
   topArtists: any[];
 
+  photostack: any;
+
   constructor(private serverService: ServerService) {}
 
   ngOnInit(): void {
     this.getData();
+  }
+
+  shuffle() {
+    if (this.photostack) {
+      // eslint-disable-next-line no-underscore-dangle
+      this.photostack._shuffle();
+    }
   }
 
   getData() {
@@ -24,7 +33,7 @@ export class TopArtistsComponent implements OnInit {
 
         setTimeout(() => {
           // eslint-disable-next-line
-          new Photostack(document.getElementById('photostack'));
+          this.photostack = new Photostack(document.getElementById('photostack'));
         }, 10);
       }
     });

@@ -19,7 +19,7 @@
                 </ul>
               </figcaption>
             </figure>
-            <figure data-dummy *ngFor="let artist of topArtists; trackBy: artist">
+            <figure data-dummy *ngFor="let artist of topArtists; trackBy: artist" class="polaroid" (click)="shuffle()">
               <span class="photostack-img">
                 <img loading="lazy" [src]="artist.img" [title]="artist.artist" [alt]="artist && artist.artist" />
               </span>
