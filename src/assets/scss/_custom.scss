@@ -22,25 +22,6 @@ section:nth-of-type(odd) {
   background-position: 50% 50% !important;
 }
 
-.feature-icon-large i {
-  display: block;
-  height: 84px;
-  width: 84px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  text-align: center;
-  color: #fff;
-  font-size: 30px;
-  padding-top: 26px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-
-.image-divider .feature-icon-large i {
-  border-color: #fff;
-  color: #fff;
-}
-
 img {
   max-width: 100%;
 }
@@ -96,6 +77,8 @@ h4 {
   font-family: 'Open Sans', monospace;
 }
 
+.p,
+p,
 h1,
 h2,
 .h1,

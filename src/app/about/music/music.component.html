@@ -8,31 +8,30 @@
       </div>
     </div>
 
-    <div class="row" *ngIf="musicData">
+    <div class="row main-section-content" *ngIf="musicData">
       <div class="col-lg-3">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-headphones"></i>
+        <div class="feature">
           <div class="h5 text-white">Average Daily Listening</div>
-          <p class="text-white" [innerHTML]="(avgListening | number) + ' Hours'"></p>
+          <p class="text-white focus-number" [innerHTML]="avgListening | number"></p>
+          <small class="text-white focus-subtext">HOURS</small>
         </div>
       </div>
       <div class="col-lg-3">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-music"></i>
+        <div class="feature">
           <div class="h5 text-white">Songs Listened To</div>
-          <p class="text-white" [innerHTML]="(totalListening | number) + pastYear"></p>
+          <p class="text-white focus-number" [innerHTML]="totalListening | number"></p>
+          <small class="text-white focus-subtext">PAST YEAR</small>
         </div>
       </div>
       <div class="col-lg-3">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-user"></i>
+        <div class="feature">
           <div class="h5 text-white">Artists Listened To</div>
-          <p class="text-white" [innerHTML]="(totalArtists | number) + pastYear"></p>
+          <p class="text-white focus-number" [innerHTML]="totalArtists | number"></p>
+          <small class="text-white focus-subtext">PAST YEAR</small>
         </div>
       </div>
       <div class="col-lg-3">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-random"></i>
+        <div class="feature">
           <div class="h5 text-white">Top Genres</div>
           <p class="text-white" [innerHTML]="genresList"></p>
         </div>

@@ -7,31 +7,29 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row main-section-content">
     <div class="col-sm-12 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-television"></i>
+      <div class="feature">
         <h5 class="text-white">Average Daily TV Show Viewing</h5>
-        <p class="text-white" [innerHtml]="avgTv"></p>
+        <p class="text-white focus-number" [innerHtml]="avgTv"></p>
+        <small class="text-white focus-subtext">MINUTES</small>
       </div>
     </div>
     <div class="col-sm-12 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-film"></i>
+      <div class="feature">
         <h5 class="text-white">Average Daily Movie Viewing</h5>
-        <p class="text-white" [innerHtml]="avgMovies"></p>
+        <p class="text-white focus-number" [innerHtml]="avgMovies"></p>
+        <small class="text-white focus-subtext">MINUTES</small>
       </div>
     </div>
     <div class="col-sm-12 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-heart"></i>
+      <div class="feature">
         <h5 class="text-white">Favorite Movies</h5>
         <p class="text-white" [innerHtml]="topMoviesList"></p>
       </div>
     </div>
     <div class="col-sm-12 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-heart"></i>
+      <div class="feature">
         <h5 class="text-white">Favorite TV Shows</h5>
         <p class="text-white" [innerHtml]="topShowsList"></p>
       </div>

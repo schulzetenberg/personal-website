@@ -7,25 +7,24 @@
         <h2 class="h1 text-white">Books</h2>
       </div>
     </div>
-    <div class="row">
+    <div class="row main-section-content">
       <div class="col-sm-12 col-lg-2 offset-lg-1" *ngIf="bookData && bookData.books">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-book"></i>
+        <div class="feature">
           <div class="h5 text-white">Books Read</div>
-          <p class="text-white" [innerHtml]="(bookData.books.length | number) + pastYear"></p>
+          <p class="text-white focus-number" [innerHtml]="bookData.books.length | number"></p>
+          <small class="text-white focus-subtext">PAST YEAR</small>
         </div>
       </div>
       <div class="col-sm-12 col-lg-2" *ngIf="bookData && bookData.pagesRead">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-file-text-o"></i>
+        <div class="feature">
           <div class="h5 text-white">Pages Read</div>
-          <p class="text-white" [innerHtml]="(bookData.pagesRead | number) + pastYear"></p>
+          <p class="text-white focus-number" [innerHtml]="bookData.pagesRead | number"></p>
+          <small class="text-white focus-subtext">PAST YEAR</small>
         </div>
       </div>
       <div class="col-sm-12 col-lg-7" *ngIf="bookData && bookData.topBooksList">
-        <div class="feature feature-icon-large">
-          <i class="text-white fa fa-file-text-o"></i>
-          <div class="h5 text-white">Favorite Books</div>
+        <div class="feature">
+          <div class="h5 text-white">Recent Favorite Books</div>
           <p class="text-white" [innerHtml]="bookData.topBooksList"></p>
         </div>
       </div>

@@ -28,13 +28,13 @@ export class TvComponent implements OnInit {
     const numMinTv = data && data.stats && data.stats.episodes && data.stats.episodes.minutes;
 
     if (numMinTv && data.totalDays) {
-      this.avgTv = `${(numMinTv / data.totalDays).toFixed(0)} Minutes`; // Round to int value of minutes;
+      this.avgTv = `${(numMinTv / data.totalDays).toFixed(0)}`; // Round to int value of minutes;
     }
 
     const numMinMovies = data && data.stats && data.stats.movies && data.stats.movies.minutes;
 
     if (numMinMovies && data.totalDays) {
-      this.avgMovies = `${(numMinMovies / data.totalDays).toFixed(0)} Minutes`;
+      this.avgMovies = `${(numMinMovies / data.totalDays).toFixed(0)}`;
     }
 
     const { topMovies } = data;

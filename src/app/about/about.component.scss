@@ -22,11 +22,6 @@ p a {
   color: #333;
 }
 
-.podcast-section {
-  padding-bottom: 0;
-  padding-top: 0;
-}
-
 .image-divider2.overlay2::before {
   position: absolute;
   width: 100%;
@@ -80,4 +75,22 @@ app-countries path[stroke='#3c3840'] {
   opacity: 0.85;
   background-color: #5a3827;
   background-image: url('/assets/img/wood-pattern.png');
+}
+
+.feature {
+  .focus-number {
+    font-weight: 400;
+    font-size: 3.2rem;
+    margin-bottom: 0;
+    transform: scaleY(1.5);
+  }
+
+  .focus-subtext {
+    font-weight: 300;
+  }
+}
+
+.main-section-content {
+  min-height: 300px;
+  align-items: center;
 }

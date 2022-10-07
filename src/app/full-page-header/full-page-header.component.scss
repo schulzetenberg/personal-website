@@ -42,6 +42,7 @@
   }
 
   @include shadow(4);
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s;
 }
 
 .flex-center {
@@ -49,4 +50,38 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.full-bg-img {
+  h1,
+  h2 {
+    overflow: hidden;
+  }
+
+  h1 div,
+  h2 div {
+    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    transform: translate(0, 100%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translate(0, 5%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }

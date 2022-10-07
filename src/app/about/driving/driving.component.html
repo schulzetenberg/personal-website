@@ -1,5 +1,4 @@
 <div class="background-image-holder" style="background: url(assets/img/road.jpg) 50% 0%"></div>
-
 <div class="container">
   <div class="row">
     <div class="col-sm-8 offset-sm-2 text-center">
@@ -7,26 +6,28 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row main-section-content">
     <div class="col-sm-4 col-lg-3 offset-lg-2">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-car"></i>
+      <div class="feature">
         <h3 class="h5 text-white">Average Daily Driving</h3>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.avgDriving.toFixed(0) | number }} Miles</p>
+        <p class="text-white focus-number" *ngIf="drivingData$ | async as drivingData">{{ drivingData.avgDriving.toFixed(0) | number }}</p>
+        <small class="text-white focus-subtext">MILES</small>
       </div>
     </div>
     <div class="col-sm-4 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-map-o"></i>
+      <div class="feature">
         <h3 class="h5 text-white">Miles Driven</h3>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.totalMiles.toFixed(0) | number }} Miles <small class="ml-1">PAST YEAR</small></p>
+        <p class="text-white focus-number" *ngIf="drivingData$ | async as drivingData">
+          {{ drivingData.totalMiles.toFixed(0) | number }}
+        </p>
+        <small class="text-white focus-subtext">PAST YEAR</small>
       </div>
     </div>
     <div class="col-sm-4 col-lg-3">
-      <div class="feature feature-icon-large">
-        <i class="text-white fa fa-calendar"></i>
+      <div class="feature">
         <h3 class="h5 text-white">Average Days Per Barrel of Gas</h3>
-        <p class="text-white" *ngIf="drivingData$ | async as drivingData">{{ drivingData.daysPerBarrel.toFixed(0) | number }} Days</p>
+        <p class="text-white focus-number" *ngIf="drivingData$ | async as drivingData">{{ drivingData.daysPerBarrel.toFixed(0) | number }}</p>
+        <small class="text-white focus-subtext">DAYS</small>
       </div>
     </div>
   </div>
