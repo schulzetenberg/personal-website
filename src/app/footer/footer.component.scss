@@ -1,6 +1,6 @@
 .social-link {
   font-size: 42px;
-  opacity: 0.5;
+  opacity: 0.65;
   transition: all 0.3s ease;
 }
 
@@ -27,4 +27,9 @@ footer {
       color: white;
     }
   }
+}
+
+.h1 {
+  font-size: 3rem;
+  transform: scaleY(1.25);
 }
