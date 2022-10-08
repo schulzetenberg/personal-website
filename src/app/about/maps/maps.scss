@@ -11,6 +11,13 @@
   width: 160px;
 }
 
+@media (max-width: 767px) {
+  .completion {
+    height: 135px;
+    width: 135px;
+  }
+}
+
 .completion .h1 {
   padding-top: 15px;
   font-weight: 400;

@@ -26,7 +26,7 @@
         <div class="feature">
           <div class="h5 text-white">Recent Favorite Books</div>
           <div *ngFor="let bookName of bookData.topBooks">
-            <div class="text-white" [innerHtml]="bookName"></div>
+            <div class="text-white">- {{ bookName }}</div>
           </div>
         </div>
       </div>

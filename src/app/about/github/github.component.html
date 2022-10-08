@@ -1,29 +1,23 @@
 <div class="container">
   <h2 class="h1 mb-5 text-center">Github</h2>
   <div class="row">
-    <div class="col-lg-3 offset-lg-1">
+    <div class="col-lg-4 offset-lg-1">
       <div class="feature" *ngIf="githubData$ | async as githubData">
         <h3 class="h5">Contributions</h3>
         <p class="focus-number">{{ githubData.contributions }}</p>
         <small class="focus-subtext">PAST YEAR</small>
       </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-4">
       <div class="feature" *ngIf="githubData$ | async as githubData">
         <h3 class="h5">Public Repos</h3>
-        <p class="focus-number">{{ githubData.repos }}</p>
+        <p class="focus-number">{{ githubData.publicRepos }}</p>
       </div>
     </div>
     <div class="col-lg-3">
       <div class="feature" *ngIf="githubData$ | async as githubData">
-        <h3 class="h5">Following</h3>
-        <p class="focus-number">{{ githubData.following.length }}</p>
-      </div>
-    </div>
-    <div class="col-lg-2">
-      <div class="feature" *ngIf="githubData$ | async as githubData">
-        <h3 class="h5">Followers</h3>
-        <p class="focus-number">{{ githubData.followers.length }}</p>
+        <h3 class="h5">Private Repos</h3>
+        <p class="focus-number">{{ githubData.privateRepos }}</p>
       </div>
     </div>
   </div>

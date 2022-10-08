@@ -10,7 +10,7 @@ import { ServerService } from '../../shared/server.service';
 export class MusicComponent implements OnInit {
   musicData: {};
 
-  genresList = '';
+  genreCounts = [];
 
   avgListening: string;
 
@@ -44,7 +44,7 @@ export class MusicComponent implements OnInit {
       }
 
       if (musicData) {
-        this.genresList = this.genres(musicData.topArtists);
+        this.genreCounts = this.genres(musicData.topArtists);
       }
     });
   }
@@ -75,21 +75,8 @@ export class MusicComponent implements OnInit {
 
     // Sort (ascending) based on total occurances of a genre across the artists
     genreCounts = _.sortBy(genreCounts, 'count');
+    const reducedList = genreCounts.slice(0, 5);
 
-    // Error handling for when there are less than 15 top genres
-    const topGenreCount = genreCounts.length > 16 ? 16 : genreCounts.length;
-    let topGenres = '';
-
-    // Offset by 1 because array index starts at 0
-    // Take the genre with the highest count first (desc order)
-    for (let k = 1, z = topGenreCount; k < z; k += 1) {
-      if (k % 2) {
-        topGenres += `<b>${genreCounts[genreCounts.length - k].genre}. </b>`;
-      } else {
-        topGenres += `${genreCounts[genreCounts.length - k].genre}.  `;
-      }
-    }
-
-    return topGenres;
+    return reducedList;
   }
 }

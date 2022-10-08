@@ -60,7 +60,6 @@ p a {
   }
 }
 
-// This does not work when moved inside the Countries component
 app-countries path[stroke='#3c3840'] {
   cursor: pointer;
 }
@@ -95,4 +94,8 @@ app-countries path[stroke='#3c3840'] {
 .main-section-content {
   min-height: 300px;
   align-items: center;
+}
+
+app-tv p > b {
+  font-weight: bold;
 }

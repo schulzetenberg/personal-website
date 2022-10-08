@@ -30,14 +30,15 @@
           <small class="text-white focus-subtext">PAST YEAR</small>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 mt-lg-3">
         <div class="feature">
           <div class="h5 text-white">Top Genres</div>
-          <p class="text-white" [innerHTML]="genresList"></p>
+          <div *ngFor="let item of genreCounts; trackBy: genre">
+            <div class="text-white">- {{ item.genre }}</div>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-sm-12 text-center">
         <a href="https://www.last.fm/user/JSchulzetenberg">
