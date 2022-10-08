@@ -8,24 +8,26 @@
       </div>
     </div>
     <div class="row main-section-content">
-      <div class="col-sm-12 col-lg-2 offset-lg-1" *ngIf="bookData && bookData.books">
+      <div class="col-sm-12 col-lg-3 offset-lg-1" *ngIf="bookData && bookData.books">
         <div class="feature">
           <div class="h5 text-white">Books Read</div>
           <p class="text-white focus-number" [innerHtml]="bookData.books.length | number"></p>
           <small class="text-white focus-subtext">PAST YEAR</small>
         </div>
       </div>
-      <div class="col-sm-12 col-lg-2" *ngIf="bookData && bookData.pagesRead">
+      <div class="col-sm-12 col-lg-3" *ngIf="bookData && bookData.pagesRead">
         <div class="feature">
           <div class="h5 text-white">Pages Read</div>
           <p class="text-white focus-number" [innerHtml]="bookData.pagesRead | number"></p>
           <small class="text-white focus-subtext">PAST YEAR</small>
         </div>
       </div>
-      <div class="col-sm-12 col-lg-7" *ngIf="bookData && bookData.topBooksList">
+      <div class="col-sm-12 col-lg-4" *ngIf="bookData && bookData.topBooksList">
         <div class="feature">
           <div class="h5 text-white">Recent Favorite Books</div>
-          <p class="text-white" [innerHtml]="bookData.topBooksList"></p>
+          <div *ngFor="let bookName of bookData.topBooks">
+            <div class="text-white" [innerHtml]="bookName"></div>
+          </div>
         </div>
       </div>
     </div>

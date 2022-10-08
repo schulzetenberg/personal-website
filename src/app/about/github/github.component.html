@@ -1,8 +1,35 @@
 <div class="container">
+  <h2 class="h1 mb-5 text-center">Github</h2>
   <div class="row">
+    <div class="col-lg-3 offset-lg-1">
+      <div class="feature" *ngIf="githubData$ | async as githubData">
+        <h3 class="h5">Contributions</h3>
+        <p class="focus-number">{{ githubData.contributions }}</p>
+        <small class="focus-subtext">PAST YEAR</small>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="feature" *ngIf="githubData$ | async as githubData">
+        <h3 class="h5">Public Repos</h3>
+        <p class="focus-number">{{ githubData.repos }}</p>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="feature" *ngIf="githubData$ | async as githubData">
+        <h3 class="h5">Following</h3>
+        <p class="focus-number">{{ githubData.following.length }}</p>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="feature" *ngIf="githubData$ | async as githubData">
+        <h3 class="h5">Followers</h3>
+        <p class="focus-number">{{ githubData.followers.length }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
     <div class="col-lg-12 text-center">
-      <h2 class="mb-5">Github</h2>
-      <div class="h5" *ngIf="githubData$ | async as githubData">{{ githubData.repos }} Public Repos</div>
+      <h3 class="h5 mb-0">Contributions</h3>
       <div class="svg px-lg-5" *ngIf="githubData$ | async as githubData" [innerHTML]="sanitizer.bypassSecurityTrustHtml(githubData && githubData.contribSvg)"></div>
     </div>
   </div>

@@ -18,7 +18,7 @@ export class StatesComponent implements OnInit {
 
   visitedStates: number;
 
-  percentVisited: string;
+  // percentVisited: string;
 
   options = {
     backgroundColor: {
@@ -49,7 +49,7 @@ export class StatesComponent implements OnInit {
       options: this.options,
     };
 
-    this.percentVisited = `${Math.round((data.length / 50) * 100)}%`;
+    // this.percentVisited = `${Math.round((data.length / 50) * 100)}`;
     this.visitedStates = data.length;
   }
 }

@@ -19,7 +19,7 @@ export class CountriesComponent implements OnInit {
 
   visitedCountries: number;
 
-  percentVisited: string;
+  // percentVisited: string;
 
   // All options found here: https://developers.google.com/chart/interactive/docs/gallery/geochart#configuration-options
   options = {
@@ -71,7 +71,7 @@ export class CountriesComponent implements OnInit {
       options: this.options,
     };
 
-    this.percentVisited = `${Math.round((data.length / 197) * 100)}%`;
+    // this.percentVisited = `${Math.round((data.length / 197) * 100)}`;
     this.visitedCountries = data.length;
   }
 

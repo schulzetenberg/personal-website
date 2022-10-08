@@ -1,25 +1,21 @@
 @import '../../../assets/scss/site-defaults';
 
 .completion {
-  border: 2px solid $primary;
+  border: 3px solid $primary;
   text-align: center;
-  border-radius: 100px;
+  border-radius: 10px;
   float: left;
   margin: 20px;
-  padding: 20px;
-  height: 140px;
-  width: 140px;
+  padding-top: 12px;
+  height: 160px;
+  width: 160px;
 }
 
 .completion .h1 {
-  font-size: 45px;
-  margin-bottom: 0;
   padding-top: 15px;
-}
-
-.completion .h5 {
-  font-size: 16px;
-  color: #58535b;
+  font-weight: 400;
+  font-size: 3.2rem;
+  transform: scaleY(1.5);
 }
 
 .legend {

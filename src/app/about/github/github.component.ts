@@ -9,7 +9,7 @@ import { ServerService } from '../../shared/server.service';
   templateUrl: './github.component.html',
   styleUrls: ['./github.component.scss'],
   // NOTE: In order to properly style the SVG we cannot have view encapsulation
-  encapsulation: ViewEncapsulation.None, // eslint-disable-line 
+  encapsulation: ViewEncapsulation.None, // eslint-disable-line
 })
 export class GithubComponent implements OnInit {
   githubData$: Observable<{}>;
