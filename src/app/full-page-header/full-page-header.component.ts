@@ -14,7 +14,7 @@ export class FullPageHeaderComponent implements OnInit {
   ngOnInit() {
     const tl = gsap.timeline({ defaults: { ease: 'power4.inOut', duration: 1, opacity: 1, y: 0 } });
     tl.to('#headshot', {});
-    tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)' }, '-=1');
-    tl.to('h2', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)' }, '-=0.75');
+    tl.to('h1', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)', scale: 1.25 }, '-=1');
+    tl.to('h2', { 'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)' }, '-=1');
   }
 }

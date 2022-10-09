@@ -53,20 +53,12 @@
   height: 100%;
 }
 
-.full-bg-img {
-  h1,
-  h2 {
-    overflow: hidden;
-  }
-}
-
 i {
   transition: all 0.3s ease;
 }
 
 h1,
 h2 {
-  transform: scaleY(1.25);
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   transform: translateY(10px);
   opacity: 0;
