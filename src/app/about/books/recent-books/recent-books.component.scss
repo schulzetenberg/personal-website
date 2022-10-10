@@ -5,6 +5,7 @@
 }
 
 .book {
+  opacity: 0;
   transition: transform 0.5s ease;
   display: inline-block;
   transform: rotateY(-1deg);

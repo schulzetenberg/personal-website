@@ -36,8 +36,6 @@
             ],
             "styles": ["src/styles.scss"],
             "scripts": [
-              "node_modules/gsap/dist/gsap.min.js",
-              "node_modules/gsap/dist/CSSRulePlugin.min.js",
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/q/q.js",
