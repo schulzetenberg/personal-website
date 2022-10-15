@@ -44,6 +44,7 @@ export class MusicComponent implements OnInit {
       }
 
       if (musicData) {
+        // TODO: Use this data again
         this.genreCounts = this.genres(musicData.topArtists);
       }
     });

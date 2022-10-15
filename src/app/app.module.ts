@@ -26,6 +26,7 @@ import { FullPageHeaderComponent } from './full-page-header/full-page-header.com
 import { NotFound404Component } from './not-found-404/not-found-404.component';
 import { ServerService } from './shared/server.service';
 import { UsesComponent } from './uses/uses.component';
+import { DiversificationComponent } from './about/allocations/diversification/diversification.component';
 
 const appRoutes: Routes = [
   { path: '', component: AboutComponent },
@@ -58,6 +59,7 @@ const appRoutes: Routes = [
     TopArtistsComponent,
     ParksComponent,
     AllocationsComponent,
+    DiversificationComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule, Ng2GoogleChartsModule],
   schemas: [NO_ERRORS_SCHEMA],

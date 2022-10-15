@@ -24,7 +24,7 @@ export class RecentBooksComponent implements OnInit {
       setTimeout(() => {
         const bookArr: Element[] = this.bookContainers.map((x) => x.nativeElement);
         const tl = gsap.timeline({ defaults: { ease: 'power4.inOut', duration: 0.6 } });
-        tl.to(bookArr, { stagger: 0.1, opacity: 1 });
+        tl.to(bookArr, { stagger: { each: 0.05 }, opacity: 1 });
       }, 5);
     });
   }
