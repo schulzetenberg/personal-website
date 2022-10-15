@@ -27,7 +27,7 @@
 
   figure {
     @include shadow(1);
-
+    transition: transform 0.5s ease-in-out;
     width: 320px;
     height: 360px;
     background: #fff;
