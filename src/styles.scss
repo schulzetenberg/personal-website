@@ -7,19 +7,4 @@ $container-max-widths: (
 );
 
 @import 'node_modules/bootstrap/scss/bootstrap';
-
-// Custom
-@media (max-width: 767px) {
-  html {
-    font-size: 0.8rem;
-  }
-}
-
-.text-white:not(i) {
-  text-shadow: black 0px 0px 10px;
-}
-
-.container {
-  padding-left: 20px;
-  padding-right: 20px;
-}
+@import 'assets/scss/custom';

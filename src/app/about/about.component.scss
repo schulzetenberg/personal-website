@@ -2,26 +2,6 @@
 @import '../../assets/scss/custom';
 @import '../../assets/scss/shadow.mixin';
 
-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.h1 {
-  margin-bottom: 2rem;
-}
-
-.instafeed-section {
-  padding-top: 30px;
-  padding-bottom: 0;
-}
-
-p a {
-  color: #333;
-}
-
 .image-divider2.overlay2::before {
   position: absolute;
   width: 100%;
@@ -46,6 +26,7 @@ p a {
   border: 2px solid rgb(63, 81, 181);
   color: rgb(63, 81, 181);
   @include shadow(1);
+
   font-size: 0.7rem;
   padding: 0.5rem 1.5rem;
   transition: 0.4s ease;
@@ -56,6 +37,7 @@ p a {
   &:active,
   &:focus {
     @include shadow(3);
+
     color: rgb(63, 81, 181);
   }
 }
@@ -67,10 +49,10 @@ app-countries path[stroke='#3c3840'] {
 .parks-section:before {
   content: '';
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   opacity: 0.85;
   background-color: #5a3827;
   background-image: url('/assets/img/wood-pattern.png');
