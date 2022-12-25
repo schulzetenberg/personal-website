@@ -2,9 +2,5 @@
 $enable-shadows: true;
 $enable-gradients: true;
 
-$container-max-widths: (
-  xl: 1300px,
-);
-
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'assets/scss/custom';
