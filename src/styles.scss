@@ -1,6 +1,15 @@
-// Bootstrap variable overrides
-$enable-shadows: true;
-$enable-gradients: true;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'node_modules/bootstrap/scss/bootstrap';
+@layer base {
+  h1 {
+    @apply text-3xl;
+    // @apply leading-5;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+}
+
 @import 'assets/scss/custom';

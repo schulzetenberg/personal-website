@@ -1,14 +1,14 @@
-<div class="row mt-4 mb-1">
-  <div class="col">
+<div class="flex flex-wrap mt-4 mb-1">
+  <div class="relative flex-grow max-w-full flex-1 px-4">
     <p class="text-center">
-      <a class="h4 mb-5" href="https://instagram.com/schulzetenberg">INSTA <i class="fa fa-instagram"></i> GRAM</a>
+      <a class="text-2xl mb-5 block" href="https://instagram.com/schulzetenberg">INSTA <i class="fa fa-instagram"></i> GRAM</a>
     </p>
   </div>
 </div>
 
-<div class="container pb-3">
-  <div class="row row-centered mx-3 mb-5 instafeed" *ngIf="instagramData$ | async as instagramData">
-    <div class="col-3 col-md-2 my-3" *ngFor="let image of instagramData.images; trackBy: imgUrl">
+<div class="container max-w-screen-lg mx-auto sm:px-4 pb-12">
+  <div class="flex flex-wrap row-centered mx-3 mb-5 instafeed" *ngIf="instagramData$ | async as instagramData">
+    <div class="w-1/4 md:w-1/6 pr-4 pl-4 my-3" *ngFor="let image of instagramData.images; trackBy: imgUrl">
       <a [href]="image.postUrl" target="_blank">
         <img loading="lazy" class="podcast-img" [title]="image.caption" [alt]="'View image on instagram: ' + image.caption" [src]="image.imgUrl" />
       </a>

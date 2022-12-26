@@ -67,6 +67,8 @@ h2,
 h3,
 h4 {
   font-family: 'Open Sans', monospace;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .p,
@@ -114,4 +116,9 @@ p a {
 .instafeed-section {
   padding-top: 30px;
   padding-bottom: 0;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+  font-weight: 500;
 }
