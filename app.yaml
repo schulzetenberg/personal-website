@@ -5,14 +5,9 @@ automatic_scaling:
   min_instances: 0
 
 handlers:
-  - url: /
+  - url: /.*
     static_files: dist/index.html
     upload: dist/index.html
-    secure: always
-    http_headers:
-      Access-Control-Allow-Origin: '*'
-  - url: /
-    static_dir: dist
     secure: always
     http_headers:
       Access-Control-Allow-Origin: '*'

@@ -24,17 +24,28 @@ jobs:
         run: npm ci
       - name: Build Frontend
         run: npm run build
+      - name: List build output
+        run: |
+          echo "Checking if dist folder exists and has content:"
+          ls -la
+          if [ -d "dist" ]; then
+            echo "dist folder contents:"
+            ls -la dist/
+          else
+            echo "ERROR: dist folder not found!"
+            exit 1
+          fi
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
       - name: Deploy to App Engine
         id: deploy
+        timeout-minutes: 10
         uses: google-github-actions/deploy-appengine@v2
         with:
           deliverables: app.yaml
           version: v1
           project_id: ${{ secrets.GCP_PROJECT }}
-          promote: false
       - name: Test
         run: curl "${{ steps.deploy.outputs.url }}"
