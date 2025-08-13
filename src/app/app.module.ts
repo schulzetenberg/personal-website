@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { FullPageHeaderComponent } from './full-page-header/full-page-header.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { ServerService } from './shared/server.service';
 
 const appRoutes: Routes = [{ path: '', component: HomeComponent }];
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, FullPageHeaderComponent, InstagramComponent, HomeComponent],
+  declarations: [AppComponent, FooterComponent, FullPageHeaderComponent, InstagramComponent, HomeComponent, ProjectsComponent],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [ServerService],

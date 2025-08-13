@@ -1,0 +1,54 @@
+// Component-specific styles for the projects section
+
+.project-card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.tech-tag {
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Ensure proper spacing for the section
+:host {
+  display: block;
+}
+
+// Override default section styling for this component
+section.projects-section {
+  background: #f8f9fa;
+}
+
+// Custom hover effects for project links
+a:hover {
+  text-decoration: none;
+}
+
+// Responsive image handling
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+// Feature list styling
+.feature-list {
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+  }
+}

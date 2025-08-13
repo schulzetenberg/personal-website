@@ -80,7 +80,7 @@
   "lint-staged": {
     "*.ts": [
       "prettier --write",
-      "npx ng lint personal website",
+      "npx ng lint PersonalWebsite",
       "git add"
     ],
     "*.html": [
