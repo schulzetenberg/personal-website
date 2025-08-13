@@ -1,6 +1,4 @@
-runtime: python27
-api_version: 1
-threadsafe: true
+runtime: python311
 skip_files:
   - ^node_modules/(.*/)?
   - ^.angular/(.*/)?
