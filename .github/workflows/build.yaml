@@ -20,13 +20,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          # cache: npm
-      - name: Install Angular CLI
-        run: sudo npm i @angular/cli --force
-      - name: Install Angular Build
-        run: sudo npm i @angular-devkit/build-angular --force
+      - name: Install Dependencies
+        run: npm ci
       - name: Build Frontend
-        run: sudo npm run build --force
+        run: npm run build
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
@@ -38,5 +35,6 @@ jobs:
           deliverables: app.yaml
           version: v1
           project_id: ${{ secrets.GCP_PROJECT }}
+          promote: false
       - name: Test
         run: curl "${{ steps.deploy.outputs.url }}"
