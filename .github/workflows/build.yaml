@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Setup Node.js 16
-        uses: actions/setup-node@v2
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
           # cache: npm
       - name: Install Angular CLI
         run: sudo npm i @angular/cli --force
@@ -27,13 +27,16 @@ jobs:
         run: sudo npm i @angular-devkit/build-angular --force
       - name: Build Frontend
         run: sudo npm run build --force
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
       - name: Deploy to App Engine
         id: deploy
-        uses: google-github-actions/deploy-appengine@v0.5.0
+        uses: google-github-actions/deploy-appengine@v2
         with:
           deliverables: app.yaml
           version: v1
           project_id: ${{ secrets.GCP_PROJECT }}
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
       - name: Test
         run: curl "${{ steps.deploy.outputs.url }}"

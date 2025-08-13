@@ -1,7 +1,9 @@
 runtime: python311
-skip_files:
-  - ^node_modules/(.*/)?
-  - ^.angular/(.*/)?
+
+automatic_scaling:
+  max_instances: 10
+  min_instances: 0
+
 handlers:
   - url: /
     static_files: dist/index.html
