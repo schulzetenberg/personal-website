@@ -17,12 +17,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
               loading="lazy"
             />
           ) : (
-            /* Fallback content when image is not available */
+            /* Enhanced fallback with more personality */
             <div className="absolute inset-0 flex items-center justify-center text-white">
-              <div className="text-center">
-                <i className="fa fa-heart icon-jumbo opacity-80" />
-                <h4 className="text-xl font-light">{project.title}</h4>
-                <p className="text-sm opacity-90 mt-2">Web Application</p>
+              <div className="text-center space-y-4">
+                <div className="relative">
+                  <i className="fa fa-heart text-6xl opacity-90 animate-pulse" />
+                  <div className="absolute -top-2 -right-2 text-2xl">✨</div>
+                </div>
+                <h4 className="text-2xl font-semibold">{project.title}</h4>
+                <p className="text-base opacity-90 px-4">Web Application</p>
               </div>
             </div>
           )}
@@ -33,30 +36,34 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <div className="p-6 md:p-8">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
             <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-light mb-3 text-gray-800">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-600 transition-colors duration-200"
+                  className="group inline-flex items-center gap-3 hover:text-indigo-600 transition-all duration-300"
                 >
-                  {project.title}
-                  <i className="fa fa-external-link text-sm ml-2 opacity-70" />
+                  <span>{project.title}</span>
+                  <i className="fa fa-external-link text-lg opacity-60 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                 </a>
               </h3>
 
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">{project.description}</p>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6 font-light">{project.description}</p>
             </div>
           </div>
 
           {/* Technologies */}
           <div className="mb-6">
-            <h4 className="text-sm font-medium text-gray-800 mb-3 uppercase tracking-wide">Technologies Used</h4>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
+            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wider flex items-center gap-2">
+              <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
+              Tech Stack
+            </h4>
+            <div className="flex flex-wrap gap-3">
+              {project.technologies.map((tech, index) => (
                 <span
                   key={tech}
-                  className="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full border border-blue-200 tech-tag transition-all duration-200 hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm font-medium px-4 py-2 rounded-full border border-indigo-200 tech-tag hover:shadow-lg"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {tech}
                 </span>
@@ -66,12 +73,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           {/* Features */}
           <div className="mb-6">
-            <h4 className="text-sm font-medium text-gray-800 mb-3 uppercase tracking-wide">Key Features</h4>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 feature-list">
-              {project.features.map((feature) => (
-                <li key={feature} className="flex items-center text-gray-600 relative pl-6">
-                  <span className="absolute left-0 text-green-500 font-bold">✓</span>
-                  {feature}
+            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wider flex items-center gap-2">
+              <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+              Highlights
+            </h4>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {project.features.map((feature, index) => (
+                <li
+                  key={feature}
+                  className="flex items-start text-gray-600 font-medium bg-emerald-50 rounded-lg p-3 border border-emerald-100 hover:border-emerald-200 transition-all duration-300"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  <span className="flex-1">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -84,10 +97,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 export const ProjectsSection = () => {
   return (
-    <section className="projects-section" style={{ background: '#f8f9fa' }}>
-      <div className="flex flex-wrap mt-4 mb-1">
-        <div className="relative flex-grow max-w-full flex-1 px-4">
-          <h2 className="text-center text-3xl mb-5 font-light">Recent Projects</h2>
+    <section className="projects-section">
+      <div className="container max-w-6xl mx-auto px-4 py-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            Things I&apos;ve Built <span className="font-medium text-black">⚡</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
+            A curated collection of projects that showcase my passion for creating
+            <span className="font-medium"> meaningful digital experiences</span>
+          </p>
         </div>
       </div>
 

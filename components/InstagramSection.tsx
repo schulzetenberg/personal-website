@@ -46,12 +46,16 @@ export const InstagramSection = () => {
         <div className="relative flex-grow max-w-full flex-1 px-4">
           <p className="text-center">
             <a
-              className="text-2xl mb-5 block hover:text-blue-600 transition-colors duration-200"
+              className="font-light text-3xl md:text-4xl mb-8 block hover:text-pink-600 transition-all duration-300 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent group"
               href="https://instagram.com/schulzetenberg"
               target="_blank"
               rel="noopener noreferrer"
             >
-              INSTA <i className="fab fa-instagram" /> GRAM
+              <span className="inline-flex items-center gap-3">
+                INSTA
+                <i className="fab fa-instagram text-pink-500 group-hover:animate-pulse group-hover:scale-110 transition-all duration-300" />
+                GRAM
+              </span>
             </a>
           </p>
         </div>
@@ -65,12 +69,16 @@ export const InstagramSection = () => {
         <div className="relative flex-grow max-w-full flex-1 px-4">
           <p className="text-center">
             <a
-              className="text-2xl mb-5 block hover:text-blue-600 transition-colors duration-200"
+              className="font-light text-3xl md:text-4xl mb-8 block hover:text-pink-600 transition-all duration-300 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent group"
               href="https://instagram.com/schulzetenberg"
               target="_blank"
               rel="noopener noreferrer"
             >
-              INSTA <i className="fab fa-instagram" /> GRAM
+              <span className="inline-flex items-center gap-3">
+                INSTA
+                <i className="fab fa-instagram text-pink-500 group-hover:animate-pulse group-hover:scale-110 transition-all duration-300" />
+                GRAM
+              </span>
             </a>
           </p>
         </div>

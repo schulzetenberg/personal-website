@@ -30,8 +30,9 @@ export const FullPageHeader = () => {
                   borderRadius: '125px',
                 }}
               />
-              <h1 className="pb-2 text-4xl md:text-5xl font-light">
-                <div>I am Jacob Schulzetenberg</div>
+              <h1 className="pb-4   font-semibold">
+                <div className="mb-2 text-3xl">Hey there!</div>
+                <div className="text-4xl md:text-5xl">I&apos;m Jacob Schulzetenberg</div>
               </h1>
               <h2 className="text-xl md:text-2xl font-light text-blue-100">
                 <div>
