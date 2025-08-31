@@ -1,3 +1,35 @@
-node_modules
-package.json
+# Dependencies
+node_modules/
+.next/
+.turbo/
+
+# Old Angular code
+OLD/
+
+# Build outputs
+dist/
+out/
+build/
+
+# Environment files
+.env*
+
+# Logs
+*.log
+
+# Package manager files
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Cache directories
+.cache/
+.parcel-cache/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db

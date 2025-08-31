@@ -1,0 +1,345 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Original brand colors restored */
+  --color-primary: #0d47a1;
+  --color-secondary: #2e2e2e;
+
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-500: #0d47a1; /* Restored original primary */
+  --color-blue-600: #0d47a1; /* Primary blue */
+  --color-blue-700: #0a3d91;
+  --color-blue-800: #083481;
+  --color-blue-900: #062a71;
+
+  --color-purple-600: #9333ea;
+  --color-purple-800: #6b21a8;
+
+  --color-green-500: #10b981;
+
+  --color-gray-400: #9ca3af;
+  --color-gray-600: #4b5563;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  /* Restored original font family */
+  --font-sans: 'Open Sans', sans-serif;
+
+  /* Material Design shadow system */
+  --shadow-mat-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-mat-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --shadow-mat-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  --shadow-mat-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  --shadow-mat-5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* Global styles matching original site */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+/* Section styling like original */
+section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+section:nth-of-type(odd) {
+  background: #f4f4f4;
+}
+
+/* Responsive font scaling like original */
+@media (max-width: 767px) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+.nav-link {
+  @apply inline-block py-2 px-4 no-underline transition-all duration-300;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+  @apply text-blue-200;
+}
+
+/* Specific styling for nav links in header (white text) */
+.text-white .nav-link {
+  color: inherit;
+}
+
+.text-white .nav-link:hover {
+  @apply text-blue-200;
+}
+
+.social-link {
+  @apply inline-block transition-all duration-300;
+  font-size: 50px;
+  opacity: 0.65;
+}
+
+.social-link:hover {
+  opacity: 1;
+  @apply hover:text-blue-500;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 transition-colors duration-200 inline-flex items-center gap-2;
+  border-radius: 10em;
+}
+
+.card {
+  @apply bg-white rounded-lg transition-all duration-300;
+  box-shadow: var(--shadow-mat-2);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-mat-3);
+  transform: translateY(-2px);
+}
+
+.full-bg-img {
+  @apply min-h-screen bg-cover bg-center bg-no-repeat relative;
+  background-image: url('/background.jpg');
+}
+
+.mask {
+  @apply absolute inset-0 flex items-center justify-center;
+  background: rgba(33, 150, 243, 0.4);
+}
+
+.mask.blue-light {
+  background: rgba(33, 150, 243, 0.4);
+}
+
+.elegant-color {
+  background-color: #2e2e2e;
+  @apply text-white;
+}
+
+.color-main {
+  color: #0d47a1;
+}
+
+.grey-text {
+  color: #9e9e9e;
+}
+
+/* Material Design shadow system */
+.shadow-mat {
+  box-shadow: var(--shadow-mat-1);
+}
+
+.shadow-mat-md {
+  box-shadow: var(--shadow-mat-2);
+}
+
+.shadow-mat-lg {
+  box-shadow: var(--shadow-mat-3);
+}
+
+.shadow-mat-xl {
+  box-shadow: var(--shadow-mat-4);
+}
+
+.shadow-mat-2xl {
+  box-shadow: var(--shadow-mat-5);
+}
+
+.page-footer {
+  background-image: url('/topography.png');
+  @apply bg-repeat;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.row-centered {
+  @apply flex justify-center;
+}
+
+/* Original icon styling */
+.icon-jumbo {
+  color: #0d47a1;
+  text-align: center;
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+/* Container styling like original */
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Text shadow for white text like original */
+.text-white:not(i) {
+  text-shadow: black 0 0 10px;
+}
+
+/* Background image holders */
+.background-image-holder,
+.foreground-image-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: 0;
+  background-position: 50% 50%;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+}
+
+.project-image img {
+  border-radius: 8px;
+  box-shadow: var(--shadow-mat-2);
+}
+
+/* Profile image enhancements */
+.profile-image {
+  border-radius: 50%;
+  box-shadow: var(--shadow-mat-4);
+  border: 4px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Entrance animations like original */
+.animate-entrance h1,
+.animate-entrance h2 {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transform: translateY(10px);
+  opacity: 0;
+  animation: slideInUp 0.8s ease-out 0.3s forwards;
+}
+
+.animate-entrance #headshot {
+  transform: translateY(10px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+@keyframes slideInUp {
+  to {
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Project card hover effects matching original */
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+}
+
+.tech-tag {
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Project image styling */
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Feature list styling matching original */
+.feature-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Button styling like original */
+.btn-rounded {
+  border-radius: 10em;
+}
+
+/* Header adjustments for proper sizing */
+#headshot {
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+}
+
+@media (max-width: 767px) {
+  #headshot {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+  }
+}
+
+/* Instagram section styling like original */
+.instafeed-section {
+  padding-top: 30px;
+  padding-bottom: 0;
+}
+
+/* Proper h6 styling */
+h6,
+.h6 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Link styling in paragraphs */
+p a {
+  color: #333;
+}
+
+/* Super lead text styling */
+.super-lead {
+  font-family: 'Open Sans', sans-serif;
+}

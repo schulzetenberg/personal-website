@@ -1,19 +1,10 @@
 {
   "name": "personal-website",
-  "version": "1.0.0",
-  "license": "MIT",
-  "description": "Personal Website Application",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve --configuration development --open",
-    "build": "ng build --configuration production",
-    "test": "jest",
-    "lint": "ng lint PersonalWebsite --fix",
-    "e2e": "ng e2e",
-    "test:watch": "jest --watch"
-  },
+  "version": "2.0.0",
+  "private": true,
+  "description": "Personal Website Application - Next.js Version",
   "author": {
-    "name": "Jacob",
+    "name": "Jacob Schulzetenberg",
     "email": "jacob.schulzetenberg@gmail.com",
     "url": "http://www.schulzetenberg.com/"
   },
@@ -21,114 +12,41 @@
     "type": "git",
     "url": "https://github.com/schulzetenberg/personal-website"
   },
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky"
+  },
   "dependencies": {
-    "@angular/animations": "13.1.3",
-    "@angular/common": "13.1.3",
-    "@angular/compiler": "13.1.3",
-    "@angular/core": "13.1.3",
-    "@angular/forms": "13.1.3",
-    "@angular/platform-browser": "13.1.3",
-    "@angular/platform-browser-dynamic": "13.1.3",
-    "@angular/router": "13.1.3",
-    "core-js": "3.20.3",
-    "gsap": "3.11.3",
-    "hammerjs": "2.0.8",
-    "rxjs": "7.5.2",
-    "rxjs-compat": "6.6.7",
-    "zone.js": "0.11.4"
+    "next": "15.5.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "13.2.5",
-    "@angular-eslint/builder": "13.0.1",
-    "@angular-eslint/eslint-plugin": "13.0.1",
-    "@angular-eslint/eslint-plugin-template": "13.0.1",
-    "@angular-eslint/schematics": "13.0.1",
-    "@angular-eslint/template-parser": "13.0.1",
-    "@angular/cli": "13.1.4",
-    "@angular/compiler-cli": "13.1.3",
-    "@angular/language-service": "13.1.3",
-    "@types/jasmine": "3.5.6",
-    "@types/jasminewd2": "2.0.8",
-    "@types/jest": "28.1.6",
-    "@types/jquery": "3.3.38",
-    "@types/node": "13.7.4",
-    "@typescript-eslint/eslint-plugin": "5.3.0",
-    "@typescript-eslint/parser": "5.3.0",
-    "autoprefixer": "10.4.13",
-    "eslint": "8.2.0",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.25.2",
-    "eslint-plugin-prettier": "4.0.0",
-    "htmlhint": "0.11.0",
-    "husky": "4.2.3",
-    "jasmine-core": "3.5.0",
-    "jasmine-spec-reporter": "4.2.1",
-    "jest": "28.1.3",
-    "jest-preset-angular": "12.2.0",
-    "js-beautify": "1.10.3",
-    "lint-staged": "10.0.7",
-    "postcss": "8.4.20",
-    "prettier": "2.5.1",
-    "stylelint": "13.2.0",
-    "stylelint-config-prettier": "8.0.1",
-    "stylelint-config-standard": "20.0.0",
-    "tailwindcss": "3.2.4",
-    "ts-node": "8.6.2",
-    "typescript": "4.5.5"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^8",
+    "eslint-config-next": "15.5.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   },
   "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "npx ng lint PersonalWebsite",
-      "git add"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
     ],
-    "*.html": [
-      "htmlhint --config .htmlhintrc",
-      "js-beautify --config .jsbeautifyrc --type html -r",
-      "git add"
-    ],
-    "*.scss": [
-      "stylelint --syntax=scss"
-    ],
-    "src/**/*.{ts,css,scss}": [
-      "prettier --write",
-      "git add"
+    "*.{js,jsx,ts,tsx,json,css,md}": [
+      "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx lint-staged"
-    }
-  },
-  "jest": {
-    "preset": "jest-preset-angular",
-    "roots": [
-      "src"
-    ],
-    "transform": {
-      "^.+\\.(ts|js|html)$": "ts-jest"
-    },
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setup-jest.ts"
-    ],
-    "moduleNameMapper": {
-      "@app/(.*)": "<rootDir>/src/app/$1",
-      "@assets/(.*)": "<rootDir>/src/assets/$1",
-      "@core/(.*)": "<rootDir>/src/app/core/$1",
-      "@env": "<rootDir>/src/environments/environment",
-      "@src/(.*)": "<rootDir>/src/src/$1",
-      "@state/(.*)": "<rootDir>/src/app/state/$1"
-    },
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "<rootDir>/src/tsconfig.spec.json",
-        "stringifyContentPathRegex": "\\.html$",
-        "astTransformers": [
-          "jest-preset-angular/build/InlineFilesTransformer",
-          "jest-preset-angular/build/StripStylesTransformer"
-        ]
-      }
-    }
   }
 }
