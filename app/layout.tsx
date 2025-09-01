@@ -1,12 +1,26 @@
 import type { Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
+import { Inter, Pacifico, Figtree } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@/components/Analytics';
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+});
+
+const display = Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display',
+});
+
+const subhead = Figtree({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-subhead',
 });
 
 export const metadata: Metadata = {
@@ -73,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${display.variable} ${subhead.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -86,7 +100,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`${openSans.className} antialiased bg-white text-gray-900`}>
+      <body className={`${inter.className} antialiased bg-white text-gray-900 min-h-screen bg-grid`}>
         {children}
         <Analytics />
       </body>

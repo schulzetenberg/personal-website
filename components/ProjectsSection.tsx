@@ -13,7 +13,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               src={project.image}
               alt={`${project.title} screenshot`}
               fill
-              className="object-cover object-top hover:scale-105 transition-transform duration-300"
+              className="object-cover object-top"
               loading="lazy"
             />
           ) : (
@@ -29,41 +29,36 @@ const ProjectCard = ({ project }: { project: Project }) => {
               </div>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-purple-800/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
         </div>
 
         {/* Project Content */}
         <div className="p-6 md:p-8">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
             <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 heading-display">
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 hover:text-indigo-600 transition-all duration-300"
+                  className="hover:text-indigo-600 transition-colors duration-300 quirk-underline"
                 >
-                  <span>{project.title}</span>
-                  <i className="fa fa-external-link text-lg opacity-60 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                  <span className="text-gradient pr-2">{project.title}</span>
                 </a>
               </h3>
 
-              <p className="text-gray-600 text-lg leading-relaxed mb-6 font-light">{project.description}</p>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">{project.description}</p>
             </div>
           </div>
 
           {/* Technologies */}
           <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wider flex items-center gap-2">
-              <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
-              Tech Stack
-            </h4>
-            <div className="flex flex-wrap gap-3">
-              {project.technologies.map((tech, index) => (
+            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Technologies</h4>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm font-medium px-4 py-2 rounded-full border border-indigo-200 tech-tag hover:shadow-lg"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors duration-200"
                 >
                   {tech}
                 </span>
@@ -73,18 +68,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           {/* Features */}
           <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wider flex items-center gap-2">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
-              Highlights
-            </h4>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {project.features.map((feature, index) => (
-                <li
-                  key={feature}
-                  className="flex items-start text-gray-600 font-medium bg-emerald-50 rounded-lg p-3 border border-emerald-100 hover:border-emerald-200 transition-all duration-300"
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                >
-                  <span className="flex-1">{feature}</span>
+            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Key Features</h4>
+            <ul className="space-y-2">
+              {project.features.map((feature) => (
+                <li key={feature} className="flex items-start text-gray-600">
+                  <span className="text-indigo-500 mr-2 mt-1">•</span>
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>
@@ -98,19 +87,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
 export const ProjectsSection = () => {
   return (
     <section className="projects-section">
-      <div className="container max-w-6xl mx-auto px-4 py-8">
+      <div className="container max-w-6xl mx-auto px-4 pb-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Things I&apos;ve Built <span className="font-medium text-black">⚡</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 heading-display text-gradient">
+            Things I&apos;ve Built
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A curated collection of projects that showcase my passion for creating
-            <span className="font-medium"> meaningful digital experiences</span>
+            <span className="font-semibold text-indigo-600"> meaningful digital experiences</span>
           </p>
         </div>
       </div>
 
-      <div className="container max-w-screen-lg mx-auto px-4 pb-12">
+      <div className="container max-w-screen-lg mx-auto px-4 pb-4">
         <div className="flex flex-wrap justify-center">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
