@@ -71,8 +71,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Key Features</h4>
             <ul className="space-y-2">
               {project.features.map((feature) => (
-                <li key={feature} className="flex items-start text-gray-600">
-                  <span className="text-indigo-500 mr-2 mt-1">•</span>
+                <li key={feature} className="flex items-center text-gray-600">
+                  <span className="text-indigo-500 mr-2">•</span>
                   <span>{feature}</span>
                 </li>
               ))}
