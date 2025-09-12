@@ -4,6 +4,9 @@ export interface Project {
   url: string;
   description: string;
   image?: string;
+  icon?: string;
+  backgroundColor?: string;
+  titleColor?: string;
   technologies: string[];
   features: string[];
 }

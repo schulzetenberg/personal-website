@@ -4,10 +4,14 @@ import { Project } from '@/types/project';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="w-full lg:w-10/12 px-4 mb-8">
+    <div className="w-full lg:w-10/12 px-4 my-8">
       <div className="card overflow-hidden project-card">
         {/* Project Image */}
-        <div className="relative h-48 md:h-56 overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 project-image">
+        <div
+          className={`relative h-48 md:h-56 overflow-hidden project-image ${
+            project.backgroundColor || 'bg-gradient-to-br from-blue-500 to-purple-600'
+          }`}
+        >
           {project.image ? (
             <Image
               src={project.image}
@@ -21,7 +25,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             <div className="absolute inset-0 flex items-center justify-center text-white">
               <div className="text-center space-y-4">
                 <div className="relative">
-                  <i className="fa fa-heart text-6xl opacity-90 animate-pulse" />
+                  <i className={`${project.icon || 'fa fa-heart'} text-6xl opacity-90 animate-pulse`} />
                   <div className="absolute -top-2 -right-2 text-2xl">✨</div>
                 </div>
                 <h4 className="text-2xl font-semibold">{project.title}</h4>
@@ -43,7 +47,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   rel="noopener noreferrer"
                   className="hover:text-indigo-600 transition-colors duration-300 quirk-underline"
                 >
-                  <span className="text-gradient pr-2">{project.title}</span>
+                  <span className={`pr-2 ${project.titleColor ? project.titleColor : 'text-gradient'}`}>
+                    {project.title}
+                  </span>
                 </a>
               </h3>
 
@@ -87,7 +93,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 export const ProjectsSection = () => {
   return (
     <section className="projects-section">
-      <div className="container max-w-6xl mx-auto px-4 pb-8">
+      <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 heading-display text-gradient">
             Things I&apos;ve Built
