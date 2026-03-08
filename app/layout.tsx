@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { Oswald, DM_Mono } from 'next/font/google';
+import { Righteous, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@/components/Analytics';
 
-const display = Oswald({
+const display = Righteous({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
+  weight: ['400'],
   variable: '--font-display',
 });
 
-const mono = DM_Mono({
-  weight: ['400', '500'],
+const sans = Space_Grotesk({
+  weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sans',
@@ -81,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${display.variable} ${mono.variable}`}>
+    <html lang="en" className={`scroll-smooth ${display.variable} ${sans.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -94,9 +94,7 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body
-        className={`${mono.className} antialiased min-h-screen relative overflow-x-hidden selection:bg-[#FF4500] selection:text-white`}
-      >
+      <body className={`${sans.className} antialiased min-h-screen relative overflow-x-hidden`}>
         {/* Noise overlay for texture */}
         <div className="bg-noise" />
 

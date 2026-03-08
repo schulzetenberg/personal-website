@@ -52,7 +52,7 @@ export const SocialLinks = ({ size = 'medium', className = '' }: SocialLinksProp
       {socialLinks.map((link) => (
         <li key={link.label}>
           <a
-            className={`${linkClass} ${className} focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FF4500] focus-visible:ring-offset-4 focus-visible:ring-offset-black rounded-sm block p-2`}
+            className={`${linkClass} ${className} focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-black rounded-sm block p-2`}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"

@@ -5,8 +5,12 @@ import { motion } from 'framer-motion';
 
 export const FullPageHeader = () => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center border-b-4 border-black pt-20 pb-12">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="relative min-h-[90vh] flex flex-col justify-center pt-20 pb-12 overflow-hidden pattern-dots">
+      {/* Background Shapes */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-[var(--color-cyan)] rounded-full mix-blend-screen opacity-40 blur-2xl animate-pulse" />
+      <div className="absolute bottom-40 right-20 w-48 h-48 bg-[var(--color-pink)] mix-blend-screen opacity-40 blur-3xl rotate-45" />
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Main Typography Block */}
           <div className="lg:col-span-8 order-2 lg:order-1 flex flex-col justify-center">
@@ -15,24 +19,32 @@ export const FullPageHeader = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
             >
-              <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold heading-display text-black leading-none mb-4 uppercase tracking-tighter">
+              <h1
+                className="text-6xl md:text-8xl lg:text-[10rem] font-bold heading-display text-[var(--color-white)] leading-none mb-4 uppercase tracking-tighter"
+                style={{ textShadow: '4px 4px 0px var(--color-pink), 8px 8px 0px var(--color-black)' }}
+              >
                 Jacob
                 <br />
-                <span className="text-[#FF4500]">Schulzetenberg</span>
+                <span
+                  className="text-[var(--color-yellow)]"
+                  style={{ textShadow: '4px 4px 0px var(--color-cyan), 8px 8px 0px var(--color-black)' }}
+                >
+                  Schulzetenberg
+                </span>
               </h1>
-              <div className="bg-black text-white px-4 py-2 inline-block mb-8 transform -rotate-1 shadow-[4px_4px_0_#FF4500]">
-                <h2 className="text-xl md:text-3xl font-mono uppercase tracking-widest font-bold">Software Engineer</h2>
+              <div className="bg-[var(--color-pink)] text-[var(--color-black)] px-6 py-2 inline-block mb-8 transform -rotate-2 memphis-border memphis-shadow">
+                <h2 className="text-xl md:text-3xl font-sans uppercase tracking-widest font-bold">Software Engineer</h2>
               </div>
-              <p className="text-xl md:text-2xl text-black font-medium max-w-2xl mb-10 border-l-4 border-black pl-6">
+              <p className="text-xl md:text-2xl text-[var(--color-white)] font-bold max-w-2xl mb-10 border-l-8 border-[var(--color-green)] pl-6 bg-black/40 p-4 memphis-border backdrop-blur-sm">
                 I build digital experiences with high-contrast, bold aesthetics. Just fast, scalable, and unforgettable
                 frontend interfaces.
               </p>
 
               <div className="flex flex-wrap gap-6 mt-4">
-                <a href="#projects" className="neo-button">
+                <a href="#projects" className="memphis-button">
                   View Works <i className="fa-solid fa-arrow-right ml-2" />
                 </a>
-                <a href="mailto:contact@schulzetenberg.com" className="neo-button neo-button-secondary">
+                <a href="mailto:contact@schulzetenberg.com" className="memphis-button cyan">
                   Contact Me
                 </a>
               </div>
@@ -47,15 +59,25 @@ export const FullPageHeader = () => {
               transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 200 }}
               className="relative w-64 h-64 md:w-80 md:h-80 xl:w-96 xl:h-96"
             >
-              <div className="absolute inset-0 bg-[#FF4500] translate-x-4 translate-y-4 border-4 border-black" />
-              <div className="relative w-full h-full border-4 border-black bg-white overflow-hidden group">
+              {/* Memphis floating abstract geometries behind image */}
+              <div
+                className="absolute -top-12 -left-8 w-32 h-32 bg-[var(--color-yellow)] rounded-full memphis-border memphis-shadow-pink animate-bounce"
+                style={{ animationDuration: '3s', zIndex: -1 }}
+              />
+              <div
+                className="absolute -bottom-8 -right-8 w-24 h-24 bg-[var(--color-green)] transform rotate-12 memphis-border memphis-shadow"
+                style={{ zIndex: -1 }}
+              />
+
+              <div className="absolute inset-0 bg-[var(--color-cyan)] translate-x-4 translate-y-4 memphis-border" />
+              <div className="relative w-full h-full bg-white overflow-hidden group memphis-border memphis-shadow">
                 <Image
                   src="/profile-cartoon-crop.jpg"
                   alt="Jacob Schulzetenberg Portrait"
                   fill
                   sizes="(max-width: 768px) 256px, (max-width: 1280px) 320px, 384px"
                   priority
-                  className="object-cover filter grayscale transition-transform duration-500 scale-105 group-hover:scale-100"
+                  className="object-cover filter grayscale group-hover:grayscale-0 transition-transform duration-500 scale-105 group-hover:scale-100"
                 />
               </div>
             </motion.div>
@@ -63,8 +85,7 @@ export const FullPageHeader = () => {
         </div>
       </div>
 
-      {/* Decorative repeating stripe */}
-      <div className="absolute bottom-0 left-0 w-full h-4 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImsiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBoNDBWMHgtNDB6IiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTAgNDBMMDAgMEw0MCA0MHoiIGZpbGw9IiMwRjBGMEYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaykiLz48L3N2Zz4=')] opacity-20" />
+      {/* Removed the brutalist wavy svg */}
     </section>
   );
 };

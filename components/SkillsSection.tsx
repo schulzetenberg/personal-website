@@ -25,41 +25,48 @@ const skillsBottom = [
   'PostgreSQL',
 ];
 
-export const SkillsSection = () => {
-  return (
-    <section id="skills" className="relative bg-[#F4F4F0] border-b-4 border-black py-0">
-      {/* Brutalist Section Header */}
-      <div className="container mx-auto px-4 py-8 border-b-4 border-black">
-        <h2 className="text-4xl md:text-5xl font-bold heading-display text-black uppercase tracking-tighter">
-          Technical Arsenal <span className="text-[#FF4500]">{'///'}</span>
-        </h2>
-      </div>
+const uniqueSkills = Array.from(new Set([...skillsTop, ...skillsBottom]));
 
-      {/* Top Marquee (Scrolls Left) */}
-      <div className="marquee-container bg-[#FF4500] text-white">
-        <div className="marquee-content">
-          {skillsTop.map((skill, index) => (
-            <div key={`top-${index}`} className="marquee-item">
-              {skill}
-            </div>
-          ))}
+export const SkillsSection = () => {
+  const getShadowColor = (index: number) => {
+    const colors = ['memphis-shadow-pink', 'memphis-shadow-cyan', 'memphis-shadow-yellow'];
+    return colors[index % colors.length];
+  };
+
+  return (
+    <section id="skills" className="relative py-24 bg-[var(--color-black)] overflow-hidden pattern-dots">
+      {/* Memphis Section Header */}
+      <div className="container mx-auto px-4 mb-16 relative z-10 flex justify-center">
+        <div className="bg-[var(--color-pink)] px-8 py-4 memphis-border memphis-shadow-cyan transform -rotate-2 inline-block">
+          <h2
+            className="text-4xl md:text-5xl font-bold heading-display text-[var(--color-white)] uppercase tracking-tighter"
+            style={{ textShadow: '4px 4px 0px var(--color-black)' }}
+          >
+            Technical Arsenal{' '}
+            <span className="text-[var(--color-yellow)]" style={{ textShadow: 'none' }}>
+              ★
+            </span>
+          </h2>
         </div>
       </div>
 
-      {/* Bottom Marquee (Scrolls Right) */}
-      <div className="marquee-container bg-black text-white border-none">
-        <div className="marquee-content reverse">
-          {skillsBottom.map((skill, index) => (
-            <div key={`bottom-${index}`} className="marquee-item">
-              {skill}
+      {/* Readable Skills Grid */}
+      <div className="container mx-auto px-4 relative z-10 max-w-4xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+          {uniqueSkills.map((skill, index) => (
+            <div
+              key={skill}
+              className={`bg-white p-4 flex items-center justify-center memphis-border ${getShadowColor(index)} transform transition-transform hover:-translate-y-2 hover:translate-x-[-2px] duration-200 cursor-default`}
+            >
+              <span className="text-[var(--color-black)] font-bold text-lg font-sans text-center">{skill}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Decorative Footer */}
-      <div className="container mx-auto px-4 py-4 bg-[#F4F4F0]">
-        <p className="text-black font-mono font-bold uppercase tracking-widest text-xs text-right">
+      <div className="container mx-auto px-4 py-8 bg-transparent">
+        <p className="text-[var(--color-yellow)] font-sans font-bold uppercase tracking-widest text-xs text-right">
           END OF ARSENAL BLOCK
         </p>
       </div>
