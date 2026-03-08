@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { InstagramData, InstagramImage } from '@/types/instagram';
+import { motion } from 'framer-motion';
 
 export const InstagramSection = () => {
   const [instagramData, setInstagramData] = useState<InstagramData | null>(null);
@@ -30,81 +31,106 @@ export const InstagramSection = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-wrap mt-12 mb-1">
-        <div className="relative flex-grow max-w-full flex-1 px-4">
-          <p className="text-center">
-            <span className="text-2xl mb-5 block">Loading Instagram feed...</span>
+      <section className="relative bg-[#F4F4F0] border-b-4 border-black py-20">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-black font-mono font-bold uppercase tracking-widest flex items-center justify-center gap-3">
+            <i className="fa-solid fa-spinner fa-spin text-[#FF4500]"></i> Fetching Feed...
           </p>
         </div>
-      </div>
+      </section>
     );
   }
 
   if (error || !instagramData || instagramData.images.length === 0) {
     return (
-      <div className="flex flex-wrap mt-12 mb-1">
-        <div className="relative flex-grow max-w-full flex-1 px-4">
-          <p className="text-center">
-            <a
-              className="font-light text-3xl md:text-4xl mb-8 block transition-all duration-300 group heading-display text-gradient"
-              href="https://instagram.com/schulzetenberg"
-              target="_blank"
-              rel="noopener noreferrer"
+      <section className="relative bg-[#F4F4F0] border-b-4 border-black py-20">
+        <div className="container mx-auto px-4 text-center">
+          <a
+            className="inline-block group"
+            href="https://instagram.com/schulzetenberg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.div
+              className="neo-card px-8 py-6 flex items-center gap-4 bg-white"
+              whileHover={{ x: -4, y: -4, boxShadow: '12px 12px 0px #0F0F0F' }}
             >
-              <span className="inline-flex items-center gap-3">
-                INSTA
-                <i className="fab fa-instagram text-pink-500 group-hover:animate-pulse group-hover:scale-110 transition-all duration-300 wiggle-on-hover" />
-                GRAM
-              </span>
-            </a>
-          </p>
+              <i className="fab fa-instagram text-4xl text-[#FF4500]" />
+              <span className="text-2xl font-bold heading-display text-black tracking-widest uppercase">INSTAGRAM</span>
+            </motion.div>
+          </a>
         </div>
-      </div>
+      </section>
     );
   }
 
   return (
-    <>
-      <div className="flex flex-wrap mt-12 mb-1">
-        <div className="relative flex-grow max-w-full flex-1 px-4">
-          <p className="text-center">
+    <section className="relative bg-[#F4F4F0] border-b-4 border-black py-24 bg-memphis-waves">
+      <div className="absolute inset-0 bg-[#F4F4F0] opacity-80 pointer-events-none" />
+      <div className="container max-w-7xl mx-auto px-4 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b-4 border-black pb-4">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <h2 className="text-5xl md:text-7xl font-bold heading-display text-black flex items-center gap-4 uppercase tracking-tighter">
+              <i className="fab fa-instagram text-[#FF4500]" />
+              Instagram
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="mt-4 md:mt-0"
+          >
             <a
-              className="font-bold text-3xl md:text-4xl mb-4 block hover:text-indigo-600 transition-colors duration-300"
+              className="neo-button"
               href="https://instagram.com/schulzetenberg"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: 'Fredoka One, cursive' }}
             >
-              <span className="inline-flex items-center gap-3">
-                <i className="fab fa-instagram text-pink-500" />
-                Instagram
-              </span>
+              @schulzetenberg
             </a>
-          </p>
+          </motion.div>
         </div>
-      </div>
 
-      <div className="container max-w-screen-lg mx-auto px-4 pb-18">
-        <div className="flex flex-wrap row-centered mx-3 mb-5 instafeed">
-          {instagramData.images.map((image: InstagramImage) => (
-            <div key={image.imgUrl} className="w-1/4 md:w-1/6 px-2 my-3">
-              <a href={image.postUrl} target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative overflow-hidden rounded-lg hover:shadow-lg transition-shadow duration-300">
+        <motion.div
+          className="neo-card bg-white p-4 md:p-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {instagramData.images.slice(0, 8).map((image: InstagramImage, index: number) => (
+              <motion.div
+                key={image.imgUrl}
+                className="relative aspect-square border-4 border-black overflow-hidden bg-black"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.1, delay: index * 0.05 }}
+              >
+                <div className="block w-full h-full">
                   <Image
-                    className="h-auto w-full"
+                    className="object-cover w-full h-full filter grayscale"
                     src={image.imgUrl}
-                    alt={`Instagram post: ${image.caption}`}
-                    title={image.caption}
-                    width={200}
-                    height={200}
+                    alt={`Instagram post`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
                     loading="lazy"
                   />
                 </div>
-              </a>
-            </div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </>
+    </section>
   );
 };

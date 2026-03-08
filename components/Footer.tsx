@@ -1,28 +1,42 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { SocialLinks } from './SocialLinks';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="page-footer elegant-color text-center pb-4 pt-32">
-      <div className="container mx-auto px-4 pb-5">
-        <div className="flex flex-wrap">
-          <div className="w-full px-4 text-center">
-            <h1 className="h1 text-4xl md:text-5xl color-main font-light mb-8" style={{ transform: 'scaleY(1.25)' }}>
-              Get In Touch
-            </h1>
+    <footer className="relative bg-black text-white pt-24 pb-8 border-t-8 border-[#FF4500]">
+      <div className="container mx-auto px-4">
+        {/* Massive Footer CTA */}
+        <div className="flex flex-col items-center justify-center text-center mb-16">
+          <motion.h2
+            className="text-6xl md:text-[8rem] lg:text-[12rem] font-bold mb-8 heading-display leading-none tracking-tighter uppercase"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+          >
+            Let&apos;s <br className="md:hidden" />
+            Talk
+          </motion.h2>
+
+          <div className="mb-16 transform transition-transform hover:scale-110">
+            <SocialLinks size="large" className="text-white hover:text-[#FF4500]" />
           </div>
         </div>
-      </div>
 
-      <div className="text-center pb-24">
-        <SocialLinks size="medium" className="justify-center gap-8" />
-      </div>
+        {/* Brutalist Footer Details */}
+        <div className="border-t-4 border-white pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-white font-mono font-bold uppercase tracking-widest text-sm">
+            © {currentYear} Jacob Schulzetenberg
+          </div>
 
-      <div className="container mx-auto max-w-full text-center grey-text mt-5 mb-1">
-        <small>© Copyright {currentYear} Jacob Schulzetenberg</small>
+          <div className="text-white font-mono font-bold uppercase tracking-widest text-sm bg-[#FF4500] px-3 py-1 text-black">
+            Thanks for visiting
+          </div>
+        </div>
       </div>
     </footer>
   );
