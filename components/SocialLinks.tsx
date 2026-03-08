@@ -48,11 +48,16 @@ export const SocialLinks = ({ size = 'medium', className = '' }: SocialLinksProp
   const linkClass = size === 'large' ? 'social-link' : 'nav-link';
 
   return (
-    <ul className={`flex flex-wrap list-none pl-0 mb-0 flex-row ${className}`}>
+    <ul className={`flex flex-wrap justify-center gap-8 list-none pl-0 mb-0 flex-row ${className}`}>
       {socialLinks.map((link) => (
         <li key={link.label}>
-          <a className={`${linkClass} ${className}`} href={link.href} target="_blank" rel="noopener noreferrer">
-            <i className={`fab ${link.icon} ${sizeClasses[size]}`} aria-label={link.label} />
+          <a
+            className={`${linkClass} ${className} focus:outline-none focus-visible:ring-4 focus-visible:ring-[#FF4500] focus-visible:ring-offset-4 focus-visible:ring-offset-black rounded-sm block p-2`}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className={`fab ${link.icon} ${sizeClasses[size]}`} aria-hidden="true" />
             <span className="sr-only">{link.ariaLabel}</span>
           </a>
         </li>
