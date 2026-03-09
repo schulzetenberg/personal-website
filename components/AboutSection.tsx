@@ -23,7 +23,7 @@ export const AboutSection = () => {
                 Me
               </h2>
               <div className="w-16 h-4 bg-black mb-6"></div>
-              <p className="text-black font-mono font-bold uppercase tracking-widest text-sm">System Profile // 001</p>
+              <p className="text-black font-mono font-bold uppercase tracking-widest text-sm">System Profile // INIT</p>
             </div>
 
             {/* Content Area */}

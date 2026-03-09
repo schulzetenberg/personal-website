@@ -71,8 +71,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             <ul className="space-y-1">
               {project.features.map((feature) => (
                 <li key={feature} className="flex items-start text-black text-sm font-medium">
-                  <span className="text-[#FF4500] mr-2 text-lg leading-none">►</span>
-                  <span>{feature}</span>
+                  <span className="text-[#FF4500] mr-2 text-xs mt-[5px] leading-none">►</span>
+                  <span className="flex-1">{feature}</span>
                 </li>
               ))}
             </ul>
@@ -102,6 +102,33 @@ export const ProjectsSection = () => {
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
+
+          {/* GitHub CTA */}
+          <motion.div
+            className="w-full lg:w-10/12 px-4 mt-8 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className="neo-card bg-[#FF4500] p-8 md:p-12 border-4 border-black inline-block transform rotate-1 hover:rotate-0 transition-transform duration-300">
+              <h3 className="text-3xl md:text-5xl font-bold heading-display text-black uppercase tracking-widest mb-4">
+                There&apos;s More.
+              </h3>
+              <p className="text-black text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto">
+                Check out the rest of my open source contributions, experiments, and earlier projects over on my GitHub.
+              </p>
+              <a
+                href="https://github.com/schulzetenberg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-black text-xl font-bold font-mono tracking-widest uppercase border-4 border-black hover:bg-black hover:text-white transition-colors group shadow-[4px_4px_0_#0F0F0F] hover:translate-x-[2px] animate-bounce-short hover:animate-none hover:shadow-[2px_2px_0_#0F0F0F] hover:translate-y-[2px]"
+              >
+                <i className="fab fa-github mr-3 text-2xl group-hover:text-white transition-colors" /> View GitHub
+                Profile
+              </a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

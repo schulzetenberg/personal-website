@@ -74,9 +74,7 @@ export const SkillsSection = () => {
 
         {/* Decorative Footer */}
         <div className="mt-16 text-right">
-          <p className="text-black font-mono font-bold uppercase tracking-widest text-xs">
-            END OF ARSENAL BLOCK // 002
-          </p>
+          <p className="text-black font-mono font-bold tracking-widest text-xs">&lt;ArsenalBlock/&gt;</p>
         </div>
       </div>
     </section>
