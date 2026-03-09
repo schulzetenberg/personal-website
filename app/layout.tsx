@@ -1,26 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter, Pacifico, Figtree } from 'next/font/google';
+import { Oswald, DM_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@/components/Analytics';
 
-const inter = Inter({
+const display = Oswald({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['300', '400', '500', '600', '700', '800'],
-});
-
-const display = Pacifico({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
+  weight: ['400', '500', '600', '700'],
   variable: '--font-display',
 });
 
-const subhead = Figtree({
-  weight: ['400', '500', '600'],
+const mono = DM_Mono({
+  weight: ['400', '500'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-subhead',
+  variable: '--font-sans',
 });
 
 export const metadata: Metadata = {
@@ -87,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${display.variable} ${subhead.variable}`}>
+    <html lang="en" className={`scroll-smooth ${display.variable} ${mono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -100,8 +94,15 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={`${inter.className} antialiased bg-white text-gray-900 min-h-screen bg-grid`}>
-        {children}
+      <body
+        className={`${mono.className} antialiased min-h-screen relative overflow-x-hidden selection:bg-[#FF4500] selection:text-white`}
+      >
+        {/* Noise overlay for texture */}
+        <div className="bg-noise" />
+
+        {/* Main Content Container relative to sit on top of fixed bg */}
+        <div className="relative z-10 w-full">{children}</div>
+
         <Analytics />
       </body>
     </html>

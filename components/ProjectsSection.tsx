@@ -1,84 +1,77 @@
+'use client';
+
 import Image from 'next/image';
 import { projects } from '@/lib/projects';
 import { Project } from '@/types/project';
+import { motion } from 'framer-motion';
 
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
-    <div className="w-full lg:w-10/12 px-4 my-8">
-      <div className="card overflow-hidden project-card">
-        {/* Project Image */}
-        <div
-          className={`relative h-48 md:h-56 overflow-hidden project-image ${
-            project.backgroundColor || 'bg-gradient-to-br from-blue-500 to-purple-600'
-          }`}
-        >
+    <motion.div
+      className="w-full lg:w-10/12 px-4 mb-16"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+    >
+      <div className="neo-card flex flex-col md:flex-row group bg-[#F4F4F0]">
+        {/* Project Image Panel */}
+        <div className="relative w-full md:w-5/12 h-64 md:h-auto border-b-4 md:border-b-0 md:border-r-4 border-black overflow-hidden bg-black">
           {project.image ? (
             <Image
               src={project.image}
               alt={`${project.title} screenshot`}
               fill
-              className="object-cover object-top"
+              className="object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-300"
               loading="lazy"
             />
           ) : (
-            /* Enhanced fallback with more personality */
-            <div className="absolute inset-0 flex items-center justify-center text-white">
-              <div className="text-center space-y-4">
-                <div className="relative">
-                  <i className={`${project.icon || 'fa fa-heart'} text-6xl opacity-90 animate-pulse`} />
-                  <div className="absolute -top-2 -right-2 text-2xl">✨</div>
-                </div>
-                <h4 className="text-2xl font-semibold">{project.title}</h4>
-                <p className="text-base opacity-90 px-4">Web Application</p>
+            <div className="absolute inset-0 flex items-center justify-center bg-black">
+              <div className="text-center">
+                <i className={`${project.icon || 'fa fa-code'} text-7xl text-[#FF4500]`} />
               </div>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+          {/* Brutalist overlay on hover */}
+          <div className="absolute inset-0 bg-[#FF4500] mix-blend-multiply opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
         </div>
 
-        {/* Project Content */}
-        <div className="p-6 md:p-8">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-            <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 heading-display">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-indigo-600 transition-colors duration-300 quirk-underline"
-                >
-                  <span className={`pr-2 ${project.titleColor ? project.titleColor : 'text-gradient'}`}>
-                    {project.title}
-                  </span>
-                </a>
-              </h3>
+        {/* Project Content Panel */}
+        <div className="w-full md:w-7/12 p-8 flex flex-col bg-white">
+          <div className="flex-1">
+            <h3 className="text-4xl font-bold mb-4 heading-display text-black uppercase">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#FF4500] transition-colors"
+              >
+                {project.title}
+                <i className="fa-solid fa-arrow-right ml-3 transform -rotate-45" />
+              </a>
+            </h3>
 
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">{project.description}</p>
-            </div>
+            <p className="text-black text-lg mb-8 font-medium border-l-4 border-black pl-4">{project.description}</p>
           </div>
 
-          {/* Technologies */}
-          <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Technologies</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mt-auto">
+            <h4 className="text-black font-mono font-bold uppercase tracking-widest text-sm mb-3">Stack:</h4>
+            <div className="flex flex-wrap gap-2 mb-6">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors duration-200"
+                  className="border-2 border-black px-2 py-1 text-xs font-mono font-bold bg-white text-black"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-          </div>
 
-          {/* Features */}
-          <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wide">Key Features</h4>
-            <ul className="space-y-2">
+            <h4 className="text-black font-mono font-bold uppercase tracking-widest text-sm mb-3">Notes:</h4>
+            <ul className="space-y-1">
               {project.features.map((feature) => (
-                <li key={feature} className="flex items-center text-gray-600">
-                  <span className="text-indigo-500 mr-2">•</span>
+                <li key={feature} className="flex items-start text-black text-sm font-medium">
+                  <span className="text-[#FF4500] mr-2 text-lg leading-none">►</span>
                   <span>{feature}</span>
                 </li>
               ))}
@@ -86,29 +79,28 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export const ProjectsSection = () => {
   return (
-    <section className="projects-section">
-      <div className="container max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 heading-display text-gradient">
-            Things I&apos;ve Built
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A curated collection of projects that showcase my passion for creating
-            <span className="font-semibold text-indigo-600"> meaningful digital experiences</span>
-          </p>
-        </div>
+    <section
+      id="projects"
+      className="relative bg-white border-b-4 border-black overflow-hidden py-16 bg-memphis-stripes"
+    >
+      <div className="absolute inset-0 bg-white opacity-80 pointer-events-none z-0" />
+      {/* Section Header */}
+      <div className="container mx-auto px-4 mb-16 border-b-4 border-black pb-8 relative z-10">
+        <h2 className="text-5xl md:text-7xl font-bold heading-display text-black uppercase tracking-tighter">
+          Selected Works <span className="text-[#FF4500]">{'///'}</span>
+        </h2>
       </div>
 
-      <div className="container max-w-screen-lg mx-auto px-4 pb-4">
+      <div className="container max-w-screen-lg mx-auto px-4 relative z-10">
         <div className="flex flex-wrap justify-center">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>
