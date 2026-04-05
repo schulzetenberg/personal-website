@@ -111,7 +111,7 @@ export const ProjectsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <div className="neo-card accent-panel-cool p-8 md:p-12 border-4 border-black inline-block transform rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="neo-card neo-card-paper p-8 md:p-12 border-4 border-black inline-block transform rotate-1 hover:rotate-0 transition-transform duration-300">
               <h3 className="text-3xl md:text-5xl font-bold heading-display text-black uppercase tracking-widest mb-4">
                 There&apos;s More.
               </h3>
