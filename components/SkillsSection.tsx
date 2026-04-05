@@ -4,77 +4,90 @@ import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: 'Frontend Development',
+    title: 'Frontend',
     skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux', 'React-Query', 'Jest'],
-    color: '#00D1FF', // Memphis Teal
   },
   {
     title: 'Backend & Data',
     skills: ['Node.js', 'NestJS', 'Express', 'PostgreSQL', 'Redis', 'MongoDB', 'MySQL'],
-    color: '#B04DF4', // Memphis Purple
   },
   {
     title: 'Tools & DevOps',
     skills: ['Docker', 'AWS', 'Git & GitHub', 'CI/CD', 'Cypress', 'Blockchain', 'Microservices'],
-    color: '#FF4500', // Neon Orange
   },
 ];
 
 export const SkillsSection = () => {
+  const backgroundCode = [
+    'const skills = [',
+    '  {',
+    '    category: "Frontend",',
+    '    technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"]',
+    '  },',
+    '  {',
+    '    category: "Backend & Data",',
+    '    technologies: ["Node.js", "NestJS", "PostgreSQL", "Redis"]',
+    '  },',
+    '  {',
+    '    category: "Tools & DevOps",',
+    '    technologies: ["Docker", "AWS", "Git & GitHub", "CI/CD"]',
+    '  }',
+    ']',
+    'export const SkillsSection = () => {',
+    '  return (',
+    '    <section id="skills" className="relative bg-white border-b-4 border-black py-16 md:py-18 overflow-hidden">',
+    '      {/* Section content here */}',
+    '    </section>',
+    '  );',
+    '};',
+  ];
+
   return (
-    <section id="skills" className="relative bg-[#F4F4F0] border-b-4 border-black py-16 overflow-hidden">
-      {/* Abstract Background Elements (Memphis Style) */}
-      <div className="absolute inset-0 bg-[#F4F4F0] opacity-90 pointer-events-none" />
-      <div className="absolute top-10 right-10 w-24 h-24 border-4 border-black rounded-full opacity-20 pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-32 h-32 border-4 border-black rotate-45 opacity-20 pointer-events-none" />
+    <section id="skills" className="relative bg-white border-b-4 border-black py-16 md:py-18 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_12%_15%,rgba(255,69,0,0.06),transparent_26%)]" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.08] [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_78%,transparent)]"
+      >
+        <div className="absolute -top-4 -left-24 w-[160%] rotate-[-2deg] text-[11px] leading-6 font-mono text-black/90">
+          {Array.from({ length: 18 }).map((_, rowIdx) => (
+            <p key={rowIdx} className="whitespace-nowrap">
+              {backgroundCode[rowIdx % backgroundCode.length]} | {backgroundCode[(rowIdx + 2) % backgroundCode.length]}
+            </p>
+          ))}
+        </div>
+      </div>
 
       <div className="container mx-auto px-4 z-10 relative">
-        {/* Brutalist Section Header */}
-        <div className="mb-12 border-b-4 border-black pb-4 inline-block">
-          <h2 className="text-4xl md:text-5xl font-bold heading-display text-black uppercase tracking-tighter">
-            Technical Arsenal <span className="text-[#FF4500]">{'///'}</span>
+        <div className="mb-10 md:mb-12">
+          <h2 className="section-title-wrap text-4xl md:text-[3.35rem] font-bold heading-display text-black uppercase tracking-tighter">
+            Technical Skills <span className="text-[#FF4500]">{'///'}</span>
           </h2>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-10">
           {skillCategories.map((category, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="neo-card bg-white p-8 relative overflow-hidden group"
+              className="group neo-card relative bg-[#F4F4F0] px-5 py-6 md:px-6 md:py-7"
             >
-              {/* Decorative Corner Shape */}
-              <div
-                className="absolute top-0 right-0 w-20 h-20 transform translate-x-10 -translate-y-10 rotate-45 border-4 border-black transition-transform duration-300 group-hover:scale-125"
-                style={{ backgroundColor: category.color }}
-              />
-
-              <h3 className="text-2xl font-bold font-mono uppercase tracking-widest mb-6 relative z-10 border-b-4 border-black pb-2 inline-block">
+              <h3 className="text-[2rem] leading-none font-bold font-mono uppercase tracking-wide mb-5 relative z-10">
                 {category.title}
               </h3>
-
-              <ul className="space-y-4 relative z-10">
+              <ul className="space-y-2.5 relative z-10">
                 {category.skills.map((skill, sIdx) => (
                   <li key={sIdx} className="flex items-center text-lg font-medium text-black">
-                    <span
-                      className="w-4 h-4 border-2 border-black mr-4 inline-block shrink-0"
-                      style={{ backgroundColor: category.color }}
-                    />
+                    <span className="mr-3 inline-block h-1.5 w-1.5 shrink-0 bg-[#FF4500]" />
                     {skill}
                   </li>
                 ))}
               </ul>
             </motion.div>
           ))}
-        </div>
-
-        {/* Decorative Footer */}
-        <div className="mt-16 text-right">
-          <p className="text-black font-mono font-bold tracking-widest text-xs">&lt;ArsenalBlock/&gt;</p>
         </div>
       </div>
     </section>

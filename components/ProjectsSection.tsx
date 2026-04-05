@@ -93,7 +93,7 @@ export const ProjectsSection = () => {
       {/* Section Header */}
       <div className="container mx-auto px-4 mb-16 border-b-4 border-black pb-8 relative z-10">
         <h2 className="text-5xl md:text-7xl font-bold heading-display text-black uppercase tracking-tighter">
-          Selected Works <span className="text-[#FF4500]">{'///'}</span>
+          Selected Projects <span className="text-[#FF4500]">{'///'}</span>
         </h2>
       </div>
 

@@ -8,25 +8,33 @@ export const AboutSection = () => {
       <div className="absolute inset-0 bg-white opacity-80 pointer-events-none" />
       <div className="container mx-auto px-4 z-10 relative">
         <motion.div
-          className="neo-card max-w-6xl mx-auto"
+          className="panel-frame max-w-6xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.4 }}
         >
+          <div className="panel-topbar">
+            <div className="panel-lights" aria-hidden="true">
+              <span className="panel-light orange" />
+              <span className="panel-light amber" />
+              <span className="panel-light cyan" />
+            </div>
+            <span className="panel-code">about-engineer.ts</span>
+          </div>
           <div className="grid md:grid-cols-12 items-stretch">
-            {/* Header / Title Area */}
             <div className="md:col-span-4 bg-[#FF4500] p-8 md:p-12 border-b-4 md:border-b-0 md:border-r-4 border-black flex flex-col justify-center">
               <h2 className="text-5xl md:text-6xl heading-display text-white mb-4 transform -rotate-2">
                 About
                 <br />
                 Me
               </h2>
-              <div className="w-16 h-4 bg-black mb-6"></div>
-              <p className="text-black font-mono font-bold uppercase tracking-widest text-sm">System Profile // INIT</p>
+              <div className="w-16 h-4 bg-black mb-6" />
+              <p className="text-black font-mono font-bold uppercase tracking-widest text-xs">
+                Profile // <span className="lowercase">init</span>
+              </p>
             </div>
 
-            {/* Content Area */}
             <div className="md:col-span-8 p-8 md:p-12 bg-[#F4F4F0] flex flex-col justify-center">
               <div className="space-y-6 mb-12">
                 <p className="text-xl md:text-2xl text-black leading-snug font-medium">
@@ -41,7 +49,6 @@ export const AboutSection = () => {
                 </p>
               </div>
 
-              {/* Status Bar */}
               <div className="border-4 border-black bg-white p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-[4px_4px_0_#0F0F0F]">
                 <div className="flex items-center gap-3 text-black font-mono font-bold uppercase text-sm">
                   <span className="relative flex h-4 w-4">
