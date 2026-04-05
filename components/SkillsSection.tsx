@@ -73,7 +73,9 @@ export const SkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group neo-card relative bg-[#F4F4F0] px-5 py-6 md:px-6 md:py-7"
+              className={`group neo-card relative px-5 py-6 md:px-6 md:py-7 ${
+                idx === 1 ? 'neo-card-paper' : 'neo-card-cool'
+              }`}
             >
               <h3 className="text-[2rem] leading-none font-bold font-mono uppercase tracking-wide mb-5 relative z-10">
                 {category.title}
