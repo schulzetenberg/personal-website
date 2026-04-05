@@ -1,28 +1,24 @@
 interface SocialLink {
   href: string;
   icon: string;
+  iconStyle?: 'fab' | 'fa-solid';
   label: string;
   ariaLabel: string;
 }
 
 const socialLinks: SocialLink[] = [
   {
+    href: 'mailto:contact@schulzetenberg.com',
+    icon: 'fa-envelope',
+    iconStyle: 'fa-solid',
+    label: 'Email',
+    ariaLabel: 'Send an email to contact@schulzetenberg.com',
+  },
+  {
     href: 'https://www.linkedin.com/in/schulzetenberg',
     icon: 'fa-linkedin',
     label: 'LinkedIn',
     ariaLabel: 'Navigate to LinkedIn profile',
-  },
-  {
-    href: 'https://www.instagram.com/schulzetenberg',
-    icon: 'fa-instagram',
-    label: 'Instagram',
-    ariaLabel: 'Navigate to Instagram profile',
-  },
-  {
-    href: 'https://open.spotify.com/user/waterland15',
-    icon: 'fa-spotify',
-    label: 'Spotify',
-    ariaLabel: 'Navigate to Spotify profile',
   },
   {
     href: 'https://github.com/schulzetenberg',
@@ -54,10 +50,10 @@ export const SocialLinks = ({ size = 'medium', className = '' }: SocialLinksProp
           <a
             className={`${linkClass} ${className} focus:outline-none focus-visible:ring-4 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-black rounded-sm block p-2`}
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+            rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
           >
-            <i className={`fab ${link.icon} ${sizeClasses[size]}`} aria-hidden="true" />
+            <i className={`${link.iconStyle ?? 'fab'} ${link.icon} ${sizeClasses[size]}`} aria-hidden="true" />
             <span className="sr-only">{link.ariaLabel}</span>
           </a>
         </li>
