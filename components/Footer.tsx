@@ -7,7 +7,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-black text-white pt-24 pb-8 border-t-8 border-[#FF4500]">
+    <footer className="relative bg-black text-white pt-24 pb-8 border-t-8 border-[var(--color-accent)]">
       <div className="container mx-auto px-4">
         {/* Massive Footer CTA */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
@@ -23,7 +23,7 @@ export const Footer = () => {
           </motion.h2>
 
           <div className="mb-16 transform transition-transform hover:scale-110">
-            <SocialLinks size="large" className="text-white hover:text-[#FF4500]" />
+            <SocialLinks size="large" className="text-white hover:text-[var(--color-accent)]" />
           </div>
         </div>
 
@@ -33,7 +33,7 @@ export const Footer = () => {
             © {currentYear} Jacob Schulzetenberg
           </div>
 
-          <div className="text-white font-mono font-bold uppercase tracking-widest text-sm bg-[#FF4500] px-3 py-1 text-black">
+          <div className="text-white font-mono font-bold uppercase tracking-widest text-sm bg-[var(--color-accent)] px-3 py-1 text-black">
             Thanks for visiting
           </div>
         </div>

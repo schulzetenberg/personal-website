@@ -28,12 +28,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-black">
               <div className="text-center">
-                <i className={`${project.icon || 'fa fa-code'} text-7xl text-[#FF4500]`} />
+                <i className={`${project.icon || 'fa fa-code'} text-7xl text-[var(--color-accent)]`} />
               </div>
             </div>
           )}
           {/* Brutalist overlay on hover */}
-          <div className="absolute inset-0 bg-[#FF4500] mix-blend-multiply opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-[var(--color-accent)] mix-blend-multiply opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
         </div>
 
         {/* Project Content Panel */}
@@ -44,7 +44,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#FF4500] transition-colors"
+                className="hover:text-[var(--color-accent)] transition-colors"
               >
                 {project.title}
                 <i className="fa-solid fa-arrow-right ml-3 transform -rotate-45" />
@@ -71,7 +71,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             <ul className="space-y-1">
               {project.features.map((feature) => (
                 <li key={feature} className="flex items-start text-black text-sm font-medium">
-                  <span className="text-[#FF4500] mr-2 text-xs mt-[5px] leading-none">►</span>
+                  <span className="text-[var(--color-accent)] mr-2 text-xs mt-[5px] leading-none">►</span>
                   <span className="flex-1">{feature}</span>
                 </li>
               ))}
@@ -93,7 +93,7 @@ export const ProjectsSection = () => {
       {/* Section Header */}
       <div className="container mx-auto px-4 mb-16 border-b-4 border-black pb-8 relative z-10">
         <h2 className="text-5xl md:text-7xl font-bold heading-display text-black uppercase tracking-tighter">
-          Selected Projects <span className="text-[#FF4500]">{'///'}</span>
+          Selected Projects <span className="text-[var(--color-accent)]">{'///'}</span>
         </h2>
       </div>
 
@@ -111,7 +111,7 @@ export const ProjectsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <div className="neo-card bg-[#FF4500] p-8 md:p-12 border-4 border-black inline-block transform rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="neo-card bg-[var(--color-accent)] p-8 md:p-12 border-4 border-black inline-block transform rotate-1 hover:rotate-0 transition-transform duration-300">
               <h3 className="text-3xl md:text-5xl font-bold heading-display text-black uppercase tracking-widest mb-4">
                 There&apos;s More.
               </h3>

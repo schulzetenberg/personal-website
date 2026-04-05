@@ -23,7 +23,7 @@ export const AboutSection = () => {
             <span className="panel-code">about-engineer.ts</span>
           </div>
           <div className="grid md:grid-cols-12 items-stretch">
-            <div className="md:col-span-4 bg-[#FF4500] p-8 md:p-12 border-b-4 md:border-b-0 md:border-r-4 border-black flex flex-col justify-center">
+            <div className="md:col-span-4 bg-[var(--color-accent)] p-8 md:p-12 border-b-4 md:border-b-0 md:border-r-4 border-black flex flex-col justify-center">
               <h2 className="text-5xl md:text-6xl heading-display text-white mb-4 transform -rotate-2">
                 About
                 <br />
@@ -52,8 +52,8 @@ export const AboutSection = () => {
               <div className="border-4 border-black bg-white p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-[4px_4px_0_#0F0F0F]">
                 <div className="flex items-center gap-3 text-black font-mono font-bold uppercase text-sm">
                   <span className="relative flex h-4 w-4">
-                    <span className="animate-ping absolute inline-flex h-full w-full bg-[#FF4500] opacity-75"></span>
-                    <span className="relative inline-flex h-4 w-4 bg-[#FF4500] border-2 border-black"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full bg-[var(--color-accent)] opacity-75"></span>
+                    <span className="relative inline-flex h-4 w-4 bg-[var(--color-accent)] border-2 border-black"></span>
                   </span>
                   <span>Status: Crafting digital experiences</span>
                 </div>

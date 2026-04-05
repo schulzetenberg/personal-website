@@ -34,7 +34,7 @@ export const InstagramSection = () => {
       <section className="relative bg-[#F4F4F0] border-b-4 border-black py-20">
         <div className="container mx-auto px-4 text-center">
           <p className="text-black font-mono font-bold uppercase tracking-widest flex items-center justify-center gap-3">
-            <i className="fa-solid fa-spinner fa-spin text-[#FF4500]"></i> Fetching Feed...
+            <i className="fa-solid fa-spinner fa-spin text-[var(--color-accent)]"></i> Fetching Feed...
           </p>
         </div>
       </section>
@@ -55,7 +55,7 @@ export const InstagramSection = () => {
               className="neo-card px-8 py-6 flex items-center gap-4 bg-white"
               whileHover={{ x: -4, y: -4, boxShadow: '12px 12px 0px #0F0F0F' }}
             >
-              <i className="fab fa-instagram text-[#FF4500] transform md:translate-y-1" />
+              <i className="fab fa-instagram text-[var(--color-accent)] transform md:translate-y-1" />
               <span className="text-2xl font-bold heading-display text-black tracking-widest uppercase">INSTAGRAM</span>
             </motion.div>
           </a>
@@ -76,7 +76,7 @@ export const InstagramSection = () => {
             transition={{ duration: 0.4 }}
           >
             <h2 className="text-5xl md:text-7xl font-bold heading-display text-black flex items-center gap-4 uppercase tracking-tighter">
-              <i className="fab fa-instagram text-[#FF4500] transform md:translate-y-1" />
+              <i className="fab fa-instagram text-[var(--color-accent)] transform md:translate-y-1" />
               Instagram
             </h2>
           </motion.div>

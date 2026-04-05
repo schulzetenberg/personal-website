@@ -19,9 +19,9 @@ export const FullPageHeader = () => {
               <h1 className="text-6xl md:text-7xl lg:text-7xl xl:text-[7rem] font-bold heading-display text-black leading-none mb-4 uppercase tracking-tighter">
                 Jacob
                 <br />
-                <span className="text-[#FF4500]">Schulzetenberg</span>
+                <span className="text-[var(--color-accent)]">Schulzetenberg</span>
               </h1>
-              <div className="bg-black text-white px-4 py-2 inline-block mb-8 transform -rotate-1 shadow-[4px_4px_0_#FF4500]">
+              <div className="bg-black text-white px-4 py-2 inline-block mb-8 transform -rotate-1 shadow-[4px_4px_0_var(--color-accent)]">
                 <h2 className="text-xl md:text-3xl font-mono uppercase tracking-widest font-bold">Software Engineer</h2>
               </div>
               <p className="text-xl md:text-2xl text-black font-medium max-w-2xl mb-10 border-l-4 border-black pl-6">
@@ -47,7 +47,7 @@ export const FullPageHeader = () => {
               transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 200 }}
               className="relative w-64 h-64 md:w-80 md:h-80 xl:w-96 xl:h-96"
             >
-              <div className="absolute inset-0 bg-[#FF4500] translate-x-4 translate-y-4 border-4 border-black" />
+              <div className="absolute inset-0 bg-[var(--color-accent)] translate-x-4 translate-y-4 border-4 border-black" />
               <div className="relative w-full h-full border-4 border-black bg-white overflow-hidden group">
                 <Image
                   src="/profile-cartoon-crop.jpg"

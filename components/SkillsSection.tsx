@@ -44,7 +44,7 @@ export const SkillsSection = () => {
 
   return (
     <section id="skills" className="relative bg-white border-b-4 border-black py-16 md:py-18 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_12%_15%,rgba(255,69,0,0.06),transparent_26%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_12%_15%,rgba(30, 58, 138, 0.08),transparent_26%)]" />
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.08] [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_78%,transparent)]"
@@ -61,7 +61,7 @@ export const SkillsSection = () => {
       <div className="container mx-auto px-4 z-10 relative">
         <div className="mb-10 md:mb-12">
           <h2 className="section-title-wrap text-4xl md:text-[3.35rem] font-bold heading-display text-black uppercase tracking-tighter">
-            Technical Skills <span className="text-[#FF4500]">{'///'}</span>
+            Technical Skills <span className="text-[var(--color-accent)]">{'///'}</span>
           </h2>
         </div>
 
@@ -81,7 +81,7 @@ export const SkillsSection = () => {
               <ul className="space-y-2.5 relative z-10">
                 {category.skills.map((skill, sIdx) => (
                   <li key={sIdx} className="flex items-center text-lg font-medium text-black">
-                    <span className="mr-3 inline-block h-1.5 w-1.5 shrink-0 bg-[#FF4500]" />
+                    <span className="mr-3 inline-block h-1.5 w-1.5 shrink-0 bg-[var(--color-accent)]" />
                     {skill}
                   </li>
                 ))}

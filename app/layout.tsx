@@ -95,7 +95,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${mono.className} antialiased min-h-screen relative overflow-x-hidden selection:bg-[#FF4500] selection:text-white`}
+        className={`${mono.className} antialiased min-h-screen relative overflow-x-hidden selection:bg-[var(--color-accent)] selection:text-white`}
       >
         {/* Noise overlay for texture */}
         <div className="bg-noise" />

@@ -4,10 +4,11 @@
   /* High-Contrast Neo-Brutalist Palette */
   --color-primary: #0f0f0f; /* Jet Black */
   --color-background: #f4f4f0; /* Cream/Off-White */
-  --color-accent: #ff4500; /* Neon Red-Orange */
+  --color-accent: #1e3a8a; /* Deep Indigo Blue */
+  --color-accent-red: #ff4500; /* Neon Red-Orange */
   --color-accent-cyan: #8ae9fa;
   --color-accent-amber: #ffd39a;
-  --color-accent-hover: #e03e00;
+  --color-accent-hover: #1e40af; /* Hover Blue */
 
   --color-text: #0f0f0f;
   --color-text-light: #555555;
@@ -23,7 +24,7 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-background);
   background-image:
-    radial-gradient(circle at 10% 5%, rgba(255, 69, 0, 0.07), transparent 26%),
+    radial-gradient(circle at 10% 5%, rgba(30, 58, 138, 0.08), transparent 26%),
     radial-gradient(circle at 90% 88%, rgba(0, 209, 255, 0.09), transparent 23%);
   color: var(--color-text);
   line-height: 1.6;
@@ -289,7 +290,7 @@ section:last-of-type {
 }
 
 .panel-light.orange {
-  background: var(--color-accent);
+  background: var(--color-accent-red);
 }
 
 .panel-light.cyan {
@@ -421,7 +422,7 @@ section:last-of-type {
 }
 
 .brick-stud {
-  --stud-color: #ff4500;
+  --stud-color: var(--color-accent);
   position: relative;
   width: 1.2rem;
   height: 1.2rem;
@@ -457,7 +458,7 @@ section:last-of-type {
 }
 
 .brick-skill-chip {
-  --chip-color: #ff4500;
+  --chip-color: var(--color-accent);
   --chip-edge: #c13600;
   position: relative;
   display: flex;
