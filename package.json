@@ -27,25 +27,25 @@
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.19.4",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/node": "^20.19.39",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "clsx": "^2.1.1",
     "framer-motion": "^12.35.1",
     "husky": "^9.1.7",
     "next": "^16.2.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tailwind-merge": "^3.5.0"
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.4",
-    "@types/node": "^20",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
     "lint-staged": "^15.3.0",
     "prettier": "^3.6.2",
-    "tailwindcss": "^4",
-    "typescript": "^5",
     "wrangler": "^4.84.1"
   },
   "lint-staged": {
