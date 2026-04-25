@@ -50,7 +50,7 @@ export const FullPageHeader = () => {
               <div className="absolute inset-0 bg-[var(--color-accent)] translate-x-4 translate-y-4 border-4 border-black" />
               <div className="relative w-full h-full border-4 border-black bg-white overflow-hidden group">
                 <Image
-                  src="/profile-cartoon-crop.jpg"
+                  src="/profile-image.jpg"
                   alt="Jacob Schulzetenberg Portrait"
                   fill
                   sizes="(max-width: 768px) 256px, (max-width: 1280px) 320px, 384px"

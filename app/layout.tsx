@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Jacob Schulzetenberg',
     images: [
       {
-        url: '/profile-cartoon-crop.jpg',
+        url: '/profile-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Jacob Schulzetenberg',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jacob Schulzetenberg - Software Engineer',
     description: 'Software engineer with expertise in web development, analytics, and finance.',
-    images: ['/profile-cartoon-crop.jpg'],
+    images: ['/profile-image.jpg'],
   },
   robots: {
     index: true,
