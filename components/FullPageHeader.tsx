@@ -29,9 +29,9 @@ export const FullPageHeader = () => {
               </p>
 
               <div className="flex flex-wrap gap-6 mt-4">
-                <a href="#projects" className="neo-button">
+                {/* <a href="#projects" className="neo-button">
                   View Projects <i className="fa-solid fa-arrow-right ml-2" />
-                </a>
+                </a> */}
                 <a href="mailto:contact@schulzetenberg.com" className="neo-button neo-button-secondary">
                   Contact Me
                 </a>

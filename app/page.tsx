@@ -1,7 +1,7 @@
 import { FullPageHeader } from '@/components/FullPageHeader';
 import { AboutSection } from '@/components/AboutSection';
 import { SkillsSection } from '@/components/SkillsSection';
-import { ProjectsSection } from '@/components/ProjectsSection';
+// import { ProjectsSection } from '@/components/ProjectsSection';
 import { InstagramSection } from '@/components/InstagramSection';
 import { Footer } from '@/components/Footer';
 
@@ -14,7 +14,7 @@ export default function HomePage() {
 
       <SkillsSection />
 
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
 
       <InstagramSection />
 
